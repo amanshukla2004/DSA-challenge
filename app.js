@@ -1,5 +1,16 @@
 (() => {
   const THEME_KEY = 'dsa_revision_vault_theme';
+  const CONTEST_JOINED_KEY = 'dsa_contest_tracker_joined';
+
+  function loadJoinedContests() {
+    try {
+      const raw = localStorage.getItem(CONTEST_JOINED_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (_) {
+      return [];
+    }
+  }
 
   /**
    * @typedef {{
@@ -22,7 +33,7 @@
     itemById: new Map(),
     /** @type {Map<string, any>} */
     conceptsById: new Map(),
-    mode: 'dashboard', // dashboard | roadmap | concepts
+    mode: 'dashboard', // dashboard | roadmap | concepts | contests
     /** @type {string | null} */
     selectedId: null,
     /** @type {string | null} */
@@ -33,6 +44,15 @@
     previewDayIndex: null,
     /** @type {string | null} */
     selectedHeatmapDate: null,
+    contests: {
+      items: /** @type {Array<any>} */ ([]),
+      loading: false,
+      fetchedAt: /** @type {number | null} */ (null),
+      apiStatus: { leetcode: 'idle', codechef: 'idle' },
+      filter: 'all', // all | leetcode | codechef
+      joinedIds: new Set(loadJoinedContests())
+    },
+    contestTimerId: /** @type {number | null} */ (null),
     filters: {
       search: '',
       type: 'all', // all | dsa | design | behavioral | solved | notes | todo
@@ -50,6 +70,7 @@
     homeBtn: document.getElementById('homeBtn'),
     modeButtons: Array.from(document.querySelectorAll('.mode-btn')),
     conceptsCount: document.getElementById('conceptsCount'),
+    contestsCount: document.getElementById('contestsCount'),
     roadmapControls: document.getElementById('roadmapControls'),
     conceptsControls: document.getElementById('conceptsControls'),
     searchInput: /** @type {HTMLInputElement | null} */ (document.getElementById('searchInput')),
@@ -60,6 +81,7 @@
     dashboardView: document.getElementById('dashboardView'),
     problemView: document.getElementById('problemView'),
     conceptView: document.getElementById('conceptView'),
+    contestView: document.getElementById('contestView'),
     solvedStat: document.getElementById('solvedStat'),
     notesStat: document.getElementById('notesStat'),
     miniBarFill: document.getElementById('miniBarFill'),
@@ -292,15 +314,20 @@
       }
     });
 
-    const isDashboard = mode === 'dashboard';
+    if (mode !== 'contests' && state.contestTimerId !== null) {
+      clearInterval(state.contestTimerId);
+      state.contestTimerId = null;
+    }
+
+    const isFullWidth = mode === 'dashboard' || mode === 'contests';
     const isConcepts = mode === 'concepts';
 
-    els.sidebar?.classList.toggle('hidden', isDashboard);
-    els.sidebarToggle?.classList.toggle('hidden', isDashboard);
+    els.sidebar?.classList.toggle('hidden', isFullWidth);
+    els.sidebarToggle?.classList.toggle('hidden', isFullWidth);
     els.roadmapControls?.classList.toggle('hidden', isConcepts);
     els.conceptsControls?.classList.toggle('hidden', !isConcepts);
 
-    if (!isDashboard && state.data) {
+    if (!isFullWidth && state.data) {
       renderSidebar();
     }
   }
@@ -784,6 +811,7 @@
     }
     els.problemView?.classList.add('hidden');
     els.conceptView?.classList.add('hidden');
+    els.contestView?.classList.add('hidden');
     els.dashboardView.classList.remove('hidden');
 
     const { totals, solvedByDate = {} } = state.data;
@@ -1036,6 +1064,7 @@
 
     els.dashboardView?.classList.add('hidden');
     els.problemView?.classList.add('hidden');
+    els.contestView?.classList.add('hidden');
     els.conceptView.classList.remove('hidden');
 
     const prevC = idx > 0 ? concepts[idx - 1] : null;
@@ -1094,6 +1123,7 @@
 
     els.dashboardView?.classList.add('hidden');
     els.conceptView?.classList.add('hidden');
+    els.contestView?.classList.add('hidden');
     els.problemView.classList.remove('hidden');
 
     const prevItem = idx > 0 ? state.flatItems[idx - 1] : null;
@@ -1292,6 +1322,512 @@
     return items;
   }
 
+  const CONTEST_SCHEDULES = [
+    {
+      platform: 'leetcode',
+      cadence: 'weekly',
+      anchorNum: 400,
+      anchorMs: Date.UTC(2024, 5, 2, 2, 30, 0), // Sunday 08:00 AM IST
+      periodMs: 7 * 86400000,
+      durationMin: 90,
+      buildTitle: (num) => `Weekly Contest ${num}`,
+      buildUrl: (num) => `https://leetcode.com/contest/weekly-contest-${num}/`,
+      matchTitle: (title) => /\bweekly\s+contest\b/i.test(title) && !/\bbiweekly\b/i.test(title),
+      ruleLabel: 'Every Sunday · 8:00 AM IST (02:30 UTC) · 90m'
+    },
+    {
+      platform: 'leetcode',
+      cadence: 'biweekly',
+      anchorNum: 130,
+      anchorMs: Date.UTC(2024, 4, 11, 14, 30, 0), // Alternate Saturday 08:00 PM IST
+      periodMs: 14 * 86400000,
+      durationMin: 90,
+      buildTitle: (num) => `Biweekly Contest ${num}`,
+      buildUrl: (num) => `https://leetcode.com/contest/biweekly-contest-${num}/`,
+      matchTitle: (title) => /\bbiweekly\s+contest\b/i.test(title),
+      ruleLabel: 'Alternate Saturday · 8:00 PM IST (14:30 UTC) · 90m'
+    },
+    {
+      platform: 'codechef',
+      cadence: 'starters',
+      anchorNum: 150,
+      anchorMs: Date.UTC(2024, 8, 4, 14, 30, 0), // Wednesday 08:00 PM IST
+      periodMs: 7 * 86400000,
+      durationMin: 120,
+      buildTitle: (num) => `CodeChef Starters ${num}`,
+      buildUrl: (num) => `https://www.codechef.com/START${num}`,
+      matchTitle: (title) => /\bstarter/i.test(title),
+      ruleLabel: 'Every Wednesday · 8:00 PM IST (14:30 UTC) · 120m'
+    }
+  ];
+
+  function saveJoinedContests() {
+    try {
+      localStorage.setItem(CONTEST_JOINED_KEY, JSON.stringify(Array.from(state.contests.joinedIds)));
+    } catch (_) {}
+  }
+
+  async function fetchJsonWithTimeout(url, timeoutMs = 5000) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, { signal: controller.signal });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  function normalizeContestItem(raw, fallbackPlatform) {
+    if (!raw || typeof raw !== 'object') return null;
+    const title = String(raw.title || raw.name || raw.contest_name || '').trim();
+    const rawPlatform = String(raw.platform || raw.site || fallbackPlatform || '').toLowerCase();
+    const platform = rawPlatform.includes('leetcode')
+      ? 'leetcode'
+      : rawPlatform.includes('codechef')
+        ? 'codechef'
+        : fallbackPlatform;
+    if (!title || (platform !== 'leetcode' && platform !== 'codechef')) return null;
+
+    const startRaw = raw.startTime || raw.start_time || raw.start;
+    const startMs = typeof startRaw === 'number'
+      ? (startRaw < 1e12 ? startRaw * 1000 : startRaw)
+      : Date.parse(String(startRaw || ''));
+    if (!Number.isFinite(startMs)) return null;
+
+    const endRaw = raw.endTime || raw.end_time || raw.end;
+    let endMs = endRaw
+      ? (typeof endRaw === 'number' ? (endRaw < 1e12 ? endRaw * 1000 : endRaw) : Date.parse(String(endRaw)))
+      : NaN;
+
+    if (!Number.isFinite(endMs) || endMs <= startMs) {
+      const rawDur = Number(raw.duration || raw.contest_duration || 0);
+      let durationMs = 90 * 60000;
+      if (Number.isFinite(rawDur) && rawDur > 0) {
+        if (rawDur > 86400) durationMs = rawDur;           // milliseconds
+        else if (rawDur >= 600) durationMs = rawDur * 1000; // seconds
+        else durationMs = rawDur * 60000;                  // minutes
+      } else if (platform === 'codechef') {
+        durationMs = 120 * 60000;
+      }
+      endMs = startMs + durationMs;
+    }
+
+    const url = String(
+      raw.url ||
+      (platform === 'leetcode' ? 'https://leetcode.com/contest/' : 'https://www.codechef.com/contests')
+    );
+
+    return {
+      id: `${platform}::${startMs}`,
+      platform,
+      title,
+      url,
+      startMs,
+      endMs,
+      durationMin: Math.round((endMs - startMs) / 60000),
+      source: 'api'
+    };
+  }
+
+  async function fetchPlatformContestsFromApi(platform) {
+    const candidates = [
+      {
+        url: `https://contest-hive.vercel.app/api/${platform}`,
+        extract: (json) => (json && Array.isArray(json.data) ? json.data : [])
+      },
+      {
+        url: 'https://competeapi.vercel.app/contests/upcoming/',
+        extract: (json) => (Array.isArray(json) ? json : [])
+      }
+    ];
+
+    const nowMs = Date.now();
+    for (const src of candidates) {
+      try {
+        const json = await fetchJsonWithTimeout(src.url, 5000);
+        const list = src.extract(json)
+          .map((item) => normalizeContestItem(item, platform))
+          .filter((item) => item && item.platform === platform && item.endMs > nowMs);
+        if (list.length > 0) {
+          return { status: 'api', items: list };
+        }
+      } catch (_) {
+        // Try next public API candidate or fall back to recurring schedule
+      }
+    }
+    return { status: 'fallback', items: [] };
+  }
+
+  function parseContestNumber(title) {
+    const m = String(title || '').match(/(\d{2,4})/);
+    return m ? Number(m[1]) : null;
+  }
+
+  function buildRecurringContests(nowMs, horizonDays, apiItems) {
+    const horizonEndMs = nowMs + horizonDays * 86400000;
+    const generated = [];
+
+    for (const sched of CONTEST_SCHEDULES) {
+      const durationMs = sched.durationMin * 60000;
+      const firstK = Math.floor((nowMs - sched.anchorMs - durationMs) / sched.periodMs) + 1;
+
+      // If an API item matches this recurring cadence, calibrate numbering offset from it
+      let numOffset = 0;
+      for (const apiItem of apiItems) {
+        if (apiItem.platform !== sched.platform || !sched.matchTitle(apiItem.title)) continue;
+        const apiNum = parseContestNumber(apiItem.title);
+        if (apiNum === null) continue;
+        const nearestK = Math.round((apiItem.startMs - sched.anchorMs) / sched.periodMs);
+        const expectedStart = sched.anchorMs + nearestK * sched.periodMs;
+        if (Math.abs(apiItem.startMs - expectedStart) <= 3 * 3600000) {
+          numOffset = apiNum - (sched.anchorNum + nearestK);
+          break;
+        }
+      }
+
+      for (let k = firstK; ; k++) {
+        const startMs = sched.anchorMs + k * sched.periodMs;
+        if (startMs > horizonEndMs) break;
+        const endMs = startMs + durationMs;
+        if (endMs <= nowMs) continue;
+
+        const hasApiMatch = apiItems.some(
+          (apiItem) =>
+            apiItem.platform === sched.platform &&
+            Math.abs(apiItem.startMs - startMs) <= 3 * 3600000
+        );
+        if (hasApiMatch) continue;
+
+        const num = sched.anchorNum + k + numOffset;
+        generated.push({
+          id: `${sched.platform}::${startMs}`,
+          platform: sched.platform,
+          title: sched.buildTitle(num),
+          url: sched.buildUrl(num),
+          startMs,
+          endMs,
+          durationMin: sched.durationMin,
+          source: 'schedule'
+        });
+      }
+    }
+
+    return generated;
+  }
+
+  function mergeContests(apiItems, nowMs) {
+    const recurring = buildRecurringContests(nowMs, 28, apiItems);
+    const merged = [...apiItems.filter((it) => it.endMs > nowMs), ...recurring];
+    merged.sort((a, b) => a.startMs - b.startMs);
+    return merged;
+  }
+
+  function updateContestsPill() {
+    if (!els.contestsCount) return;
+    const nowMs = Date.now();
+    const weekAheadMs = nowMs + 7 * 86400000;
+    const next7 = state.contests.items.filter((c) => c.endMs > nowMs && c.startMs <= weekAheadMs);
+    const count = next7.length || state.contests.items.length;
+    els.contestsCount.textContent = String(count);
+  }
+
+  async function refreshContests(force = false) {
+    if (state.contests.loading && !force) return;
+    const nowMs = Date.now();
+    if (!state.contests.items.length) {
+      state.contests.items = mergeContests([], nowMs);
+      updateContestsPill();
+    }
+
+    state.contests.loading = true;
+    if (state.mode === 'contests') renderContestTracker();
+
+    const [lcRes, ccRes] = await Promise.all([
+      fetchPlatformContestsFromApi('leetcode'),
+      fetchPlatformContestsFromApi('codechef')
+    ]);
+
+    state.contests.apiStatus = {
+      leetcode: lcRes.status,
+      codechef: ccRes.status
+    };
+    const apiItems = [...lcRes.items, ...ccRes.items];
+    state.contests.items = mergeContests(apiItems, Date.now());
+    state.contests.fetchedAt = Date.now();
+    state.contests.loading = false;
+    updateContestsPill();
+
+    if (state.mode === 'contests') {
+      renderContestTracker();
+    }
+  }
+
+  function formatDurationLabel(minutes) {
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    if (h > 0 && m > 0) return `${h}h ${m}m`;
+    if (h > 0) return `${h}h`;
+    return `${m}m`;
+  }
+
+  function formatCountdown(targetMs, nowMs = Date.now()) {
+    const diff = Math.max(0, targetMs - nowMs);
+    const totalSec = Math.floor(diff / 1000);
+    const days = Math.floor(totalSec / 86400);
+    const hrs = Math.floor((totalSec % 86400) / 3600);
+    const mins = Math.floor((totalSec % 3600) / 60);
+    const secs = totalSec % 60;
+    const hh = String(hrs).padStart(2, '0');
+    const mm = String(mins).padStart(2, '0');
+    const ss = String(secs).padStart(2, '0');
+    return days > 0 ? `${days}d ${hh}h ${mm}m ${ss}s` : `${hh}h ${mm}m ${ss}s`;
+  }
+
+  function formatContestWindow(startMs, endMs) {
+    const startDt = new Date(startMs);
+    const endDt = new Date(endMs);
+    const datePart = startDt.toLocaleDateString(undefined, {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    });
+    const startTime = startDt.toLocaleTimeString(undefined, {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    const endTime = endDt.toLocaleTimeString(undefined, {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    return `${datePart} · ${startTime} – ${endTime}`;
+  }
+
+  function buildGoogleCalendarUrl(contest) {
+    const fmt = (ms) => new Date(ms).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+    const params = new URLSearchParams({
+      action: 'TEMPLATE',
+      text: contest.title,
+      dates: `${fmt(contest.startMs)}/${fmt(contest.endMs)}`,
+      details: `Platform: ${contest.platform === 'leetcode' ? 'LeetCode' : 'CodeChef'}\nLink: ${contest.url}`
+    });
+    return `https://calendar.google.com/calendar/render?${params.toString()}`;
+  }
+
+  function updateContestCountdowns() {
+    if (state.mode !== 'contests' || !els.contestView) return;
+    const nowMs = Date.now();
+    els.contestView.querySelectorAll('[data-countdown-start]').forEach((el) => {
+      if (!(el instanceof HTMLElement)) return;
+      const startMs = Number(el.dataset.countdownStart || 0);
+      const endMs = Number(el.dataset.countdownEnd || 0);
+      if (nowMs >= endMs) {
+        el.textContent = 'Ended';
+      } else if (nowMs >= startMs) {
+        el.textContent = `Ends in ${formatCountdown(endMs, nowMs)}`;
+      } else {
+        el.textContent = formatCountdown(startMs, nowMs);
+      }
+    });
+  }
+
+  function renderContestTracker() {
+    if (!els.contestView) return;
+    state.selectedId = null;
+    state.selectedConceptId = null;
+    setModeUI('contests');
+    if (window.location.hash !== '#contests') {
+      history.replaceState(null, '', '#contests');
+    }
+
+    els.dashboardView?.classList.add('hidden');
+    els.problemView?.classList.add('hidden');
+    els.conceptView?.classList.add('hidden');
+    els.contestView.classList.remove('hidden');
+
+    if (!state.contests.items.length && !state.contests.loading) {
+      refreshContests(false);
+    }
+
+    const nowMs = Date.now();
+    const tzName = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local Time';
+    const allContests = state.contests.items.filter((c) => c.endMs > nowMs);
+    const filtered = state.contests.filter === 'all'
+      ? allContests
+      : allContests.filter((c) => c.platform === state.contests.filter);
+
+    const nextContest = filtered[0] || allContests[0] || null;
+    const nextIsLive = Boolean(nextContest && nowMs >= nextContest.startMs && nowMs < nextContest.endMs);
+    const nextLc = allContests.find((c) => c.platform === 'leetcode');
+    const nextCc = allContests.find((c) => c.platform === 'codechef');
+
+    const { leetcode: lcState, codechef: ccState } = state.contests.apiStatus;
+    const sourceBadge = state.contests.loading
+      ? '<span class="badge badge-y">⟳ Syncing public APIs...</span>'
+      : lcState === 'api' && ccState === 'api'
+        ? '<span class="badge badge-g">● Live Public API</span>'
+        : lcState === 'api' || ccState === 'api'
+          ? '<span class="badge badge-y">◐ Partial Live API + Schedule</span>'
+          : '<span class="badge badge-grey">↻ Recurring Schedule Mode</span>';
+
+    const platformTag = (p) =>
+      p === 'leetcode'
+        ? '<span class="badge badge-lc">LeetCode</span>'
+        : '<span class="badge badge-cc">CodeChef</span>';
+
+    const statusTag = (c) => {
+      if (nowMs >= c.startMs && nowMs < c.endMs) return '<span class="badge badge-r">● LIVE NOW</span>';
+      const hrs = (c.startMs - nowMs) / 3600000;
+      if (hrs <= 24) return '<span class="badge badge-y">Within 24h</span>';
+      return '';
+    };
+
+    els.contestView.innerHTML = `
+      <div class="section-card">
+        <div class="contest-toolbar">
+          <div>
+            <h2 style="margin:0;font-size:18px;display:flex;align-items:center;gap:8px;">
+              🏆 Contest Tracker ${sourceBadge}
+            </h2>
+            <div class="section-sub" style="margin:4px 0 0;">
+              Tracking upcoming <strong>LeetCode</strong> & <strong>CodeChef</strong> contests · Timezone: <code>${escapeHtml(tzName)}</code>
+              ${state.contests.fetchedAt ? ` · Last checked ${escapeHtml(new Date(state.contests.fetchedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))}` : ''}
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;">
+            <button class="chip ${state.contests.filter === 'all' ? 'active' : ''}" data-c-filter="all">All (${allContests.length})</button>
+            <button class="chip ${state.contests.filter === 'leetcode' ? 'active' : ''}" data-c-filter="leetcode">LeetCode (${allContests.filter((c) => c.platform === 'leetcode').length})</button>
+            <button class="chip ${state.contests.filter === 'codechef' ? 'active' : ''}" data-c-filter="codechef">CodeChef (${allContests.filter((c) => c.platform === 'codechef').length})</button>
+            <button class="btn" id="refreshContestsBtn" ${state.contests.loading ? 'disabled' : ''}>↻ Refresh</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="contest-hero">
+        <section class="section-card contest-spotlight ${nextIsLive ? 'is-live' : ''}">
+          <div class="section-header" style="margin-bottom:8px;">
+            <h2>${nextIsLive ? '🔴 Live Contest' : '⚡ Next Contest Up'}</h2>
+            ${nextContest ? platformTag(nextContest.platform) : ''}
+          </div>
+          ${nextContest ? `
+            <div style="font-size:18px;font-weight:700;margin-bottom:6px;">
+              ${escapeHtml(nextContest.title)} ${statusTag(nextContest)}
+            </div>
+            <div class="contest-countdown" data-countdown-start="${nextContest.startMs}" data-countdown-end="${nextContest.endMs}">
+              ${nextIsLive ? `Ends in ${formatCountdown(nextContest.endMs, nowMs)}` : formatCountdown(nextContest.startMs, nowMs)}
+            </div>
+            <div class="section-sub" style="margin:8px 0 12px;">
+              ${escapeHtml(formatContestWindow(nextContest.startMs, nextContest.endMs))} · Duration <strong>${escapeHtml(formatDurationLabel(nextContest.durationMin))}</strong>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <a class="btn btn-primary" href="${escapeHtml(nextContest.url)}" target="_blank" rel="noopener noreferrer">Open Contest ↗</a>
+              <a class="btn" href="${escapeHtml(buildGoogleCalendarUrl(nextContest))}" target="_blank" rel="noopener noreferrer">📅 Google Calendar</a>
+              <button class="btn ${state.contests.joinedIds.has(nextContest.id) ? 'btn-joined' : ''}" data-join-id="${escapeHtml(nextContest.id)}">
+                ${state.contests.joinedIds.has(nextContest.id) ? '✓ Participating' : '+ Mark Participating'}
+              </button>
+            </div>
+          ` : '<div class="empty-hint">No upcoming contests found.</div>'}
+        </section>
+
+        <section class="section-card">
+          <div class="section-header" style="margin-bottom:8px;">
+            <h2>🗓️ Fixed Weekly Cadence</h2>
+            <span class="badge badge-grey">Auto-Fallback Active</span>
+          </div>
+          <div class="contest-schedule-list">
+            ${CONTEST_SCHEDULES.map((s) => `
+              <div class="contest-schedule-row">
+                <div>
+                  <div style="font-weight:600;display:flex;align-items:center;gap:6px;">
+                    ${platformTag(s.platform)}
+                    <span>${s.cadence === 'weekly' ? 'Weekly Contest' : s.cadence === 'biweekly' ? 'Biweekly Contest' : 'CodeChef Starters'}</span>
+                  </div>
+                  <div style="font-size:11.5px;color:var(--text-muted);margin-top:2px;">${escapeHtml(s.ruleLabel)}</div>
+                </div>
+                <span class="badge ${state.contests.apiStatus[s.platform] === 'api' ? 'badge-g' : 'badge-grey'}">
+                  ${state.contests.apiStatus[s.platform] === 'api' ? 'API Synced' : 'Schedule'}
+                </span>
+              </div>
+            `).join('')}
+          </div>
+          <div style="margin-top:8px;font-size:11.5px;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;">
+            <span>Next LC: <strong>${nextLc ? escapeHtml(nextLc.title) : '—'}</strong></span>
+            <span>Next CC: <strong>${nextCc ? escapeHtml(nextCc.title) : '—'}</strong></span>
+          </div>
+        </section>
+      </div>
+
+      <section class="section-card">
+        <div class="section-header">
+          <h2>Upcoming Contests (Next 28 Days)</h2>
+          <span class="section-sub" style="margin:0;">${filtered.length} scheduled · ${state.contests.joinedIds.size} marked participating</span>
+        </div>
+
+        ${filtered.length === 0 ? `
+          <div class="empty-hint">No upcoming contests match this filter.</div>
+        ` : `
+          <div class="contest-list">
+            ${filtered.map((c) => {
+              const isLive = nowMs >= c.startMs && nowMs < c.endMs;
+              const isJoined = state.contests.joinedIds.has(c.id);
+              return `
+                <div class="contest-card ${isLive ? 'is-live' : ''} ${isJoined ? 'is-joined' : ''}">
+                  <div class="contest-card-main">
+                    <div class="contest-card-title">
+                      ${platformTag(c.platform)}
+                      <span>${escapeHtml(c.title)}</span>
+                      ${statusTag(c)}
+                      <span class="badge ${c.source === 'api' ? 'badge-g' : 'badge-grey'}">${c.source === 'api' ? 'Live API' : 'Schedule'}</span>
+                    </div>
+                    <div class="contest-card-meta">
+                      <span>🕒 ${escapeHtml(formatContestWindow(c.startMs, c.endMs))}</span>
+                      <span>⏱ ${escapeHtml(formatDurationLabel(c.durationMin))}</span>
+                      <span>⏳ <strong class="contest-countdown-sm" data-countdown-start="${c.startMs}" data-countdown-end="${c.endMs}">${isLive ? `Ends in ${formatCountdown(c.endMs, nowMs)}` : formatCountdown(c.startMs, nowMs)}</strong></span>
+                    </div>
+                  </div>
+                  <div class="contest-card-right">
+                    <button class="btn ${isJoined ? 'btn-joined' : ''}" data-join-id="${escapeHtml(c.id)}">
+                      ${isJoined ? '✓ Participating' : 'Participate'}
+                    </button>
+                    <a class="btn" href="${escapeHtml(buildGoogleCalendarUrl(c))}" target="_blank" rel="noopener noreferrer" title="Add to Google Calendar">📅 Cal</a>
+                    <a class="btn btn-primary" href="${escapeHtml(c.url)}" target="_blank" rel="noopener noreferrer">Open ↗</a>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `}
+      </section>
+    `;
+
+    els.contestView.querySelectorAll('[data-c-filter]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!(btn instanceof HTMLElement) || !btn.dataset.cFilter) return;
+        state.contests.filter = btn.dataset.cFilter;
+        renderContestTracker();
+      });
+    });
+
+    els.contestView.querySelectorAll('[data-join-id]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!(btn instanceof HTMLElement) || !btn.dataset.joinId) return;
+        const id = btn.dataset.joinId;
+        if (state.contests.joinedIds.has(id)) state.contests.joinedIds.delete(id);
+        else state.contests.joinedIds.add(id);
+        saveJoinedContests();
+        renderContestTracker();
+      });
+    });
+
+    document.getElementById('refreshContestsBtn')?.addEventListener('click', () => {
+      refreshContests(true);
+    });
+
+    if (state.contestTimerId !== null) clearInterval(state.contestTimerId);
+    state.contestTimerId = window.setInterval(updateContestCountdowns, 1000);
+  }
+
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(THEME_KEY, theme);
@@ -1301,13 +1837,17 @@
   }
 
   function routeFromHash() {
-    if (!state.data) return;
     let raw = '';
     try {
       raw = decodeURIComponent(window.location.hash.replace(/^#/, ''));
     } catch (_) {
       raw = '';
     }
+    if (raw === 'contests') {
+      renderContestTracker();
+      return;
+    }
+    if (!state.data) return;
     if (raw.startsWith('concept::') && state.conceptsById.has(raw)) {
       selectConcept(raw);
     } else if (raw && state.itemById.has(raw)) {
@@ -1333,8 +1873,13 @@
 
     els.modeButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        if (!state.data || !(btn instanceof HTMLElement)) return;
+        if (!(btn instanceof HTMLElement)) return;
         const mode = btn.dataset.mode;
+        if (mode === 'contests') {
+          renderContestTracker();
+          return;
+        }
+        if (!state.data) return;
         if (mode === 'dashboard') {
           renderDashboard();
         } else if (mode === 'concepts') {
@@ -1401,6 +1946,7 @@
   async function boot() {
     setModeUI('dashboard');
     initControls();
+    refreshContests(false);
     try {
       const [idxRes, trackerRes] = await Promise.all([
         fetch(`./roadmap-index.json?t=${Date.now()}`),
