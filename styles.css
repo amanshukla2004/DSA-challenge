@@ -1294,6 +1294,7 @@ body {
 
 .pane-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 

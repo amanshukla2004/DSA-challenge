@@ -319,10 +319,10 @@
       s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
       s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
         const cleanHref = href.trim();
-        const javaMatch = cleanHref.match(/^\.\/(bruteforce|better|optimised)\.java$/i);
+        const javaMatch = cleanHref.match(/^(?:\.\/)?([^/?#]+\.java)$/i);
         if (javaMatch) {
-          const tier = javaMatch[1].toLowerCase();
-          return `<a href="#java-${tier}" data-java-tab="${tier}">${label}</a>`;
+          const fileName = javaMatch[1];
+          return `<a href="#java-${escapeHtml(fileName)}" data-java-tab="${escapeHtml(fileName)}">${label}</a>`;
         }
         const safeHref = /^https?:\/\//i.test(cleanHref) ? cleanHref : '#';
         return `<a href="${escapeHtml(safeHref)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
@@ -1563,12 +1563,32 @@
     return res.text();
   }
 
-  async function loadJavaTab(item, tier) {
-    state.activeTier = tier;
-    const tabs = els.problemView ? els.problemView.querySelectorAll('.pane-tab[data-tier]') : [];
+  function getQuestionJavaFiles(q) {
+    if (!q) return [];
+    if (Array.isArray(q.javaFiles)) return q.javaFiles;
+    return q.hasJava ? ['bruteforce.java', 'better.java', 'optimised.java'] : [];
+  }
+
+  function resolveJavaFileChoice(javaFiles, preferred) {
+    if (!javaFiles.length) return null;
+    const prefRaw = String(preferred || '').toLowerCase();
+    const prefFile = prefRaw && !prefRaw.endsWith('.java') ? `${prefRaw}.java` : prefRaw;
+    const exact = javaFiles.find((f) => f.toLowerCase() === prefFile);
+    if (exact) return exact;
+    const opt = javaFiles.find((f) => f.toLowerCase() === 'optimised.java');
+    return opt || javaFiles[javaFiles.length - 1];
+  }
+
+  async function loadJavaTab(item, tierOrFile) {
+    const javaFiles = getQuestionJavaFiles(item?.q);
+    const resolved = resolveJavaFileChoice(javaFiles, tierOrFile)
+      || (String(tierOrFile || '').endsWith('.java') ? String(tierOrFile) : `${tierOrFile || 'optimised'}.java`);
+    state.activeTier = resolved;
+
+    const tabs = els.problemView ? els.problemView.querySelectorAll('.pane-tab[data-java-file]') : [];
     tabs.forEach((t) => {
       if (t instanceof HTMLElement) {
-        t.classList.toggle('active', t.dataset.tier === tier);
+        t.classList.toggle('active', t.dataset.javaFile === resolved);
       }
     });
 
@@ -1576,7 +1596,7 @@
     const codeFooter = document.getElementById('codeFooter');
     if (!codeBody) return;
 
-    const relFile = `${item.q.path}/${tier}.java`;
+    const relFile = `${item.q.path}/${resolved}`;
     codeBody.innerHTML = '<div style="padding:16px;color:var(--text-muted)">Loading Java source...</div>';
     if (codeFooter) codeFooter.textContent = relFile;
 
@@ -1725,7 +1745,10 @@
             ? '<span class="badge badge-y">◐ Notes Added</span>'
             : '<span class="badge badge-grey">○ Todo</span>';
 
-    const singlePane = !q.hasJava || state.viewMode !== 'split';
+    const javaFiles = getQuestionJavaFiles(q);
+    const hasJavaFiles = q.hasJava && javaFiles.length > 0;
+    const activeJavaFile = resolveJavaFileChoice(javaFiles, state.activeTier);
+    const singlePane = !hasJavaFiles || state.viewMode !== 'split';
 
     els.problemView.innerHTML = `
       <div class="problem-header ${q.status === 'solved' ? 'is-complete' : ''}">
@@ -1741,7 +1764,7 @@
           </div>
         </div>
         <div class="problem-actions">
-          ${q.hasJava ? `
+          ${hasJavaFiles ? `
             <div class="view-mode-group">
               <button class="view-mode-btn ${state.viewMode === 'split' ? 'active' : ''}" data-mode="split">Split</button>
               <button class="view-mode-btn ${state.viewMode === 'notes' ? 'active' : ''}" data-mode="notes">Notes</button>
@@ -1755,7 +1778,7 @@
       </div>
 
       <div class="workspace-panes ${singlePane ? 'single-pane' : ''}" id="workspacePanes">
-        <div class="pane ${q.hasJava && state.viewMode === 'code' ? 'hidden' : ''}" id="notesPane">
+        <div class="pane ${hasJavaFiles && state.viewMode === 'code' ? 'hidden' : ''}" id="notesPane">
           <div class="pane-header">
             <strong>understanding.md</strong>
           </div>
@@ -1763,18 +1786,18 @@
           <div class="path-footer">${escapeHtml(q.path)}/understanding.md</div>
         </div>
 
-        ${q.hasJava ? `
+        ${hasJavaFiles ? `
           <div class="pane ${state.viewMode === 'notes' ? 'hidden' : ''}" id="codePane">
             <div class="pane-header">
               <div class="pane-tabs">
-                <button class="pane-tab ${state.activeTier === 'bruteforce' ? 'active' : ''}" data-tier="bruteforce">bruteforce.java</button>
-                <button class="pane-tab ${state.activeTier === 'better' ? 'active' : ''}" data-tier="better">better.java</button>
-                <button class="pane-tab ${state.activeTier === 'optimised' ? 'active' : ''}" data-tier="optimised">optimised.java</button>
+                ${javaFiles.map((fileName) => `
+                  <button class="pane-tab ${activeJavaFile === fileName ? 'active' : ''}" data-java-file="${escapeHtml(fileName)}">${escapeHtml(fileName)}</button>
+                `).join('')}
               </div>
               <button class="btn" id="copyCodeBtn">Copy</button>
             </div>
             <div class="pane-body code-body" id="codeBody">Loading Java...</div>
-            <div class="path-footer" id="codeFooter">${escapeHtml(q.path)}/${state.activeTier}.java</div>
+            <div class="path-footer" id="codeFooter">${escapeHtml(q.path)}/${escapeHtml(activeJavaFile)}</div>
           </div>
         ` : ''}
       </div>
@@ -1792,10 +1815,10 @@
       });
     });
 
-    els.problemView.querySelectorAll('.pane-tab[data-tier]').forEach((btn) => {
+    els.problemView.querySelectorAll('.pane-tab[data-java-file]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        if (btn instanceof HTMLElement && btn.dataset.tier) {
-          loadJavaTab(item, btn.dataset.tier);
+        if (btn instanceof HTMLElement && btn.dataset.javaFile) {
+          loadJavaTab(item, btn.dataset.javaFile);
         }
       });
     });
@@ -1837,8 +1860,8 @@
       }
     }
 
-    if (q.hasJava) {
-      loadJavaTab(item, state.activeTier);
+    if (hasJavaFiles && activeJavaFile) {
+      loadJavaTab(item, activeJavaFile);
     }
   }
 

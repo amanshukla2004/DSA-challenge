@@ -354,19 +354,39 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
     }
   }
 
+  const PREFERRED_JAVA_ORDER = ['bruteforce.java', 'better.java', 'optimised.java'];
+  const javaFiles = fs.existsSync(qAbsPath)
+    ? fs.readdirSync(qAbsPath, { withFileTypes: true })
+        .filter((e) => e.isFile() && /\.java$/i.test(e.name))
+        .map((e) => e.name)
+        .sort((a, b) => {
+          const ia = PREFERRED_JAVA_ORDER.indexOf(a.toLowerCase());
+          const ib = PREFERRED_JAVA_ORDER.indexOf(b.toLowerCase());
+          if (ia !== -1 && ib !== -1) return ia - ib;
+          if (ia !== -1) return -1;
+          if (ib !== -1) return 1;
+          return a.localeCompare(b);
+        })
+    : [];
+
   const hasCode = { bruteforce: false, better: false, optimised: false };
-  if (isDsa) {
-    for (const tier of ['bruteforce', 'better', 'optimised']) {
-      const javaPath = path.join(qAbsPath, `${tier}.java`);
-      if (fs.existsSync(javaPath)) {
-        const actualJava = fs.readFileSync(javaPath, 'utf8');
-        const templateJava = buildJavaTemplate(dayEntry, q, tier);
-        hasCode[tier] = normalizeText(actualJava) !== normalizeText(templateJava);
-      }
+  let anyCode = false;
+  for (const fileName of javaFiles) {
+    const javaPath = path.join(qAbsPath, fileName);
+    const actualJava = fs.readFileSync(javaPath, 'utf8');
+    const lower = fileName.toLowerCase();
+    const tier = lower.replace(/\.java$/, '');
+    if (tier === 'bruteforce' || tier === 'better' || tier === 'optimised') {
+      const templateJava = buildJavaTemplate(dayEntry, q, tier);
+      const isCustom = normalizeText(actualJava) !== normalizeText(templateJava);
+      hasCode[tier] = isCustom;
+      if (isCustom) anyCode = true;
+    } else if (actualJava.trim().length > 0) {
+      hasCode[tier] = true;
+      anyCode = true;
     }
   }
 
-  const anyCode = hasCode.bruteforce || hasCode.better || hasCode.optimised;
   let status = explicitStatus;
   if (!status) {
     if (isDsa) {
@@ -378,7 +398,7 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
     }
   }
 
-  return { hasNotes, hasCode, status, explicitSolvedDate };
+  return { hasNotes, hasCode, javaFiles, status, explicitSolvedDate };
 }
 
 /**
@@ -729,17 +749,23 @@ async function main() {
         const isDsa = dayEntry.type === 'dsa';
         if (isDsa) {
           totals.dsaQuestions++;
+          const mdPath = path.join(qAbsPath, 'understanding.md');
+          const hadFolderInit =
+            fs.existsSync(mdPath) ||
+            fs.readdirSync(qAbsPath, { withFileTypes: true }).some((e) => e.isFile() && /\.java$/i.test(e.name));
           writeIfMissing(
-            path.join(qAbsPath, 'understanding.md'),
+            mdPath,
             buildDsaUnderstandingTemplate(dayEntry, q),
             stats
           );
-          for (const tier of ['bruteforce', 'better', 'optimised']) {
-            writeIfMissing(
-              path.join(qAbsPath, `${tier}.java`),
-              buildJavaTemplate(dayEntry, q, tier),
-              stats
-            );
+          if (!hadFolderInit) {
+            for (const tier of ['bruteforce', 'better', 'optimised']) {
+              writeIfMissing(
+                path.join(qAbsPath, `${tier}.java`),
+                buildJavaTemplate(dayEntry, q, tier),
+                stats
+              );
+            }
           }
         } else {
           if (dayEntry.type === 'design') totals.designQuestions++;
@@ -779,7 +805,8 @@ async function main() {
           type: q.type || dayEntry.type,
           slug: q.slug || null,
           url: q.url,
-          hasJava: isDsa,
+          hasJava: inspected.javaFiles.length > 0,
+          javaFiles: inspected.javaFiles,
           path: qRelPath,
           status: inspected.status,
           hasNotes: inspected.hasNotes,
