@@ -2091,7 +2091,8 @@
     const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
     const next = state.contests.items.find((c) => c.endMs > nowMs && c.startMs <= horizonEndMs);
     if (!next) {
-      els.navUpcomingContest.classList.add('hidden');
+      els.navUpcomingContest.classList.remove('is-live');
+      els.navContestText.innerHTML = '<span class="nav-contest-tag">🏆 Contests</span> View Schedule';
       return;
     }
     const isLive = nowMs >= next.startMs && nowMs < next.endMs;
@@ -2104,16 +2105,17 @@
     els.navUpcomingContest.classList.toggle('is-live', isLive);
     els.navContestText.innerHTML = isLive
       ? `<span class="nav-contest-tag">● LIVE</span> ${escapeHtml(shortName)}`
-      : `<span class="nav-contest-tag">Next</span> ${escapeHtml(shortName)} · ${escapeHtml(dateStr)}, ${escapeHtml(timeStr)}`;
+      : `<span class="nav-contest-tag">🏆 Next</span> ${escapeHtml(shortName)} · ${escapeHtml(dateStr)}, ${escapeHtml(timeStr)}`;
     els.navUpcomingContest.title = `${next.title} — ${dateStr} ${timeStr} (Open Contest Tracker)`;
   }
 
   function updateContestsPill() {
-    if (!els.contestsCount) return;
     const nowMs = Date.now();
     const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
     const count = state.contests.items.filter((c) => c.endMs > nowMs && c.startMs <= horizonEndMs).length;
-    els.contestsCount.textContent = String(count);
+    if (els.contestsCount) {
+      els.contestsCount.textContent = String(count);
+    }
     updateNavUpcomingContest();
   }
 

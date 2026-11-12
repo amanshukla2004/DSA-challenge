@@ -174,11 +174,11 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  max-width: 310px;
+  max-width: 300px;
   padding: 5px 10px;
   border-radius: 8px;
   border: 1px solid var(--yellow-border);
-  background: var(--bg-card);
+  background: var(--yellow-soft);
   color: var(--text);
   font-family: inherit;
   font-size: 12px;
@@ -189,6 +189,13 @@ body {
   text-overflow: ellipsis;
 }
 
+#navContestText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
 .nav-contest-pill:hover {
   border-color: var(--yellow);
   background: var(--bg-hover);
@@ -196,6 +203,7 @@ body {
 
 .nav-contest-pill.is-live {
   border-color: var(--red-border);
+  background: var(--red-soft);
 }
 
 .nav-contest-tag {
@@ -210,9 +218,15 @@ body {
   color: var(--red);
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1280px) {
+  .topbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   .nav-contest-pill {
-    display: none;
+    max-width: 230px;
   }
 }
 
