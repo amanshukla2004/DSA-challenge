@@ -1,7 +1,79 @@
 (() => {
   const THEME_KEY = 'dsa_revision_vault_theme';
   const CONTEST_JOINED_KEY = 'dsa_contest_tracker_joined';
+  const POTD_DONE_KEY = 'dsa_potd_completed_by_date';
+  const CONTEST_DONE_KEY = 'dsa_contest_completed_by_date';
   const LC_API_BASE = 'https://alfa-leetcode-api.onrender.com';
+
+  function loadJsonObject(key) {
+    try {
+      const raw = localStorage.getItem(key);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function saveJsonObject(key, obj) {
+    try {
+      localStorage.setItem(key, JSON.stringify(obj));
+    } catch (_) {}
+  }
+
+  let completedPotdByDate = loadJsonObject(POTD_DONE_KEY);
+  let completedContestsByDate = loadJsonObject(CONTEST_DONE_KEY);
+
+  function getTodayCompletedPotd() {
+    const entry = completedPotdByDate[getTodayIsoLocal()];
+    return entry && entry.done ? entry : null;
+  }
+
+  function isPotdCompletedToday() {
+    return Boolean(getTodayCompletedPotd());
+  }
+
+  function togglePotdCompletedToday() {
+    const today = getTodayIsoLocal();
+    if (completedPotdByDate[today]?.done) {
+      delete completedPotdByDate[today];
+    } else {
+      completedPotdByDate[today] = {
+        done: true,
+        title: state.lc?.potd?.title || 'LeetCode POTD',
+        url: state.lc?.potd?.url || 'https://leetcode.com/problemset/',
+      };
+    }
+    saveJsonObject(POTD_DONE_KEY, completedPotdByDate);
+  }
+
+  function getTodayCompletedContests() {
+    const list = completedContestsByDate[getTodayIsoLocal()];
+    return Array.isArray(list) ? list : [];
+  }
+
+  function isContestCompletedToday(contestId) {
+    return getTodayCompletedContests().some((c) => c.id === contestId);
+  }
+
+  function toggleContestCompletedToday(contest) {
+    if (!contest || !contest.id) return;
+    const today = getTodayIsoLocal();
+    const list = getTodayCompletedContests().slice();
+    const idx = list.findIndex((c) => c.id === contest.id);
+    if (idx >= 0) {
+      list.splice(idx, 1);
+    } else {
+      list.push({
+        id: contest.id,
+        title: contest.title || 'Coding Contest',
+        platform: contest.platform || 'leetcode',
+      });
+    }
+    if (list.length) completedContestsByDate[today] = list;
+    else delete completedContestsByDate[today];
+    saveJsonObject(CONTEST_DONE_KEY, completedContestsByDate);
+  }
 
   function loadJoinedContests() {
     try {
@@ -61,6 +133,8 @@
       potd: /** @type {any} */ (null),
       potdStatus: 'idle' // idle | loading | ready | error
     },
+    funnyLines: /** @type {Array<string>} */ ([]),
+    pjLine: '',
     filters: {
       search: '',
       type: 'all', // all | dsa | design | behavioral | solved | notes | todo
@@ -76,6 +150,8 @@
     sidebar: document.getElementById('sidebar'),
     sidebarToggle: document.getElementById('sidebarToggle'),
     homeBtn: document.getElementById('homeBtn'),
+    navUpcomingContest: document.getElementById('navUpcomingContest'),
+    navContestText: document.getElementById('navContestText'),
     modeButtons: Array.from(document.querySelectorAll('.mode-btn')),
     conceptsCount: document.getElementById('conceptsCount'),
     contestsCount: document.getElementById('contestsCount'),
@@ -852,10 +928,15 @@
     state.lc.potdStatus = 'loading';
     if (state.mode === 'dashboard') renderDashboard();
 
-    const urls = [`${LC_API_BASE}/daily`, `${LC_API_BASE}/dailyProblem`];
-    for (const url of urls) {
+    const sources = [
+      { url: './api/potd', timeout: 7000 },
+      { url: `${LC_API_BASE}/daily`, timeout: 15000 },
+      { url: `${LC_API_BASE}/dailyProblem`, timeout: 15000 }
+    ];
+
+    for (const src of sources) {
       try {
-        const json = await fetchJsonWithTimeout(url, 6500);
+        const json = await fetchJsonWithTimeout(src.url, src.timeout);
         const qNode = json?.question || json;
         const title = qNode?.title || json?.questionTitle || '';
         const rawLink = json?.link || json?.questionLink || (qNode?.titleSlug ? `/problems/${qNode.titleSlug}/` : '');
@@ -881,8 +962,114 @@
       } catch (_) {}
     }
 
+    if (state.data?.potd?.title) {
+      state.lc.potd = state.data.potd;
+      state.lc.potdStatus = 'ready';
+      if (state.mode === 'dashboard') renderDashboard();
+      return;
+    }
+
     state.lc.potdStatus = 'error';
     if (state.mode === 'dashboard') renderDashboard();
+  }
+
+  function getQuickContestChoices(nowMs = Date.now()) {
+    const todayIso = getTodayIsoLocal();
+    const choices = [];
+    const seenIds = new Set();
+
+    const addChoice = (c) => {
+      if (!c || !c.id || seenIds.has(c.id)) return;
+      seenIds.add(c.id);
+      choices.push({
+        id: c.id,
+        title: c.title || 'Coding Contest',
+        platform: c.platform || 'leetcode',
+      });
+    };
+
+    // Always include contests already marked completed today so user can toggle them off
+    for (const c of getTodayCompletedContests()) {
+      addChoice(c);
+    }
+
+    // Include any contests occurring today or currently live
+    for (const c of (state.contests?.items || [])) {
+      const startIso = toIsoLocal(new Date(c.startMs));
+      const isLive = nowMs >= c.startMs && nowMs < c.endMs;
+      if (startIso === todayIso || isLive) {
+        addChoice(c);
+      }
+    }
+
+    // Fallback quick-toggle when no scheduled contest falls on today's date (e.g. virtual contest)
+    if (choices.length === 0) {
+      addChoice({
+        id: `contest::${todayIso}`,
+        title: 'Coding Contest',
+        platform: 'leetcode',
+      });
+    }
+
+    return choices;
+  }
+
+  const FALLBACK_FUNNY_LINES = [
+    'Entry-level job. Requires 5 years of experience.',
+    'Currently between opportunities. The gap is just very long.',
+    'AI can write code in seconds. I can overthink it for days.',
+    'Applied to 10 jobs. Heard back from 10 chatbots.',
+    'Posting daily on X. The algorithm has not been informed.',
+  ];
+
+  function parseFunnyHeaderLines(rawText) {
+    const out = [];
+    for (const raw of String(rawText || '').split(/\r?\n/)) {
+      const trimmed = raw.trim();
+      if (!trimmed) continue;
+      if (trimmed.startsWith('===')) continue;
+      if (/^200\s+FUNNY\s+HEADER/i.test(trimmed)) continue;
+      if (/^\(Pick one per day/i.test(trimmed)) continue;
+      const cleaned = trimmed.replace(/^\d+\.\s*/, '').trim();
+      if (cleaned) out.push(cleaned);
+    }
+    return out;
+  }
+
+  function pickRandomPjLine(excludeCurrent = false) {
+    const pool = state.funnyLines.length ? state.funnyLines : FALLBACK_FUNNY_LINES;
+    if (!pool.length) return '';
+    if (pool.length === 1) {
+      state.pjLine = pool[0];
+      return state.pjLine;
+    }
+    let next = pool[Math.floor(Math.random() * pool.length)];
+    if (excludeCurrent && next === state.pjLine) {
+      const idx = pool.indexOf(next);
+      next = pool[(idx + 1) % pool.length];
+    }
+    state.pjLine = next;
+    return state.pjLine;
+  }
+
+  function getCurrentPjLine() {
+    return state.pjLine || pickRandomPjLine(false);
+  }
+
+  async function fetchFunnyHeaderLines() {
+    try {
+      const raw = await fetchText('funny-header-lines.txt');
+      const parsed = parseFunnyHeaderLines(raw);
+      if (parsed.length > 0) {
+        state.funnyLines = parsed;
+        pickRandomPjLine(false);
+        if (state.mode === 'dashboard' && state.data) {
+          renderDashboard();
+        }
+      }
+    } catch (_) {
+      if (!state.pjLine) pickRandomPjLine(false);
+    }
   }
 
   function buildXShareText(targetEntry, todayIds) {
@@ -897,11 +1084,36 @@
     }
     const dayLabel = uniqueDays.length ? uniqueDays.join(' & ') : `Day ${targetEntry.day.day}`;
     const count = solvedItems.length;
-    const footer = '#150DaysOfDSA #DSA #LeetCode';
-    const header = `${dayLabel} — 150 Days Challenge\n\nSolved Today: ${count} question${count === 1 ? '' : 's'}`;
+
+    const todayPotd = getTodayCompletedPotd();
+    const todayContests = getTodayCompletedContests();
+    const hasCodeChef = todayContests.some((c) => c.platform === 'codechef');
+    const footer = hasCodeChef ? '#DSA #LeetCode #CodeChef' : '#DSA #LeetCode';
+    const header = `${dayLabel}\n\nSolved Today: ${count}`;
+
+    const extraLines = [];
+    if (todayPotd) {
+      extraLines.push(
+        todayPotd.title && todayPotd.title !== 'LeetCode POTD'
+          ? `• LeetCode POTD: ${todayPotd.title} ✓`
+          : '• LeetCode POTD ✓'
+      );
+    }
+    for (const c of todayContests) {
+      extraLines.push(`• Contest: ${c.title} ✓`);
+    }
+    const extraBlock = extraLines.length ? `\n${extraLines.join('\n')}` : '';
+
+    const pjLine = getCurrentPjLine();
+    const pjBlock = pjLine ? `\n\nPJ: ${pjLine}` : '';
 
     if (count === 0) {
-      return `${header}\nQuestions: None solved today yet\n\n${footer}`;
+      if (extraLines.length === 0) {
+        return `${header}\nQuestions: None solved today yet${pjBlock}\n\n${footer}`;
+      }
+      const soloText = `${header}\nQuestions:${extraBlock}${pjBlock}\n\n${footer}`;
+      if (soloText.length <= 275) return soloText;
+      return `${header}\nQuestions:\n${extraLines.slice(0, 2).join('\n')}${pjBlock}\n\n${footer}`;
     }
 
     const names = solvedItems.map((it) => it.q.name);
@@ -911,7 +1123,7 @@
       const candidateLine = `• ${names[i]}`;
       const remaining = names.length - i - 1;
       const moreSuffix = remaining > 0 ? `\n+${remaining} more` : '';
-      const candidate = `${header}\n${[...lines, candidateLine].join('\n')}${moreSuffix}\n\n${footer}`;
+      const candidate = `${header}\nQuestions:\n${[...lines, candidateLine].join('\n')}${moreSuffix}${extraBlock}${pjBlock}\n\n${footer}`;
       if (candidate.length > maxLen && lines.length > 0) {
         lines.push(`+${names.length - i} more`);
         break;
@@ -919,34 +1131,51 @@
       lines.push(candidateLine);
     }
 
-    return `${header}\n${lines.join('\n')}\n\n${footer}`;
+    return `${header}\nQuestions:\n${lines.join('\n')}${extraBlock}${pjBlock}\n\n${footer}`;
   }
 
   function renderIntegrationsRow(targetEntry, todayIds) {
     const potd = state.lc.potd;
+    const potdDone = isPotdCompletedToday();
+    const potdDoneBtn = `
+      <button class="btn ${potdDone ? 'btn-joined' : ''}" id="togglePotdDoneBtn">
+        ${potdDone ? '✓ POTD Completed' : '+ Mark POTD Done'}
+      </button>
+    `;
     const potdHtml = state.lc.potdStatus === 'loading'
-      ? '<div class="empty-hint" style="padding:10px;font-size:12px;">Fetching LeetCode Daily Problem...</div>'
+      ? `
+        <div class="empty-hint" style="padding:10px;font-size:12px;margin-bottom:8px;">Fetching LeetCode Daily Problem...</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">${potdDoneBtn}</div>
+      `
       : potd
         ? `
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
             <span class="badge badge-${escapeHtml(potd.diff)}">${escapeHtml(potd.diffLabel)}</span>
             <code style="font-size:11px;color:var(--text-muted);">${escapeHtml(potd.date)}</code>
+            ${potdDone ? '<span class="badge badge-g">✓ Completed</span>' : ''}
           </div>
           <div style="font-weight:600;font-size:13.5px;margin-bottom:6px;">${escapeHtml(potd.title)}</div>
           ${potd.tags?.length ? `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;">${potd.tags.map((t) => `<span class="badge badge-grey">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
-          <a class="btn btn-primary" href="${escapeHtml(potd.url)}" target="_blank" rel="noopener noreferrer">Solve POTD ↗</a>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+            <a class="btn btn-primary" href="${escapeHtml(potd.url)}" target="_blank" rel="noopener noreferrer">Solve POTD ↗</a>
+            ${potdDoneBtn}
+          </div>
         `
         : `
           <div class="empty-hint" style="padding:10px;font-size:12px;margin-bottom:8px;">Could not load live POTD right now.</div>
-          <a class="btn" href="https://leetcode.com/problemset/" target="_blank" rel="noopener noreferrer">Open LeetCode ↗</a>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+            <a class="btn" href="https://leetcode.com/problemset/" target="_blank" rel="noopener noreferrer">Open LeetCode ↗</a>
+            ${potdDoneBtn}
+          </div>
         `;
 
+    const quickContests = getQuickContestChoices();
     const shareText = buildXShareText(targetEntry, todayIds);
     const xIntentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
     return `
       <div class="integrations-grid">
-        <section class="section-card">
+        <section class="section-card ${potdDone ? 'is-complete' : ''}">
           <div class="section-header" style="margin-bottom:8px;">
             <h2 style="font-size:14.5px;">🟡 LeetCode POTD</h2>
             <button class="btn" id="lcRefreshPotdBtn" ${state.lc.potdStatus === 'loading' ? 'disabled' : ''}>↻</button>
@@ -958,9 +1187,25 @@
           <div class="section-header" style="margin-bottom:8px;">
             <h2 style="font-size:14.5px;">𝕏 Share Progress on X</h2>
             <div style="display:flex;gap:6px;">
+              <button class="btn" id="shufflePjBtn" title="Pick a different random PJ">🎲 PJ</button>
               <button class="btn" id="copyXPostBtn">Copy</button>
-              <a class="btn btn-primary" href="${escapeHtml(xIntentUrl)}" target="_blank" rel="noopener noreferrer">Share on X ↗</a>
+              <a class="btn btn-primary" id="shareOnXLink" href="${escapeHtml(xIntentUrl)}" target="_blank" rel="noopener noreferrer">Share on X ↗</a>
             </div>
+          </div>
+          <div class="x-toggle-row">
+            <span class="x-toggle-label">Include today:</span>
+            <button class="btn ${potdDone ? 'btn-joined' : ''}" id="shareTogglePotdBtn">
+              ${potdDone ? '✓ POTD Done' : '+ POTD Done'}
+            </button>
+            ${quickContests.map((c) => {
+              const done = isContestCompletedToday(c.id);
+              const label = c.title === 'Coding Contest' ? 'Contest Done' : c.title;
+              return `
+                <button class="btn ${done ? 'btn-joined' : ''}" data-quick-contest-id="${escapeHtml(c.id)}" data-quick-contest-title="${escapeHtml(c.title)}" data-quick-contest-platform="${escapeHtml(c.platform)}">
+                  ${done ? `✓ ${escapeHtml(label)}` : `+ ${escapeHtml(label)}`}
+                </button>
+              `;
+            }).join('')}
           </div>
           <pre class="x-post-preview" id="xPostPreview">${escapeHtml(shareText)}</pre>
         </section>
@@ -1127,7 +1372,7 @@
         </div>
 
         <div class="bento-col">
-          <section class="section-card ${targetEntry.day.completed ? 'is-complete' : ''}">
+          <section class="section-card target-highlight ${targetEntry.day.completed ? 'is-complete' : ''}">
             <div class="section-header" style="margin-bottom:6px;">
               <h2>
                 Today's Target — Day ${escapeHtml(targetEntry.day.day)}
@@ -1234,6 +1479,30 @@
 
     document.getElementById('lcRefreshPotdBtn')?.addEventListener('click', () => {
       fetchLeetCodePotd();
+    });
+
+    const handleTogglePotd = () => {
+      togglePotdCompletedToday();
+      renderDashboard();
+    };
+    document.getElementById('togglePotdDoneBtn')?.addEventListener('click', handleTogglePotd);
+    document.getElementById('shareTogglePotdBtn')?.addEventListener('click', handleTogglePotd);
+
+    els.dashboardView.querySelectorAll('[data-quick-contest-id]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!(btn instanceof HTMLElement) || !btn.dataset.quickContestId) return;
+        toggleContestCompletedToday({
+          id: btn.dataset.quickContestId,
+          title: btn.dataset.quickContestTitle || 'Coding Contest',
+          platform: btn.dataset.quickContestPlatform || 'leetcode',
+        });
+        renderDashboard();
+      });
+    });
+
+    document.getElementById('shufflePjBtn')?.addEventListener('click', () => {
+      pickRandomPjLine(true);
+      renderDashboard();
     });
 
     document.getElementById('copyXPostBtn')?.addEventListener('click', async () => {
@@ -1743,11 +2012,12 @@
 
   function buildRecurringContests(nowMs, horizonDays, apiItems) {
     const horizonEndMs = nowMs + horizonDays * 86400000;
+    const todayIso = toIsoLocal(new Date(nowMs));
     const generated = [];
 
     for (const sched of CONTEST_SCHEDULES) {
       const durationMs = sched.durationMin * 60000;
-      const firstK = Math.floor((nowMs - sched.anchorMs - durationMs) / sched.periodMs) + 1;
+      const firstK = Math.floor((nowMs - 24 * 3600000 - sched.anchorMs) / sched.periodMs);
 
       // If an API item matches this recurring cadence, calibrate numbering offset from it
       let numOffset = 0;
@@ -1767,7 +2037,8 @@
         const startMs = sched.anchorMs + k * sched.periodMs;
         if (startMs > horizonEndMs) break;
         const endMs = startMs + durationMs;
-        if (endMs <= nowMs) continue;
+        const isToday = toIsoLocal(new Date(startMs)) === todayIso;
+        if (endMs <= nowMs && !isToday) continue;
 
         const hasApiMatch = apiItems.some(
           (apiItem) =>
@@ -1797,11 +2068,44 @@
 
   function mergeContests(apiItems, nowMs) {
     const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
-    const validApi = apiItems.filter((it) => it.endMs > nowMs && it.startMs <= horizonEndMs);
+    const todayIso = toIsoLocal(new Date(nowMs));
+    const validApi = apiItems.filter(
+      (it) => (it.endMs > nowMs || toIsoLocal(new Date(it.startMs)) === todayIso) && it.startMs <= horizonEndMs
+    );
     const recurring = buildRecurringContests(nowMs, CONTEST_HORIZON_DAYS, apiItems);
     const merged = [...validApi, ...recurring];
     merged.sort((a, b) => a.startMs - b.startMs);
     return merged;
+  }
+
+  function shortenContestTitle(title) {
+    return String(title || 'Contest')
+      .replace(/^LeetCode\s+/i, 'LC ')
+      .replace(/^CodeChef\s+/i, 'CC ')
+      .replace(/\bContest\s+/i, '');
+  }
+
+  function updateNavUpcomingContest() {
+    if (!els.navUpcomingContest || !els.navContestText) return;
+    const nowMs = Date.now();
+    const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
+    const next = state.contests.items.find((c) => c.endMs > nowMs && c.startMs <= horizonEndMs);
+    if (!next) {
+      els.navUpcomingContest.classList.add('hidden');
+      return;
+    }
+    const isLive = nowMs >= next.startMs && nowMs < next.endMs;
+    const dt = new Date(next.startMs);
+    const dateStr = dt.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+    const timeStr = dt.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+    const shortName = shortenContestTitle(next.title);
+
+    els.navUpcomingContest.classList.remove('hidden');
+    els.navUpcomingContest.classList.toggle('is-live', isLive);
+    els.navContestText.innerHTML = isLive
+      ? `<span class="nav-contest-tag">● LIVE</span> ${escapeHtml(shortName)}`
+      : `<span class="nav-contest-tag">Next</span> ${escapeHtml(shortName)} · ${escapeHtml(dateStr)}, ${escapeHtml(timeStr)}`;
+    els.navUpcomingContest.title = `${next.title} — ${dateStr} ${timeStr} (Open Contest Tracker)`;
   }
 
   function updateContestsPill() {
@@ -1810,6 +2114,7 @@
     const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
     const count = state.contests.items.filter((c) => c.endMs > nowMs && c.startMs <= horizonEndMs).length;
     els.contestsCount.textContent = String(count);
+    updateNavUpcomingContest();
   }
 
   async function refreshContests(force = false) {
@@ -1941,16 +2246,20 @@
 
     const nowMs = Date.now();
     const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
+    const todayIso = toIsoLocal(new Date(nowMs));
     const tzName = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local Time';
-    const allContests = state.contests.items.filter((c) => c.endMs > nowMs && c.startMs <= horizonEndMs);
+    const allContests = state.contests.items.filter(
+      (c) => (c.endMs > nowMs || toIsoLocal(new Date(c.startMs)) === todayIso) && c.startMs <= horizonEndMs
+    );
     const filtered = state.contests.filter === 'all'
       ? allContests
       : allContests.filter((c) => c.platform === state.contests.filter);
 
-    const nextContest = filtered[0] || allContests[0] || null;
+    const upcomingAll = allContests.filter((c) => c.endMs > nowMs);
+    const nextContest = filtered.find((c) => c.endMs > nowMs) || upcomingAll[0] || null;
     const nextIsLive = Boolean(nextContest && nowMs >= nextContest.startMs && nowMs < nextContest.endMs);
-    const nextLc = allContests.find((c) => c.platform === 'leetcode');
-    const nextCc = allContests.find((c) => c.platform === 'codechef');
+    const nextLc = upcomingAll.find((c) => c.platform === 'leetcode');
+    const nextCc = upcomingAll.find((c) => c.platform === 'codechef');
 
     const { leetcode: lcState, codechef: ccState } = state.contests.apiStatus;
     const sourceBadge = state.contests.loading
@@ -1968,6 +2277,7 @@
 
     const statusTag = (c) => {
       if (nowMs >= c.startMs && nowMs < c.endMs) return '<span class="badge badge-r">● LIVE NOW</span>';
+      if (c.endMs <= nowMs) return '<span class="badge badge-grey">Ended Today</span>';
       const hrs = (c.startMs - nowMs) / 3600000;
       if (hrs <= 24) return '<span class="badge badge-y">Within 24h</span>';
       return '';
@@ -2017,6 +2327,9 @@
               <button class="btn ${state.contests.joinedIds.has(nextContest.id) ? 'btn-joined' : ''}" data-join-id="${escapeHtml(nextContest.id)}">
                 ${state.contests.joinedIds.has(nextContest.id) ? '✓ Participating' : '+ Mark Participating'}
               </button>
+              <button class="btn ${isContestCompletedToday(nextContest.id) ? 'btn-joined' : ''}" data-complete-contest-id="${escapeHtml(nextContest.id)}" data-complete-contest-title="${escapeHtml(nextContest.title)}" data-complete-contest-platform="${escapeHtml(nextContest.platform)}">
+                ${isContestCompletedToday(nextContest.id) ? '✓ Completed' : '+ Mark Completed'}
+              </button>
             </div>
           ` : '<div class="empty-hint">No upcoming contests found.</div>'}
         </section>
@@ -2061,23 +2374,29 @@
           <div class="contest-list">
             ${filtered.map((c) => {
               const isLive = nowMs >= c.startMs && nowMs < c.endMs;
+              const isEndedToday = c.endMs <= nowMs;
               const isJoined = state.contests.joinedIds.has(c.id);
+              const isDone = isContestCompletedToday(c.id);
               return `
-                <div class="contest-card ${isLive ? 'is-live' : ''} ${isJoined ? 'is-joined' : ''}">
+                <div class="contest-card ${isLive ? 'is-live' : ''} ${isJoined ? 'is-joined' : ''} ${isDone ? 'is-complete' : ''}">
                   <div class="contest-card-main">
                     <div class="contest-card-title">
                       ${platformTag(c.platform)}
                       <span>${escapeHtml(c.title)}</span>
                       ${statusTag(c)}
+                      ${isDone ? '<span class="badge badge-g">✓ Completed</span>' : ''}
                       <span class="badge ${c.source === 'api' ? 'badge-g' : 'badge-grey'}">${c.source === 'api' ? 'Live API' : 'Schedule'}</span>
                     </div>
                     <div class="contest-card-meta">
                       ${renderContestDateTimePills(c.startMs, c.endMs)}
                       <span>⏱ ${escapeHtml(formatDurationLabel(c.durationMin))}</span>
-                      <span>⏳ <strong class="contest-countdown-sm" data-countdown-start="${c.startMs}" data-countdown-end="${c.endMs}">${isLive ? `Ends in ${formatCountdown(c.endMs, nowMs)}` : formatCountdown(c.startMs, nowMs)}</strong></span>
+                      <span>⏳ <strong class="contest-countdown-sm" data-countdown-start="${c.startMs}" data-countdown-end="${c.endMs}">${isEndedToday ? 'Completed Window' : isLive ? `Ends in ${formatCountdown(c.endMs, nowMs)}` : formatCountdown(c.startMs, nowMs)}</strong></span>
                     </div>
                   </div>
                   <div class="contest-card-right">
+                    <button class="btn ${isDone ? 'btn-joined' : ''}" data-complete-contest-id="${escapeHtml(c.id)}" data-complete-contest-title="${escapeHtml(c.title)}" data-complete-contest-platform="${escapeHtml(c.platform)}">
+                      ${isDone ? '✓ Completed' : 'Completed'}
+                    </button>
                     <button class="btn ${isJoined ? 'btn-joined' : ''}" data-join-id="${escapeHtml(c.id)}">
                       ${isJoined ? '✓ Participating' : 'Participate'}
                     </button>
@@ -2107,6 +2426,20 @@
         if (state.contests.joinedIds.has(id)) state.contests.joinedIds.delete(id);
         else state.contests.joinedIds.add(id);
         saveJoinedContests();
+        renderContestTracker();
+      });
+    });
+
+    els.contestView.querySelectorAll('[data-complete-contest-id]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!(btn instanceof HTMLElement) || !btn.dataset.completeContestId) return;
+        const id = btn.dataset.completeContestId;
+        const found = state.contests.items.find((c) => c.id === id) || {
+          id,
+          title: btn.dataset.completeContestTitle || 'Coding Contest',
+          platform: btn.dataset.completeContestPlatform || 'leetcode',
+        };
+        toggleContestCompletedToday(found);
         renderContestTracker();
       });
     });
@@ -2162,6 +2495,7 @@
     });
 
     els.homeBtn?.addEventListener('click', () => renderDashboard());
+    els.navUpcomingContest?.addEventListener('click', () => renderContestTracker());
 
     els.modeButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -2230,6 +2564,7 @@
     initControls();
     refreshContests(false);
     fetchLeetCodePotd();
+    fetchFunnyHeaderLines();
     try {
       const [idxRes, trackerRes] = await Promise.all([
         fetch(`./roadmap-index.json?t=${Date.now()}`),
@@ -2241,6 +2576,10 @@
         state.tracker = await trackerRes.json();
       }
       if (state.data) {
+        if (state.lc.potdStatus === 'error' && state.data.potd?.title) {
+          state.lc.potd = state.data.potd;
+          state.lc.potdStatus = 'ready';
+        }
         state.flatItems = buildFlatItems(state.data);
         updateStatsBar();
         routeFromHash();

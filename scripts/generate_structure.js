@@ -560,6 +560,43 @@ async function fetchLeetCodeRecentAc(username) {
   }
 }
 
+async function fetchDailyProblemSnapshot() {
+  if (typeof fetch !== 'function') return null;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 4000);
+  try {
+    const res = await fetch('https://leetcode.com/graphql', {
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        'Content-Type': 'application/json',
+        'Referer': 'https://leetcode.com',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+      },
+      body: JSON.stringify({
+        query: 'query { activeDailyCodingChallengeQuestion { date link question { title difficulty topicTags { name } } } }'
+      })
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    const d = json?.data?.activeDailyCodingChallengeQuestion;
+    if (!d?.question?.title) return null;
+    const rawDiff = String(d.question.difficulty || 'Medium');
+    return {
+      date: d.date,
+      title: d.question.title,
+      url: `https://leetcode.com${d.link.startsWith('/') ? '' : '/'}${d.link}`,
+      diff: rawDiff[0].toUpperCase(),
+      diffLabel: rawDiff,
+      tags: Array.isArray(d.question.topicTags) ? d.question.topicTags.map((t) => t.name).slice(0, 3) : []
+    };
+  } catch (_) {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 function buildLcAcMap(submissions) {
   const map = new Map();
   for (const sub of submissions) {
@@ -801,10 +838,12 @@ async function main() {
     }
   }
   totals.weeks = weeksIndex.length;
+  const potd = await fetchDailyProblemSnapshot();
 
   const indexPayload = {
     generatedAt: new Date().toISOString(),
     totals,
+    potd,
     concepts,
     activityByDate,
     solvedByDate,

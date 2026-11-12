@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:25:27.163Z",
+  "generatedAt": "2026-11-12T12:37:27.985Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -14,6 +14,7 @@
     "daysCompleted": 0,
     "weeksCompleted": 0
   },
+  "potd": null,
   "concepts": [
     {
       "id": "concept::Concepts/01-Java-DSA-Cheatsheet.md",
