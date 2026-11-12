@@ -10,6 +10,8 @@
 
 ## Intuition
 <!-- Write the core insight and why the brute-force approach can be improved -->
+- socho ki aaj tak ka minimum kya hai.
+- tumne uss din khareeda tha jis din minimum tha .
 
 
 ## Pattern
@@ -18,13 +20,11 @@
 
 ## Complexity Analysis
 - **Time Complexity (TC):**
-  - Bruteforce: `O(...)`
-  - Better: `O(...)`
-  - Optimised: `O(...)`
+  - Bruteforce: `O(N2) TLE`
+  - Optimised: `O(N)`
 - **Space Complexity (SC):**
-  - Bruteforce: `O(...)`
-  - Better: `O(...)`
-  - Optimised: `O(...)`
+  - Bruteforce: `O(1)`
+  - Optimised: `O(1)`
 
 ## Resources
 - [Problem Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
@@ -32,5 +32,15 @@
 
 ## Approaches
 - [Bruteforce Approach](./bruteforce.java)
-- [Better Approach](./better.java)
 - [Optimised Approach](./optimised.java)
+
+
+## similar problems 
+Best Time to Buy and Sell Stock II
+Medium
+Best Time to Buy and Sell Stock III
+Hard
+Best Time to Buy and Sell Stock IV
+Hard
+Best Time to Buy and Sell Stock with Cooldown
+Medium
