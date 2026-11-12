@@ -116,12 +116,12 @@ html, body {
 
 /* Topbar */
 .topbar {
-  height: 52px;
-  display: flex;
+  min-height: 52px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
-  padding: 0 18px;
+  padding: 6px 18px;
   background: var(--bg-elev);
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -129,10 +129,25 @@ html, body {
   z-index: 30;
 }
 
-.topbar-left, .topbar-right {
+.topbar-left {
   display: flex;
   align-items: center;
   gap: 8px;
+  justify-self: start;
+}
+
+.topbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
 }
 
 .brand {
@@ -713,43 +728,63 @@ html, body {
   transition: width 0.25s ease;
 }
 
-/* Heatmap */
-.heatmap-wrap {
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-
-.heatmap-grid {
+/* Heatmap (Last 10 Days with Count Boxes) */
+.heatmap-10-grid {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(7, 13px);
-  gap: 3px;
-  width: max-content;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 6px;
 }
 
-.hm-cell {
-  width: 13px;
-  height: 13px;
-  border-radius: 3px;
+.hm-day-box {
+  min-height: 54px;
+  border-radius: 7px;
   background: var(--hm-0);
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
   cursor: pointer;
-  padding: 0;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-family: inherit;
+  transition: transform 0.12s ease, border-color 0.15s ease;
 }
 
-.hm-cell:hover {
+.hm-day-box:hover {
+  transform: translateY(-1px);
   border-color: var(--text);
 }
 
-.hm-cell.hm-selected {
+.hm-day-box.hm-selected {
   border-color: var(--blue);
   box-shadow: 0 0 0 1px var(--blue);
 }
 
-.hm-1 { background: var(--hm-1); }
-.hm-2 { background: var(--hm-2); }
-.hm-3 { background: var(--hm-3); }
-.hm-4 { background: var(--hm-4); }
+.hm-day-num {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hm-day-date {
+  font-size: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hm-1 { background: var(--hm-1); border-color: var(--green-border); }
+.hm-2 { background: var(--hm-2); border-color: var(--green-border); }
+.hm-3 { background: var(--hm-3); border-color: var(--green-bright); color: #000000; }
+.hm-4 { background: var(--hm-4); border-color: var(--green-bright); color: #000000; }
+
+.hm-3 .hm-day-date,
+.hm-4 .hm-day-date {
+  color: #000000;
+  opacity: 0.78;
+}
 
 .heatmap-footer {
   display: flex;
@@ -944,14 +979,19 @@ html, body {
   box-shadow: 0 0 8px rgba(34, 197, 94, 0.55);
 }
 
-.compact-scroll {
-  max-height: 215px;
-  overflow-y: auto;
+.target-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
 }
 
 .target-item.compact {
   padding: 7px 10px;
   font-size: 12.5px;
+}
+
+.dashboard-bottom-row {
+  gap: 10px;
 }
 
 @media (max-width: 1120px) {
@@ -965,6 +1005,15 @@ html, body {
 
 @media (max-width: 900px) {
   .matrix-dw-grid {
+    grid-template-columns: 1fr;
+  }
+  .heatmap-10-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .target-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1246,8 +1295,25 @@ html, body {
   .mobile-only {
     display: inline-flex;
   }
+  .topbar {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .topbar-left {
+    order: 1;
+    flex: 1;
+  }
+  .topbar-right {
+    order: 2;
+  }
   .topbar-center {
-    display: none;
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
   .sidebar {
     position: fixed;
@@ -1261,6 +1327,42 @@ html, body {
   .sidebar.open {
     transform: translateX(0);
   }
+}
+
+/* Contest Date & Time Highlight */
+.contest-datetime-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.contest-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--yellow-border);
+  color: var(--yellow);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.contest-time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--blue-border);
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
 }
 
 /* Contest Tracker */

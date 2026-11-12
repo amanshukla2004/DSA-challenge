@@ -82,10 +82,6 @@
     problemView: document.getElementById('problemView'),
     conceptView: document.getElementById('conceptView'),
     contestView: document.getElementById('contestView'),
-    solvedStat: document.getElementById('solvedStat'),
-    notesStat: document.getElementById('notesStat'),
-    miniBarFill: document.getElementById('miniBarFill'),
-    randomBtn: document.getElementById('randomBtn'),
     themeBtn: document.getElementById('themeBtn')
   };
 
@@ -297,12 +293,7 @@
 
   function updateStatsBar() {
     if (!state.data) return;
-    const { questions, repoSolved, repoNotes, concepts } = state.data.totals;
-    const pct = questions ? Math.round((repoSolved / questions) * 100) : 0;
-
-    if (els.solvedStat) els.solvedStat.textContent = `${repoSolved} / ${questions} Solved (${pct}%)`;
-    if (els.notesStat) els.notesStat.textContent = `${repoNotes} Notes`;
-    if (els.miniBarFill) els.miniBarFill.style.width = `${pct}%`;
+    const { concepts } = state.data.totals;
     if (els.conceptsCount) els.conceptsCount.textContent = String(concepts || 0);
   }
 
@@ -605,22 +596,22 @@
     return streak;
   }
 
+  function formatShortHmDate(isoStr, isToday) {
+    if (isToday) return 'Today';
+    const [y, m, d] = isoStr.split('-').map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, d));
+    return dt.toLocaleDateString(undefined, { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  }
+
   function renderHeatmap(solvedByDate, selectedDate) {
     const today = getTodayIsoLocal();
-    const [ty, tm, td] = today.split('-').map(Number);
-    const todayUtc = new Date(Date.UTC(ty, tm - 1, td));
-    const dayOfWeek = todayUtc.getUTCDay(); // 0=Sun..6=Sat
-    const totalWeeks = 24;
-    const endOffset = 6 - dayOfWeek;
-    const totalDays = totalWeeks * 7;
-    const endDateIso = addDaysIso(today, endOffset);
-    const startDateIso = addDaysIso(endDateIso, -(totalDays - 1));
+    const totalDays = 10;
+    const startDateIso = addDaysIso(today, -(totalDays - 1));
 
     const cells = [];
     for (let i = 0; i < totalDays; i++) {
       const iso = addDaysIso(startDateIso, i);
-      const isFuture = iso > today;
-      const count = isFuture ? 0 : ((solvedByDate[iso] || []).length);
+      const count = (solvedByDate[iso] || []).length;
       let lvl = '';
       if (count >= 6) lvl = 'hm-4';
       else if (count >= 4) lvl = 'hm-3';
@@ -628,22 +619,21 @@
       else if (count >= 1) lvl = 'hm-1';
 
       const selectedCls = selectedDate === iso ? 'hm-selected' : '';
-      const style = isFuture ? 'opacity:0.22;cursor:default;' : '';
-      const title = isFuture
-        ? `${iso}`
-        : `${iso}: ${count} question${count === 1 ? '' : 's'} solved`;
+      const shortLbl = formatShortHmDate(iso, iso === today);
+      const title = `${iso}: ${count} question${count === 1 ? '' : 's'} solved`;
 
       cells.push(
-        `<button class="hm-cell ${lvl} ${selectedCls}" data-hm-date="${iso}" ${isFuture ? 'disabled' : ''} style="${style}" title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}"></button>`
+        `<button class="hm-day-box ${lvl} ${selectedCls}" data-hm-date="${iso}" title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}">
+          <span class="hm-day-num">${count}</span>
+          <span class="hm-day-date">${escapeHtml(shortLbl)}</span>
+        </button>`
       );
     }
 
     return `
-      <div class="heatmap-wrap">
-        <div class="heatmap-grid">${cells.join('')}</div>
-      </div>
+      <div class="heatmap-10-grid">${cells.join('')}</div>
       <div class="heatmap-footer">
-        <span>${startDateIso} → ${today} (click any square to inspect solved questions)</span>
+        <span>Last 10 days (${startDateIso} → ${today}) · Click any day to inspect</span>
         <div class="hm-legend">
           <span>Less</span>
           <span class="hm-legend-box" style="background:var(--hm-0)"></span>
@@ -778,7 +768,7 @@
         ${items.length === 0 ? `
           <div class="empty-hint" style="padding:10px;font-size:12px;">${escapeHtml(emptyText)}</div>
         ` : `
-          <div class="target-list compact-scroll">
+          <div class="target-grid">
             ${items.map((it) => {
               const badgeCls = it.q.diff ? `badge-${it.q.diff}` : `badge-${it.day.type}`;
               const badgeTxt = it.q.diff || it.day.type;
@@ -870,14 +860,6 @@
       <div class="bento-grid">
         <div class="bento-col">
           ${renderProgressMatrix(flatDays)}
-
-          <section class="section-card">
-            <div class="section-header" style="margin-bottom:8px;">
-              <h2>Solve Heatmap</h2>
-              ${state.selectedHeatmapDate ? '<button class="btn" id="clearHeatmapBtn">Reset to Today</button>' : ''}
-            </div>
-            ${renderHeatmap(solvedByDate, state.selectedHeatmapDate)}
-          </section>
         </div>
 
         <div class="bento-col">
@@ -905,7 +887,7 @@
             </div>
 
             ${targetEntry.day.type === 'revision' || targetQs.length === 0 ? `
-              <div class="target-list">
+              <div class="target-grid">
                 <button class="target-item compact ${targetEntry.day.completed ? 'is-complete' : ''}" data-jump-id="rev::${escapeHtml(targetEntry.day.day)}">
                   <span class="target-item-left">
                     <span>${targetEntry.day.completed ? '✓' : '↻'}</span>
@@ -915,7 +897,7 @@
                 </button>
               </div>
             ` : `
-              <div class="target-list compact-scroll">
+              <div class="target-grid">
                 ${targetQs.map((q) => {
                   const badgeCls = q.diff ? `badge-${q.diff}` : `badge-${targetEntry.day.type}`;
                   const badgeTxt = q.diff || targetEntry.day.type;
@@ -937,24 +919,32 @@
             `}
           </section>
 
-          <div class="dashboard-grid-2">
-            ${renderSolvedListCard(
-              state.selectedHeatmapDate ? `Solved (${activeLeftDate})` : 'Solved Today',
-              activeLeftDate,
-              leftIds,
-              state.selectedHeatmapDate
-                ? 'None solved on this date.'
-                : 'No problems solved today yet.'
-            )}
-
-            ${renderSolvedListCard(
-              'Solved Yesterday',
-              yesterdayStr,
-              yesterdayIds,
-              'None solved yesterday.'
-            )}
-          </div>
+          <section class="section-card">
+            <div class="section-header" style="margin-bottom:8px;">
+              <h2>Solve Heatmap <span class="badge badge-grey">Last 10 Days</span></h2>
+              ${state.selectedHeatmapDate ? '<button class="btn" id="clearHeatmapBtn">Reset to Today</button>' : ''}
+            </div>
+            ${renderHeatmap(solvedByDate, state.selectedHeatmapDate)}
+          </section>
         </div>
+      </div>
+
+      <div class="dashboard-grid-2 dashboard-bottom-row">
+        ${renderSolvedListCard(
+          state.selectedHeatmapDate ? `Solved (${activeLeftDate})` : 'Solved Today',
+          activeLeftDate,
+          leftIds,
+          state.selectedHeatmapDate
+            ? 'None solved on this date.'
+            : 'No problems solved today yet.'
+        )}
+
+        ${renderSolvedListCard(
+          'Solved Yesterday',
+          yesterdayStr,
+          yesterdayIds,
+          'None solved yesterday.'
+        )}
       </div>
     `;
 
@@ -1517,9 +1507,13 @@
     return generated;
   }
 
+  const CONTEST_HORIZON_DAYS = 10;
+
   function mergeContests(apiItems, nowMs) {
-    const recurring = buildRecurringContests(nowMs, 28, apiItems);
-    const merged = [...apiItems.filter((it) => it.endMs > nowMs), ...recurring];
+    const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
+    const validApi = apiItems.filter((it) => it.endMs > nowMs && it.startMs <= horizonEndMs);
+    const recurring = buildRecurringContests(nowMs, CONTEST_HORIZON_DAYS, apiItems);
+    const merged = [...validApi, ...recurring];
     merged.sort((a, b) => a.startMs - b.startMs);
     return merged;
   }
@@ -1527,9 +1521,8 @@
   function updateContestsPill() {
     if (!els.contestsCount) return;
     const nowMs = Date.now();
-    const weekAheadMs = nowMs + 7 * 86400000;
-    const next7 = state.contests.items.filter((c) => c.endMs > nowMs && c.startMs <= weekAheadMs);
-    const count = next7.length || state.contests.items.length;
+    const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
+    const count = state.contests.items.filter((c) => c.endMs > nowMs && c.startMs <= horizonEndMs).length;
     els.contestsCount.textContent = String(count);
   }
 
@@ -1585,7 +1578,7 @@
     return days > 0 ? `${days}d ${hh}h ${mm}m ${ss}s` : `${hh}h ${mm}m ${ss}s`;
   }
 
-  function formatContestWindow(startMs, endMs) {
+  function formatContestWindowParts(startMs, endMs) {
     const startDt = new Date(startMs);
     const endDt = new Date(endMs);
     const datePart = startDt.toLocaleDateString(undefined, {
@@ -1601,7 +1594,17 @@
       hour: '2-digit',
       minute: '2-digit'
     });
-    return `${datePart} · ${startTime} – ${endTime}`;
+    return { datePart, timeRange: `${startTime} – ${endTime}` };
+  }
+
+  function renderContestDateTimePills(startMs, endMs) {
+    const { datePart, timeRange } = formatContestWindowParts(startMs, endMs);
+    return `
+      <span class="contest-datetime-row">
+        <span class="contest-date-pill">📅 ${escapeHtml(datePart)}</span>
+        <span class="contest-time-pill">🕒 ${escapeHtml(timeRange)}</span>
+      </span>
+    `;
   }
 
   function buildGoogleCalendarUrl(contest) {
@@ -1651,8 +1654,9 @@
     }
 
     const nowMs = Date.now();
+    const horizonEndMs = nowMs + CONTEST_HORIZON_DAYS * 86400000;
     const tzName = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local Time';
-    const allContests = state.contests.items.filter((c) => c.endMs > nowMs);
+    const allContests = state.contests.items.filter((c) => c.endMs > nowMs && c.startMs <= horizonEndMs);
     const filtered = state.contests.filter === 'all'
       ? allContests
       : allContests.filter((c) => c.platform === state.contests.filter);
@@ -1717,8 +1721,9 @@
             <div class="contest-countdown" data-countdown-start="${nextContest.startMs}" data-countdown-end="${nextContest.endMs}">
               ${nextIsLive ? `Ends in ${formatCountdown(nextContest.endMs, nowMs)}` : formatCountdown(nextContest.startMs, nowMs)}
             </div>
-            <div class="section-sub" style="margin:8px 0 12px;">
-              ${escapeHtml(formatContestWindow(nextContest.startMs, nextContest.endMs))} · Duration <strong>${escapeHtml(formatDurationLabel(nextContest.durationMin))}</strong>
+            <div style="margin:8px 0 12px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
+              ${renderContestDateTimePills(nextContest.startMs, nextContest.endMs)}
+              <span class="badge badge-grey">⏱ ${escapeHtml(formatDurationLabel(nextContest.durationMin))}</span>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
               <a class="btn btn-primary" href="${escapeHtml(nextContest.url)}" target="_blank" rel="noopener noreferrer">Open Contest ↗</a>
@@ -1760,12 +1765,12 @@
 
       <section class="section-card">
         <div class="section-header">
-          <h2>Upcoming Contests (Next 28 Days)</h2>
+          <h2>Upcoming Contests (Next ${CONTEST_HORIZON_DAYS} Days)</h2>
           <span class="section-sub" style="margin:0;">${filtered.length} scheduled · ${state.contests.joinedIds.size} marked participating</span>
         </div>
 
         ${filtered.length === 0 ? `
-          <div class="empty-hint">No upcoming contests match this filter.</div>
+          <div class="empty-hint">No upcoming contests match this filter in the next ${CONTEST_HORIZON_DAYS} days.</div>
         ` : `
           <div class="contest-list">
             ${filtered.map((c) => {
@@ -1781,7 +1786,7 @@
                       <span class="badge ${c.source === 'api' ? 'badge-g' : 'badge-grey'}">${c.source === 'api' ? 'Live API' : 'Schedule'}</span>
                     </div>
                     <div class="contest-card-meta">
-                      <span>🕒 ${escapeHtml(formatContestWindow(c.startMs, c.endMs))}</span>
+                      ${renderContestDateTimePills(c.startMs, c.endMs)}
                       <span>⏱ ${escapeHtml(formatDurationLabel(c.durationMin))}</span>
                       <span>⏳ <strong class="contest-countdown-sm" data-countdown-start="${c.startMs}" data-countdown-end="${c.endMs}">${isLive ? `Ends in ${formatCountdown(c.endMs, nowMs)}` : formatCountdown(c.startMs, nowMs)}</strong></span>
                     </div>
@@ -1928,16 +1933,6 @@
         state.filters.diff = btn.dataset.diff || 'all';
         renderRoadmapTree();
       });
-    });
-
-    els.randomBtn?.addEventListener('click', () => {
-      if (!state.data) return;
-      const pool = state.flatItems.filter((it) => !it.isRevision && it.q.status !== 'solved');
-      const list = pool.length ? pool : state.flatItems.filter((it) => !it.isRevision);
-      if (list.length) {
-        const pick = list[Math.floor(Math.random() * list.length)];
-        selectItem(pick.id);
-      }
     });
 
     window.addEventListener('hashchange', routeFromHash);
