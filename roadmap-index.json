@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:24:01.120Z",
+  "generatedAt": "2026-11-12T12:25:27.163Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -48,9 +48,9 @@
     "2026-11-12": {
       "questions": [],
       "concepts": [
+        "concept::Concepts/03-System-Design-Notes.md",
         "concept::Concepts/01-Java-DSA-Cheatsheet.md",
         "concept::Concepts/02-Core-Patterns-Playbook.md",
-        "concept::Concepts/03-System-Design-Notes.md",
         "concept::Concepts/04-Learnings-and-Mistakes-Log.md"
       ],
       "trackerUpdated": true
