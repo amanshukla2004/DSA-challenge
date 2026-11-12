@@ -632,47 +632,53 @@
 
   function renderProgressMatrix(flatDays) {
     if (!state.data) return '';
-    /** @type {Record<string, { label: string, litCls: string, dotCls: string, items: Array<any> }>} */
-    const buckets = {
-      E: { label: 'Easy', litCls: 'lit-easy', dotCls: 'dot-g', items: [] },
-      M: { label: 'Medium', litCls: 'lit-medium', dotCls: 'dot-y', items: [] },
-      H: { label: 'Hard', litCls: 'lit-hard', dotCls: 'dot-r', items: [] },
-      design: { label: 'System Design', litCls: 'lit-design', dotCls: 'dot-dim', items: [] },
-      behavioral: { label: 'Behavioral', litCls: 'lit-behavioral', dotCls: 'dot-dim', items: [] }
-    };
+    /** @type {Array<{ key: string, label: string, color: string, dimCls: string, litCls: string, items: Array<any> }>} */
+    const groups = [
+      { key: 'E', label: 'Easy', color: 'var(--green)', dimCls: 'dim-easy', litCls: 'lit-easy', items: [] },
+      { key: 'M', label: 'Med', color: 'var(--yellow)', dimCls: 'dim-medium', litCls: 'lit-medium', items: [] },
+      { key: 'H', label: 'Hard', color: 'var(--red)', dimCls: 'dim-hard', litCls: 'lit-hard', items: [] },
+      { key: 'design', label: 'Design', color: 'var(--blue)', dimCls: 'dim-design', litCls: 'lit-design', items: [] },
+      { key: 'behavioral', label: 'Behav', color: '#93c5fd', dimCls: 'dim-behavioral', litCls: 'lit-behavioral', items: [] }
+    ];
+    const groupByKey = new Map(groups.map((g) => [g.key, g]));
 
     for (const it of state.flatItems) {
       if (it.isRevision) continue;
       if (it.day.type === 'dsa') {
-        const key = it.q.diff || 'E';
-        if (buckets[key]) buckets[key].items.push(it);
-      } else if (buckets[it.day.type]) {
-        buckets[it.day.type].items.push(it);
+        const g = groupByKey.get(it.q.diff || 'E');
+        if (g) g.items.push(it);
+      } else {
+        const g = groupByKey.get(it.day.type);
+        if (g) g.items.push(it);
       }
     }
 
-    const questionCards = Object.entries(buckets).map(([key, b]) => {
-      const done = b.items.filter((it) => it.q.status === 'solved').length;
-      const pct = b.items.length ? Math.round((done / b.items.length) * 100) : 0;
-      const cells = b.items.map((it) => {
+    let totalQs = 0;
+    let totalSolvedQs = 0;
+    const allCells = [];
+    const legendHtml = groups.map((g) => {
+      const done = g.items.filter((it) => it.q.status === 'solved').length;
+      totalQs += g.items.length;
+      totalSolvedQs += done;
+
+      for (const it of g.items) {
         const isDone = it.q.status === 'solved';
         const statusTxt = isDone
           ? `Solved${it.q.solvedAt ? ` ${it.q.solvedAt}` : ''}`
           : it.q.hasNotes
             ? 'Notes added'
             : 'Pending';
-        const cls = isDone ? b.litCls : it.q.hasNotes ? 'lit-partial' : '';
-        return `<button class="p-cell ${cls}" data-jump-id="${escapeHtml(it.id)}" title="${escapeHtml(`${it.q.name} (Day ${it.day.day} · ${statusTxt})`)}"></button>`;
-      }).join('');
+        const cls = isDone ? g.litCls : it.q.hasNotes ? 'lit-partial' : g.dimCls;
+        allCells.push(
+          `<button class="p-cell ${cls}" data-jump-id="${escapeHtml(it.id)}" title="${escapeHtml(`${it.q.name} [${g.label} · Day ${it.day.day} · ${statusTxt}]`)}"></button>`
+        );
+      }
 
       return `
-        <div class="matrix-box">
-          <div class="matrix-box-head">
-            <span>${escapeHtml(b.label)}</span>
-            <span class="matrix-count">${done}/${b.items.length} (${pct}%)</span>
-          </div>
-          <div class="block-grid">${cells}</div>
-        </div>
+        <span class="legend-item">
+          <span class="legend-dot" style="background:${g.color}"></span>
+          <span>${escapeHtml(g.label)} <strong>${done}/${g.items.length}</strong></span>
+        </span>
       `;
     }).join('');
 
@@ -696,13 +702,13 @@
 
     return `
       <section class="section-card">
-        <div class="section-header">
-          <h2>Progress Matrix</h2>
-          <span class="section-sub" style="margin:0;">1 cell = 1 question / day / week (click any block to open)</span>
+        <div class="section-header" style="margin-bottom:8px;">
+          <h2>Progress Matrix <span class="badge ${totalSolvedQs ? 'badge-g' : 'badge-grey'}">${totalSolvedQs}/${totalQs}</span></h2>
+          <div class="matrix-legend">${legendHtml}</div>
         </div>
         <div class="matrix-sections">
-          <div class="matrix-questions-grid">
-            ${questionCards}
+          <div class="matrix-box">
+            <div class="block-grid">${allCells.join('')}</div>
           </div>
           <div class="matrix-dw-grid">
             <div class="matrix-box">
@@ -737,28 +743,26 @@
 
     return `
       <section class="section-card">
-        <div class="section-header">
-          <h2>${escapeHtml(title)} <span class="badge ${items.length ? 'badge-g' : 'badge-grey'}">${items.length} solved</span></h2>
+        <div class="section-header" style="margin-bottom:6px;">
+          <h2 style="font-size:14.5px;">${escapeHtml(title)} <span class="badge ${items.length ? 'badge-g' : 'badge-grey'}">${items.length}</span></h2>
+          <code style="font-size:11px;color:var(--text-muted);">${escapeHtml(dateStr)}</code>
         </div>
-        <div class="section-sub">
-          <code>${escapeHtml(dateStr)}</code>
-          ${completedDaysToday.size ? ` · ${Array.from(completedDaysToday).map((d) => `<span class="badge badge-g">✓ ${escapeHtml(d)} Done</span>`).join(' ')}` : ''}
-        </div>
+        ${completedDaysToday.size ? `<div style="margin-bottom:6px;display:flex;flex-wrap:wrap;gap:4px;">${Array.from(completedDaysToday).map((d) => `<span class="badge badge-g">✓ ${escapeHtml(d)} Done</span>`).join('')}</div>` : ''}
         ${items.length === 0 ? `
-          <div class="empty-hint">${escapeHtml(emptyText)}</div>
+          <div class="empty-hint" style="padding:10px;font-size:12px;">${escapeHtml(emptyText)}</div>
         ` : `
-          <div class="target-list">
+          <div class="target-list compact-scroll">
             ${items.map((it) => {
               const badgeCls = it.q.diff ? `badge-${it.q.diff}` : `badge-${it.day.type}`;
               const badgeTxt = it.q.diff || it.day.type;
               return `
-                <button class="target-item is-complete" data-jump-id="${escapeHtml(it.id)}">
+                <button class="target-item compact is-complete" data-jump-id="${escapeHtml(it.id)}">
                   <span class="target-item-left">
                     <span class="dot-g">✓</span>
                     <span class="target-item-title">${escapeHtml(it.q.name)}</span>
                   </span>
                   <span class="target-item-meta">
-                    <span class="target-item-sub">Day ${escapeHtml(it.day.day)}</span>
+                    <span class="target-item-sub">D${escapeHtml(it.day.day)}</span>
                     <span class="badge ${badgeCls}">${escapeHtml(badgeTxt)}</span>
                   </span>
                 </button>
@@ -835,89 +839,94 @@
         </div>
       </div>
 
-      <section class="section-card ${targetEntry.day.completed ? 'is-complete' : ''}">
-        <div class="section-header">
-          <h2>
-            Today's Target — Day ${escapeHtml(targetEntry.day.day)}
-            ${targetEntry.day.completed ? '<span class="badge badge-g">✓ Day Completed</span>' : paceBadge}
-          </h2>
-          <div style="display:flex;gap:6px;align-items:center;">
-            <button class="btn" id="targetPrevBtn" ${targetIdx <= 0 ? 'disabled' : ''}>←</button>
-            <button class="btn" id="targetTodayBtn">Next Pending</button>
-            <button class="btn" id="targetNextBtn" ${targetIdx >= flatDays.length - 1 ? 'disabled' : ''}>→</button>
-          </div>
+      <div class="bento-grid">
+        <div class="bento-col">
+          ${renderProgressMatrix(flatDays)}
+
+          <section class="section-card">
+            <div class="section-header" style="margin-bottom:8px;">
+              <h2>Solve Heatmap</h2>
+              ${state.selectedHeatmapDate ? '<button class="btn" id="clearHeatmapBtn">Reset to Today</button>' : ''}
+            </div>
+            ${renderHeatmap(solvedByDate, state.selectedHeatmapDate)}
+          </section>
         </div>
 
-        <div class="section-sub">
-          Week ${targetEntry.week.week} ${targetEntry.week.completed ? '<span class="badge badge-g">✓ Week Done</span>' : ''}
-          · <strong>${escapeHtml(targetEntry.day.category)}</strong>
-          ${targetTotal ? ` · ${targetDone}/${targetTotal} solved (${targetPct}%)` : ''}
-        </div>
+        <div class="bento-col">
+          <section class="section-card ${targetEntry.day.completed ? 'is-complete' : ''}">
+            <div class="section-header" style="margin-bottom:6px;">
+              <h2>
+                Today's Target — Day ${escapeHtml(targetEntry.day.day)}
+                ${targetEntry.day.completed ? '<span class="badge badge-g">✓ Done</span>' : paceBadge}
+              </h2>
+              <div style="display:flex;gap:5px;align-items:center;">
+                <button class="btn" id="targetPrevBtn" ${targetIdx <= 0 ? 'disabled' : ''}>←</button>
+                <button class="btn" id="targetTodayBtn">Next Pending</button>
+                <button class="btn" id="targetNextBtn" ${targetIdx >= flatDays.length - 1 ? 'disabled' : ''}>→</button>
+              </div>
+            </div>
 
-        <div class="day-progress-bar">
-          <div class="day-progress-fill" style="width:${targetPct}%"></div>
-        </div>
+            <div class="section-sub" style="margin-bottom:8px;">
+              Week ${targetEntry.week.week} ${targetEntry.week.completed ? '<span class="badge badge-g">✓ Week Done</span>' : ''}
+              · <strong>${escapeHtml(targetEntry.day.category)}</strong>
+              ${targetTotal ? ` · ${targetDone}/${targetTotal} (${targetPct}%)` : ''}
+            </div>
 
-        ${targetEntry.day.type === 'revision' || targetQs.length === 0 ? `
-          <div class="target-list">
-            <button class="target-item ${targetEntry.day.completed ? 'is-complete' : ''}" data-jump-id="rev::${escapeHtml(targetEntry.day.day)}">
-              <span class="target-item-left">
-                <span>${targetEntry.day.completed ? '✓' : '↻'}</span>
-                <span class="target-item-title">${escapeHtml(targetEntry.day.title || targetEntry.day.category)}</span>
-              </span>
-              <span class="badge badge-revision">Open Revision</span>
-            </button>
-          </div>
-        ` : `
-          <div class="target-list">
-            ${targetQs.map((q) => {
-              const badgeCls = q.diff ? `badge-${q.diff}` : `badge-${targetEntry.day.type}`;
-              const badgeTxt = q.diff || targetEntry.day.type;
-              const isDone = q.status === 'solved';
-              return `
-                <button class="target-item ${isDone ? 'is-complete' : ''}" data-jump-id="${escapeHtml(q.id)}">
+            <div class="day-progress-bar" style="margin-bottom:9px;">
+              <div class="day-progress-fill" style="width:${targetPct}%"></div>
+            </div>
+
+            ${targetEntry.day.type === 'revision' || targetQs.length === 0 ? `
+              <div class="target-list">
+                <button class="target-item compact ${targetEntry.day.completed ? 'is-complete' : ''}" data-jump-id="rev::${escapeHtml(targetEntry.day.day)}">
                   <span class="target-item-left">
-                    ${getStatusIndicator(q)}
-                    <span class="target-item-title">${escapeHtml(q.name)}</span>
+                    <span>${targetEntry.day.completed ? '✓' : '↻'}</span>
+                    <span class="target-item-title">${escapeHtml(targetEntry.day.title || targetEntry.day.category)}</span>
                   </span>
-                  <span class="target-item-meta">
-                    ${q.solvedAt ? `<span class="target-item-sub">Solved ${escapeHtml(q.solvedAt)}</span>` : ''}
-                    <span class="badge ${badgeCls}">${escapeHtml(badgeTxt)}</span>
-                  </span>
+                  <span class="badge badge-revision">Open Revision</span>
                 </button>
-              `;
-            }).join('')}
+              </div>
+            ` : `
+              <div class="target-list compact-scroll">
+                ${targetQs.map((q) => {
+                  const badgeCls = q.diff ? `badge-${q.diff}` : `badge-${targetEntry.day.type}`;
+                  const badgeTxt = q.diff || targetEntry.day.type;
+                  const isDone = q.status === 'solved';
+                  return `
+                    <button class="target-item compact ${isDone ? 'is-complete' : ''}" data-jump-id="${escapeHtml(q.id)}">
+                      <span class="target-item-left">
+                        ${getStatusIndicator(q)}
+                        <span class="target-item-title">${escapeHtml(q.name)}</span>
+                      </span>
+                      <span class="target-item-meta">
+                        ${q.solvedAt ? `<span class="target-item-sub">${escapeHtml(q.solvedAt)}</span>` : ''}
+                        <span class="badge ${badgeCls}">${escapeHtml(badgeTxt)}</span>
+                      </span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            `}
+          </section>
+
+          <div class="dashboard-grid-2">
+            ${renderSolvedListCard(
+              state.selectedHeatmapDate ? `Solved (${activeLeftDate})` : 'Solved Today',
+              activeLeftDate,
+              leftIds,
+              state.selectedHeatmapDate
+                ? 'None solved on this date.'
+                : 'No problems solved today yet.'
+            )}
+
+            ${renderSolvedListCard(
+              'Solved Yesterday',
+              yesterdayStr,
+              yesterdayIds,
+              'None solved yesterday.'
+            )}
           </div>
-        `}
-      </section>
-
-      <!-- Progress Matrix -->
-      ${renderProgressMatrix(flatDays)}
-
-      <section class="section-card">
-        <div class="section-header">
-          <h2>Solve Heatmap</h2>
-          ${state.selectedHeatmapDate ? '<button class="btn" id="clearHeatmapBtn">Reset to Today</button>' : ''}
         </div>
-        ${renderHeatmap(solvedByDate, state.selectedHeatmapDate)}
-      </section>
-
-      <div class="dashboard-grid-2">
-        ${renderSolvedListCard(
-          state.selectedHeatmapDate ? `Solved on ${activeLeftDate}` : 'Solved Today',
-          activeLeftDate,
-          leftIds,
-          state.selectedHeatmapDate
-            ? `No questions marked solved on ${activeLeftDate}.`
-            : 'No questions solved today yet. Solve & push to GitHub to log them here.'
-        )}
-
-        ${renderSolvedListCard(
-          'Solved Yesterday',
-          yesterdayStr,
-          yesterdayIds,
-          'No questions solved yesterday.'
-        )}
       </div>
     `;
 

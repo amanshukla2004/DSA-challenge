@@ -455,22 +455,39 @@ function buildGitActivity(questionPathToId, conceptPathToId) {
 
 function buildRootReadme(weeksIndex, concepts, totals) {
   const lines = [
-    '# DSA & Interview Prep Roadmap',
+    '# DSA & Interview Prep Revision Vault',
     '',
-    `A structured **${totals.weeks}-Week (${totals.days} Days · ${totals.questions} Questions)** preparation repository covering DSA, System Design / OOD, Behavioral interviews, Revision checkpoints, and general **Concepts & Learnings**.`,
+    `A **${totals.weeks}-Week (${totals.days} Days · ${totals.questions} Questions)** Git-backed preparation repository & static revision web app covering DSA, System Design / OOD, Behavioral interviews, Revision checkpoints, and **Concepts & Learnings**.`,
     '',
-    '## Hosting & Revision Web App',
-    'This repository includes a zero-build static revision viewer (`index.html`) backed by your committed Git files (`Week-*`, `Concepts/`, `daily-tracker.json`, and `roadmap-index.json`):',
-    '- **Vercel / Netlify:** Connect the repo with no build command and output directory `.`.',
-    '- **GitHub Pages:** Settings → Pages → Deploy from branch (`main` / `/root`).',
+    '## Live Repo Progress',
+    `| Metric | Progress |`,
+    `|---|---|`,
+    `| **Questions Solved** | **${totals.repoSolved} / ${totals.questions}** |`,
+    `| **Days Completed** | **${totals.daysCompleted} / ${totals.days}** |`,
+    `| **Weeks Completed** | **${totals.weeksCompleted} / ${totals.weeks}** |`,
+    `| **Problem Notes Written** | **${totals.repoNotes} / ${totals.questions}** |`,
+    `| **Concept & Learning Notes** | **${concepts.length}** in [Concepts/](./Concepts) |`,
+    '',
+    '## Website Features (`index.html`)',
+    '- **📊 One-Page Bento Dashboard:** Isolated single-screen summary built for tracking & sharing progress:',
+    '  - **Progress Matrix:** Continuous block grid of all questions (`Easy`, `Medium`, `Hard`, `System Design`, `Behavioral`) plus **Days** and **Weeks** completion blocks.',
+    '  - **Today\'s Target:** Smartly auto-advances to your next incomplete day (handles solving 2+ days in a single day seamlessly).',
+    '  - **Solve Heatmap:** Contribution calendar showing daily solved problem counts.',
+    '  - **Solved Today & Yesterday:** Lists solved questions with solve dates from Git history.',
+    '- **🗺️ Roadmap Workspace:** Side-by-side `understanding.md` notes and syntax-highlighted `bruteforce.java` / `better.java` / `optimised.java` viewer with Week/Day/Question completion highlights.',
+    '- **📚 Concepts & Learnings Hub:** Reads all `.md` files and subfolders inside [Concepts/](./Concepts).',
+    '',
+    '## Daily Git Workflow & Hosting',
+    '1. Solve problems in `Week-*/Day-*/<Question>/` (`understanding.md` + `*.java`) or add notes in `Concepts/`.',
+    '2. Optionally set `"startDate"` or `"activeDayOverride"` in [daily-tracker.json](./daily-tracker.json), or add `- **Status:** Solved` / `- **Solved Date:** YYYY-MM-DD` in `understanding.md`.',
+    '3. Commit and push to `main` — [update-index.yml](./.github/workflows/update-index.yml) automatically rebuilds [roadmap-index.json](./roadmap-index.json) and `README.md`, and **Vercel** deploys the updated site.',
     '- **Local Preview:** Run `npx serve .` or `python -m http.server 8000` in the repo root.',
     '',
-    '## Summary',
-    `- **DSA Questions:** ${totals.dsaQuestions} (with \`bruteforce.java\`, \`better.java\`, \`optimised.java\`, and \`understanding.md\`)`,
-    `- **System Design & OOD:** ${totals.designQuestions} (with \`understanding.md\`)`,
-    `- **Behavioral Questions:** ${totals.behavioralQuestions} (with \`understanding.md\`)`,
+    '## Question Breakdown',
+    `- **DSA Questions:** ${totals.dsaQuestions} (\`bruteforce.java\`, \`better.java\`, \`optimised.java\`, \`understanding.md\`)`,
+    `- **System Design & OOD:** ${totals.designQuestions} (\`understanding.md\`)`,
+    `- **Behavioral Questions:** ${totals.behavioralQuestions} (\`understanding.md\`)`,
     `- **Revision Checkpoints:** ${totals.revisionDays} days`,
-    `- **Concepts & Learnings Notes:** ${concepts.length} files in [Concepts/](./Concepts)`,
     ''
   ];
 
@@ -485,17 +502,21 @@ function buildRootReadme(weeksIndex, concepts, totals) {
   lines.push('## Weekly Index', '');
 
   for (const wk of weeksIndex) {
+    const wkBadge = wk.completed ? ' ✅' : '';
     lines.push(`<details>`);
-    lines.push(`<summary><strong>${wk.weekTitle}</strong> — ${wk.phase} (${wk.days.length} days)</summary>`);
+    lines.push(`<summary><strong>${wk.weekTitle}${wkBadge}</strong> — ${wk.phase} (${wk.solvedCount}/${wk.totalCount} solved · ${wk.days.length} days)</summary>`);
     lines.push('');
     for (const d of wk.days) {
       if (d.type === 'revision') {
-        lines.push(`- **Day ${d.day} (${d.category}):** [${d.title || 'Revision'}](./${d.path}/README.md)`);
+        const revMark = d.completed ? ' ✅' : '';
+        lines.push(`- **Day ${d.day} (${d.category})${revMark}:** [${d.title || 'Revision'}](./${d.path}/README.md)`);
       } else {
-        lines.push(`- **Day ${d.day} — ${d.category}** (${d.questions.length} items):`);
+        const dayMark = d.completed ? ' ✅' : '';
+        lines.push(`- **Day ${d.day} — ${d.category}${dayMark}** (${d.solvedCount}/${d.totalCount} solved):`);
         for (const q of d.questions) {
           const badge = q.diff ? ` \`${q.diff}\`` : q.type ? ` \`${q.type}\`` : '';
-          lines.push(`  - [${q.name}](./${q.path}/understanding.md)${badge}`);
+          const qMark = q.status === 'solved' ? ' ✅' : q.hasNotes ? ' 📝' : '';
+          lines.push(`  - [${q.name}](./${q.path}/understanding.md)${badge}${qMark}`);
         }
       }
     }
