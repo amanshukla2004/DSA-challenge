@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /**
  * Question: Two Sum
  * URL: https://leetcode.com/problems/two-sum/

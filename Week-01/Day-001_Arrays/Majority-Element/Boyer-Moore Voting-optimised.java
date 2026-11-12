@@ -11,18 +11,17 @@
 // Boyer-Moore Voting
 class Solution {
     public int majorityElement(int[] nums) {
-        // voting algo
-        int count = 0;
-        int candidate = 0;
-        for (int num : nums) {
-            if (count == 0)
-                candidate = num;
 
-            if (num == candidate) {
+        int candidate = 0;
+        int count = 0;
+
+        for (int ele : nums) {
+            if (count == 0)
+                candidate = ele;
+            if (ele == candidate)
                 count++;
-            } else {
+            else
                 count--;
-            }
         }
         return candidate;
     }

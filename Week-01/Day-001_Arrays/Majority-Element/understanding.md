@@ -36,6 +36,7 @@
 
 ## Resources
 - [Problem Link](https://leetcode.com/problems/majority-element/)
+- [YT](https://www.youtube.com/watch?v=1r8kzrXJiUk)
 - <!-- Add editorial, article, or video links here -->
 
 ## Approaches

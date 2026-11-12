@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 class SortingMethod {
     public int majorityElement(int[] nums) {

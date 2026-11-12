@@ -9,7 +9,12 @@
 ---
 
 ## Intuition
-<!-- Write the core insight and why the brute-force approach can be improved -->
+- `nums1` has `n` empty slots at the end. If you fill from the front, you overwrite unread elements of `nums1`.
+- Fill from the back instead. The largest remaining element goes at `end`.
+- Compare `nums1[i]` and `nums2[j]`, place the bigger one at `end`, move that pointer and `end` left.
+- The write position `end` is never behind `i`, so no unread element of `nums1` gets overwritten.
+- Loop only while `j >= 0`. If `nums2` is exhausted, the rest of `nums1` is already in place.
+- The `i >= 0` check handles `nums1` running out first, so the leftover `nums2` elements get copied in.
 
 
 ## Pattern
