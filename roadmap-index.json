@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:37:27.985Z",
+  "generatedAt": "2026-11-12T13:01:15.547Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -14,7 +14,16 @@
     "daysCompleted": 0,
     "weeksCompleted": 0
   },
-  "potd": null,
+  "potd": {
+    "date": "2026-11-12",
+    "title": "Longest Strictly Increasing or Strictly Decreasing Subarray",
+    "url": "https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/",
+    "diff": "E",
+    "diffLabel": "Easy",
+    "tags": [
+      "Array"
+    ]
+  },
   "concepts": [
     {
       "id": "concept::Concepts/01-Java-DSA-Cheatsheet.md",
