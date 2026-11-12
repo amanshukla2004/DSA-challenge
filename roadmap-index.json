@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T15:09:41.430Z",
+  "generatedAt": "2026-11-12T15:49:00.815Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -9,8 +9,8 @@
     "behavioralQuestions": 26,
     "revisionDays": 10,
     "concepts": 4,
-    "repoSolved": 2,
-    "repoNotes": 1,
+    "repoSolved": 3,
+    "repoNotes": 2,
     "daysCompleted": 0,
     "weeksCompleted": 0
   },
@@ -57,6 +57,7 @@
   "activityByDate": {
     "2026-11-12": {
       "questions": [
+        "1::Majority-Element",
         "1::Best-Time-to-Buy-and-Sell-Stock",
         "1::Two-Sum"
       ],
@@ -72,7 +73,8 @@
   "solvedByDate": {
     "2026-11-12": [
       "1::Two-Sum",
-      "1::Best-Time-to-Buy-and-Sell-Stock"
+      "1::Best-Time-to-Buy-and-Sell-Stock",
+      "1::Majority-Element"
     ]
   },
   "weeks": [
@@ -81,7 +83,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 2,
+      "solvedCount": 3,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -91,7 +93,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-001_Arrays",
-          "solvedCount": 2,
+          "solvedCount": 3,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -150,20 +152,25 @@
               "url": "https://leetcode.com/problems/majority-element/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
-                "better.java",
-                "optimised.java"
+                "Boyer-Moore Voting-optimised.java",
+                "BruteforceSolution.java",
+                "HashMapSoln.java",
+                "SortingMethod.java"
               ],
               "path": "Week-01/Day-001_Arrays/Majority-Element",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
-                "optimised": false
+                "optimised": false,
+                "boyer-moore voting-optimised": true,
+                "bruteforcesolution": true,
+                "hashmapsoln": true,
+                "sortingmethod": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-12",
+              "lastUpdated": "2026-11-12"
             },
             {
               "id": "1::Move-Zeroes",

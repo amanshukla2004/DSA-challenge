@@ -5,10 +5,10 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Live Repo Progress
 | Metric | Progress |
 |---|---|
-| **Questions Solved** | **2 / 484** |
+| **Questions Solved** | **3 / 484** |
 | **Days Completed** | **0 / 136** |
 | **Weeks Completed** | **0 / 21** |
-| **Problem Notes Written** | **1 / 484** |
+| **Problem Notes Written** | **2 / 484** |
 | **Concept & Learning Notes** | **4** in [Concepts/](./Concepts) |
 
 ## Website Features (`index.html`)
@@ -42,12 +42,12 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Weekly Index
 
 <details>
-<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (2/39 solved · 7 days)</summary>
+<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (3/39 solved · 7 days)</summary>
 
-- **Day 1 — Arrays** (2/6 solved):
+- **Day 1 — Arrays** (3/6 solved):
   - [Two Sum](./Week-01/Day-001_Arrays/Two-Sum/understanding.md) `E` ✅
   - [Best Time to Buy and Sell Stock](./Week-01/Day-001_Arrays/Best-Time-to-Buy-and-Sell-Stock/understanding.md) `E` ✅
-  - [Majority Element](./Week-01/Day-001_Arrays/Majority-Element/understanding.md) `E`
+  - [Majority Element](./Week-01/Day-001_Arrays/Majority-Element/understanding.md) `E` ✅
   - [Move Zeroes](./Week-01/Day-001_Arrays/Move-Zeroes/understanding.md) `E`
   - [Squares of a Sorted Array](./Week-01/Day-001_Arrays/Squares-of-a-Sorted-Array/understanding.md) `E`
   - [Merge Sorted Array](./Week-01/Day-001_Arrays/Merge-Sorted-Array/understanding.md) `E`
