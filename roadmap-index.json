@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T14:39:51.089Z",
+  "generatedAt": "2026-11-12T15:09:41.430Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -9,8 +9,8 @@
     "behavioralQuestions": 26,
     "revisionDays": 10,
     "concepts": 4,
-    "repoSolved": 1,
-    "repoNotes": 0,
+    "repoSolved": 2,
+    "repoNotes": 1,
     "daysCompleted": 0,
     "weeksCompleted": 0
   },
@@ -57,6 +57,7 @@
   "activityByDate": {
     "2026-11-12": {
       "questions": [
+        "1::Best-Time-to-Buy-and-Sell-Stock",
         "1::Two-Sum"
       ],
       "concepts": [
@@ -70,7 +71,8 @@
   },
   "solvedByDate": {
     "2026-11-12": [
-      "1::Two-Sum"
+      "1::Two-Sum",
+      "1::Best-Time-to-Buy-and-Sell-Stock"
     ]
   },
   "weeks": [
@@ -79,7 +81,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 1,
+      "solvedCount": 2,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -89,7 +91,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-001_Arrays",
-          "solvedCount": 1,
+          "solvedCount": 2,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -126,19 +128,18 @@
               "hasJava": true,
               "javaFiles": [
                 "bruteforce.java",
-                "better.java",
                 "optimised.java"
               ],
               "path": "Week-01/Day-001_Arrays/Best-Time-to-Buy-and-Sell-Stock",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
-                "optimised": false
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-12",
+              "lastUpdated": "2026-11-12"
             },
             {
               "id": "1::Majority-Element",
