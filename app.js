@@ -630,6 +630,101 @@
     `;
   }
 
+  function renderProgressMatrix(flatDays) {
+    if (!state.data) return '';
+    /** @type {Record<string, { label: string, litCls: string, dotCls: string, items: Array<any> }>} */
+    const buckets = {
+      E: { label: 'Easy', litCls: 'lit-easy', dotCls: 'dot-g', items: [] },
+      M: { label: 'Medium', litCls: 'lit-medium', dotCls: 'dot-y', items: [] },
+      H: { label: 'Hard', litCls: 'lit-hard', dotCls: 'dot-r', items: [] },
+      design: { label: 'System Design', litCls: 'lit-design', dotCls: 'dot-dim', items: [] },
+      behavioral: { label: 'Behavioral', litCls: 'lit-behavioral', dotCls: 'dot-dim', items: [] }
+    };
+
+    for (const it of state.flatItems) {
+      if (it.isRevision) continue;
+      if (it.day.type === 'dsa') {
+        const key = it.q.diff || 'E';
+        if (buckets[key]) buckets[key].items.push(it);
+      } else if (buckets[it.day.type]) {
+        buckets[it.day.type].items.push(it);
+      }
+    }
+
+    const questionCards = Object.entries(buckets).map(([key, b]) => {
+      const done = b.items.filter((it) => it.q.status === 'solved').length;
+      const pct = b.items.length ? Math.round((done / b.items.length) * 100) : 0;
+      const cells = b.items.map((it) => {
+        const isDone = it.q.status === 'solved';
+        const statusTxt = isDone
+          ? `Solved${it.q.solvedAt ? ` ${it.q.solvedAt}` : ''}`
+          : it.q.hasNotes
+            ? 'Notes added'
+            : 'Pending';
+        const cls = isDone ? b.litCls : it.q.hasNotes ? 'lit-partial' : '';
+        return `<button class="p-cell ${cls}" data-jump-id="${escapeHtml(it.id)}" title="${escapeHtml(`${it.q.name} (Day ${it.day.day} · ${statusTxt})`)}"></button>`;
+      }).join('');
+
+      return `
+        <div class="matrix-box">
+          <div class="matrix-box-head">
+            <span>${escapeHtml(b.label)}</span>
+            <span class="matrix-count">${done}/${b.items.length} (${pct}%)</span>
+          </div>
+          <div class="block-grid">${cells}</div>
+        </div>
+      `;
+    }).join('');
+
+    const daysDone = flatDays.filter((d) => d.day.completed).length;
+    const dayCells = flatDays.map((entry, idx) => {
+      const d = entry.day;
+      const cls = d.completed ? 'lit-done' : d.solvedCount > 0 ? 'lit-partial' : '';
+      const info = d.type === 'revision'
+        ? `Day ${d.day} · ${d.category} (${d.completed ? 'Completed' : 'Pending'})`
+        : `Day ${d.day} · ${d.category} (${d.solvedCount}/${d.totalCount})`;
+      return `<button class="p-cell ${cls}" data-day-idx="${idx}" title="${escapeHtml(info)}"></button>`;
+    }).join('');
+
+    const weeks = state.data.weeks || [];
+    const weeksDone = weeks.filter((w) => w.completed).length;
+    const weekCells = weeks.map((wk) => {
+      const cls = wk.completed ? 'lit-done' : wk.solvedCount > 0 ? 'lit-partial' : '';
+      const info = `${wk.weekTitle} (${wk.solvedCount}/${wk.totalCount} solved)`;
+      return `<button class="w-cell ${cls}" data-week-num="${wk.week}" title="${escapeHtml(info)}">W${wk.week}</button>`;
+    }).join('');
+
+    return `
+      <section class="section-card">
+        <div class="section-header">
+          <h2>Progress Matrix</h2>
+          <span class="section-sub" style="margin:0;">1 cell = 1 question / day / week (click any block to open)</span>
+        </div>
+        <div class="matrix-sections">
+          <div class="matrix-questions-grid">
+            ${questionCards}
+          </div>
+          <div class="matrix-dw-grid">
+            <div class="matrix-box">
+              <div class="matrix-box-head">
+                <span>Days Completed</span>
+                <span class="matrix-count">${daysDone}/${flatDays.length}</span>
+              </div>
+              <div class="block-grid">${dayCells}</div>
+            </div>
+            <div class="matrix-box">
+              <div class="matrix-box-head">
+                <span>Weeks Completed</span>
+                <span class="matrix-count">${weeksDone}/${weeks.length}</span>
+              </div>
+              <div class="week-block-grid">${weekCells}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
   function renderSolvedListCard(title, dateStr, qIds, emptyText) {
     const items = (qIds || [])
       .map((id) => state.itemById.get(id))
@@ -796,6 +891,9 @@
         `}
       </section>
 
+      <!-- Progress Matrix -->
+      ${renderProgressMatrix(flatDays)}
+
       <section class="section-card">
         <div class="section-header">
           <h2>Solve Heatmap</h2>
@@ -855,6 +953,27 @@
         if (btn instanceof HTMLElement && btn.dataset.jumpId) {
           selectItem(btn.dataset.jumpId);
         }
+      });
+    });
+
+    els.dashboardView.querySelectorAll('[data-day-idx]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (btn instanceof HTMLElement && btn.dataset.dayIdx !== undefined) {
+          state.previewDayIndex = Number(btn.dataset.dayIdx);
+          renderDashboard();
+        }
+      });
+    });
+
+    els.dashboardView.querySelectorAll('[data-week-num]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!(btn instanceof HTMLElement) || !btn.dataset.weekNum || !state.data) return;
+        const wkNum = Number(btn.dataset.weekNum);
+        state.expandedWeeks.add(wkNum);
+        const wk = state.data.weeks.find((w) => w.week === wkNum);
+        const firstDay = wk?.days?.[0];
+        const firstId = firstDay?.questions?.[0]?.id || (firstDay ? `rev::${firstDay.day}` : null);
+        if (firstId) selectItem(firstId);
       });
     });
   }
