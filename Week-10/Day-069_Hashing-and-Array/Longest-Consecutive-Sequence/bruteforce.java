@@ -1,0 +1,15 @@
+/**
+ * Question: Longest Consecutive Sequence
+ * URL: https://leetcode.com/problems/longest-consecutive-sequence/
+ * Week 10 | Day 69 | Hashing & Array
+ * Approach: Bruteforce
+ *
+ * Time Complexity:  O(...)
+ * Space Complexity: O(...)
+ */
+
+public class BruteforceSolution {
+    public static void main(String[] args) {
+        // TODO: Add test cases for Longest Consecutive Sequence (Bruteforce)
+    }
+}

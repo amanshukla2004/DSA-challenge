@@ -1,0 +1,15 @@
+/**
+ * Question: Merge Two Sorted Lists
+ * URL: https://leetcode.com/problems/merge-two-sorted-lists/
+ * Week 1 | Day 5 | Linked List
+ * Approach: Bruteforce
+ *
+ * Time Complexity:  O(...)
+ * Space Complexity: O(...)
+ */
+
+public class BruteforceSolution {
+    public static void main(String[] args) {
+        // TODO: Add test cases for Merge Two Sorted Lists (Bruteforce)
+    }
+}

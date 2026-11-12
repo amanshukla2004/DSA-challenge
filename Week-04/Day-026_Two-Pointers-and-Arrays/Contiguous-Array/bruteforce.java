@@ -1,0 +1,15 @@
+/**
+ * Question: Contiguous Array
+ * URL: https://leetcode.com/problems/contiguous-array/
+ * Week 4 | Day 26 | Two Pointers & Arrays
+ * Approach: Bruteforce
+ *
+ * Time Complexity:  O(...)
+ * Space Complexity: O(...)
+ */
+
+public class BruteforceSolution {
+    public static void main(String[] args) {
+        // TODO: Add test cases for Contiguous Array (Bruteforce)
+    }
+}

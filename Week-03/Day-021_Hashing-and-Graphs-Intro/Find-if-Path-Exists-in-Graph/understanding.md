@@ -1,0 +1,36 @@
+# Find if Path Exists in Graph
+
+- **Question Name:** Find if Path Exists in Graph
+- **Question Number:** TBD
+- **Difficulty:** Easy (E)
+- **Week / Day / Category:** Week 3 · Day 21 · Hashing & Graphs Intro
+- **URL:** https://leetcode.com/problems/find-if-path-exists-in-graph/
+
+---
+
+## Intuition
+<!-- Write the core insight and why the brute-force approach can be improved -->
+
+
+## Pattern
+<!-- e.g., Two Pointers, Sliding Window, Hash Map, Binary Search, DP -->
+
+
+## Complexity Analysis
+- **Time Complexity (TC):**
+  - Bruteforce: `O(...)`
+  - Better: `O(...)`
+  - Optimised: `O(...)`
+- **Space Complexity (SC):**
+  - Bruteforce: `O(...)`
+  - Better: `O(...)`
+  - Optimised: `O(...)`
+
+## Resources
+- [Problem Link](https://leetcode.com/problems/find-if-path-exists-in-graph/)
+- <!-- Add editorial, article, or video links here -->
+
+## Approaches
+- [Bruteforce Approach](./bruteforce.java)
+- [Better Approach](./better.java)
+- [Optimised Approach](./optimised.java)

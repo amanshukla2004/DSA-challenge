@@ -1,0 +1,15 @@
+/**
+ * Question: Top K Frequent Elements
+ * URL: https://leetcode.com/problems/top-k-frequent-elements/
+ * Week 13 | Day 87 | Heaps / Priority Queues
+ * Approach: Bruteforce
+ *
+ * Time Complexity:  O(...)
+ * Space Complexity: O(...)
+ */
+
+public class BruteforceSolution {
+    public static void main(String[] args) {
+        // TODO: Add test cases for Top K Frequent Elements (Bruteforce)
+    }
+}

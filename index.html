@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA Challenge — Revision Vault</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button id="sidebarToggle" class="icon-btn mobile-only" title="Toggle sidebar" aria-label="Toggle sidebar">☰</button>
+      <button id="homeBtn" class="brand" title="Back to Dashboard">
+        <span class="brand-dot"></span>
+        <span>DSA Revision Vault</span>
+      </button>
+    </div>
+
+    <div class="topbar-center">
+      <div class="progress-summary" id="progressSummary">
+        <span id="solvedStat">0 / 484 Solved</span>
+        <span class="sep">·</span>
+        <span id="reviseStat">0 Flagged</span>
+        <div class="mini-bar"><div id="miniBarFill" class="mini-bar-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <button id="randomBtn" class="btn btn-ghost" title="Pick a random question to revise">🎲 Random</button>
+      <button id="exportBtn" class="btn btn-ghost" title="Export solved/revision progress as JSON">Export</button>
+      <label class="btn btn-ghost" title="Import progress JSON">
+        Import
+        <input type="file" id="importInput" accept="application/json" hidden />
+      </label>
+      <button id="themeBtn" class="icon-btn" title="Toggle light/dark theme" aria-label="Toggle theme">☀️</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-controls">
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="Search questions, categories, weeks..." autocomplete="off" />
+        </div>
+
+        <div class="filter-row" id="typeFilters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="dsa">DSA</button>
+          <button class="chip" data-filter="design">Design</button>
+          <button class="chip" data-filter="behavioral">Behavioral</button>
+          <button class="chip" data-filter="revise">Flagged</button>
+          <button class="chip" data-filter="unsolved">Unsolved</button>
+        </div>
+
+        <div class="filter-row diff-row" id="diffFilters">
+          <span class="filter-label">Difficulty:</span>
+          <button class="chip active" data-diff="all">All</button>
+          <button class="chip diff-e" data-diff="E">Easy</button>
+          <button class="chip diff-m" data-diff="M">Med</button>
+          <button class="chip diff-h" data-diff="H">Hard</button>
+        </div>
+      </div>
+
+      <div id="treeContainer" class="tree-container">
+        <div class="loading-msg">Loading roadmap...</div>
+      </div>
+    </aside>
+
+    <main id="mainContent" class="main-content">
+      <div id="dashboardView" class="dashboard-view"></div>
+      <div id="problemView" class="problem-view hidden"></div>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
+
