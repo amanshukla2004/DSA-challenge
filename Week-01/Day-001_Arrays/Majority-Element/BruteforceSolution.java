@@ -2,14 +2,15 @@
  * Question: Majority Element
  * URL: https://leetcode.com/problems/majority-element/
  * Week 1 | Day 1 | Arrays
- * Approach: Better
+ * Approach: Bruteforce
  *
- * Time Complexity:  O(...)
+ * Time Complexity: O(...)
  * Space Complexity: O(...)
  */
 
-public class BetterSolution {
+public class BruteforceSolution {
     public static void main(String[] args) {
-        // TODO: Add test cases for Majority Element (Better)
+        // for each element count the number of occurence and return the ele with n/2
+        // freq
     }
 }
