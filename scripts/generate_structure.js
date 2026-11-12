@@ -273,6 +273,8 @@ Keep track of edge cases, wrong assumptions, and key takeaways from daily practi
   const starterTracker = {
     startDate: todayStr,
     activeDayOverride: null,
+    leetcodeUsername: '',
+    autoSyncLeetcode: false,
     todayTargets: [
       'Solve today\'s scheduled DSA problems with Bruteforce -> Better -> Optimised',
       'Write Intuition, Pattern, and TC/SC in understanding.md',
@@ -528,9 +530,69 @@ function buildRootReadme(weeksIndex, concepts, totals) {
   return lines.join('\n');
 }
 
-function main() {
+function normalizeTitleKey(str) {
+  return String(str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+async function fetchLeetCodeRecentAc(username) {
+  if (!username || typeof fetch !== 'function') return [];
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 4500);
+  try {
+    const res = await fetch('https://leetcode.com/graphql', {
+      method: 'POST',
+      signal: controller.signal,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: 'query recentAcSubmissions($username: String!, $limit: Int!) { recentAcSubmissionList(username: $username, limit: $limit) { id title titleSlug timestamp } }',
+        variables: { username, limit: 50 }
+      })
+    });
+    if (!res.ok) return [];
+    const json = await res.json();
+    const list = json?.data?.recentAcSubmissionList;
+    return Array.isArray(list) ? list : [];
+  } catch (err) {
+    console.warn('LeetCode auto-sync skipped:', err && err.message ? err.message : String(err));
+    return [];
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function buildLcAcMap(submissions) {
+  const map = new Map();
+  for (const sub of submissions) {
+    const tsSec = Number(sub.timestamp || 0);
+    const isoDate = tsSec > 0 ? new Date(tsSec * 1000).toISOString().slice(0, 10) : null;
+    for (const key of [normalizeTitleKey(sub.titleSlug), normalizeTitleKey(sub.title)]) {
+      if (key && (!map.has(key) || (isoDate && isoDate < map.get(key).solvedDate))) {
+        map.set(key, { title: sub.title, titleSlug: sub.titleSlug, solvedDate: isoDate });
+      }
+    }
+  }
+  return map;
+}
+
+function stampUnderstandingSolved(mdPath, solvedDate) {
+  if (!fs.existsSync(mdPath)) return false;
+  let content = fs.readFileSync(mdPath, 'utf8');
+  if (/^\s*[-*]\s*\*\*Status:\*\*/im.test(content)) return false;
+  const statusLines = solvedDate
+    ? `- **Status:** Solved\n- **Solved Date:** ${solvedDate}\n`
+    : `- **Status:** Solved\n`;
+  if (content.includes('\n---\n')) {
+    content = content.replace('\n---\n', `\n${statusLines}\n---\n`);
+  } else {
+    content = `${content.trimEnd()}\n\n${statusLines}`;
+  }
+  fs.writeFileSync(mdPath, content, 'utf8');
+  return true;
+}
+
+async function main() {
   const roadmap = loadRoadmap();
-  const stats = { created: 0, skipped: 0, dirsCreated: 0 };
+  const stats = { created: 0, skipped: 0, dirsCreated: 0, lcSynced: 0 };
   const totals = {
     weeks: 0,
     days: roadmap.length,
@@ -547,6 +609,15 @@ function main() {
   };
 
   ensureConceptsAndTracker(stats);
+
+  let trackerCfg = {};
+  try {
+    trackerCfg = JSON.parse(fs.readFileSync(TRACKER_FILE, 'utf8'));
+  } catch (_) {}
+
+  const lcUser = String(process.env.LEETCODE_USERNAME || trackerCfg.leetcodeUsername || '').trim();
+  const shouldSyncLc = Boolean(lcUser && (trackerCfg.autoSyncLeetcode || process.argv.includes('--sync-leetcode')));
+  const lcAcMap = shouldSyncLc ? buildLcAcMap(await fetchLeetCodeRecentAc(lcUser)) : new Map();
 
   const weeksMap = new Map();
   const questionPathToId = new Map();
@@ -645,6 +716,16 @@ function main() {
 
         const qId = `${dayEntry.day}::${qFolder}`;
         questionPathToId.set(qRelPath, qId);
+
+        if (isDsa && lcAcMap.size > 0) {
+          const slugMatch = (q.url || '').match(/leetcode\.com\/problems\/([^/?#]+)/i);
+          const matchEntry =
+            (slugMatch && lcAcMap.get(normalizeTitleKey(slugMatch[1]))) ||
+            lcAcMap.get(normalizeTitleKey(q.name));
+          if (matchEntry && stampUnderstandingSolved(path.join(qAbsPath, 'understanding.md'), matchEntry.solvedDate)) {
+            stats.lcSynced++;
+          }
+        }
 
         const inspected = inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa);
         if (inspected.status === 'solved') {
@@ -745,4 +826,7 @@ function main() {
   console.log('Generation complete:', JSON.stringify({ totals, stats }, null, 2));
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

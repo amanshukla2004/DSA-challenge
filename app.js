@@ -1,16 +1,34 @@
 (() => {
   const THEME_KEY = 'dsa_revision_vault_theme';
   const CONTEST_JOINED_KEY = 'dsa_contest_tracker_joined';
+  const LC_USERNAME_KEY = 'dsa_lc_username';
+  const LC_SYNCED_KEY = 'dsa_lc_synced_map';
+  const LC_API_BASE = 'https://alfa-leetcode-api.onrender.com';
 
-  function loadJoinedContests() {
+  function loadJsonStorage(key, fallback) {
     try {
-      const raw = localStorage.getItem(CONTEST_JOINED_KEY);
-      const parsed = raw ? JSON.parse(raw) : [];
-      return Array.isArray(parsed) ? parsed : [];
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
     } catch (_) {
-      return [];
+      return fallback;
     }
   }
+
+  function loadJoinedContests() {
+    const parsed = loadJsonStorage(CONTEST_JOINED_KEY, []);
+    return Array.isArray(parsed) ? parsed : [];
+  }
+
+  function loadSavedLcUser() {
+    try {
+      return (localStorage.getItem(LC_USERNAME_KEY) || '').trim();
+    } catch (_) {
+      return '';
+    }
+  }
+
+  const krokiCache = new Map();
+  const noembedCache = new Map();
 
   /**
    * @typedef {{
@@ -53,6 +71,15 @@
       joinedIds: new Set(loadJoinedContests())
     },
     contestTimerId: /** @type {number | null} */ (null),
+    lc: {
+      username: loadSavedLcUser(),
+      potd: /** @type {any} */ (null),
+      potdStatus: 'idle', // idle | loading | ready | error
+      profile: /** @type {any} */ (null),
+      profileStatus: 'idle', // idle | loading | ready | error
+      syncedMap: /** @type {Record<string, string>} */ (loadJsonStorage(LC_SYNCED_KEY, {})),
+      recentAcCount: 0
+    },
     filters: {
       search: '',
       type: 'all', // all | dsa | design | behavioral | solved | notes | todo
@@ -167,17 +194,65 @@
       .join('')}</tbody></table>`;
   }
 
+  const KROKI_LANGS = new Set([
+    'mermaid', 'plantuml', 'c4plantuml', 'd2', 'graphviz', 'dot', 'excalidraw', 'erd', 'seqdiag'
+  ]);
+
+  function toBase64Utf8(str) {
+    try {
+      const bytes = new TextEncoder().encode(str);
+      let bin = '';
+      for (const b of bytes) bin += String.fromCharCode(b);
+      return btoa(bin);
+    } catch (_) {
+      return '';
+    }
+  }
+
+  function fromBase64Utf8(b64) {
+    try {
+      const bin = atob(b64);
+      const bytes = Uint8Array.from(bin, (ch) => ch.charCodeAt(0));
+      return new TextDecoder().decode(bytes);
+    } catch (_) {
+      return '';
+    }
+  }
+
   /**
-   * Dependency-free Markdown renderer supporting headings, lists, code blocks, links, and tables.
+   * Dependency-free Markdown renderer supporting headings, lists, code blocks, Kroki diagrams, links, and tables.
    */
   function renderMarkdown(md) {
     const cleaned = md.replace(/<!--[\s\S]*?-->/g, '').trim();
     const codeBlocks = [];
     const withPlaceholders = cleaned.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, (_, lang, body) => {
       const idx = codeBlocks.length;
-      const html = lang.toLowerCase() === 'java'
-        ? `<pre><code>${highlightJava(body.trimEnd())}</code></pre>`
-        : `<pre><code>${escapeHtml(body.trimEnd())}</code></pre>`;
+      const lower = (lang || '').toLowerCase();
+      const trimmed = body.trimEnd();
+      let html;
+      if (lower === 'java') {
+        html = `<pre><code>${highlightJava(trimmed)}</code></pre>`;
+      } else if (KROKI_LANGS.has(lower)) {
+        const krokiLang = lower === 'dot' ? 'graphviz' : lower;
+        const encoded = toBase64Utf8(trimmed);
+        html = `
+          <div class="kroki-card">
+            <div class="kroki-head">
+              <span>📐 <strong>${escapeHtml(krokiLang.toUpperCase())}</strong> Diagram (Kroki)</span>
+              <span class="badge badge-b">Architecture</span>
+            </div>
+            <div class="kroki-img-wrap" data-kroki-lang="${escapeHtml(krokiLang)}" data-kroki-src="${escapeHtml(encoded)}">
+              <span style="color:#525252;font-size:12px;">Rendering ${escapeHtml(krokiLang)} diagram via Kroki...</span>
+            </div>
+            <details class="kroki-details">
+              <summary>View Diagram Source</summary>
+              <pre><code>${escapeHtml(trimmed)}</code></pre>
+            </details>
+          </div>
+        `;
+      } else {
+        html = `<pre><code>${escapeHtml(trimmed)}</code></pre>`;
+      }
       codeBlocks.push(html);
       return `\n@@CODEBLOCK_${idx}@@\n`;
     });
@@ -791,6 +866,370 @@
     `;
   }
 
+  function normalizeTitleKey(str) {
+    return String(str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
+
+  function saveLcSyncedMap() {
+    try {
+      localStorage.setItem(LC_SYNCED_KEY, JSON.stringify(state.lc.syncedMap));
+    } catch (_) {}
+  }
+
+  async function fetchLeetCodePotd() {
+    if (state.lc.potdStatus === 'loading') return;
+    state.lc.potdStatus = 'loading';
+    if (state.mode === 'dashboard') renderDashboard();
+
+    const urls = [`${LC_API_BASE}/daily`, `${LC_API_BASE}/dailyProblem`];
+    for (const url of urls) {
+      try {
+        const json = await fetchJsonWithTimeout(url, 6500);
+        const qNode = json?.question || json;
+        const title = qNode?.title || json?.questionTitle || '';
+        const rawLink = json?.link || json?.questionLink || (qNode?.titleSlug ? `/problems/${qNode.titleSlug}/` : '');
+        const fullUrl = rawLink.startsWith('http')
+          ? rawLink
+          : `https://leetcode.com${rawLink.startsWith('/') ? '' : '/'}${rawLink}`;
+        const rawDiff = String(qNode?.difficulty || json?.difficulty || 'Medium');
+        const diff = rawDiff[0]?.toUpperCase() || 'M';
+        const tags = Array.isArray(qNode?.topicTags) ? qNode.topicTags.map((t) => t.name).slice(0, 3) : [];
+        if (title) {
+          state.lc.potd = {
+            date: json?.date || getTodayIsoLocal(),
+            title,
+            url: fullUrl,
+            diff,
+            diffLabel: rawDiff,
+            tags
+          };
+          state.lc.potdStatus = 'ready';
+          if (state.mode === 'dashboard') renderDashboard();
+          return;
+        }
+      } catch (_) {}
+    }
+
+    state.lc.potdStatus = 'error';
+    if (state.mode === 'dashboard') renderDashboard();
+  }
+
+  function matchLcSubmissionsToRoadmap(submissions) {
+    if (!Array.isArray(submissions) || !state.flatItems.length) return 0;
+    const byKey = new Map();
+    for (const it of state.flatItems) {
+      if (it.isRevision || !it.q) continue;
+      const slugMatch = (it.q.url || '').match(/leetcode\.com\/problems\/([^/?#]+)/i);
+      if (slugMatch) byKey.set(normalizeTitleKey(slugMatch[1]), it.id);
+      byKey.set(normalizeTitleKey(it.q.name), it.id);
+    }
+
+    let matched = 0;
+    for (const sub of submissions) {
+      const id =
+        byKey.get(normalizeTitleKey(sub.titleSlug)) ||
+        byKey.get(normalizeTitleKey(sub.title));
+      if (id) {
+        matched++;
+        const tsSec = Number(sub.timestamp || 0);
+        state.lc.syncedMap[id] = tsSec > 0 ? new Date(tsSec * 1000).toISOString().slice(0, 10) : getTodayIsoLocal();
+      }
+    }
+    saveLcSyncedMap();
+    return matched;
+  }
+
+  async function fetchLeetCodeProfileAndSync(username) {
+    const clean = String(username || '').trim();
+    state.lc.username = clean;
+    try {
+      localStorage.setItem(LC_USERNAME_KEY, clean);
+    } catch (_) {}
+
+    if (!clean) {
+      state.lc.profile = null;
+      state.lc.profileStatus = 'idle';
+      state.lc.recentAcCount = 0;
+      if (state.mode === 'dashboard') renderDashboard();
+      return;
+    }
+
+    state.lc.profileStatus = 'loading';
+    if (state.mode === 'dashboard') renderDashboard();
+
+    const u = encodeURIComponent(clean);
+    try {
+      const [solvedRes, profileRes, acRes] = await Promise.allSettled([
+        fetchJsonWithTimeout(`${LC_API_BASE}/${u}/solved`, 7000),
+        fetchJsonWithTimeout(`${LC_API_BASE}/userProfile/${u}`, 7000),
+        fetchJsonWithTimeout(`${LC_API_BASE}/${u}/acSubmission?limit=20`, 7000)
+      ]);
+
+      let solved = solvedRes.status === 'fulfilled' ? solvedRes.value : null;
+      const profile = profileRes.status === 'fulfilled' ? profileRes.value : null;
+      const acJson = acRes.status === 'fulfilled' ? acRes.value : null;
+
+      if (!solved || solved.solvedProblem === undefined) {
+        try {
+          const backup = await fetchJsonWithTimeout(`https://leetcode-stats-api.herokuapp.com/${u}`, 6000);
+          if (backup && backup.status === 'success') {
+            solved = {
+              solvedProblem: backup.totalSolved,
+              easySolved: backup.easySolved,
+              mediumSolved: backup.mediumSolved,
+              hardSolved: backup.hardSolved,
+              ranking: backup.ranking
+            };
+          }
+        } catch (_) {}
+      }
+
+      if (solved && solved.solvedProblem !== undefined) {
+        const subs = Array.isArray(acJson?.submission) ? acJson.submission : [];
+        state.lc.recentAcCount = matchLcSubmissionsToRoadmap(subs);
+        state.lc.profile = {
+          username: clean,
+          name: profile?.name || clean,
+          ranking: profile?.ranking || solved?.ranking || null,
+          totalSolved: Number(solved.solvedProblem ?? solved.totalSolved ?? 0),
+          easySolved: Number(solved.easySolved || 0),
+          mediumSolved: Number(solved.mediumSolved || 0),
+          hardSolved: Number(solved.hardSolved || 0)
+        };
+        state.lc.profileStatus = 'ready';
+      } else {
+        state.lc.profileStatus = 'error';
+      }
+    } catch (_) {
+      state.lc.profileStatus = 'error';
+    }
+
+    if (state.mode === 'dashboard') renderDashboard();
+  }
+
+  function buildQuickChartUrl(categoryStats) {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const textColor = isLight ? '#171717' : '#e5e5e5';
+    const gridColor = isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)';
+    const remColor = isLight ? '#e5e5e5' : '#262626';
+    const cfg = {
+      type: 'bar',
+      data: {
+        labels: categoryStats.map((c) => c.label),
+        datasets: [
+          {
+            label: 'Solved',
+            data: categoryStats.map((c) => c.done),
+            backgroundColor: ['#22c55e', '#eab308', '#ef4444', '#3b82f6', '#93c5fd']
+          },
+          {
+            label: 'Remaining',
+            data: categoryStats.map((c) => Math.max(0, c.total - c.done)),
+            backgroundColor: remColor
+          }
+        ]
+      },
+      options: {
+        legend: { labels: { fontColor: textColor, fontSize: 10 } },
+        scales: {
+          xAxes: [{ stacked: true, ticks: { fontColor: textColor, fontSize: 10 }, gridLines: { display: false } }],
+          yAxes: [{ stacked: true, ticks: { fontColor: textColor, fontSize: 10, beginAtZero: true }, gridLines: { color: gridColor } }]
+        }
+      }
+    };
+    const bkg = isLight ? '#fafafa' : '#0d0d0d';
+    return `https://quickchart.io/chart?w=460&h=175&bkg=${encodeURIComponent(bkg)}&c=${encodeURIComponent(JSON.stringify(cfg))}`;
+  }
+
+  function getCategorySummaryStats() {
+    const map = {
+      E: { label: 'Easy', done: 0, total: 0 },
+      M: { label: 'Med', done: 0, total: 0 },
+      H: { label: 'Hard', done: 0, total: 0 },
+      design: { label: 'Design', done: 0, total: 0 },
+      behavioral: { label: 'Behav', done: 0, total: 0 }
+    };
+    for (const it of state.flatItems) {
+      if (it.isRevision || !it.q) continue;
+      const key = it.day.type === 'dsa' ? (it.q.diff || 'E') : it.day.type;
+      if (!map[key]) continue;
+      map[key].total++;
+      if (it.q.status === 'solved' || state.lc.syncedMap[it.id]) map[key].done++;
+    }
+    return [map.E, map.M, map.H, map.design, map.behavioral];
+  }
+
+  function renderIntegrationsRow(totals, streak) {
+    const potd = state.lc.potd;
+    const potdHtml = state.lc.potdStatus === 'loading'
+      ? '<div class="empty-hint" style="padding:10px;font-size:12px;">Fetching LeetCode Daily Problem...</div>'
+      : potd
+        ? `
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+            <span class="badge badge-${escapeHtml(potd.diff)}">${escapeHtml(potd.diffLabel)}</span>
+            <code style="font-size:11px;color:var(--text-muted);">${escapeHtml(potd.date)}</code>
+          </div>
+          <div style="font-weight:600;font-size:13.5px;margin-bottom:6px;">${escapeHtml(potd.title)}</div>
+          ${potd.tags?.length ? `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;">${potd.tags.map((t) => `<span class="badge badge-grey">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
+          <a class="btn btn-primary" href="${escapeHtml(potd.url)}" target="_blank" rel="noopener noreferrer">Solve POTD ↗</a>
+        `
+        : `
+          <div class="empty-hint" style="padding:10px;font-size:12px;margin-bottom:8px;">Could not load live POTD right now.</div>
+          <a class="btn" href="https://leetcode.com/problemset/" target="_blank" rel="noopener noreferrer">Open LeetCode ↗</a>
+        `;
+
+    const prof = state.lc.profile;
+    const syncedTotal = Object.keys(state.lc.syncedMap || {}).length;
+    const profileHtml = state.lc.profileStatus === 'loading'
+      ? '<div class="empty-hint" style="padding:10px;font-size:12px;">Syncing LeetCode profile & AC submissions...</div>'
+      : prof
+        ? `
+          <div class="lc-stat-pills">
+            <span class="badge badge-g">${prof.totalSolved} Total</span>
+            <span class="badge badge-E">E ${prof.easySolved}</span>
+            <span class="badge badge-M">M ${prof.mediumSolved}</span>
+            <span class="badge badge-H">H ${prof.hardSolved}</span>
+            ${prof.ranking ? `<span class="badge badge-grey">Rank #${Number(prof.ranking).toLocaleString()}</span>` : ''}
+          </div>
+          <div style="font-size:11.5px;color:var(--text-muted);">
+            Auto-Sync matched <strong>${state.lc.recentAcCount}</strong> recent ACs (${syncedTotal} total cached in roadmap).
+          </div>
+        `
+        : state.lc.profileStatus === 'error'
+          ? '<div class="empty-hint" style="padding:10px;font-size:12px;">Profile unavailable or rate-limited. Verify handle and retry.</div>'
+          : '<div class="empty-hint" style="padding:10px;font-size:12px;">Enter your LeetCode username to sync solved counts & recent ACs.</div>';
+
+    const catStats = getCategorySummaryStats();
+    const chartUrl = buildQuickChartUrl(catStats);
+    const xText = encodeURIComponent(
+      `150 Days DSA Challenge Update:\n✅ Questions: ${totals.repoSolved}/${totals.questions}\n📅 Days Completed: ${totals.daysCompleted}/${totals.days}\n🔥 Streak: ${streak}d\n\n#150DaysOfDSA #LeetCode #SystemDesign`
+    );
+
+    return `
+      <div class="integrations-grid">
+        <section class="section-card">
+          <div class="section-header" style="margin-bottom:8px;">
+            <h2 style="font-size:14.5px;">🟡 LeetCode POTD</h2>
+            <button class="btn" id="lcRefreshPotdBtn" ${state.lc.potdStatus === 'loading' ? 'disabled' : ''}>↻</button>
+          </div>
+          ${potdHtml}
+        </section>
+
+        <section class="section-card">
+          <div class="section-header" style="margin-bottom:8px;">
+            <h2 style="font-size:14.5px;">⚡ LeetCode Profile & Sync</h2>
+            ${prof ? `<span class="badge badge-g">@${escapeHtml(prof.username)}</span>` : '<span class="badge badge-grey">Not Linked</span>'}
+          </div>
+          <form class="lc-user-form" id="lcProfileForm">
+            <input class="lc-input" id="lcUsernameInput" type="text" placeholder="LeetCode handle..." value="${escapeHtml(state.lc.username || '')}" />
+            <button class="btn btn-primary" type="submit">Sync</button>
+          </form>
+          ${profileHtml}
+        </section>
+
+        <section class="section-card">
+          <div class="section-header" style="margin-bottom:8px;">
+            <h2 style="font-size:14.5px;">📈 QuickChart Breakdown</h2>
+            <div style="display:flex;gap:5px;">
+              <a class="btn" href="${escapeHtml(chartUrl)}" target="_blank" rel="noopener noreferrer" download="150days-progress.png">PNG ↗</a>
+              <a class="btn btn-primary" href="https://twitter.com/intent/tweet?text=${xText}" target="_blank" rel="noopener noreferrer">Post to X ↗</a>
+            </div>
+          </div>
+          <div class="quickchart-wrap">
+            <img class="quickchart-img" src="${escapeHtml(chartUrl)}" alt="QuickChart DSA Progress Breakdown" loading="lazy" />
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  async function hydrateKrokiDiagrams(container) {
+    const nodes = container.querySelectorAll('[data-kroki-lang][data-kroki-src]');
+    for (const el of nodes) {
+      if (!(el instanceof HTMLElement)) continue;
+      const lang = el.dataset.krokiLang || 'mermaid';
+      const src = fromBase64Utf8(el.dataset.krokiSrc || '');
+      if (!src) continue;
+
+      const cacheKey = `${lang}::${src}`;
+      let svgText = krokiCache.get(cacheKey);
+      if (!svgText) {
+        try {
+          const controller = new AbortController();
+          const timer = setTimeout(() => controller.abort(), 7000);
+          const res = await fetch(`https://kroki.io/${encodeURIComponent(lang)}/svg`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+            body: src,
+            signal: controller.signal
+          });
+          clearTimeout(timer);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          svgText = await res.text();
+          krokiCache.set(cacheKey, svgText);
+        } catch (err) {
+          const msg = err instanceof Error ? err.message : String(err);
+          el.innerHTML = `<span style="color:#ef4444;font-size:12px;">Could not render Kroki diagram (${escapeHtml(msg)}). Expand source below.</span>`;
+          continue;
+        }
+      }
+
+      const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgText)}`;
+      el.innerHTML = `<img src="${dataUrl}" alt="${escapeHtml(lang)} diagram rendered by Kroki" />`;
+    }
+  }
+
+  async function hydrateNoembedLinks(container) {
+    const links = Array.from(container.querySelectorAll('a[href^="http"]')).filter((a) => {
+      const href = a.getAttribute('href') || '';
+      return /(youtube\.com\/watch|youtu\.be\/|youtube\.com\/shorts\/|vimeo\.com\/\d+|codepen\.io\/.+\/pen\/)/i.test(href);
+    });
+
+    const seen = new Set();
+    let count = 0;
+    for (const a of links) {
+      if (count >= 6) break;
+      const href = a.getAttribute('href') || '';
+      if (!href || seen.has(href)) continue;
+      seen.add(href);
+      count++;
+
+      let data = noembedCache.get(href);
+      if (data === undefined) {
+        try {
+          data = await fetchJsonWithTimeout(`https://noembed.com/embed?url=${encodeURIComponent(href)}`, 4500);
+          if (!data || data.error || !data.title) data = null;
+          noembedCache.set(href, data);
+        } catch (_) {
+          noembedCache.set(href, null);
+          data = null;
+        }
+      }
+      if (!data) continue;
+
+      const card = document.createElement('a');
+      card.className = 'oembed-card';
+      card.href = href;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.innerHTML = `
+        ${data.thumbnail_url ? `<img class="oembed-thumb" src="${escapeHtml(data.thumbnail_url)}" alt="" loading="lazy" />` : ''}
+        <span class="oembed-meta">
+          <span class="oembed-title">${escapeHtml(data.title)}</span>
+          <span class="oembed-sub">${escapeHtml(data.author_name || data.provider_name || 'Video / Resource')} ↗</span>
+        </span>
+      `;
+      const anchorHost = a.closest('li, p') || a;
+      anchorHost.insertAdjacentElement('afterend', card);
+    }
+  }
+
+  function hydrateMarkdownExtras(container) {
+    if (!container) return;
+    hydrateKrokiDiagrams(container);
+    hydrateNoembedLinks(container);
+  }
+
   function renderDashboard() {
     if (!state.data || !els.dashboardView) return;
     state.selectedId = null;
@@ -946,6 +1385,8 @@
           'None solved yesterday.'
         )}
       </div>
+
+      ${renderIntegrationsRow(totals, streak)}
     `;
 
     document.getElementById('targetPrevBtn')?.addEventListener('click', () => {
@@ -964,6 +1405,16 @@
     document.getElementById('clearHeatmapBtn')?.addEventListener('click', () => {
       state.selectedHeatmapDate = null;
       renderDashboard();
+    });
+
+    document.getElementById('lcRefreshPotdBtn')?.addEventListener('click', () => {
+      fetchLeetCodePotd();
+    });
+
+    document.getElementById('lcProfileForm')?.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const input = /** @type {HTMLInputElement | null} */ (document.getElementById('lcUsernameInput'));
+      fetchLeetCodeProfileAndSync(input ? input.value : '');
     });
 
     els.dashboardView.querySelectorAll('[data-hm-date]').forEach((btn) => {
@@ -1091,6 +1542,7 @@
     try {
       const md = await fetchText(concept.path);
       conceptBody.innerHTML = renderMarkdown(md);
+      hydrateMarkdownExtras(conceptBody);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       conceptBody.innerHTML = `<div class="alert-box">Could not load <code>${escapeHtml(concept.path)}</code> (${escapeHtml(msg)}).</div>`;
@@ -1152,6 +1604,7 @@
       try {
         const md = await fetchText(`${item.day.path}/README.md`);
         revBody.innerHTML = renderMarkdown(md);
+        hydrateMarkdownExtras(revBody);
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
         revBody.innerHTML = `<div class="alert-box">Could not load revision README (${escapeHtml(msg)}).</div>`;
@@ -1261,6 +1714,7 @@
       try {
         const md = await fetchText(`${q.path}/understanding.md`);
         notesBody.innerHTML = renderMarkdown(md);
+        hydrateMarkdownExtras(notesBody);
         notesBody.querySelectorAll('a[data-java-tab]').forEach((a) => {
           a.addEventListener('click', (ev) => {
             ev.preventDefault();
@@ -1868,6 +2322,7 @@
     els.themeBtn?.addEventListener('click', () => {
       const cur = document.documentElement.getAttribute('data-theme');
       applyTheme(cur === 'dark' ? 'light' : 'dark');
+      if (state.mode === 'dashboard') renderDashboard();
     });
 
     els.sidebarToggle?.addEventListener('click', () => {
@@ -1942,6 +2397,7 @@
     setModeUI('dashboard');
     initControls();
     refreshContests(false);
+    fetchLeetCodePotd();
     try {
       const [idxRes, trackerRes] = await Promise.all([
         fetch(`./roadmap-index.json?t=${Date.now()}`),
@@ -1956,6 +2412,10 @@
         state.flatItems = buildFlatItems(state.data);
         updateStatsBar();
         routeFromHash();
+        const initialLcUser = state.lc.username || String(state.tracker.leetcodeUsername || '').trim();
+        if (initialLcUser) {
+          fetchLeetCodeProfileAndSync(initialLcUser);
+        }
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);

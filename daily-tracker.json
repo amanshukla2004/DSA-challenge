@@ -1,6 +1,8 @@
 {
   "startDate": "2026-11-12",
   "activeDayOverride": null,
+  "leetcodeUsername": "",
+  "autoSyncLeetcode": false,
   "todayTargets": [
     "Solve today's scheduled DSA problems with Bruteforce -> Better -> Optimised",
     "Write Intuition, Pattern, and TC/SC in understanding.md",

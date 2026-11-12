@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>150 Days Challenge</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
   <header class="topbar">
     <div class="topbar-left">
-      <button id="sidebarToggle" class="icon-btn mobile-only" title="Toggle sidebar" aria-label="Toggle sidebar">☰</button>
+      <button id="sidebarToggle" class="icon-btn mobile-only" title="Toggle sidebar"
+        aria-label="Toggle sidebar">☰</button>
       <button id="homeBtn" class="brand" title="Dashboard">
         <span class="brand-dot"></span>
         <span>150 Days Challenge</span>
@@ -20,8 +23,10 @@
       <nav class="mode-nav" aria-label="Primary sections">
         <button class="mode-btn active" data-mode="dashboard">📊 Dashboard</button>
         <button class="mode-btn" data-mode="roadmap">🗺️ Roadmap</button>
-        <button class="mode-btn" data-mode="concepts">📚 Concepts <span id="conceptsCount" class="count-pill">0</span></button>
-        <button class="mode-btn" data-mode="contests">🏆 Contest Tracker <span id="contestsCount" class="count-pill">0</span></button>
+        <button class="mode-btn" data-mode="concepts">📚 Concepts <span id="conceptsCount"
+            class="count-pill">0</span></button>
+        <button class="mode-btn" data-mode="contests">🏆 Contest Tracker <span id="contestsCount"
+            class="count-pill">0</span></button>
       </nav>
     </div>
 
@@ -35,7 +40,8 @@
       <!-- Roadmap sidebar controls -->
       <div id="roadmapControls" class="sidebar-controls">
         <div class="search-box">
-          <input id="searchInput" type="search" placeholder="Search questions, categories, weeks..." autocomplete="off" />
+          <input id="searchInput" type="search" placeholder="Search questions, categories, weeks..."
+            autocomplete="off" />
         </div>
 
         <div class="filter-row" id="typeFilters">
@@ -60,7 +66,8 @@
       <!-- Concepts sidebar controls -->
       <div id="conceptsControls" class="sidebar-controls hidden">
         <div class="search-box">
-          <input id="conceptSearchInput" type="search" placeholder="Search concepts & learnings..." autocomplete="off" />
+          <input id="conceptSearchInput" type="search" placeholder="Search concepts & learnings..."
+            autocomplete="off" />
         </div>
       </div>
 
@@ -79,4 +86,5 @@
 
   <script src="./app.js"></script>
 </body>
+
 </html>
