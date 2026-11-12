@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T10:19:41.774Z",
+  "generatedAt": "2026-11-12T10:21:29.161Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -18,31 +18,42 @@
       "title": "Java DSA Cheat Sheet",
       "group": "General",
       "path": "Concepts/01-Java-DSA-Cheatsheet.md",
-      "lastUpdated": null
+      "lastUpdated": "2026-11-12"
     },
     {
       "id": "concept::Concepts/02-Core-Patterns-Playbook.md",
       "title": "Core DSA Patterns Playbook",
       "group": "General",
       "path": "Concepts/02-Core-Patterns-Playbook.md",
-      "lastUpdated": null
+      "lastUpdated": "2026-11-12"
     },
     {
       "id": "concept::Concepts/03-System-Design-Notes.md",
       "title": "System Design Building Blocks",
       "group": "General",
       "path": "Concepts/03-System-Design-Notes.md",
-      "lastUpdated": null
+      "lastUpdated": "2026-11-12"
     },
     {
       "id": "concept::Concepts/04-Learnings-and-Mistakes-Log.md",
       "title": "Learnings & Mistakes Log",
       "group": "General",
       "path": "Concepts/04-Learnings-and-Mistakes-Log.md",
-      "lastUpdated": null
+      "lastUpdated": "2026-11-12"
     }
   ],
-  "activityByDate": {},
+  "activityByDate": {
+    "2026-11-12": {
+      "questions": [],
+      "concepts": [
+        "concept::Concepts/01-Java-DSA-Cheatsheet.md",
+        "concept::Concepts/02-Core-Patterns-Playbook.md",
+        "concept::Concepts/03-System-Design-Notes.md",
+        "concept::Concepts/04-Learnings-and-Mistakes-Log.md"
+      ],
+      "trackerUpdated": true
+    }
+  },
   "weeks": [
     {
       "week": 1,
