@@ -1,8 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const DATA_FILE = path.join(ROOT_DIR, 'daily_data.js');
+const CONCEPTS_DIR = path.join(ROOT_DIR, 'Concepts');
+const TRACKER_FILE = path.join(ROOT_DIR, 'daily-tracker.json');
+const INITIAL_SCAFFOLD_COMMIT = '6fefd623855cce9b7554ac13123ce156de254069';
 
 /**
  * Load dailyRoadmap array from daily_data.js without needing module.exports in daily_data.js.
@@ -54,9 +58,14 @@ function writeIfMissing(filePath, content, stats) {
     stats.skipped++;
     return false;
   }
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, content, 'utf8');
   stats.created++;
   return true;
+}
+
+function normalizeText(str) {
+  return String(str).replace(/\r\n/g, '\n').trim();
 }
 
 function buildDsaUnderstandingTemplate(dayEntry, q) {
@@ -184,14 +193,259 @@ function buildRevisionReadme(dayEntry) {
 `;
 }
 
-function buildRootReadme(weeksIndex, totals) {
+function ensureConceptsAndTracker(stats) {
+  const starterConcepts = {
+    '01-Java-DSA-Cheatsheet.md': `# Java DSA Cheat Sheet
+
+A quick reference for Java collections, idioms, and complexity rules used across solutions.
+
+## Collections & Common Operations
+
+| Structure | Java Class | Common Methods | Time Complexity |
+|---|---|---|---|
+| Dynamic Array | \`ArrayList<>\` | \`add\`, \`get\`, \`set\`, \`remove(last)\` | \`O(1)\` amortized |
+| Hash Map | \`HashMap<K, V>\` | \`put\`, \`getOrDefault\`, \`containsKey\`, \`computeIfAbsent\` | \`O(1)\` avg |
+| Hash Set | \`HashSet<T>\` | \`add\`, \`contains\`, \`remove\` | \`O(1)\` avg |
+| Stack / Queue | \`ArrayDeque<T>\` | \`push\`, \`pop\`, \`offer\`, \`poll\`, \`peek\` | \`O(1)\` |
+| Min / Max Heap | \`PriorityQueue<T>\` | \`offer\`, \`poll\`, \`peek\` | \`O(log n)\` / \`O(1)\` |
+| Balanced BST | \`TreeMap<K, V>\` | \`floorKey\`, \`ceilingKey\`, \`firstKey\`, \`lastKey\` | \`O(log n)\` |
+
+## Useful Snippets
+
+\`\`\`java
+// Custom comparator (Max-Heap)
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> Integer.compare(b, a));
+
+// Frequency map
+Map<Integer, Integer> freq = new HashMap<>();
+for (int x : nums) freq.put(x, freq.getOrDefault(x, 0) + 1);
+\`\`\`
+`,
+    '02-Core-Patterns-Playbook.md': `# Core DSA Patterns Playbook
+
+Document your reusable problem-solving templates and recognition triggers here.
+
+## 1. Two Pointers
+- **When to use:** Sorted arrays, palindrome checks, pair sums, removing duplicates in-place.
+- **Key idea:** Shrink search space from both ends or maintain slow/fast pointers.
+
+## 2. Sliding Window
+- **When to use:** Contiguous subarray / substring problems with constraints (length, sum, distinct chars).
+- **Template:** Expand \`right\`, update window state, shrink \`left\` while invalid/valid.
+
+## 3. Binary Search on Answer
+- **When to use:** "Find minimum/maximum X such that condition(X) is feasible" with monotonic property.
+
+## 4. Monotonic Stack / Queue
+- **When to use:** Next greater/smaller element, histogram area, sliding window maximum.
+
+## 5. Graphs & Trees (BFS / DFS)
+- **BFS:** Shortest path in unweighted graph, level-order traversal.
+- **DFS:** Connected components, topological sort, cycle detection, tree recursion.
+`,
+    '03-System-Design-Notes.md': `# System Design Building Blocks
+
+Summarize key architecture concepts, trade-offs, and back-of-the-envelope numbers here.
+
+## Core Topics
+- **Load Balancing & API Gateway:** L4 vs L7, health checks, rate limiting algorithms (Token Bucket, Sliding Window).
+- **Caching:** Cache-aside, write-through, write-back, eviction policies (LRU/LFU).
+- **Databases & Scaling:** Read replicas, sharding/partitioning keys, consistent hashing, SQL vs NoSQL trade-offs.
+- **Async Processing:** Message queues (Kafka/SQS), dead-letter queues, idempotency keys.
+`,
+    '04-Learnings-and-Mistakes-Log.md': `# Learnings & Mistakes Log
+
+Keep track of edge cases, wrong assumptions, and key takeaways from daily practice.
+
+## Template Entry
+- **Date:** YYYY-MM-DD
+- **Topic / Question:** ...
+- **What went wrong / Key insight:** ...
+- **Rule to remember:** ...
+`
+  };
+
+  for (const [filename, content] of Object.entries(starterConcepts)) {
+    writeIfMissing(path.join(CONCEPTS_DIR, filename), content, stats);
+  }
+
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const starterTracker = {
+    startDate: todayStr,
+    activeDayOverride: null,
+    todayTargets: [
+      'Solve today\'s scheduled DSA problems with Bruteforce -> Better -> Optimised',
+      'Write Intuition, Pattern, and TC/SC in understanding.md',
+      'Log key learnings in Concepts/04-Learnings-and-Mistakes-Log.md'
+    ],
+    dailyNotes: {}
+  };
+
+  writeIfMissing(TRACKER_FILE, JSON.stringify(starterTracker, null, 2) + '\n', stats);
+}
+
+/**
+ * Recursively scan Concepts/ for all .md files.
+ */
+function scanConcepts() {
+  if (!fs.existsSync(CONCEPTS_DIR)) return [];
+  const results = [];
+
+  function walk(dir, groupParts) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name));
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath, [...groupParts, entry.name]);
+      } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.md')) {
+        const relPath = path.relative(ROOT_DIR, fullPath).replace(/\\/g, '/');
+        const content = fs.readFileSync(fullPath, 'utf8');
+        const headingMatch = content.match(/^#\s+(.+)$/m);
+        const fallbackTitle = entry.name
+          .replace(/\.md$/i, '')
+          .replace(/^\d+[-_ ]*/, '')
+          .replace(/[-_]+/g, ' ');
+        const title = headingMatch ? headingMatch[1].trim() : fallbackTitle;
+        const group = groupParts.length ? groupParts.join(' / ') : 'General';
+        results.push({
+          id: `concept::${relPath}`,
+          title,
+          group,
+          path: relPath
+        });
+      }
+    }
+  }
+
+  walk(CONCEPTS_DIR, []);
+  return results;
+}
+
+/**
+ * Inspect question files to determine if notes/code have been filled in beyond starter templates.
+ */
+function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
+  const mdPath = path.join(qAbsPath, 'understanding.md');
+  let hasNotes = false;
+  let explicitStatus = null;
+
+  if (fs.existsSync(mdPath)) {
+    const actualMd = fs.readFileSync(mdPath, 'utf8');
+    const templateMd = isDsa
+      ? buildDsaUnderstandingTemplate(dayEntry, q)
+      : buildNonDsaUnderstandingTemplate(dayEntry, q);
+
+    hasNotes = normalizeText(actualMd) !== normalizeText(templateMd);
+
+    const statusMatch = actualMd.match(/^\s*[-*]\s*\*\*Status:\*\*\s*(.+)$/im);
+    if (statusMatch) {
+      const rawStatus = statusMatch[1].trim().toLowerCase();
+      if (rawStatus.includes('revise') || rawStatus.includes('review')) explicitStatus = 'revise';
+      else if (rawStatus.includes('solved') || rawStatus.includes('done')) explicitStatus = 'solved';
+      else if (rawStatus.includes('progress')) explicitStatus = 'in-progress';
+    }
+  }
+
+  const hasCode = { bruteforce: false, better: false, optimised: false };
+  if (isDsa) {
+    for (const tier of ['bruteforce', 'better', 'optimised']) {
+      const javaPath = path.join(qAbsPath, `${tier}.java`);
+      if (fs.existsSync(javaPath)) {
+        const actualJava = fs.readFileSync(javaPath, 'utf8');
+        const templateJava = buildJavaTemplate(dayEntry, q, tier);
+        hasCode[tier] = normalizeText(actualJava) !== normalizeText(templateJava);
+      }
+    }
+  }
+
+  const anyCode = hasCode.bruteforce || hasCode.better || hasCode.optimised;
+  let status = explicitStatus;
+  if (!status) {
+    if (isDsa) {
+      if (anyCode) status = 'solved';
+      else if (hasNotes) status = 'in-progress';
+      else status = 'todo';
+    } else {
+      status = hasNotes ? 'solved' : 'todo';
+    }
+  }
+
+  return { hasNotes, hasCode, status };
+}
+
+/**
+ * Parse git log to map commit dates -> touched question IDs & concept IDs.
+ * Excludes the initial scaffold commit and automated index-update commits.
+ */
+function buildGitActivity(questionPathToId, conceptPathToId) {
+  const activityByDate = {};
+  const lastUpdatedByPath = {};
+
+  try {
+    const out = execFileSync(
+      'git',
+      ['log', '--name-only', '--pretty=format:__COMMIT__%H|%ad|%s', '--date=short'],
+      { cwd: ROOT_DIR, encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 }
+    );
+
+    let current = null;
+    for (const rawLine of out.split(/\r?\n/)) {
+      const line = rawLine.trim();
+      if (!line) continue;
+
+      if (line.startsWith('__COMMIT__')) {
+        const payload = line.slice('__COMMIT__'.length);
+        const [hash, date, ...subjectParts] = payload.split('|');
+        const subject = subjectParts.join('|');
+        const isScaffold = hash === INITIAL_SCAFFOLD_COMMIT;
+        const isAutoIndex = subject.includes('[skip ci]') || subject.startsWith('chore(index):');
+        current = (!isScaffold && !isAutoIndex && date) ? { date, skip: false } : { date, skip: true };
+        continue;
+      }
+
+      if (!current || current.skip) continue;
+      const filePath = line.replace(/\\/g, '/');
+
+      if (!lastUpdatedByPath[filePath] || current.date > lastUpdatedByPath[filePath]) {
+        lastUpdatedByPath[filePath] = current.date;
+      }
+
+      const dayEntry = activityByDate[current.date] || {
+        questions: [],
+        concepts: [],
+        trackerUpdated: false
+      };
+
+      const folderPath = filePath.split('/').slice(0, -1).join('/');
+      if (questionPathToId.has(folderPath)) {
+        const qId = questionPathToId.get(folderPath);
+        if (!dayEntry.questions.includes(qId)) dayEntry.questions.push(qId);
+      } else if (conceptPathToId.has(filePath)) {
+        const cId = conceptPathToId.get(filePath);
+        if (!dayEntry.concepts.includes(cId)) dayEntry.concepts.push(cId);
+      } else if (filePath === 'daily-tracker.json') {
+        dayEntry.trackerUpdated = true;
+      }
+
+      if (dayEntry.questions.length || dayEntry.concepts.length || dayEntry.trackerUpdated) {
+        activityByDate[current.date] = dayEntry;
+      }
+    }
+  } catch (_) {
+    // Git not initialized or unavailable; return empty activity gracefully.
+  }
+
+  return { activityByDate, lastUpdatedByPath };
+}
+
+function buildRootReadme(weeksIndex, concepts, totals) {
   const lines = [
     '# DSA & Interview Prep Roadmap',
     '',
-    `A structured **${totals.weeks}-Week (${totals.days} Days · ${totals.questions} Questions)** preparation repository covering DSA, System Design / OOD, Behavioral interviews, and Revision checkpoints.`,
+    `A structured **${totals.weeks}-Week (${totals.days} Days · ${totals.questions} Questions)** preparation repository covering DSA, System Design / OOD, Behavioral interviews, Revision checkpoints, and general **Concepts & Learnings**.`,
     '',
     '## Hosting & Revision Web App',
-    'This repository includes a zero-build static revision viewer (`index.html`) that dynamically loads your `understanding.md` notes and `.java` solutions directly from the folders:',
+    'This repository includes a zero-build static revision viewer (`index.html`) backed by your committed Git files (`Week-*`, `Concepts/`, `daily-tracker.json`, and `roadmap-index.json`):',
     '- **GitHub Pages:** Settings → Pages → Deploy from branch (`main` / `/root`).',
     '- **Vercel / Netlify:** Connect the repo with no build command and publish directory `.`.',
     '- **Local Preview:** Run `npx serve .` or `python -m http.server 8000` in the repo root.',
@@ -201,10 +455,19 @@ function buildRootReadme(weeksIndex, totals) {
     `- **System Design & OOD:** ${totals.designQuestions} (with \`understanding.md\`)`,
     `- **Behavioral Questions:** ${totals.behavioralQuestions} (with \`understanding.md\`)`,
     `- **Revision Checkpoints:** ${totals.revisionDays} days`,
-    '',
-    '## Weekly Index',
+    `- **Concepts & Learnings Notes:** ${concepts.length} files in [Concepts/](./Concepts)`,
     ''
   ];
+
+  if (concepts.length) {
+    lines.push('## Concepts & Learnings', '');
+    for (const c of concepts) {
+      lines.push(`- [${c.title}](./${c.path}) *(${c.group})*`);
+    }
+    lines.push('');
+  }
+
+  lines.push('## Weekly Index', '');
 
   for (const wk of weeksIndex) {
     lines.push(`<details>`);
@@ -239,10 +502,16 @@ function main() {
     dsaQuestions: 0,
     designQuestions: 0,
     behavioralQuestions: 0,
-    revisionDays: 0
+    revisionDays: 0,
+    concepts: 0,
+    repoSolved: 0,
+    repoNotes: 0
   };
 
+  ensureConceptsAndTracker(stats);
+
   const weeksMap = new Map();
+  const questionPathToId = new Map();
 
   for (const dayEntry of roadmap) {
     const weekFolder = formatWeekFolder(dayEntry.week);
@@ -322,20 +591,40 @@ function main() {
           );
         }
 
+        const qId = `${dayEntry.day}::${qFolder}`;
+        questionPathToId.set(qRelPath, qId);
+
+        const inspected = inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa);
+        if (inspected.status === 'solved') totals.repoSolved++;
+        if (inspected.hasNotes) totals.repoNotes++;
+
         dayRecord.questions.push({
-          id: `${dayEntry.day}::${qFolder}`,
+          id: qId,
           name: q.name,
           diff: q.diff || null,
           type: q.type || dayEntry.type,
           slug: q.slug || null,
           url: q.url,
           hasJava: isDsa,
-          path: qRelPath
+          path: qRelPath,
+          status: inspected.status,
+          hasNotes: inspected.hasNotes,
+          hasCode: inspected.hasCode
         });
       }
     }
 
     weeksMap.get(dayEntry.week).days.push(dayRecord);
+  }
+
+  const concepts = scanConcepts();
+  totals.concepts = concepts.length;
+  const conceptPathToId = new Map(concepts.map((c) => [c.path, c.id]));
+
+  const { activityByDate, lastUpdatedByPath } = buildGitActivity(questionPathToId, conceptPathToId);
+
+  for (const c of concepts) {
+    c.lastUpdated = lastUpdatedByPath[c.path] || null;
   }
 
   const weeksIndex = Array.from(weeksMap.values()).sort((a, b) => a.week - b.week);
@@ -344,6 +633,8 @@ function main() {
   const indexPayload = {
     generatedAt: new Date().toISOString(),
     totals,
+    concepts,
+    activityByDate,
     weeks: weeksIndex
   };
 
@@ -354,7 +645,7 @@ function main() {
   );
   fs.writeFileSync(
     path.join(ROOT_DIR, 'README.md'),
-    buildRootReadme(weeksIndex, totals),
+    buildRootReadme(weeksIndex, concepts, totals),
     'utf8'
   );
   fs.writeFileSync(path.join(ROOT_DIR, '.nojekyll'), '', 'utf8');
@@ -363,4 +654,3 @@ function main() {
 }
 
 main();
-

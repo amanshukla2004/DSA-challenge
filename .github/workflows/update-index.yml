@@ -1,0 +1,46 @@
+name: Update Roadmap & Activity Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Week-*/**"
+      - "Concepts/**"
+      - "daily-tracker.json"
+      - "daily_data.js"
+      - "scripts/generate_structure.js"
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Regenerate roadmap-index.json and README.md
+        run: node scripts/generate_structure.js
+
+      - name: Commit updated index if changed
+        run: |
+          if [ -n "$(git status --porcelain roadmap-index.json README.md)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add roadmap-index.json README.md
+            git commit -m "chore(index): update roadmap-index.json and README.md [skip ci]"
+            git push
+          else
+            echo "No index changes to commit."
+          fi
+

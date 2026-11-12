@@ -10,35 +10,37 @@
   <header class="topbar">
     <div class="topbar-left">
       <button id="sidebarToggle" class="icon-btn mobile-only" title="Toggle sidebar" aria-label="Toggle sidebar">☰</button>
-      <button id="homeBtn" class="brand" title="Back to Dashboard">
+      <button id="homeBtn" class="brand" title="Dashboard">
         <span class="brand-dot"></span>
         <span>DSA Revision Vault</span>
       </button>
+
+      <nav class="mode-nav" aria-label="Primary sections">
+        <button class="mode-btn active" data-mode="dashboard">📊 Dashboard</button>
+        <button class="mode-btn" data-mode="roadmap">🗺️ Roadmap</button>
+        <button class="mode-btn" data-mode="concepts">📚 Concepts <span id="conceptsCount" class="count-pill">0</span></button>
+      </nav>
     </div>
 
     <div class="topbar-center">
       <div class="progress-summary" id="progressSummary">
         <span id="solvedStat">0 / 484 Solved</span>
         <span class="sep">·</span>
-        <span id="reviseStat">0 Flagged</span>
+        <span id="notesStat">0 Notes</span>
         <div class="mini-bar"><div id="miniBarFill" class="mini-bar-fill"></div></div>
       </div>
     </div>
 
     <div class="topbar-right">
-      <button id="randomBtn" class="btn btn-ghost" title="Pick a random question to revise">🎲 Random</button>
-      <button id="exportBtn" class="btn btn-ghost" title="Export solved/revision progress as JSON">Export</button>
-      <label class="btn btn-ghost" title="Import progress JSON">
-        Import
-        <input type="file" id="importInput" accept="application/json" hidden />
-      </label>
+      <button id="randomBtn" class="btn btn-ghost" title="Pick a random unsolved question">🎲 Random</button>
       <button id="themeBtn" class="icon-btn" title="Toggle light/dark theme" aria-label="Toggle theme">☀️</button>
     </div>
   </header>
 
   <div class="layout">
     <aside id="sidebar" class="sidebar">
-      <div class="sidebar-controls">
+      <!-- Roadmap sidebar controls -->
+      <div id="roadmapControls" class="sidebar-controls">
         <div class="search-box">
           <input id="searchInput" type="search" placeholder="Search questions, categories, weeks..." autocomplete="off" />
         </div>
@@ -48,8 +50,9 @@
           <button class="chip" data-filter="dsa">DSA</button>
           <button class="chip" data-filter="design">Design</button>
           <button class="chip" data-filter="behavioral">Behavioral</button>
-          <button class="chip" data-filter="revise">Flagged</button>
-          <button class="chip" data-filter="unsolved">Unsolved</button>
+          <button class="chip" data-filter="solved">Solved</button>
+          <button class="chip" data-filter="notes">Has Notes</button>
+          <button class="chip" data-filter="todo">Todo</button>
         </div>
 
         <div class="filter-row diff-row" id="diffFilters">
@@ -61,6 +64,13 @@
         </div>
       </div>
 
+      <!-- Concepts sidebar controls -->
+      <div id="conceptsControls" class="sidebar-controls hidden">
+        <div class="search-box">
+          <input id="conceptSearchInput" type="search" placeholder="Search concepts & learnings..." autocomplete="off" />
+        </div>
+      </div>
+
       <div id="treeContainer" class="tree-container">
         <div class="loading-msg">Loading roadmap...</div>
       </div>
@@ -69,10 +79,10 @@
     <main id="mainContent" class="main-content">
       <div id="dashboardView" class="dashboard-view"></div>
       <div id="problemView" class="problem-view hidden"></div>
+      <div id="conceptView" class="problem-view hidden"></div>
     </main>
   </div>
 
   <script src="./app.js"></script>
 </body>
 </html>
-

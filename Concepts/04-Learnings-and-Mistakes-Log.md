@@ -1,0 +1,9 @@
+# Learnings & Mistakes Log
+
+Keep track of edge cases, wrong assumptions, and key takeaways from daily practice.
+
+## Template Entry
+- **Date:** YYYY-MM-DD
+- **Topic / Question:** ...
+- **What went wrong / Key insight:** ...
+- **Rule to remember:** ...

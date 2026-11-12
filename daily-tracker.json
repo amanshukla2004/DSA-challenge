@@ -1,0 +1,10 @@
+{
+  "startDate": "2026-11-12",
+  "activeDayOverride": null,
+  "todayTargets": [
+    "Solve today's scheduled DSA problems with Bruteforce -> Better -> Optimised",
+    "Write Intuition, Pattern, and TC/SC in understanding.md",
+    "Log key learnings in Concepts/04-Learnings-and-Mistakes-Log.md"
+  ],
+  "dailyNotes": {}
+}

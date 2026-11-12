@@ -1,9 +1,9 @@
 # DSA & Interview Prep Roadmap
 
-A structured **21-Week (136 Days · 484 Questions)** preparation repository covering DSA, System Design / OOD, Behavioral interviews, and Revision checkpoints.
+A structured **21-Week (136 Days · 484 Questions)** preparation repository covering DSA, System Design / OOD, Behavioral interviews, Revision checkpoints, and general **Concepts & Learnings**.
 
 ## Hosting & Revision Web App
-This repository includes a zero-build static revision viewer (`index.html`) that dynamically loads your `understanding.md` notes and `.java` solutions directly from the folders:
+This repository includes a zero-build static revision viewer (`index.html`) backed by your committed Git files (`Week-*`, `Concepts/`, `daily-tracker.json`, and `roadmap-index.json`):
 - **GitHub Pages:** Settings → Pages → Deploy from branch (`main` / `/root`).
 - **Vercel / Netlify:** Connect the repo with no build command and publish directory `.`.
 - **Local Preview:** Run `npx serve .` or `python -m http.server 8000` in the repo root.
@@ -13,6 +13,14 @@ This repository includes a zero-build static revision viewer (`index.html`) that
 - **System Design & OOD:** 42 (with `understanding.md`)
 - **Behavioral Questions:** 26 (with `understanding.md`)
 - **Revision Checkpoints:** 10 days
+- **Concepts & Learnings Notes:** 4 files in [Concepts/](./Concepts)
+
+## Concepts & Learnings
+
+- [Java DSA Cheat Sheet](./Concepts/01-Java-DSA-Cheatsheet.md) *(General)*
+- [Core DSA Patterns Playbook](./Concepts/02-Core-Patterns-Playbook.md) *(General)*
+- [System Design Building Blocks](./Concepts/03-System-Design-Notes.md) *(General)*
+- [Learnings & Mistakes Log](./Concepts/04-Learnings-and-Mistakes-Log.md) *(General)*
 
 ## Weekly Index
 
