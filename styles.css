@@ -1671,60 +1671,26 @@ body {
   }
 }
 
-/* Dashboard Integrations Row (POTD, LC Profile & Sync, QuickChart) */
+/* Dashboard Integrations Row (POTD + Share on X) */
 .integrations-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   align-items: stretch;
 }
 
-.lc-user-form {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.lc-input {
-  flex: 1;
-  min-width: 0;
-  padding: 5px 9px;
-  border-radius: 6px;
+.x-post-preview {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--bg-card);
   color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  outline: none;
-}
-
-.lc-input:focus {
-  border-color: var(--yellow);
-}
-
-.lc-stat-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.quickchart-wrap {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 112px;
-}
-
-.quickchart-img {
-  width: 100%;
-  max-height: 145px;
-  object-fit: contain;
-  display: block;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 @media (max-width: 1120px) {

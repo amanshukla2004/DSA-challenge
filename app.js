@@ -1,29 +1,15 @@
 (() => {
   const THEME_KEY = 'dsa_revision_vault_theme';
   const CONTEST_JOINED_KEY = 'dsa_contest_tracker_joined';
-  const LC_USERNAME_KEY = 'dsa_lc_username';
-  const LC_SYNCED_KEY = 'dsa_lc_synced_map';
   const LC_API_BASE = 'https://alfa-leetcode-api.onrender.com';
 
-  function loadJsonStorage(key, fallback) {
-    try {
-      const raw = localStorage.getItem(key);
-      return raw ? JSON.parse(raw) : fallback;
-    } catch (_) {
-      return fallback;
-    }
-  }
-
   function loadJoinedContests() {
-    const parsed = loadJsonStorage(CONTEST_JOINED_KEY, []);
-    return Array.isArray(parsed) ? parsed : [];
-  }
-
-  function loadSavedLcUser() {
     try {
-      return (localStorage.getItem(LC_USERNAME_KEY) || '').trim();
+      const raw = localStorage.getItem(CONTEST_JOINED_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
     } catch (_) {
-      return '';
+      return [];
     }
   }
 
@@ -72,13 +58,8 @@
     },
     contestTimerId: /** @type {number | null} */ (null),
     lc: {
-      username: loadSavedLcUser(),
       potd: /** @type {any} */ (null),
-      potdStatus: 'idle', // idle | loading | ready | error
-      profile: /** @type {any} */ (null),
-      profileStatus: 'idle', // idle | loading | ready | error
-      syncedMap: /** @type {Record<string, string>} */ (loadJsonStorage(LC_SYNCED_KEY, {})),
-      recentAcCount: 0
+      potdStatus: 'idle' // idle | loading | ready | error
     },
     filters: {
       search: '',
@@ -866,16 +847,6 @@
     `;
   }
 
-  function normalizeTitleKey(str) {
-    return String(str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  }
-
-  function saveLcSyncedMap() {
-    try {
-      localStorage.setItem(LC_SYNCED_KEY, JSON.stringify(state.lc.syncedMap));
-    } catch (_) {}
-  }
-
   async function fetchLeetCodePotd() {
     if (state.lc.potdStatus === 'loading') return;
     state.lc.potdStatus = 'loading';
@@ -914,152 +885,44 @@
     if (state.mode === 'dashboard') renderDashboard();
   }
 
-  function matchLcSubmissionsToRoadmap(submissions) {
-    if (!Array.isArray(submissions) || !state.flatItems.length) return 0;
-    const byKey = new Map();
-    for (const it of state.flatItems) {
-      if (it.isRevision || !it.q) continue;
-      const slugMatch = (it.q.url || '').match(/leetcode\.com\/problems\/([^/?#]+)/i);
-      if (slugMatch) byKey.set(normalizeTitleKey(slugMatch[1]), it.id);
-      byKey.set(normalizeTitleKey(it.q.name), it.id);
+  function buildXShareText(targetEntry, todayIds) {
+    const solvedItems = (todayIds || [])
+      .map((id) => state.itemById.get(id))
+      .filter((it) => it && !it.isRevision && it.q);
+
+    const uniqueDays = [];
+    for (const it of solvedItems) {
+      const lbl = `Day ${it.day.day}`;
+      if (!uniqueDays.includes(lbl)) uniqueDays.push(lbl);
+    }
+    const dayLabel = uniqueDays.length ? uniqueDays.join(' & ') : `Day ${targetEntry.day.day}`;
+    const count = solvedItems.length;
+    const footer = '#150DaysOfDSA #DSA #LeetCode';
+    const header = `${dayLabel} — 150 Days Challenge\n\nSolved Today: ${count} question${count === 1 ? '' : 's'}`;
+
+    if (count === 0) {
+      return `${header}\nQuestions: None solved today yet\n\n${footer}`;
     }
 
-    let matched = 0;
-    for (const sub of submissions) {
-      const id =
-        byKey.get(normalizeTitleKey(sub.titleSlug)) ||
-        byKey.get(normalizeTitleKey(sub.title));
-      if (id) {
-        matched++;
-        const tsSec = Number(sub.timestamp || 0);
-        state.lc.syncedMap[id] = tsSec > 0 ? new Date(tsSec * 1000).toISOString().slice(0, 10) : getTodayIsoLocal();
+    const names = solvedItems.map((it) => it.q.name);
+    const maxLen = 275;
+    const lines = [];
+    for (let i = 0; i < names.length; i++) {
+      const candidateLine = `• ${names[i]}`;
+      const remaining = names.length - i - 1;
+      const moreSuffix = remaining > 0 ? `\n+${remaining} more` : '';
+      const candidate = `${header}\n${[...lines, candidateLine].join('\n')}${moreSuffix}\n\n${footer}`;
+      if (candidate.length > maxLen && lines.length > 0) {
+        lines.push(`+${names.length - i} more`);
+        break;
       }
+      lines.push(candidateLine);
     }
-    saveLcSyncedMap();
-    return matched;
+
+    return `${header}\n${lines.join('\n')}\n\n${footer}`;
   }
 
-  async function fetchLeetCodeProfileAndSync(username) {
-    const clean = String(username || '').trim();
-    state.lc.username = clean;
-    try {
-      localStorage.setItem(LC_USERNAME_KEY, clean);
-    } catch (_) {}
-
-    if (!clean) {
-      state.lc.profile = null;
-      state.lc.profileStatus = 'idle';
-      state.lc.recentAcCount = 0;
-      if (state.mode === 'dashboard') renderDashboard();
-      return;
-    }
-
-    state.lc.profileStatus = 'loading';
-    if (state.mode === 'dashboard') renderDashboard();
-
-    const u = encodeURIComponent(clean);
-    try {
-      const [solvedRes, profileRes, acRes] = await Promise.allSettled([
-        fetchJsonWithTimeout(`${LC_API_BASE}/${u}/solved`, 7000),
-        fetchJsonWithTimeout(`${LC_API_BASE}/userProfile/${u}`, 7000),
-        fetchJsonWithTimeout(`${LC_API_BASE}/${u}/acSubmission?limit=20`, 7000)
-      ]);
-
-      let solved = solvedRes.status === 'fulfilled' ? solvedRes.value : null;
-      const profile = profileRes.status === 'fulfilled' ? profileRes.value : null;
-      const acJson = acRes.status === 'fulfilled' ? acRes.value : null;
-
-      if (!solved || solved.solvedProblem === undefined) {
-        try {
-          const backup = await fetchJsonWithTimeout(`https://leetcode-stats-api.herokuapp.com/${u}`, 6000);
-          if (backup && backup.status === 'success') {
-            solved = {
-              solvedProblem: backup.totalSolved,
-              easySolved: backup.easySolved,
-              mediumSolved: backup.mediumSolved,
-              hardSolved: backup.hardSolved,
-              ranking: backup.ranking
-            };
-          }
-        } catch (_) {}
-      }
-
-      if (solved && solved.solvedProblem !== undefined) {
-        const subs = Array.isArray(acJson?.submission) ? acJson.submission : [];
-        state.lc.recentAcCount = matchLcSubmissionsToRoadmap(subs);
-        state.lc.profile = {
-          username: clean,
-          name: profile?.name || clean,
-          ranking: profile?.ranking || solved?.ranking || null,
-          totalSolved: Number(solved.solvedProblem ?? solved.totalSolved ?? 0),
-          easySolved: Number(solved.easySolved || 0),
-          mediumSolved: Number(solved.mediumSolved || 0),
-          hardSolved: Number(solved.hardSolved || 0)
-        };
-        state.lc.profileStatus = 'ready';
-      } else {
-        state.lc.profileStatus = 'error';
-      }
-    } catch (_) {
-      state.lc.profileStatus = 'error';
-    }
-
-    if (state.mode === 'dashboard') renderDashboard();
-  }
-
-  function buildQuickChartUrl(categoryStats) {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const textColor = isLight ? '#171717' : '#e5e5e5';
-    const gridColor = isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)';
-    const remColor = isLight ? '#e5e5e5' : '#262626';
-    const cfg = {
-      type: 'bar',
-      data: {
-        labels: categoryStats.map((c) => c.label),
-        datasets: [
-          {
-            label: 'Solved',
-            data: categoryStats.map((c) => c.done),
-            backgroundColor: ['#22c55e', '#eab308', '#ef4444', '#3b82f6', '#93c5fd']
-          },
-          {
-            label: 'Remaining',
-            data: categoryStats.map((c) => Math.max(0, c.total - c.done)),
-            backgroundColor: remColor
-          }
-        ]
-      },
-      options: {
-        legend: { labels: { fontColor: textColor, fontSize: 10 } },
-        scales: {
-          xAxes: [{ stacked: true, ticks: { fontColor: textColor, fontSize: 10 }, gridLines: { display: false } }],
-          yAxes: [{ stacked: true, ticks: { fontColor: textColor, fontSize: 10, beginAtZero: true }, gridLines: { color: gridColor } }]
-        }
-      }
-    };
-    const bkg = isLight ? '#fafafa' : '#0d0d0d';
-    return `https://quickchart.io/chart?w=460&h=175&bkg=${encodeURIComponent(bkg)}&c=${encodeURIComponent(JSON.stringify(cfg))}`;
-  }
-
-  function getCategorySummaryStats() {
-    const map = {
-      E: { label: 'Easy', done: 0, total: 0 },
-      M: { label: 'Med', done: 0, total: 0 },
-      H: { label: 'Hard', done: 0, total: 0 },
-      design: { label: 'Design', done: 0, total: 0 },
-      behavioral: { label: 'Behav', done: 0, total: 0 }
-    };
-    for (const it of state.flatItems) {
-      if (it.isRevision || !it.q) continue;
-      const key = it.day.type === 'dsa' ? (it.q.diff || 'E') : it.day.type;
-      if (!map[key]) continue;
-      map[key].total++;
-      if (it.q.status === 'solved' || state.lc.syncedMap[it.id]) map[key].done++;
-    }
-    return [map.E, map.M, map.H, map.design, map.behavioral];
-  }
-
-  function renderIntegrationsRow(totals, streak) {
+  function renderIntegrationsRow(targetEntry, todayIds) {
     const potd = state.lc.potd;
     const potdHtml = state.lc.potdStatus === 'loading'
       ? '<div class="empty-hint" style="padding:10px;font-size:12px;">Fetching LeetCode Daily Problem...</div>'
@@ -1078,32 +941,8 @@
           <a class="btn" href="https://leetcode.com/problemset/" target="_blank" rel="noopener noreferrer">Open LeetCode ↗</a>
         `;
 
-    const prof = state.lc.profile;
-    const syncedTotal = Object.keys(state.lc.syncedMap || {}).length;
-    const profileHtml = state.lc.profileStatus === 'loading'
-      ? '<div class="empty-hint" style="padding:10px;font-size:12px;">Syncing LeetCode profile & AC submissions...</div>'
-      : prof
-        ? `
-          <div class="lc-stat-pills">
-            <span class="badge badge-g">${prof.totalSolved} Total</span>
-            <span class="badge badge-E">E ${prof.easySolved}</span>
-            <span class="badge badge-M">M ${prof.mediumSolved}</span>
-            <span class="badge badge-H">H ${prof.hardSolved}</span>
-            ${prof.ranking ? `<span class="badge badge-grey">Rank #${Number(prof.ranking).toLocaleString()}</span>` : ''}
-          </div>
-          <div style="font-size:11.5px;color:var(--text-muted);">
-            Auto-Sync matched <strong>${state.lc.recentAcCount}</strong> recent ACs (${syncedTotal} total cached in roadmap).
-          </div>
-        `
-        : state.lc.profileStatus === 'error'
-          ? '<div class="empty-hint" style="padding:10px;font-size:12px;">Profile unavailable or rate-limited. Verify handle and retry.</div>'
-          : '<div class="empty-hint" style="padding:10px;font-size:12px;">Enter your LeetCode username to sync solved counts & recent ACs.</div>';
-
-    const catStats = getCategorySummaryStats();
-    const chartUrl = buildQuickChartUrl(catStats);
-    const xText = encodeURIComponent(
-      `150 Days DSA Challenge Update:\n✅ Questions: ${totals.repoSolved}/${totals.questions}\n📅 Days Completed: ${totals.daysCompleted}/${totals.days}\n🔥 Streak: ${streak}d\n\n#150DaysOfDSA #LeetCode #SystemDesign`
-    );
+    const shareText = buildXShareText(targetEntry, todayIds);
+    const xIntentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
     return `
       <div class="integrations-grid">
@@ -1117,27 +956,13 @@
 
         <section class="section-card">
           <div class="section-header" style="margin-bottom:8px;">
-            <h2 style="font-size:14.5px;">⚡ LeetCode Profile & Sync</h2>
-            ${prof ? `<span class="badge badge-g">@${escapeHtml(prof.username)}</span>` : '<span class="badge badge-grey">Not Linked</span>'}
-          </div>
-          <form class="lc-user-form" id="lcProfileForm">
-            <input class="lc-input" id="lcUsernameInput" type="text" placeholder="LeetCode handle..." value="${escapeHtml(state.lc.username || '')}" />
-            <button class="btn btn-primary" type="submit">Sync</button>
-          </form>
-          ${profileHtml}
-        </section>
-
-        <section class="section-card">
-          <div class="section-header" style="margin-bottom:8px;">
-            <h2 style="font-size:14.5px;">📈 QuickChart Breakdown</h2>
-            <div style="display:flex;gap:5px;">
-              <a class="btn" href="${escapeHtml(chartUrl)}" target="_blank" rel="noopener noreferrer" download="150days-progress.png">PNG ↗</a>
-              <a class="btn btn-primary" href="https://twitter.com/intent/tweet?text=${xText}" target="_blank" rel="noopener noreferrer">Post to X ↗</a>
+            <h2 style="font-size:14.5px;">𝕏 Share Progress on X</h2>
+            <div style="display:flex;gap:6px;">
+              <button class="btn" id="copyXPostBtn">Copy</button>
+              <a class="btn btn-primary" href="${escapeHtml(xIntentUrl)}" target="_blank" rel="noopener noreferrer">Share on X ↗</a>
             </div>
           </div>
-          <div class="quickchart-wrap">
-            <img class="quickchart-img" src="${escapeHtml(chartUrl)}" alt="QuickChart DSA Progress Breakdown" loading="lazy" />
-          </div>
+          <pre class="x-post-preview" id="xPostPreview">${escapeHtml(shareText)}</pre>
         </section>
       </div>
     `;
@@ -1386,7 +1211,7 @@
         )}
       </div>
 
-      ${renderIntegrationsRow(totals, streak)}
+      ${renderIntegrationsRow(targetEntry, solvedByDate[todayStr] || [])}
     `;
 
     document.getElementById('targetPrevBtn')?.addEventListener('click', () => {
@@ -1411,10 +1236,17 @@
       fetchLeetCodePotd();
     });
 
-    document.getElementById('lcProfileForm')?.addEventListener('submit', (ev) => {
-      ev.preventDefault();
-      const input = /** @type {HTMLInputElement | null} */ (document.getElementById('lcUsernameInput'));
-      fetchLeetCodeProfileAndSync(input ? input.value : '');
+    document.getElementById('copyXPostBtn')?.addEventListener('click', async () => {
+      const btn = document.getElementById('copyXPostBtn');
+      const preview = document.getElementById('xPostPreview');
+      if (!preview) return;
+      try {
+        await navigator.clipboard.writeText(preview.textContent || '');
+        if (btn) {
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = 'Copy'; }, 1200);
+        }
+      } catch (_) {}
     });
 
     els.dashboardView.querySelectorAll('[data-hm-date]').forEach((btn) => {
@@ -2412,10 +2244,6 @@
         state.flatItems = buildFlatItems(state.data);
         updateStatsBar();
         routeFromHash();
-        const initialLcUser = state.lc.username || String(state.tracker.leetcodeUsername || '').trim();
-        if (initialLcUser) {
-          fetchLeetCodeProfileAndSync(initialLcUser);
-        }
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
