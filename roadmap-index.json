@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T15:49:00.815Z",
+  "generatedAt": "2026-11-12T16:49:29.119Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -9,9 +9,9 @@
     "behavioralQuestions": 26,
     "revisionDays": 10,
     "concepts": 4,
-    "repoSolved": 3,
-    "repoNotes": 2,
-    "daysCompleted": 0,
+    "repoSolved": 6,
+    "repoNotes": 5,
+    "daysCompleted": 1,
     "weeksCompleted": 0
   },
   "potd": {
@@ -58,8 +58,11 @@
     "2026-11-12": {
       "questions": [
         "1::Majority-Element",
-        "1::Best-Time-to-Buy-and-Sell-Stock",
-        "1::Two-Sum"
+        "1::Merge-Sorted-Array",
+        "1::Move-Zeroes",
+        "1::Squares-of-a-Sorted-Array",
+        "1::Two-Sum",
+        "1::Best-Time-to-Buy-and-Sell-Stock"
       ],
       "concepts": [
         "concept::Concepts/03-System-Design-Notes.md",
@@ -74,7 +77,10 @@
     "2026-11-12": [
       "1::Two-Sum",
       "1::Best-Time-to-Buy-and-Sell-Stock",
-      "1::Majority-Element"
+      "1::Majority-Element",
+      "1::Move-Zeroes",
+      "1::Squares-of-a-Sorted-Array",
+      "1::Merge-Sorted-Array"
     ]
   },
   "weeks": [
@@ -83,7 +89,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 3,
+      "solvedCount": 6,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -93,9 +99,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-001_Arrays",
-          "solvedCount": 3,
+          "solvedCount": 6,
           "totalCount": 6,
-          "completed": false,
+          "completed": true,
           "questions": [
             {
               "id": "1::Two-Sum",
@@ -181,20 +187,18 @@
               "url": "https://leetcode.com/problems/move-zeroes/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
-                "better.java",
                 "optimised.java"
               ],
               "path": "Week-01/Day-001_Arrays/Move-Zeroes",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
-                "optimised": false
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-12",
+              "lastUpdated": "2026-11-12"
             },
             {
               "id": "1::Squares-of-a-Sorted-Array",
@@ -210,15 +214,15 @@
                 "optimised.java"
               ],
               "path": "Week-01/Day-001_Arrays/Squares-of-a-Sorted-Array",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-12",
+              "lastUpdated": "2026-11-12"
             },
             {
               "id": "1::Merge-Sorted-Array",
@@ -229,20 +233,21 @@
               "url": "https://leetcode.com/problems/merge-sorted-array/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
-                "better.java",
-                "optimised.java"
+                "BetterSolution.java",
+                "OptimisedSolution.java"
               ],
               "path": "Week-01/Day-001_Arrays/Merge-Sorted-Array",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
-                "optimised": false
+                "optimised": false,
+                "bettersolution": true,
+                "optimisedsolution": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-12",
+              "lastUpdated": "2026-11-12"
             }
           ]
         },
