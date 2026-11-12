@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T13:01:15.547Z",
+  "generatedAt": "2026-11-12T14:02:39.524Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -9,7 +9,7 @@
     "behavioralQuestions": 26,
     "revisionDays": 10,
     "concepts": 4,
-    "repoSolved": 0,
+    "repoSolved": 1,
     "repoNotes": 0,
     "daysCompleted": 0,
     "weeksCompleted": 0
@@ -56,7 +56,9 @@
   ],
   "activityByDate": {
     "2026-11-12": {
-      "questions": [],
+      "questions": [
+        "1::Two-Sum"
+      ],
       "concepts": [
         "concept::Concepts/03-System-Design-Notes.md",
         "concept::Concepts/01-Java-DSA-Cheatsheet.md",
@@ -66,14 +68,18 @@
       "trackerUpdated": true
     }
   },
-  "solvedByDate": {},
+  "solvedByDate": {
+    "2026-11-12": [
+      "1::Two-Sum"
+    ]
+  },
   "weeks": [
     {
       "week": 1,
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 0,
+      "solvedCount": 1,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -83,7 +89,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-001_Arrays",
-          "solvedCount": 0,
+          "solvedCount": 1,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -96,15 +102,15 @@
               "url": "https://leetcode.com/problems/two-sum/",
               "hasJava": true,
               "path": "Week-01/Day-001_Arrays/Two-Sum",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
-                "optimised": false
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-12",
+              "lastUpdated": "2026-11-12"
             },
             {
               "id": "1::Best-Time-to-Buy-and-Sell-Stock",

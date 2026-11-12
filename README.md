@@ -5,7 +5,7 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Live Repo Progress
 | Metric | Progress |
 |---|---|
-| **Questions Solved** | **0 / 484** |
+| **Questions Solved** | **1 / 484** |
 | **Days Completed** | **0 / 136** |
 | **Weeks Completed** | **0 / 21** |
 | **Problem Notes Written** | **0 / 484** |
@@ -42,10 +42,10 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Weekly Index
 
 <details>
-<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (0/39 solved · 7 days)</summary>
+<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (1/39 solved · 7 days)</summary>
 
-- **Day 1 — Arrays** (0/6 solved):
-  - [Two Sum](./Week-01/Day-001_Arrays/Two-Sum/understanding.md) `E`
+- **Day 1 — Arrays** (1/6 solved):
+  - [Two Sum](./Week-01/Day-001_Arrays/Two-Sum/understanding.md) `E` ✅
   - [Best Time to Buy and Sell Stock](./Week-01/Day-001_Arrays/Best-Time-to-Buy-and-Sell-Stock/understanding.md) `E`
   - [Majority Element](./Week-01/Day-001_Arrays/Majority-Element/understanding.md) `E`
   - [Move Zeroes](./Week-01/Day-001_Arrays/Move-Zeroes/understanding.md) `E`
