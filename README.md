@@ -4,8 +4,8 @@ A structured **21-Week (136 Days · 484 Questions)** preparation repository cove
 
 ## Hosting & Revision Web App
 This repository includes a zero-build static revision viewer (`index.html`) backed by your committed Git files (`Week-*`, `Concepts/`, `daily-tracker.json`, and `roadmap-index.json`):
+- **Vercel / Netlify:** Connect the repo with no build command and output directory `.`.
 - **GitHub Pages:** Settings → Pages → Deploy from branch (`main` / `/root`).
-- **Vercel / Netlify:** Connect the repo with no build command and publish directory `.`.
 - **Local Preview:** Run `npx serve .` or `python -m http.server 8000` in the repo root.
 
 ## Summary

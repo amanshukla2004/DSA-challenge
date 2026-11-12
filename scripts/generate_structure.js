@@ -328,6 +328,7 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
   const mdPath = path.join(qAbsPath, 'understanding.md');
   let hasNotes = false;
   let explicitStatus = null;
+  let explicitSolvedDate = null;
 
   if (fs.existsSync(mdPath)) {
     const actualMd = fs.readFileSync(mdPath, 'utf8');
@@ -343,6 +344,11 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
       if (rawStatus.includes('revise') || rawStatus.includes('review')) explicitStatus = 'revise';
       else if (rawStatus.includes('solved') || rawStatus.includes('done')) explicitStatus = 'solved';
       else if (rawStatus.includes('progress')) explicitStatus = 'in-progress';
+    }
+
+    const dateMatch = actualMd.match(/^\s*[-*]\s*\*\*(?:Solved\s+Date|Date):\*\*\s*(\d{4}-\d{2}-\d{2})/im);
+    if (dateMatch) {
+      explicitSolvedDate = dateMatch[1];
     }
   }
 
@@ -370,16 +376,17 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
     }
   }
 
-  return { hasNotes, hasCode, status };
+  return { hasNotes, hasCode, status, explicitSolvedDate };
 }
 
 /**
- * Parse git log to map commit dates -> touched question IDs & concept IDs.
- * Excludes the initial scaffold commit and automated index-update commits.
+ * Parse git log to map commit dates -> touched question IDs & concept IDs,
+ * plus track earliest and latest commit date per question folder.
  */
 function buildGitActivity(questionPathToId, conceptPathToId) {
   const activityByDate = {};
   const lastUpdatedByPath = {};
+  const questionCommitDates = new Map();
 
   try {
     const out = execFileSync(
@@ -398,7 +405,10 @@ function buildGitActivity(questionPathToId, conceptPathToId) {
         const [hash, date, ...subjectParts] = payload.split('|');
         const subject = subjectParts.join('|');
         const isScaffold = hash === INITIAL_SCAFFOLD_COMMIT;
-        const isAutoIndex = subject.includes('[skip ci]') || subject.startsWith('chore(index):');
+        const isAutoIndex =
+          subject.includes('[skip ci]') ||
+          subject.includes('[skip actions]') ||
+          subject.startsWith('chore(index):');
         current = (!isScaffold && !isAutoIndex && date) ? { date, skip: false } : { date, skip: true };
         continue;
       }
@@ -420,6 +430,11 @@ function buildGitActivity(questionPathToId, conceptPathToId) {
       if (questionPathToId.has(folderPath)) {
         const qId = questionPathToId.get(folderPath);
         if (!dayEntry.questions.includes(qId)) dayEntry.questions.push(qId);
+
+        const prev = questionCommitDates.get(qId) || { earliest: current.date, latest: current.date };
+        if (current.date < prev.earliest) prev.earliest = current.date;
+        if (current.date > prev.latest) prev.latest = current.date;
+        questionCommitDates.set(qId, prev);
       } else if (conceptPathToId.has(filePath)) {
         const cId = conceptPathToId.get(filePath);
         if (!dayEntry.concepts.includes(cId)) dayEntry.concepts.push(cId);
@@ -435,7 +450,7 @@ function buildGitActivity(questionPathToId, conceptPathToId) {
     // Git not initialized or unavailable; return empty activity gracefully.
   }
 
-  return { activityByDate, lastUpdatedByPath };
+  return { activityByDate, lastUpdatedByPath, questionCommitDates };
 }
 
 function buildRootReadme(weeksIndex, concepts, totals) {
@@ -446,8 +461,8 @@ function buildRootReadme(weeksIndex, concepts, totals) {
     '',
     '## Hosting & Revision Web App',
     'This repository includes a zero-build static revision viewer (`index.html`) backed by your committed Git files (`Week-*`, `Concepts/`, `daily-tracker.json`, and `roadmap-index.json`):',
+    '- **Vercel / Netlify:** Connect the repo with no build command and output directory `.`.',
     '- **GitHub Pages:** Settings → Pages → Deploy from branch (`main` / `/root`).',
-    '- **Vercel / Netlify:** Connect the repo with no build command and publish directory `.`.',
     '- **Local Preview:** Run `npx serve .` or `python -m http.server 8000` in the repo root.',
     '',
     '## Summary',
@@ -505,7 +520,9 @@ function main() {
     revisionDays: 0,
     concepts: 0,
     repoSolved: 0,
-    repoNotes: 0
+    repoNotes: 0,
+    daysCompleted: 0,
+    weeksCompleted: 0
   };
 
   ensureConceptsAndTracker(stats);
@@ -530,6 +547,9 @@ function main() {
         folder: weekFolder,
         weekTitle: dayEntry.weekTitle || `Week ${dayEntry.week}`,
         phase: dayEntry.phase || '',
+        solvedCount: 0,
+        totalCount: 0,
+        completed: false,
         days: []
       });
     }
@@ -540,13 +560,24 @@ function main() {
       type: dayEntry.type,
       title: dayEntry.title || null,
       path: dayRelPath,
+      solvedCount: 0,
+      totalCount: 0,
+      completed: false,
       questions: []
     };
 
     const questions = dayEntry.questions || [];
     if (dayEntry.type === 'revision' || questions.length === 0) {
       totals.revisionDays++;
-      writeIfMissing(path.join(dayAbsPath, 'README.md'), buildRevisionReadme(dayEntry), stats);
+      const revReadme = path.join(dayAbsPath, 'README.md');
+      writeIfMissing(revReadme, buildRevisionReadme(dayEntry), stats);
+      if (fs.existsSync(revReadme)) {
+        const revText = fs.readFileSync(revReadme, 'utf8');
+        if (/- \*\*Status:\*\*\s*(Done|Solved|Completed)/im.test(revText)) {
+          dayRecord.completed = true;
+          totals.daysCompleted++;
+        }
+      }
     } else {
       const usedSlugs = new Set();
       for (const q of questions) {
@@ -595,8 +626,12 @@ function main() {
         questionPathToId.set(qRelPath, qId);
 
         const inspected = inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa);
-        if (inspected.status === 'solved') totals.repoSolved++;
+        if (inspected.status === 'solved') {
+          totals.repoSolved++;
+          dayRecord.solvedCount++;
+        }
         if (inspected.hasNotes) totals.repoNotes++;
+        dayRecord.totalCount++;
 
         dayRecord.questions.push({
           id: qId,
@@ -609,25 +644,60 @@ function main() {
           path: qRelPath,
           status: inspected.status,
           hasNotes: inspected.hasNotes,
-          hasCode: inspected.hasCode
+          hasCode: inspected.hasCode,
+          solvedAt: inspected.explicitSolvedDate || null
         });
+      }
+
+      if (dayRecord.totalCount > 0 && dayRecord.solvedCount === dayRecord.totalCount) {
+        dayRecord.completed = true;
+        totals.daysCompleted++;
       }
     }
 
-    weeksMap.get(dayEntry.week).days.push(dayRecord);
+    const wkObj = weeksMap.get(dayEntry.week);
+    wkObj.solvedCount += dayRecord.solvedCount;
+    wkObj.totalCount += dayRecord.totalCount;
+    wkObj.days.push(dayRecord);
   }
 
   const concepts = scanConcepts();
   totals.concepts = concepts.length;
   const conceptPathToId = new Map(concepts.map((c) => [c.path, c.id]));
 
-  const { activityByDate, lastUpdatedByPath } = buildGitActivity(questionPathToId, conceptPathToId);
+  const { activityByDate, lastUpdatedByPath, questionCommitDates } = buildGitActivity(
+    questionPathToId,
+    conceptPathToId
+  );
 
   for (const c of concepts) {
     c.lastUpdated = lastUpdatedByPath[c.path] || null;
   }
 
+  const solvedByDate = {};
   const weeksIndex = Array.from(weeksMap.values()).sort((a, b) => a.week - b.week);
+  for (const wk of weeksIndex) {
+    wk.completed = wk.totalCount > 0 && wk.solvedCount === wk.totalCount;
+    if (wk.completed) totals.weeksCompleted++;
+
+    for (const d of wk.days) {
+      for (const q of d.questions) {
+        const dates = questionCommitDates.get(q.id);
+        q.lastUpdated = dates ? dates.latest : null;
+        if (q.status === 'solved') {
+          if (!q.solvedAt) {
+            q.solvedAt = dates ? dates.earliest : null;
+          }
+          if (q.solvedAt) {
+            if (!solvedByDate[q.solvedAt]) solvedByDate[q.solvedAt] = [];
+            if (!solvedByDate[q.solvedAt].includes(q.id)) {
+              solvedByDate[q.solvedAt].push(q.id);
+            }
+          }
+        }
+      }
+    }
+  }
   totals.weeks = weeksIndex.length;
 
   const indexPayload = {
@@ -635,6 +705,7 @@ function main() {
     totals,
     concepts,
     activityByDate,
+    solvedByDate,
     weeks: weeksIndex
   };
 

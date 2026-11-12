@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T10:21:29.161Z",
+  "generatedAt": "2026-11-12T10:43:35.917Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -10,7 +10,9 @@
     "revisionDays": 10,
     "concepts": 4,
     "repoSolved": 0,
-    "repoNotes": 0
+    "repoNotes": 0,
+    "daysCompleted": 0,
+    "weeksCompleted": 0
   },
   "concepts": [
     {
@@ -54,12 +56,16 @@
       "trackerUpdated": true
     }
   },
+  "solvedByDate": {},
   "weeks": [
     {
       "week": 1,
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
+      "solvedCount": 0,
+      "totalCount": 39,
+      "completed": false,
       "days": [
         {
           "day": 1,
@@ -67,6 +73,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-001_Arrays",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "1::Two-Sum",
@@ -83,7 +92,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "1::Best-Time-to-Buy-and-Sell-Stock",
@@ -100,7 +111,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "1::Majority-Element",
@@ -117,7 +130,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "1::Move-Zeroes",
@@ -134,7 +149,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "1::Squares-of-a-Sorted-Array",
@@ -151,7 +168,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "1::Merge-Sorted-Array",
@@ -168,7 +187,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -178,6 +199,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-002_Arrays",
+          "solvedCount": 0,
+          "totalCount": 7,
+          "completed": false,
           "questions": [
             {
               "id": "2::Remove-Duplicates-from-Sorted-Array",
@@ -194,7 +218,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "2::Remove-Duplicates-from-Sorted-Array-II",
@@ -211,7 +237,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "2::Find-All-Numbers-Disappeared-in-an-Array",
@@ -228,7 +256,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "2::Intersection-of-Two-Arrays",
@@ -245,7 +275,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "2::Intersection-of-Two-Arrays-II",
@@ -262,7 +294,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "2::Maximum-Population-Year",
@@ -279,7 +313,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "2::Find-Pivot-Index",
@@ -296,7 +332,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -306,6 +344,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-003_Arrays",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "3::Running-Sum-of-1d-Array",
@@ -322,7 +363,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "3::Remove-Element",
@@ -339,7 +382,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
@@ -356,7 +401,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "3::Build-Array-from-Permutation",
@@ -373,7 +420,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "3::Third-Maximum-Number",
@@ -390,7 +439,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "3::Valid-Mountain-Array",
@@ -407,7 +458,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -417,6 +470,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-004_Arrays",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "4::Find-Common-Characters",
@@ -433,7 +489,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "4::Sum-of-All-Odd-Length-Subarrays",
@@ -450,7 +508,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "4::Range-Sum-Query-Immutable",
@@ -467,7 +527,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "4::Shuffle-the-Array",
@@ -484,7 +546,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "4::Max-Consecutive-Ones",
@@ -501,7 +565,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "4::Sort-Array-By-Parity",
@@ -518,7 +584,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -528,6 +596,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-005_Linked-List",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "5::Reverse-Linked-List",
@@ -544,7 +615,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "5::Remove-Linked-List-Elements",
@@ -561,7 +634,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "5::Remove-Duplicates-from-Sorted-List",
@@ -578,7 +653,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "5::Merge-Two-Sorted-Lists",
@@ -595,7 +672,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "5::Middle-of-the-Linked-List",
@@ -612,7 +691,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "5::Palindrome-Linked-List",
@@ -629,7 +710,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -639,6 +722,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-006_Linked-List-and-Stack",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "6::Intersection-of-Two-Linked-Lists",
@@ -655,7 +741,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "6::Linked-List-Cycle",
@@ -672,7 +760,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "6::Valid-Parentheses",
@@ -689,7 +779,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "6::Implement-Queue-using-Stacks",
@@ -706,7 +798,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "6::Backspace-String-Compare",
@@ -723,7 +817,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "6::Next-Greater-Element-I",
@@ -740,7 +836,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -750,6 +848,9 @@
           "type": "design",
           "title": null,
           "path": "Week-01/Day-007_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "7::Design-a-Rate-Limiter",
@@ -766,7 +867,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "7::Design-a-Library-Management-System",
@@ -783,7 +886,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -794,6 +899,9 @@
       "folder": "Week-02",
       "weekTitle": "Week 2 (Days 8–14)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
+      "solvedCount": 0,
+      "totalCount": 36,
+      "completed": false,
       "days": [
         {
           "day": 8,
@@ -801,6 +909,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-02/Day-008_Binary-Trees",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "8::Binary-Tree-Preorder-Traversal",
@@ -817,7 +928,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "8::Binary-Tree-Inorder-Traversal",
@@ -834,7 +947,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "8::Binary-Tree-Postorder-Traversal",
@@ -851,7 +966,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "8::Maximum-Depth-of-Binary-Tree",
@@ -868,7 +985,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "8::Invert-Binary-Tree",
@@ -885,7 +1004,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "8::Symmetric-Tree",
@@ -902,7 +1023,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -912,6 +1035,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-02/Day-009_Binary-Trees",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "9::Subtree-of-Another-Tree",
@@ -928,7 +1054,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "9::Diameter-of-Binary-Tree",
@@ -945,7 +1073,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "9::Balanced-Binary-Tree",
@@ -962,7 +1092,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "9::Merge-Two-Binary-Trees",
@@ -979,7 +1111,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "9::Same-Tree",
@@ -996,7 +1130,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1006,6 +1142,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-02/Day-010_Binary-Trees-and-BST",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "10::Path-Sum",
@@ -1022,7 +1161,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "10::Binary-Tree-Paths",
@@ -1039,7 +1180,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "10::Cousins-in-Binary-Tree",
@@ -1056,7 +1199,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "10::Convert-Sorted-Array-to-Binary-Search-Tree",
@@ -1073,7 +1218,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "10::Range-Sum-of-BST",
@@ -1090,7 +1237,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1100,6 +1249,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-02/Day-011_Strings",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "11::Valid-Palindrome",
@@ -1116,7 +1268,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "11::Valid-Palindrome-II",
@@ -1133,7 +1287,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "11::Longest-Palindrome",
@@ -1150,7 +1306,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "11::Longest-Common-Prefix",
@@ -1167,7 +1325,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "11::Valid-Anagram",
@@ -1184,7 +1344,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "11::First-Unique-Character-in-a-String",
@@ -1201,7 +1363,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1211,6 +1375,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-02/Day-012_Strings",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "12::Is-Subsequence",
@@ -1227,7 +1394,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "12::Reverse-String",
@@ -1244,7 +1413,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "12::Reverse-String-II",
@@ -1261,7 +1432,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "12::Reverse-Words-in-a-String-III",
@@ -1278,7 +1451,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "12::Isomorphic-Strings",
@@ -1295,7 +1470,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "12::Remove-All-Adjacent-Duplicates-In-String",
@@ -1312,7 +1489,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1322,6 +1501,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-02/Day-013_Strings",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "13::Defanging-an-IP-Address",
@@ -1338,7 +1520,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "13::Reverse-Only-Letters",
@@ -1355,7 +1539,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "13::Reverse-Vowels-of-a-String",
@@ -1372,7 +1558,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "13::Length-of-Last-Word",
@@ -1389,7 +1577,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "13::Add-Strings",
@@ -1406,7 +1596,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "13::Fizz-Buzz",
@@ -1423,7 +1615,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1433,6 +1627,9 @@
           "type": "design",
           "title": null,
           "path": "Week-02/Day-014_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "14::Design-Consistent-Hashing",
@@ -1449,7 +1646,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "14::Design-a-Parking-Lot",
@@ -1466,7 +1665,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -1477,6 +1678,9 @@
       "folder": "Week-03",
       "weekTitle": "Week 3 (Days 15–21)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
+      "solvedCount": 0,
+      "totalCount": 35,
+      "completed": false,
       "days": [
         {
           "day": 15,
@@ -1484,6 +1688,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 1 to 14",
           "path": "Week-03/Day-015_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         },
         {
@@ -1492,6 +1699,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-03/Day-016_Math",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "16::Roman-to-Integer",
@@ -1508,7 +1718,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "16::Palindrome-Number",
@@ -1525,7 +1737,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "16::Happy-Number",
@@ -1542,7 +1756,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "16::Power-of-Two",
@@ -1559,7 +1775,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "16::Sqrtx",
@@ -1576,7 +1794,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "16::Plus-One",
@@ -1593,7 +1813,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1603,6 +1825,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-03/Day-017_Math-and-Geometry",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "17::Count-Odd-Numbers-in-an-Interval-Range",
@@ -1619,7 +1844,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "17::Rectangle-Overlap",
@@ -1636,7 +1863,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "17::Add-Digits",
@@ -1653,7 +1882,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "17::Maximum-Product-of-Three-Numbers",
@@ -1670,7 +1901,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "17::Excel-Sheet-Column-Number",
@@ -1687,7 +1920,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1697,6 +1932,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-03/Day-018_Bit-Manipulation",
+          "solvedCount": 0,
+          "totalCount": 7,
+          "completed": false,
           "questions": [
             {
               "id": "18::Add-Binary",
@@ -1713,7 +1951,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "18::Counting-Bits",
@@ -1730,7 +1970,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "18::Number-of-1-Bits",
@@ -1747,7 +1989,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "18::Single-Number",
@@ -1764,7 +2008,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "18::Missing-Number",
@@ -1781,7 +2027,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "18::Reverse-Bits",
@@ -1798,7 +2046,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "18::Hamming-Distance",
@@ -1815,7 +2065,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1825,6 +2077,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-03/Day-019_Binary-Search",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "19::Binary-Search",
@@ -1841,7 +2096,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "19::Search-Insert-Position",
@@ -1858,7 +2115,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "19::First-Bad-Version",
@@ -1875,7 +2134,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "19::Valid-Perfect-Square",
@@ -1892,7 +2153,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "19::Kth-Missing-Positive-Number",
@@ -1909,7 +2172,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "19::Kth-Largest-Element-in-a-Stream",
@@ -1926,7 +2191,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -1936,6 +2203,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-03/Day-020_Hashing-and-Hash-Table",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "20::Design-HashMap",
@@ -1952,7 +2222,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "20::Ransom-Note",
@@ -1969,7 +2241,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "20::Contains-Duplicate",
@@ -1986,7 +2260,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "20::Contains-Duplicate-II",
@@ -2003,7 +2279,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "20::Jewels-and-Stones",
@@ -2020,7 +2298,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "20::Unique-Number-of-Occurrences",
@@ -2037,7 +2317,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2047,6 +2329,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-03/Day-021_Hashing-and-Graphs-Intro",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "21::Word-Pattern",
@@ -2063,7 +2348,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "21::Number-of-Good-Pairs",
@@ -2080,7 +2367,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "21::Flood-Fill",
@@ -2097,7 +2386,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "21::Island-Perimeter",
@@ -2114,7 +2405,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "21::Find-if-Path-Exists-in-Graph",
@@ -2131,7 +2424,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -2142,6 +2437,9 @@
       "folder": "Week-04",
       "weekTitle": "Week 4 (Days 22–28)",
       "phase": "Phase 2: Core Patterns, Two Pointers & Stacks",
+      "solvedCount": 0,
+      "totalCount": 28,
+      "completed": false,
       "days": [
         {
           "day": 22,
@@ -2149,6 +2447,9 @@
           "type": "design",
           "title": null,
           "path": "Week-04/Day-022_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "22::Design-A-Key-value-Store",
@@ -2165,7 +2466,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "22::Design-Amazon-Online-Shopping-System",
@@ -2182,7 +2485,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2192,6 +2497,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-04/Day-023_Dynamic-Programming-and-Greedy-Intro",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "23::Fibonacci-Number",
@@ -2208,7 +2516,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "23::Min-Cost-Climbing-Stairs",
@@ -2225,7 +2535,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "23::Climbing-Stairs",
@@ -2242,7 +2554,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "23::Pascals-Triangle",
@@ -2259,7 +2573,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "23::Can-Place-Flowers",
@@ -2276,7 +2592,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "23::Maximum-Units-on-a-Truck",
@@ -2293,7 +2611,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2303,6 +2623,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-04/Day-024_Arrays-and-Two-Pointers",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "24::3Sum",
@@ -2319,7 +2642,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "24::3Sum-Closest",
@@ -2336,7 +2661,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "24::Non-decreasing-Array",
@@ -2353,7 +2680,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "24::Product-of-Array-Except-Self",
@@ -2370,7 +2699,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2380,6 +2711,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-04/Day-025_Intervals",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "25::Merge-Intervals",
@@ -2396,7 +2730,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "25::Insert-Interval",
@@ -2413,7 +2749,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "25::Non-overlapping-Intervals",
@@ -2430,7 +2768,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "25::Interval-List-Intersections",
@@ -2447,7 +2787,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2457,6 +2799,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-04/Day-026_Two-Pointers-and-Arrays",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "26::Container-With-Most-Water",
@@ -2473,7 +2818,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "26::Sort-Colors",
@@ -2490,7 +2837,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "26::Rotate-Array",
@@ -2507,7 +2856,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "26::Contiguous-Array",
@@ -2524,7 +2875,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2534,6 +2887,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-04/Day-027_Prefix-Sum-and-Sliding-Window",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "27::Subarray-Sum-Equals-K",
@@ -2550,7 +2906,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "27::Shortest-Unsorted-Continuous-Subarray",
@@ -2567,7 +2925,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "27::Maximum-Points-You-Can-Obtain-from-Cards",
@@ -2584,7 +2944,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "27::Max-Consecutive-Ones-III",
@@ -2601,7 +2963,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2611,6 +2975,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-04/Day-028_Sliding-Window-and-Arrays",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "28::Permutation-in-String",
@@ -2627,7 +2994,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "28::Wiggle-Sort-II",
@@ -2644,7 +3013,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "28::Max-Chunks-To-Make-Sorted",
@@ -2661,7 +3032,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "28::H-Index",
@@ -2678,7 +3051,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -2689,6 +3064,9 @@
       "folder": "Week-05",
       "weekTitle": "Week 5 (Days 29–35)",
       "phase": "Phase 2: Core Patterns, Two Pointers & Stacks",
+      "solvedCount": 0,
+      "totalCount": 20,
+      "completed": false,
       "days": [
         {
           "day": 29,
@@ -2696,6 +3074,9 @@
           "type": "design",
           "title": null,
           "path": "Week-05/Day-029_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "29::Design-A-Distributed-Unique-ID-Generator",
@@ -2712,7 +3093,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "29::Design-Stack-Overflow",
@@ -2729,7 +3112,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2739,6 +3124,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 15 to 29",
           "path": "Week-05/Day-030_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         },
         {
@@ -2747,6 +3135,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-05/Day-031_Linked-List",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "31::Remove-Nth-Node-From-End-of-List",
@@ -2763,7 +3154,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "31::Delete-Node-in-a-Linked-List",
@@ -2780,7 +3173,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "31::Remove-Duplicates-from-Sorted-List-II",
@@ -2797,7 +3192,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "31::Next-Greater-Node-In-Linked-List",
@@ -2814,7 +3211,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2824,6 +3223,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-05/Day-032_Linked-List",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "32::Add-Two-Numbers",
@@ -2840,7 +3242,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "32::Add-Two-Numbers-II",
@@ -2857,7 +3261,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "32::Copy-List-with-Random-Pointer",
@@ -2874,7 +3280,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "32::Reverse-Linked-List-II",
@@ -2891,7 +3299,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2901,6 +3311,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-05/Day-033_Linked-List",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "33::Swap-Nodes-in-Pairs",
@@ -2917,7 +3330,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "33::Odd-Even-Linked-List",
@@ -2934,7 +3349,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "33::Partition-List",
@@ -2951,7 +3368,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -2961,6 +3380,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-05/Day-034_Linked-List",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "34::Sort-List",
@@ -2977,7 +3399,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "34::Reorder-List",
@@ -2994,7 +3418,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "34::Rotate-List",
@@ -3011,7 +3437,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3021,6 +3449,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-05/Day-035_Stack",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "35::Evaluate-Reverse-Polish-Notation",
@@ -3037,7 +3468,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "35::Min-Stack",
@@ -3054,7 +3487,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "35::Daily-Temperatures",
@@ -3071,7 +3506,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "35::Decode-String",
@@ -3088,7 +3525,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -3099,6 +3538,9 @@
       "folder": "Week-06",
       "weekTitle": "Week 6 (Days 36–42)",
       "phase": "Phase 2: Core Patterns, Two Pointers & Stacks",
+      "solvedCount": 0,
+      "totalCount": 26,
+      "completed": false,
       "days": [
         {
           "day": 36,
@@ -3106,6 +3548,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-06/Day-036_Stack-Monotonic",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "36::Next-Greater-Element-II",
@@ -3122,7 +3567,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "36::Next-Greater-Element-III",
@@ -3139,7 +3586,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "36::Minimum-Remove-to-Make-Valid-Parentheses",
@@ -3156,7 +3605,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "36::132-Pattern",
@@ -3173,7 +3624,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3183,6 +3636,9 @@
           "type": "design",
           "title": null,
           "path": "Week-06/Day-037_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "37::Design-A-URL-Shortener",
@@ -3199,7 +3655,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "37::Design-a-Movie-Ticket-Booking-System",
@@ -3216,7 +3674,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3226,6 +3686,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-06/Day-038_Stack",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "38::Asteroid-Collision",
@@ -3242,7 +3705,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "38::Basic-Calculator-II",
@@ -3259,7 +3724,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "38::Remove-K-Digits",
@@ -3276,7 +3743,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "38::Remove-Duplicate-Letters",
@@ -3293,7 +3762,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3303,6 +3774,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-06/Day-039_Stack",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "39::Remove-All-Adjacent-Duplicates-in-String-II",
@@ -3319,7 +3793,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "39::Flatten-Nested-List-Iterator",
@@ -3336,7 +3812,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "39::Simplify-Path",
@@ -3353,7 +3831,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "39::Longest-Absolute-File-Path",
@@ -3370,7 +3850,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3380,6 +3862,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-06/Day-040_BFS-and-Cache",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "40::Open-the-Lock",
@@ -3396,7 +3881,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "40::Shortest-Bridge",
@@ -3413,7 +3900,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "40::LRU-Cache",
@@ -3430,7 +3919,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3440,6 +3931,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-06/Day-041_Strings-and-Window",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "41::Longest-Substring-Without-Repeating-Characters",
@@ -3456,7 +3950,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "41::String-to-Integer-atoi",
@@ -3473,7 +3969,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "41::Find-All-Anagrams-in-a-String",
@@ -3490,7 +3988,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "41::Group-Anagrams",
@@ -3507,7 +4007,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "41::Pancake-Sorting",
@@ -3524,7 +4026,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3534,6 +4038,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-06/Day-042_Strings",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "42::Longest-Repeating-Character-Replacement",
@@ -3550,7 +4057,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "42::Largest-Number",
@@ -3567,7 +4076,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "42::Number-of-Matching-Subsequences",
@@ -3584,7 +4095,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "42::Find-the-Index-of-the-First-Occurrence-in-a-String",
@@ -3601,7 +4114,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -3612,6 +4127,9 @@
       "folder": "Week-07",
       "weekTitle": "Week 7 (Days 43–49)",
       "phase": "Phase 2: Core Patterns, Two Pointers & Stacks",
+      "solvedCount": 0,
+      "totalCount": 23,
+      "completed": false,
       "days": [
         {
           "day": 43,
@@ -3619,6 +4137,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-07/Day-043_Strings",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "43::Longest-Substring-with-At-Least-K-Repeating-Characters",
@@ -3635,7 +4156,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "43::Zigzag-Conversion",
@@ -3652,7 +4175,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "43::Reverse-Words-in-a-String",
@@ -3669,7 +4194,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "43::String-Compression",
@@ -3686,7 +4213,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "43::Count-and-Say",
@@ -3703,7 +4232,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3713,6 +4244,9 @@
           "type": "design",
           "title": null,
           "path": "Week-07/Day-044_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "44::Design-Pastebin",
@@ -3729,7 +4263,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "44::Design-an-ATM",
@@ -3746,7 +4282,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3756,6 +4294,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 30 to 44",
           "path": "Week-07/Day-045_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         },
         {
@@ -3764,6 +4305,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-07/Day-046_Trees-Level-Order-and-Ancestor",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "46::Binary-Tree-Level-Order-Traversal",
@@ -3780,7 +4324,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "46::Binary-Tree-Zigzag-Level-Order-Traversal",
@@ -3797,7 +4343,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "46::Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal",
@@ -3814,7 +4362,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "46::Lowest-Common-Ancestor-of-a-Binary-Tree",
@@ -3831,7 +4381,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3841,6 +4393,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-07/Day-047_Trees-Views-and-Pointers",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "47::Binary-Tree-Right-Side-View",
@@ -3857,7 +4412,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "47::Populating-Next-Right-Pointers-in-Each-Node",
@@ -3874,7 +4431,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "47::Populating-Next-Right-Pointers-in-Each-Node-II",
@@ -3891,7 +4450,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "47::Maximum-Width-of-Binary-Tree",
@@ -3908,7 +4469,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3918,6 +4481,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-07/Day-048_Trees-Path-and-Distance",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "48::Path-Sum-II",
@@ -3934,7 +4500,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "48::Path-Sum-III",
@@ -3951,7 +4519,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "48::All-Nodes-Distance-K-in-Binary-Tree",
@@ -3968,7 +4538,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "48::Flatten-Binary-Tree-to-Linked-List",
@@ -3985,7 +4557,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -3995,6 +4569,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-07/Day-049_Trees-Counting-and-Coins",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "49::Count-Complete-Tree-Nodes",
@@ -4011,7 +4588,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "49::Sum-Root-to-Leaf-Numbers",
@@ -4028,7 +4607,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "49::Find-Bottom-Left-Tree-Value",
@@ -4045,7 +4626,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "49::Distribute-Coins-in-Binary-Tree",
@@ -4062,7 +4645,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -4073,6 +4658,9 @@
       "folder": "Week-08",
       "weekTitle": "Week 8 (Days 50–56)",
       "phase": "Phase 3: Trees, Binary Search, Graphs & 1D DP",
+      "solvedCount": 0,
+      "totalCount": 24,
+      "completed": false,
       "days": [
         {
           "day": 50,
@@ -4080,6 +4668,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-08/Day-050_BST-Operations",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "50::Delete-Node-in-a-BST",
@@ -4096,7 +4687,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "50::Validate-Binary-Search-Tree",
@@ -4113,7 +4706,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "50::Kth-Smallest-Element-in-a-BST",
@@ -4130,7 +4725,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "50::Lowest-Common-Ancestor-of-a-Binary-Search-Tree",
@@ -4147,7 +4744,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4157,6 +4756,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-08/Day-051_BST-Conversion-and-Iterator",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "51::Convert-Sorted-List-to-Binary-Search-Tree",
@@ -4173,7 +4775,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "51::Construct-Binary-Search-Tree-from-Preorder-Traversal",
@@ -4190,7 +4794,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "51::Binary-Search-Tree-Iterator",
@@ -4207,7 +4813,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "51::Recover-Binary-Search-Tree",
@@ -4224,7 +4832,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4234,6 +4844,9 @@
           "type": "design",
           "title": null,
           "path": "Week-08/Day-052_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "52::Design-Instagram",
@@ -4250,7 +4863,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "52::Design-an-Airline-Management-System",
@@ -4267,7 +4882,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4277,6 +4894,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-08/Day-053_Trees-Advanced",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "53::Binary-Tree-Maximum-Path-Sum",
@@ -4293,7 +4913,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "53::Step-By-Step-Directions-From-a-Binary-Tree-Node-to-Another",
@@ -4310,7 +4932,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "53::Maximum-Level-Sum-of-a-Binary-Tree",
@@ -4327,7 +4951,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4337,6 +4963,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-08/Day-054_Trees-Serialization-and-BST",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "54::Trim-a-Binary-Search-Tree",
@@ -4353,7 +4982,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "54::Balance-a-Binary-Search-Tree",
@@ -4370,7 +5001,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "54::Serialize-and-Deserialize-Binary-Tree",
@@ -4387,7 +5020,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4397,6 +5032,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-08/Day-055_Binary-Search-Rotated",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "55::Search-in-Rotated-Sorted-Array",
@@ -4413,7 +5051,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "55::Search-in-Rotated-Sorted-Array-II",
@@ -4430,7 +5070,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "55::Time-Based-Key-Value-Store",
@@ -4447,7 +5089,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "55::Find-Minimum-in-Rotated-Sorted-Array",
@@ -4464,7 +5108,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4474,6 +5120,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-08/Day-056_Binary-Search-and-Arrays",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "56::Find-First-and-Last-Position-of-Element-in-Sorted-Array",
@@ -4490,7 +5139,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "56::Find-the-Duplicate-Number",
@@ -4507,7 +5158,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "56::Minimum-Size-Subarray-Sum",
@@ -4524,7 +5177,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "56::Single-Element-in-a-Sorted-Array",
@@ -4541,7 +5196,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -4552,6 +5209,9 @@
       "folder": "Week-09",
       "weekTitle": "Week 9 (Days 57–63)",
       "phase": "Phase 3: Trees, Binary Search, Graphs & 1D DP",
+      "solvedCount": 0,
+      "totalCount": 22,
+      "completed": false,
       "days": [
         {
           "day": 57,
@@ -4559,6 +5219,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-09/Day-057_Binary-Search-on-Answer",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "57::Find-Peak-Element",
@@ -4575,7 +5238,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "57::Capacity-To-Ship-Packages-Within-D-Days",
@@ -4592,7 +5257,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "57::Koko-Eating-Bananas",
@@ -4609,7 +5276,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "57::Peak-Index-in-a-Mountain-Array",
@@ -4626,7 +5295,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4636,6 +5307,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-09/Day-058_Matrix-and-2D-Search",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "58::Search-a-2D-Matrix",
@@ -4652,7 +5326,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "58::Search-a-2D-Matrix-II",
@@ -4669,7 +5345,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "58::Spiral-Matrix",
@@ -4686,7 +5364,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "58::Spiral-Matrix-II",
@@ -4703,7 +5383,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4713,6 +5395,9 @@
           "type": "design",
           "title": null,
           "path": "Week-09/Day-059_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "59::Design-A-Web-Crawler",
@@ -4729,7 +5414,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "59::Design-Blackjack-and-a-Deck-of-Cards",
@@ -4746,7 +5433,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4756,6 +5445,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 46 to 59",
           "path": "Week-09/Day-060_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         },
         {
@@ -4764,6 +5456,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-09/Day-061_Matrix-Simulation",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "61::Valid-Sudoku",
@@ -4780,7 +5475,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "61::Rotate-Image",
@@ -4797,7 +5494,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "61::Set-Matrix-Zeroes",
@@ -4814,7 +5513,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "61::Game-of-Life",
@@ -4831,7 +5532,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4841,6 +5544,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-09/Day-062_Matrix-and-Arrays",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "62::Diagonal-Traverse",
@@ -4857,7 +5563,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "62::Matrix-Block-Sum",
@@ -4874,7 +5582,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "62::Battleships-in-a-Board",
@@ -4891,7 +5601,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "62::Snapshot-Array",
@@ -4908,7 +5620,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -4918,6 +5632,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-09/Day-063_Graphs-BFS-DFS-Basics",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "63::Number-of-Islands",
@@ -4934,7 +5651,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "63::01-Matrix",
@@ -4951,7 +5670,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "63::Clone-Graph",
@@ -4968,7 +5689,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "63::Rotting-Oranges",
@@ -4985,7 +5708,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -4996,6 +5721,9 @@
       "folder": "Week-10",
       "weekTitle": "Week 10 (Days 64–70)",
       "phase": "Phase 3: Trees, Binary Search, Graphs & 1D DP",
+      "solvedCount": 0,
+      "totalCount": 26,
+      "completed": false,
       "days": [
         {
           "day": 64,
@@ -5003,6 +5731,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-10/Day-064_Graphs-Topological-and-DFS",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "64::Course-Schedule",
@@ -5019,7 +5750,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "64::Course-Schedule-II",
@@ -5036,7 +5769,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "64::Accounts-Merge",
@@ -5053,7 +5788,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "64::Word-Search",
@@ -5070,7 +5807,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5080,6 +5819,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-10/Day-065_Graphs-Shortest-Path-and-DFS",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "65::Minimum-Height-Trees",
@@ -5096,7 +5838,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "65::Pacific-Atlantic-Water-Flow",
@@ -5113,7 +5857,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "65::Cheapest-Flights-Within-K-Stops",
@@ -5130,7 +5876,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "65::Max-Area-of-Island",
@@ -5147,7 +5895,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5157,6 +5907,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-10/Day-066_Graphs-Union-Find-and-Dijkstra",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "66::Evaluate-Division",
@@ -5173,7 +5926,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "66::Number-of-Provinces",
@@ -5190,7 +5945,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "66::Surrounded-Regions",
@@ -5207,7 +5964,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "66::Network-Delay-Time",
@@ -5224,7 +5983,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5234,6 +5995,9 @@
           "type": "design",
           "title": null,
           "path": "Week-10/Day-067_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "67::Design-A-Notification-System",
@@ -5250,7 +6014,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "67::Design-a-Hotel-Management-System",
@@ -5267,7 +6033,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5277,6 +6045,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-10/Day-068_Graphs-Paths-and-Connectivity",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "68::All-Paths-From-Source-to-Target",
@@ -5293,7 +6064,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "68::Redundant-Connection",
@@ -5310,7 +6083,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "68::Shortest-Path-in-Binary-Matrix",
@@ -5327,7 +6102,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "68::Number-of-Operations-to-Make-Network-Connected",
@@ -5344,7 +6121,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5354,6 +6133,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-10/Day-069_Hashing-and-Array",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "69::Majority-Element-II",
@@ -5370,7 +6152,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "69::Longest-Consecutive-Sequence",
@@ -5387,7 +6171,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "69::Insert-Delete-GetRandom-O1",
@@ -5404,7 +6190,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "69::Find-All-Duplicates-in-an-Array",
@@ -5421,7 +6209,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5431,6 +6221,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-10/Day-070_Subarrays-and-Hashing",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "70::Continuous-Subarray-Sum",
@@ -5447,7 +6240,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "70::Find-and-Replace-Pattern",
@@ -5464,7 +6259,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "70::K-diff-Pairs-in-an-Array",
@@ -5481,7 +6278,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "70::Custom-Sort-String",
@@ -5498,7 +6297,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -5509,6 +6310,9 @@
       "folder": "Week-11",
       "weekTitle": "Week 11 (Days 71–77)",
       "phase": "Phase 3: Trees, Binary Search, Graphs & 1D DP",
+      "solvedCount": 0,
+      "totalCount": 22,
+      "completed": false,
       "days": [
         {
           "day": 71,
@@ -5516,6 +6320,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-11/Day-071_Math-and-Sliding-Window",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "71::Fraction-to-Recurring-Decimal",
@@ -5532,7 +6339,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "71::Fruit-Into-Baskets",
@@ -5549,7 +6358,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "71::Encode-and-Decode-TinyURL",
@@ -5566,7 +6377,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "71::Minimum-Area-Rectangle",
@@ -5583,7 +6396,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5593,6 +6408,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-11/Day-072_Dynamic-Programming-1D-and-Knapsack",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "72::Maximum-Subarray",
@@ -5609,7 +6427,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "72::Maximum-Product-Subarray",
@@ -5626,7 +6446,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "72::Coin-Change",
@@ -5643,7 +6465,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "72::Coin-Change-II",
@@ -5660,7 +6484,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5670,6 +6496,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-11/Day-073_Dynamic-Programming-and-Greedy",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "73::Jump-Game",
@@ -5686,7 +6515,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "73::Jump-Game-II",
@@ -5703,7 +6534,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "73::Jump-Game-III",
@@ -5720,7 +6553,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "73::Partition-Equal-Subset-Sum",
@@ -5737,7 +6572,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5747,6 +6584,9 @@
           "type": "design",
           "title": null,
           "path": "Week-11/Day-074_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "74::Design-A-News-Feed-System",
@@ -5763,7 +6603,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "74::Design-a-Restaurant-Management-system",
@@ -5780,7 +6622,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5790,6 +6634,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 61 to 74",
           "path": "Week-11/Day-075_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         },
         {
@@ -5798,6 +6645,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-11/Day-076_Dynamic-Programming-2D-Grid-and-LIS",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "76::Longest-Increasing-Subsequence",
@@ -5814,7 +6664,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "76::Unique-Paths",
@@ -5831,7 +6683,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "76::Unique-Paths-II",
@@ -5848,7 +6702,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "76::Maximal-Square",
@@ -5865,7 +6721,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -5875,6 +6733,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-11/Day-077_Dynamic-Programming-House-Robber-and-Decoding",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "77::House-Robber",
@@ -5891,7 +6752,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "77::House-Robber-II",
@@ -5908,7 +6771,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "77::House-Robber-III",
@@ -5925,7 +6790,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "77::Decode-Ways",
@@ -5942,7 +6809,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -5953,6 +6822,9 @@
       "folder": "Week-12",
       "weekTitle": "Week 12 (Days 78–84)",
       "phase": "Phase 4: 2D DP, Heaps, Backtracking & Advanced Arrays",
+      "solvedCount": 0,
+      "totalCount": 25,
+      "completed": false,
       "days": [
         {
           "day": 78,
@@ -5960,6 +6832,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-12/Day-078_Dynamic-Programming-Stock-and-String",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "78::Best-Time-to-Buy-and-Sell-Stock-II",
@@ -5976,7 +6851,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "78::Minimum-Path-Sum",
@@ -5993,7 +6870,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "78::Longest-Common-Subsequence",
@@ -6010,7 +6889,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "78::Palindrome-Partitioning",
@@ -6027,7 +6908,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6037,6 +6920,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-12/Day-079_Dynamic-Programming-Trees-and-Target-Sum",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "79::Unique-Binary-Search-Trees",
@@ -6053,7 +6939,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "79::Unique-Binary-Search-Trees-II",
@@ -6070,7 +6958,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "79::Target-Sum",
@@ -6087,7 +6977,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "79::Triangle",
@@ -6104,7 +6996,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6114,6 +7008,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-12/Day-080_Dynamic-Programming-Palindromes-and-Subsets",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "80::Longest-Palindromic-Subsequence",
@@ -6130,7 +7027,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "80::Partition-to-K-Equal-Sum-Subsets",
@@ -6147,7 +7046,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "80::Delete-and-Earn",
@@ -6164,7 +7065,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "80::Palindromic-Substrings",
@@ -6181,7 +7084,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6191,6 +7096,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-12/Day-081_Dynamic-Programming-Strings-and-Costs",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "81::Longest-String-Chain",
@@ -6207,7 +7115,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "81::Minimum-Cost-For-Tickets",
@@ -6224,7 +7134,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "81::Delete-Operation-for-Two-Strings",
@@ -6241,7 +7153,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "81::Perfect-Squares",
@@ -6258,7 +7172,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6268,6 +7184,9 @@
           "type": "design",
           "title": null,
           "path": "Week-12/Day-082_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "82::Design-A-Chat-System",
@@ -6284,7 +7203,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "82::Design-Chess",
@@ -6301,7 +7222,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6311,6 +7234,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-12/Day-083_Dynamic-Programming-Partition-and-Math",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "83::Different-Ways-to-Add-Parentheses",
@@ -6327,7 +7253,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "83::Longest-Palindromic-Substring",
@@ -6344,7 +7272,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "83::Largest-Divisible-Subset",
@@ -6361,7 +7291,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "83::Integer-Break",
@@ -6378,7 +7310,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6388,6 +7322,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-12/Day-084_DP-and-Backtracking-Simulation",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "84::Matchsticks-to-Square",
@@ -6404,7 +7341,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "84::Knight-Dialer",
@@ -6421,7 +7360,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "84::Minesweeper",
@@ -6438,7 +7379,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -6449,6 +7392,9 @@
       "folder": "Week-13",
       "weekTitle": "Week 13 (Days 85–91)",
       "phase": "Phase 4: 2D DP, Heaps, Backtracking & Advanced Arrays",
+      "solvedCount": 0,
+      "totalCount": 22,
+      "completed": false,
       "days": [
         {
           "day": 85,
@@ -6456,6 +7402,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-13/Day-085_Math-and-Strings",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "85::Random-Pick-with-Weight",
@@ -6472,7 +7421,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "85::Powx-n",
@@ -6489,7 +7440,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "85::Reverse-Integer",
@@ -6506,7 +7459,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "85::Multiply-Strings",
@@ -6523,7 +7478,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6533,6 +7490,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-13/Day-086_Math-and-Geometry",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "86::Count-Primes",
@@ -6549,7 +7509,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "86::Integer-to-Roman",
@@ -6566,7 +7528,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "86::Robot-Bounded-In-Circle",
@@ -6583,7 +7547,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "86::Angle-Between-Hands-of-a-Clock",
@@ -6600,7 +7566,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6610,6 +7578,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-13/Day-087_Heaps-Priority-Queues",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "87::K-Closest-Points-to-Origin",
@@ -6626,7 +7597,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "87::Task-Scheduler",
@@ -6643,7 +7616,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "87::Top-K-Frequent-Elements",
@@ -6660,7 +7635,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "87::Find-K-Closest-Elements",
@@ -6677,7 +7654,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6687,6 +7666,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-13/Day-088_Heaps-and-Strings",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "88::Kth-Largest-Element-in-an-Array",
@@ -6703,7 +7685,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "88::Kth-Smallest-Element-in-a-Sorted-Matrix",
@@ -6720,7 +7704,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "88::Top-K-Frequent-Words",
@@ -6737,7 +7723,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "88::Reorganize-String",
@@ -6754,7 +7742,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6764,6 +7754,9 @@
           "type": "design",
           "title": null,
           "path": "Week-13/Day-089_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "89::Design-A-Search-Autocomplete-System",
@@ -6780,7 +7773,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "89::Design-an-Online-Stock-Brokerage-System",
@@ -6797,7 +7792,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6807,6 +7804,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 76 to 89",
           "path": "Week-13/Day-090_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         },
         {
@@ -6815,6 +7815,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-13/Day-091_Heaps-and-Greedy",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "91::Sort-Characters-By-Frequency",
@@ -6831,7 +7834,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "91::Car-Pooling",
@@ -6848,7 +7853,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "91::Find-K-Pairs-with-Smallest-Sums",
@@ -6865,7 +7872,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "91::Maximum-Number-of-Events-That-Can-Be-Attended",
@@ -6882,7 +7891,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -6893,6 +7904,9 @@
       "folder": "Week-14",
       "weekTitle": "Week 14 (Days 92–98)",
       "phase": "Phase 4: 2D DP, Heaps, Backtracking & Advanced Arrays",
+      "solvedCount": 0,
+      "totalCount": 27,
+      "completed": false,
       "days": [
         {
           "day": 92,
@@ -6900,6 +7914,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-14/Day-092_Trie-Data-Structure",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "92::Implement-Trie-Prefix-Tree",
@@ -6916,7 +7933,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "92::Word-Break",
@@ -6933,7 +7952,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "92::Design-Add-and-Search-Words-Data-Structure",
@@ -6950,7 +7971,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "92::Search-Suggestions-System",
@@ -6967,7 +7990,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "92::Remove-Sub-Folders-from-the-Filesystem",
@@ -6984,7 +8009,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -6994,6 +8021,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-14/Day-093_Backtracking-Subsets-and-Permutations",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "93::Permutations",
@@ -7010,7 +8040,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "93::Permutations-II",
@@ -7027,7 +8059,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "93::Subsets",
@@ -7044,7 +8078,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "93::Subsets-II",
@@ -7061,7 +8097,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7071,6 +8109,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-14/Day-094_Backtracking-Combinations",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "94::Next-Permutation",
@@ -7087,7 +8128,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "94::Combinations",
@@ -7104,7 +8147,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "94::Letter-Combinations-of-a-Phone-Number",
@@ -7121,7 +8166,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "94::Generate-Parentheses",
@@ -7138,7 +8185,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7148,6 +8197,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-14/Day-095_Backtracking-Combination-Sum",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "95::Combination-Sum",
@@ -7164,7 +8216,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "95::Combination-Sum-III",
@@ -7181,7 +8235,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "95::Combination-Sum-IV",
@@ -7198,7 +8254,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "95::Restore-IP-Addresses",
@@ -7215,7 +8273,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7225,6 +8285,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-14/Day-096_Greedy-Algorithms",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "96::Gas-Station",
@@ -7241,7 +8304,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "96::Partition-Labels",
@@ -7258,7 +8323,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "96::Valid-Parenthesis-String",
@@ -7275,7 +8342,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "96::Minimum-Number-of-Arrows-to-Burst-Balloons",
@@ -7292,7 +8361,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7302,6 +8373,9 @@
           "type": "design",
           "title": null,
           "path": "Week-14/Day-097_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "97::Design-YouTube",
@@ -7318,7 +8392,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "97::Design-a-Car-Rental-System",
@@ -7335,7 +8411,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7345,6 +8423,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-14/Day-098_Bit-Manipulation",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "98::Single-Number-II",
@@ -7361,7 +8442,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "98::Single-Number-III",
@@ -7378,7 +8461,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "98::Maximum-XOR-of-Two-Numbers-in-an-Array",
@@ -7395,7 +8480,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "98::Divide-Two-Integers",
@@ -7412,7 +8499,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -7423,6 +8512,9 @@
       "folder": "Week-15",
       "weekTitle": "Week 15 (Days 99–105)",
       "phase": "Phase 4: 2D DP, Heaps, Backtracking & Advanced Arrays",
+      "solvedCount": 0,
+      "totalCount": 18,
+      "completed": false,
       "days": [
         {
           "day": 99,
@@ -7430,6 +8522,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-15/Day-099_Bit-Manipulation",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "99::Sum-of-Two-Integers",
@@ -7446,7 +8541,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "99::Bitwise-AND-of-Numbers-Range",
@@ -7463,7 +8560,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "99::Gray-Code",
@@ -7480,7 +8579,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7490,6 +8591,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-15/Day-100_Advanced-DSA-Sliding-Window-and-Monotonic-Stack",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "100::Sliding-Window-Maximum",
@@ -7506,7 +8610,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "100::Trapping-Rain-Water",
@@ -7523,7 +8629,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "100::Count-of-Smaller-Numbers-After-Self",
@@ -7540,7 +8648,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7550,6 +8660,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-15/Day-101_Hard-Arrays-and-Submatrices",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "101::Candy",
@@ -7566,7 +8679,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "101::Reverse-Pairs",
@@ -7583,7 +8698,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "101::Subarrays-with-K-Different-Integers",
@@ -7600,7 +8717,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "101::Number-of-Submatrices-That-Sum-to-Target",
@@ -7617,7 +8736,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7627,6 +8748,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-15/Day-102_Hard-Arrays-and-Monotonic-Deque",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "102::Shortest-Subarray-with-Sum-at-Least-K",
@@ -7643,7 +8767,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "102::Maximum-Gap",
@@ -7660,7 +8786,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "102::First-Missing-Positive",
@@ -7677,7 +8805,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7687,6 +8817,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-15/Day-103_Hard-Linked-Lists-and-Cache",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "103::Shuffle-an-Array",
@@ -7703,7 +8836,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "103::Reverse-Nodes-in-k-Group",
@@ -7720,7 +8855,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "103::LFU-Cache",
@@ -7737,7 +8874,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7747,6 +8886,9 @@
           "type": "design",
           "title": null,
           "path": "Week-15/Day-104_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "104::Design-Google-Drive",
@@ -7763,7 +8905,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "104::Design-LinkedIn",
@@ -7780,7 +8924,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7790,6 +8936,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 91 to 104",
           "path": "Week-15/Day-105_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         }
       ]
@@ -7799,6 +8948,9 @@
       "folder": "Week-16",
       "weekTitle": "Week 16 (Days 106–112)",
       "phase": "Phase 5: Hard Interview Mastery, System Design & Behavioral",
+      "solvedCount": 0,
+      "totalCount": 20,
+      "completed": false,
       "days": [
         {
           "day": 106,
@@ -7806,6 +8958,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-16/Day-106_Hard-Stack-Problems",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "106::Basic-Calculator",
@@ -7822,7 +8977,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "106::Largest-Rectangle-in-Histogram",
@@ -7839,7 +8996,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "106::Longest-Valid-Parentheses",
@@ -7856,7 +9015,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7866,6 +9027,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-16/Day-107_Hard-Data-Structures",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "107::Maximum-Frequency-Stack",
@@ -7882,7 +9046,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "107::The-Skyline-Problem",
@@ -7899,7 +9065,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "107::Minimum-Window-Substring",
@@ -7916,7 +9084,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7926,6 +9096,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-16/Day-108_Hard-Strings",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "108::Palindrome-Pairs",
@@ -7942,7 +9115,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "108::Shortest-Palindrome",
@@ -7959,7 +9134,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "108::Text-Justification",
@@ -7976,7 +9153,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -7986,6 +9165,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-16/Day-109_Math-and-Strings",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "109::Nth-Digit",
@@ -8002,7 +9184,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "109::Integer-to-English-Words",
@@ -8019,7 +9203,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "109::Max-Points-on-a-Line",
@@ -8036,7 +9222,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8046,6 +9234,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-16/Day-110_Hard-Binary-Search-and-DP",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "110::Maximum-Profit-in-Job-Scheduling",
@@ -8062,7 +9253,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "110::Median-of-Two-Sorted-Arrays",
@@ -8079,7 +9272,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "110::Find-Minimum-in-Rotated-Sorted-Array-II",
@@ -8096,7 +9291,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8106,6 +9303,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-16/Day-111_Hard-Graphs-and-BFS",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "111::Word-Ladder",
@@ -8122,7 +9322,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "111::Word-Ladder-II",
@@ -8139,7 +9341,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "111::Longest-Increasing-Path-in-a-Matrix",
@@ -8156,7 +9360,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8166,6 +9372,9 @@
           "type": "design",
           "title": null,
           "path": "Week-16/Day-112_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "112::Design-Twitter",
@@ -8182,7 +9391,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "112::Design-Facebook-a-social-network",
@@ -8199,7 +9410,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -8210,6 +9423,9 @@
       "folder": "Week-17",
       "weekTitle": "Week 17 (Days 113–119)",
       "phase": "Phase 5: Hard Interview Mastery, System Design & Behavioral",
+      "solvedCount": 0,
+      "totalCount": 21,
+      "completed": false,
       "days": [
         {
           "day": 113,
@@ -8217,6 +9433,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-17/Day-113_Hard-Graphs-and-Trie",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "113::Word-Search-II",
@@ -8233,7 +9452,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "113::Bus-Routes",
@@ -8250,7 +9471,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "113::Critical-Connections-in-a-Network",
@@ -8267,7 +9490,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8277,6 +9502,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-17/Day-114_Hard-BFS-and-Eulerian-Path",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "114::Shortest-Path-in-a-Grid-with-Obstacles-Elimination",
@@ -8293,7 +9521,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "114::Reconstruct-Itinerary",
@@ -8310,7 +9540,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "114::Making-A-Large-Island",
@@ -8327,7 +9559,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8337,6 +9571,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-17/Day-115_Hard-Heaps-and-Two-Heaps",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "115::Merge-k-Sorted-Lists",
@@ -8353,7 +9590,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "115::Find-Median-from-Data-Stream",
@@ -8370,7 +9609,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "115::Smallest-Range-Covering-Elements-from-K-Lists",
@@ -8387,7 +9628,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8397,6 +9640,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-17/Day-116_Hard-Heaps-and-Binary-Search",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "116::Minimum-Number-of-Refueling-Stops",
@@ -8413,7 +9659,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "116::Swim-in-Rising-Water",
@@ -8430,7 +9678,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "116::Longest-Duplicate-Substring",
@@ -8447,7 +9697,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8457,6 +9709,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-17/Day-117_Hard-Backtracking-and-DP",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "117::N-Queens",
@@ -8473,7 +9728,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "117::Permutation-Sequence",
@@ -8490,7 +9747,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "117::Sudoku-Solver",
@@ -8507,7 +9766,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "117::Palindrome-Partitioning-II",
@@ -8524,7 +9785,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8534,6 +9797,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-17/Day-118_Recursion-and-Backtracking",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "118::K-th-Symbol-in-Grammar",
@@ -8550,7 +9816,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "118::Remove-Invalid-Parentheses",
@@ -8567,7 +9835,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "118::Unique-Paths-III",
@@ -8584,7 +9854,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8594,6 +9866,9 @@
           "type": "design",
           "title": null,
           "path": "Week-17/Day-119_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "119::Proximity-Service",
@@ -8610,7 +9885,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "119::Design-Cricinfo",
@@ -8627,7 +9904,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -8638,6 +9917,9 @@
       "folder": "Week-18",
       "weekTitle": "Week 18 (Days 120–126)",
       "phase": "Phase 5: Hard Interview Mastery, System Design & Behavioral",
+      "solvedCount": 0,
+      "totalCount": 20,
+      "completed": false,
       "days": [
         {
           "day": 120,
@@ -8645,6 +9927,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 106 to 119",
           "path": "Week-18/Day-120_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         },
         {
@@ -8653,6 +9938,9 @@
           "type": "behavioral",
           "title": null,
           "path": "Week-18/Day-121_Behavioral-and-Leadership",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "121::What-are-your-strengths-and-weaknesses",
@@ -8669,7 +9957,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "121::Tell-me-about-your-most-challenging-customer-How-did-you-resolve-their",
@@ -8686,7 +9976,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "121::Describe-a-time-when-you-had-to-make-a-decision-without-having-all-the",
@@ -8703,7 +9995,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "121::Which-companys-leadership-principle-resonates-with-you-most",
@@ -8720,7 +10014,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "121::Tell-me-about-a-time-when-you-were-working-on-a-project-and-you",
@@ -8737,7 +10033,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8747,6 +10045,9 @@
           "type": "design",
           "title": null,
           "path": "Week-18/Day-122_System-Design",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "122::Nearby-Friends",
@@ -8763,7 +10064,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "122::Google-Maps",
@@ -8780,7 +10083,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8790,6 +10095,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-18/Day-123_Hard-Dynamic-Programming",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "123::Edit-Distance",
@@ -8806,7 +10114,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "123::Regular-Expression-Matching",
@@ -8823,7 +10133,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "123::Maximal-Rectangle",
@@ -8840,7 +10152,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8850,6 +10164,9 @@
           "type": "behavioral",
           "title": null,
           "path": "Week-18/Day-124_Behavioral-and-Leadership",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "124::Can-you-give-me-an-example-of-a-time-when-you-exceeded-expectations",
@@ -8866,7 +10183,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "124::Can-you-describe-a-time-when-you-took-the-lead-on-a-project",
@@ -8883,7 +10202,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "124::Think-about-a-time-you-received-negative-feedback-How-did-you-deal-with",
@@ -8900,7 +10221,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "124::Tell-me-about-a-time-when-you-had-to-deal-with-ambiguity-How-did-you",
@@ -8917,7 +10240,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "124::Have-you-been-stressed-over-a-certain-project-delivery-in-the-past-Did",
@@ -8934,7 +10259,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8944,6 +10271,9 @@
           "type": "design",
           "title": null,
           "path": "Week-18/Day-125_System-Design",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "125::Distributed-Message-Queue",
@@ -8960,7 +10290,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "125::Distributed-Email-Service",
@@ -8977,7 +10309,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -8987,6 +10321,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-18/Day-126_Hard-DP-and-Binary-Search",
+          "solvedCount": 0,
+          "totalCount": 3,
+          "completed": false,
           "questions": [
             {
               "id": "126::Split-Array-Largest-Sum",
@@ -9003,7 +10340,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "126::Burst-Balloons",
@@ -9020,7 +10359,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "126::Wildcard-Matching",
@@ -9037,7 +10378,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -9048,6 +10391,9 @@
       "folder": "Week-19",
       "weekTitle": "Week 19 (Days 127–133)",
       "phase": "Phase 5: Hard Interview Mastery, System Design & Behavioral",
+      "solvedCount": 0,
+      "totalCount": 28,
+      "completed": false,
       "days": [
         {
           "day": 127,
@@ -9055,6 +10401,9 @@
           "type": "behavioral",
           "title": null,
           "path": "Week-19/Day-127_Behavioral-and-Leadership",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "127::Tell-me-about-a-time-you-have-disagreed-with-your-manager-and-how-you",
@@ -9071,7 +10420,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "127::How-do-you-motivate-others-Can-you-give-me-an-example-of-a-time-you",
@@ -9088,7 +10439,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "127::Tell-me-about-a-time-when-you-took-a-risk-and-failed-What-did-you-learn",
@@ -9105,7 +10458,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "127::What-obstacles-have-you-encountered-in-your-career-How-did-you-overcome",
@@ -9122,7 +10477,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "127::Tell-me-about-a-project-you-are-proud-of-How-did-you-ensure-high",
@@ -9139,7 +10496,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -9149,6 +10508,9 @@
           "type": "design",
           "title": null,
           "path": "Week-19/Day-128_System-Design",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "128::S3-like-Object-Storage",
@@ -9165,7 +10527,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "128::Real-time-Gaming-Leaderboard",
@@ -9182,7 +10546,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -9192,6 +10558,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-19/Day-129_DP-and-Monotonic-Stack",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "129::Best-Time-to-Buy-and-Sell-Stock-IV",
@@ -9208,7 +10577,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "129::Word-Break-II",
@@ -9225,7 +10596,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "129::Russian-Doll-Envelopes",
@@ -9242,7 +10615,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "129::Validate-Stack-Sequences",
@@ -9259,7 +10634,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -9269,6 +10646,9 @@
           "type": "behavioral",
           "title": null,
           "path": "Week-19/Day-130_Behavioral-and-Leadership",
+          "solvedCount": 0,
+          "totalCount": 5,
+          "completed": false,
           "questions": [
             {
               "id": "130::Why-do-you-want-to-work-for-company",
@@ -9285,7 +10665,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "130::Tell-me-about-a-time-when-you-have-had-to-work-to-earn-someone’s-trust",
@@ -9302,7 +10684,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "130::Describe-a-time-when-you-were-given-a-project-to-work-on-but-your",
@@ -9319,7 +10703,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "130::Tell-me-about-a-time-you-showed-initiative",
@@ -9336,7 +10722,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "130::You-see-a-co-worker-struggling-with-a-task-What-do-you-do",
@@ -9353,7 +10741,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -9363,6 +10753,9 @@
           "type": "design",
           "title": null,
           "path": "Week-19/Day-131_System-Design",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "131::Payment-System",
@@ -9379,7 +10772,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "131::Digital-Wallet",
@@ -9396,7 +10791,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -9406,6 +10803,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-19/Day-132_Hard-DP-and-Greedy",
+          "solvedCount": 0,
+          "totalCount": 4,
+          "completed": false,
           "questions": [
             {
               "id": "132::Minimum-Insertion-Steps-to-Make-a-String-Palindrome",
@@ -9422,7 +10822,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "132::Minimum-Cost-to-Cut-a-Stick",
@@ -9439,7 +10841,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "132::Minimum-Number-of-Taps-to-Open-to-Water-a-Garden",
@@ -9456,7 +10860,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "132::Binary-Tree-Cameras",
@@ -9473,7 +10879,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -9483,6 +10891,9 @@
           "type": "behavioral",
           "title": null,
           "path": "Week-19/Day-133_Behavioral-and-Leadership",
+          "solvedCount": 0,
+          "totalCount": 6,
+          "completed": false,
           "questions": [
             {
               "id": "133::Describe-for-me-a-time-when-you-had-to-choose-short-term-sacrifices-to",
@@ -9499,7 +10910,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "133::How-do-you-deal-with-having-to-provide-feedback-to-someone",
@@ -9516,7 +10929,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "133::Tell-me-about-a-time-you-failed-to-meet-a-deadline-How-did-you-cope",
@@ -9533,7 +10948,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "133::Has-there-been-a-time-when-your-contribution-was-overlooked-and",
@@ -9550,7 +10967,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "133::Tell-me-about-a-project-you-are-proud-of-How-did-you-ensure-high",
@@ -9567,7 +10986,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "133::Have-you-been-in-a-conflict-with-a-fellow-coworker-How-did-you-deal",
@@ -9584,7 +11005,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         }
@@ -9595,6 +11018,9 @@
       "folder": "Week-20",
       "weekTitle": "Week 20 (Days 134–135)",
       "phase": "Phase 5: Hard Interview Mastery, System Design & Behavioral",
+      "solvedCount": 0,
+      "totalCount": 2,
+      "completed": false,
       "days": [
         {
           "day": 134,
@@ -9602,6 +11028,9 @@
           "type": "design",
           "title": null,
           "path": "Week-20/Day-134_System-Design-and-OOD",
+          "solvedCount": 0,
+          "totalCount": 2,
+          "completed": false,
           "questions": [
             {
               "id": "134::Design-Uber-backend",
@@ -9618,7 +11047,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             },
             {
               "id": "134::Design-Ticketmaster",
@@ -9635,7 +11066,9 @@
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
-              }
+              },
+              "solvedAt": null,
+              "lastUpdated": null
             }
           ]
         },
@@ -9645,6 +11078,9 @@
           "type": "revision",
           "title": "Revise questions solved from Day 121 to 134",
           "path": "Week-20/Day-135_Revision",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         }
       ]
@@ -9654,6 +11090,9 @@
       "folder": "Week-21",
       "weekTitle": "Weeks 21–22: Final Mock & Complete Revision",
       "phase": "Phase 5: Interview Mastery & Revision",
+      "solvedCount": 0,
+      "totalCount": 0,
+      "completed": false,
       "days": [
         {
           "day": "136 - 150",
@@ -9661,6 +11100,9 @@
           "type": "revision",
           "title": "Revise all questions solved from Day 1 to 134 & complete mock interviews",
           "path": "Week-21/Day-136-150_Final-Revision-and-Mock-Interviews",
+          "solvedCount": 0,
+          "totalCount": 0,
+          "completed": false,
           "questions": []
         }
       ]
