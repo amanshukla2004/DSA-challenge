@@ -4,12 +4,23 @@
  * Week 1 | Day 2 | Arrays
  * Approach: Better
  *
- * Time Complexity:  O(...)
+ * Time Complexity: O(...)
  * Space Complexity: O(...)
  */
 
-public class BetterSolution {
-    public static void main(String[] args) {
-        // TODO: Add test cases for Remove Duplicates from Sorted Array (Better)
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        Set<Integer> set = new LinkedHashSet<>();
+
+        for (int num : nums) {
+            set.add(num);
+        }
+
+        int i = 0;
+        for (int num : set) {
+            nums[i++] = num;
+        }
+
+        return set.size();
     }
 }
