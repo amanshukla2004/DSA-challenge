@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T16:49:29.119Z",
+  "generatedAt": "2026-11-16T18:53:42.581Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -8,20 +8,21 @@
     "designQuestions": 42,
     "behavioralQuestions": 26,
     "revisionDays": 10,
-    "concepts": 4,
-    "repoSolved": 6,
-    "repoNotes": 5,
+    "concepts": 7,
+    "repoSolved": 11,
+    "repoNotes": 7,
     "daysCompleted": 1,
     "weeksCompleted": 0
   },
   "potd": {
-    "date": "2026-11-12",
-    "title": "Longest Strictly Increasing or Strictly Decreasing Subarray",
-    "url": "https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/",
+    "date": "2026-11-16",
+    "title": "Calculate Digit Sum of a String",
+    "url": "https://leetcode.com/problems/calculate-digit-sum-of-a-string/",
     "diff": "E",
     "diffLabel": "Easy",
     "tags": [
-      "Array"
+      "String",
+      "Simulation"
     ]
   },
   "concepts": [
@@ -52,9 +53,45 @@
       "group": "General",
       "path": "Concepts/04-Learnings-and-Mistakes-Log.md",
       "lastUpdated": "2026-11-12"
+    },
+    {
+      "id": "concept::Concepts/arrayList.md",
+      "title": "arrayList",
+      "group": "General",
+      "path": "Concepts/arrayList.md",
+      "lastUpdated": "2026-11-17"
+    },
+    {
+      "id": "concept::Concepts/priorityQueue.md",
+      "title": "priorityQueue",
+      "group": "General",
+      "path": "Concepts/priorityQueue.md",
+      "lastUpdated": "2026-11-17"
+    },
+    {
+      "id": "concept::Concepts/sweepLine.md",
+      "title": "sweepLine",
+      "group": "General",
+      "path": "Concepts/sweepLine.md",
+      "lastUpdated": "2026-11-17"
     }
   ],
   "activityByDate": {
+    "2026-11-17": {
+      "questions": [
+        "2::Find-All-Numbers-Disappeared-in-an-Array",
+        "2::Intersection-of-Two-Arrays-II",
+        "2::Intersection-of-Two-Arrays",
+        "2::Remove-Duplicates-from-Sorted-Array-II",
+        "2::Remove-Duplicates-from-Sorted-Array"
+      ],
+      "concepts": [
+        "concept::Concepts/arrayList.md",
+        "concept::Concepts/priorityQueue.md",
+        "concept::Concepts/sweepLine.md"
+      ],
+      "trackerUpdated": false
+    },
     "2026-11-12": {
       "questions": [
         "1::Majority-Element",
@@ -81,6 +118,13 @@
       "1::Move-Zeroes",
       "1::Squares-of-a-Sorted-Array",
       "1::Merge-Sorted-Array"
+    ],
+    "2026-11-17": [
+      "2::Remove-Duplicates-from-Sorted-Array",
+      "2::Remove-Duplicates-from-Sorted-Array-II",
+      "2::Find-All-Numbers-Disappeared-in-an-Array",
+      "2::Intersection-of-Two-Arrays",
+      "2::Intersection-of-Two-Arrays-II"
     ]
   },
   "weeks": [
@@ -89,7 +133,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 6,
+      "solvedCount": 11,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -257,7 +301,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-002_Arrays",
-          "solvedCount": 0,
+          "solvedCount": 5,
           "totalCount": 7,
           "completed": false,
           "questions": [
@@ -275,15 +319,15 @@
                 "optimised.java"
               ],
               "path": "Week-01/Day-002_Arrays/Remove-Duplicates-from-Sorted-Array",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Remove-Duplicates-from-Sorted-Array-II",
@@ -294,20 +338,19 @@
               "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
-                "better.java",
-                "optimised.java"
+                "OptimisedSolution.java"
               ],
               "path": "Week-01/Day-002_Arrays/Remove-Duplicates-from-Sorted-Array-II",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
-                "optimised": false
+                "optimised": false,
+                "optimisedsolution": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Find-All-Numbers-Disappeared-in-an-Array",
@@ -323,15 +366,15 @@
                 "optimised.java"
               ],
               "path": "Week-01/Day-002_Arrays/Find-All-Numbers-Disappeared-in-an-Array",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Intersection-of-Two-Arrays",
@@ -343,19 +386,20 @@
               "hasJava": true,
               "javaFiles": [
                 "bruteforce.java",
-                "better.java",
-                "optimised.java"
+                "optimised.java",
+                "BetterSolution.java"
               ],
               "path": "Week-01/Day-002_Arrays/Intersection-of-Two-Arrays",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
-                "optimised": false
+                "optimised": true,
+                "bettersolution": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Intersection-of-Two-Arrays-II",
@@ -366,20 +410,18 @@
               "url": "https://leetcode.com/problems/intersection-of-two-arrays-ii/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
-                "better.java",
                 "optimised.java"
               ],
               "path": "Week-01/Day-002_Arrays/Intersection-of-Two-Arrays-II",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
-                "optimised": false
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Maximum-Population-Year",
