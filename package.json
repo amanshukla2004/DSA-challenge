@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "21-Week DSA Challenge Roadmap, 150 Algorithms Hub, and Learning Dashboard",
   "scripts": {
-    "sync": "node scripts/generate_structure.js",
-    "build": "node scripts/generate_structure.js"
+    "sync": "node scripts/generate_structure.js"
   }
 }
