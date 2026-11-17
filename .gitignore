@@ -12,6 +12,9 @@ desktop.ini
 node_modules/
 npm-debug.log*
 *.log
+* - Copy - ignore/
+*- ignore/
+algos - Copy - ignore/
 
 # Hosting / Env
 .vercel/

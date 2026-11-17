@@ -1480,6 +1480,145 @@ body {
   background: var(--bg-card);
 }
 
+/* GitHub-style Markdown Alerts */
+.markdown-alert {
+  margin: 12px 0;
+  padding: 8px 14px;
+  border-left: 3px solid;
+  border-radius: 6px;
+  font-size: 13px;
+  background: var(--bg-card);
+}
+
+.markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.markdown-alert-note {
+  border-color: var(--blue);
+}
+.markdown-alert-note .markdown-alert-title {
+  color: var(--blue);
+}
+
+.markdown-alert-tip {
+  border-color: var(--green);
+}
+.markdown-alert-tip .markdown-alert-title {
+  color: var(--green);
+}
+
+.markdown-alert-important {
+  border-color: #a855f7;
+}
+.markdown-alert-important .markdown-alert-title {
+  color: #a855f7;
+}
+
+.markdown-alert-warning {
+  border-color: var(--yellow);
+}
+.markdown-alert-warning .markdown-alert-title {
+  color: var(--yellow);
+}
+
+.markdown-alert-caution {
+  border-color: var(--red);
+}
+.markdown-alert-caution .markdown-alert-title {
+  color: var(--red);
+}
+
+/* Markdown Task Lists & Interactive Checkboxes */
+.md-task-list {
+  list-style: none !important;
+  padding-left: 2px !important;
+}
+
+.md-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+.md-task-checkbox {
+  margin-top: 3px;
+  cursor: pointer;
+  accent-color: var(--green);
+  width: 14px;
+  height: 14px;
+}
+
+.md-task-item.is-done > span {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+/* Markdown Collapsible Details */
+.md-body details {
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.md-body summary {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  user-select: none;
+  background: var(--bg-elev);
+}
+
+.md-body details[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.md-body details > :not(summary) {
+  padding: 10px 14px;
+}
+
+/* Code Block Copy Wrapper */
+.code-block-wrapper {
+  position: relative;
+  margin: 12px 0;
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+}
+
+.copy-code-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 3px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.copy-code-btn:hover {
+  opacity: 1;
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
 .alert-box {
   border: 1px solid var(--red-border);
   background: var(--red-soft);

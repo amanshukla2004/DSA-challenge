@@ -5,6 +5,7 @@ const { execFileSync } = require('child_process');
 const ROOT_DIR = path.resolve(__dirname, '..');
 const DATA_FILE = path.join(ROOT_DIR, 'daily_data.js');
 const CONCEPTS_DIR = path.join(ROOT_DIR, 'Concepts');
+const ALGOS_DIR = path.join(ROOT_DIR, '150 dsa algos');
 const TRACKER_FILE = path.join(ROOT_DIR, 'daily-tracker.json');
 const INITIAL_SCAFFOLD_COMMIT = '6fefd623855cce9b7554ac13123ce156de254069';
 
@@ -320,6 +321,50 @@ function scanConcepts() {
   }
 
   walk(CONCEPTS_DIR, []);
+  return results;
+}
+
+/**
+ * Recursively scan 150 dsa algos/ for all algorithms.
+ */
+function scanAlgos() {
+  if (!fs.existsSync(ALGOS_DIR)) return [];
+  const results = [];
+  const categories = fs.readdirSync(ALGOS_DIR, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  for (const cat of categories) {
+    const catPath = path.join(ALGOS_DIR, cat.name);
+    const algos = fs.readdirSync(catPath, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    for (const algo of algos) {
+      const algoPath = path.join(catPath, algo.name);
+      const mdPath = path.join(algoPath, 'README.md');
+      const relPath = path.relative(ROOT_DIR, mdPath).replace(/\\/g, '/');
+      let title = algo.name;
+      let tier = 'Core Interview';
+
+      if (fs.existsSync(mdPath)) {
+        const content = fs.readFileSync(mdPath, 'utf8');
+        const h1Match = content.match(/^#\s+(.+)$/m);
+        if (h1Match) title = h1Match[1].trim();
+        const tierMatch = content.match(/Tier:\s*([^·\n\r]+)/i);
+        if (tierMatch) tier = tierMatch[1].trim();
+      }
+
+      results.push({
+        id: `algo::${cat.name}::${algo.name}`,
+        name: title,
+        folder: algo.name,
+        category: cat.name,
+        tier,
+        path: relPath
+      });
+    }
+  }
   return results;
 }
 
@@ -659,6 +704,7 @@ async function main() {
     behavioralQuestions: 0,
     revisionDays: 0,
     concepts: 0,
+    algos: 0,
     repoSolved: 0,
     repoNotes: 0,
     daysCompleted: 0,
@@ -829,6 +875,8 @@ async function main() {
 
   const concepts = scanConcepts();
   totals.concepts = concepts.length;
+  const algos = scanAlgos();
+  totals.algos = algos.length;
   const conceptPathToId = new Map(concepts.map((c) => [c.path, c.id]));
 
   const { activityByDate, lastUpdatedByPath, questionCommitDates } = buildGitActivity(
@@ -872,6 +920,7 @@ async function main() {
     totals,
     potd,
     concepts,
+    algos,
     activityByDate,
     solvedByDate,
     weeks: weeksIndex

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T16:49:29.119Z",
+  "generatedAt": "2026-11-17T16:57:09.619Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -8,22 +8,14 @@
     "designQuestions": 42,
     "behavioralQuestions": 26,
     "revisionDays": 10,
-    "concepts": 4,
-    "repoSolved": 6,
-    "repoNotes": 5,
-    "daysCompleted": 1,
+    "concepts": 7,
+    "algos": 150,
+    "repoSolved": 13,
+    "repoNotes": 8,
+    "daysCompleted": 2,
     "weeksCompleted": 0
   },
-  "potd": {
-    "date": "2026-11-12",
-    "title": "Longest Strictly Increasing or Strictly Decreasing Subarray",
-    "url": "https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/",
-    "diff": "E",
-    "diffLabel": "Easy",
-    "tags": [
-      "Array"
-    ]
-  },
+  "potd": null,
   "concepts": [
     {
       "id": "concept::Concepts/01-Java-DSA-Cheatsheet.md",
@@ -52,9 +44,1247 @@
       "group": "General",
       "path": "Concepts/04-Learnings-and-Mistakes-Log.md",
       "lastUpdated": "2026-11-12"
+    },
+    {
+      "id": "concept::Concepts/arrayList.md",
+      "title": "arrayList",
+      "group": "General",
+      "path": "Concepts/arrayList.md",
+      "lastUpdated": "2026-11-17"
+    },
+    {
+      "id": "concept::Concepts/priorityQueue.md",
+      "title": "priorityQueue",
+      "group": "General",
+      "path": "Concepts/priorityQueue.md",
+      "lastUpdated": "2026-11-17"
+    },
+    {
+      "id": "concept::Concepts/sweepLine.md",
+      "title": "sweepLine",
+      "group": "General",
+      "path": "Concepts/sweepLine.md",
+      "lastUpdated": "2026-11-17"
+    }
+  ],
+  "algos": [
+    {
+      "id": "algo::AdvancedAndRare::ConvexHullAlgo",
+      "name": "Convex Hull",
+      "folder": "ConvexHullAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/ConvexHullAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::ConvexHullTrick",
+      "name": "Convex Hull Trick",
+      "folder": "ConvexHullTrick",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/ConvexHullTrick/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::DinicsAlgo",
+      "name": "Dinics",
+      "folder": "DinicsAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/DinicsAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::EdmondsKarpAlgo",
+      "name": "Edmonds Karp",
+      "folder": "EdmondsKarpAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/EdmondsKarpAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::FordFulkersonAlgo",
+      "name": "Ford Fulkerson",
+      "folder": "FordFulkersonAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/FordFulkersonAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::GrundyNumbersAlgo",
+      "name": "Grundy Numbers",
+      "folder": "GrundyNumbersAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/GrundyNumbersAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::LiChaoTreeAlgo",
+      "name": "Li Chao Tree",
+      "folder": "LiChaoTreeAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/LiChaoTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::LineIntersectionAlgo",
+      "name": "Line Intersection",
+      "folder": "LineIntersectionAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/LineIntersectionAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::MinimumCostMaxFlowAlgo",
+      "name": "Minimum Cost Max Flow",
+      "folder": "MinimumCostMaxFlowAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/MinimumCostMaxFlowAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::MinimumCutAlgo",
+      "name": "Minimum Cut",
+      "folder": "MinimumCutAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/MinimumCutAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::RotatingCalipersAlgo",
+      "name": "Rotating Calipers",
+      "folder": "RotatingCalipersAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/RotatingCalipersAlgo/README.md"
+    },
+    {
+      "id": "algo::AdvancedAndRare::SpragueGrundyTheoremAlgo",
+      "name": "Sprague Grundy Theorem",
+      "folder": "SpragueGrundyTheoremAlgo",
+      "category": "AdvancedAndRare",
+      "tier": "** Competitive Programming (Advanced)",
+      "path": "150 dsa algos/AdvancedAndRare/SpragueGrundyTheoremAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::CoordinateCompressionAlgo",
+      "name": "Coordinate Compression",
+      "folder": "CoordinateCompressionAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (Intermediate)",
+      "path": "150 dsa algos/Arrays/CoordinateCompressionAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::DifferenceArrayAlgo",
+      "name": "Difference Array",
+      "folder": "DifferenceArrayAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::KadanesAlgo",
+      "name": "Kadanes",
+      "folder": "KadanesAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Arrays/KadanesAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::MeetintheMiddleAlgo",
+      "name": "Meetinthe Middle",
+      "folder": "MeetintheMiddleAlgo",
+      "category": "Arrays",
+      "tier": "** Advanced Interview (Optimization)",
+      "path": "150 dsa algos/Arrays/MeetintheMiddleAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::PrefixSum2DAlgo",
+      "name": "Prefix Sum2 D",
+      "folder": "PrefixSum2DAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Arrays/PrefixSum2DAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::PrefixSumAlgo",
+      "name": "Prefix Sum",
+      "folder": "PrefixSumAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Arrays/PrefixSumAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::SlidingWindowAlgo",
+      "name": "Sliding Window",
+      "folder": "SlidingWindowAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Arrays/SlidingWindowAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::SubarraySumTechniqueAlgo",
+      "name": "Subarray Sum Technique",
+      "folder": "SubarraySumTechniqueAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Arrays/SubarraySumTechniqueAlgo/README.md"
+    },
+    {
+      "id": "algo::Arrays::TwoPointersAlgo",
+      "name": "Two Pointers",
+      "folder": "TwoPointersAlgo",
+      "category": "Arrays",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Arrays/TwoPointersAlgo/README.md"
+    },
+    {
+      "id": "algo::BitManipulation::BitMaskingAlgo",
+      "name": "Bit Masking",
+      "folder": "BitMaskingAlgo",
+      "category": "BitManipulation",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/BitManipulation/BitMaskingAlgo/README.md"
+    },
+    {
+      "id": "algo::BitManipulation::BitwiseOperationsAlgo",
+      "name": "Bitwise Operations",
+      "folder": "BitwiseOperationsAlgo",
+      "category": "BitManipulation",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/BitManipulation/BitwiseOperationsAlgo/README.md"
+    },
+    {
+      "id": "algo::BitManipulation::GrayCodeAlgo",
+      "name": "Gray Code",
+      "folder": "GrayCodeAlgo",
+      "category": "BitManipulation",
+      "tier": "** Advanced Interview (Pattern)",
+      "path": "150 dsa algos/BitManipulation/GrayCodeAlgo/README.md"
+    },
+    {
+      "id": "algo::BitManipulation::SETClearToggleBitAlgo",
+      "name": "SET Clear Toggle Bit",
+      "folder": "SETClearToggleBitAlgo",
+      "category": "BitManipulation",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/BitManipulation/SETClearToggleBitAlgo/README.md"
+    },
+    {
+      "id": "algo::BitManipulation::SubsetEnumerationAlgo",
+      "name": "Subset Enumeration",
+      "folder": "SubsetEnumerationAlgo",
+      "category": "BitManipulation",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/BitManipulation/SubsetEnumerationAlgo/README.md"
+    },
+    {
+      "id": "algo::BitManipulation::XORPropertiesAlgo",
+      "name": "XOR Properties",
+      "folder": "XORPropertiesAlgo",
+      "category": "BitManipulation",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/BitManipulation/XORPropertiesAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::BitMaskDPAlgo",
+      "name": "Bit Mask DP",
+      "folder": "BitMaskDPAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Advanced Interview (Hard)",
+      "path": "150 dsa algos/DynamicProgramming/BitMaskDPAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::DigitDPAlgo",
+      "name": "Digit DP",
+      "folder": "DigitDPAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Advanced Interview (Hard)",
+      "path": "150 dsa algos/DynamicProgramming/DigitDPAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::DPOnGridsAlgo",
+      "name": "DP On Grids",
+      "folder": "DPOnGridsAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/DynamicProgramming/DPOnGridsAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::DPOnIntervalsAlgo",
+      "name": "DP On Intervals",
+      "folder": "DPOnIntervalsAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Advanced Interview (Hard)",
+      "path": "150 dsa algos/DynamicProgramming/DPOnIntervalsAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::DPOnSubsequencesAlgo",
+      "name": "DP On Subsequences",
+      "folder": "DPOnSubsequencesAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/DynamicProgramming/DPOnSubsequencesAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::EditDistanceAlgo",
+      "name": "Edit Distance",
+      "folder": "EditDistanceAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/DynamicProgramming/EditDistanceAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::FibonacciDPAlgo",
+      "name": "Fibonacci DP",
+      "folder": "FibonacciDPAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/DynamicProgramming/FibonacciDPAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::Knapsack01Algo",
+      "name": "Knapsack01",
+      "folder": "Knapsack01Algo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/DynamicProgramming/Knapsack01Algo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::LongestCommonSubsequenceAlgo",
+      "name": "Longest Common Subsequence",
+      "folder": "LongestCommonSubsequenceAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/DynamicProgramming/LongestCommonSubsequenceAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::LongestIncreasingSubsequenceAlgo",
+      "name": "Longest Increasing Subsequence",
+      "folder": "LongestIncreasingSubsequenceAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/DynamicProgramming/LongestIncreasingSubsequenceAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::MatrixChainMultiplicationAlgo",
+      "name": "Matrix Chain Multiplication",
+      "folder": "MatrixChainMultiplicationAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Advanced Interview (Classic)",
+      "path": "150 dsa algos/DynamicProgramming/MatrixChainMultiplicationAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::MemoizationAlgo",
+      "name": "Memoization",
+      "folder": "MemoizationAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/DynamicProgramming/MemoizationAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::PartitionDPAlgo",
+      "name": "Partition DP",
+      "folder": "PartitionDPAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Advanced Interview (Hard)",
+      "path": "150 dsa algos/DynamicProgramming/PartitionDPAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::SubsetSumAlgo",
+      "name": "Subset Sum",
+      "folder": "SubsetSumAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/DynamicProgramming/SubsetSumAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::TabulationAlgo",
+      "name": "Tabulation",
+      "folder": "TabulationAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/DynamicProgramming/TabulationAlgo/README.md"
+    },
+    {
+      "id": "algo::DynamicProgramming::UnboundedKnapsackAlgo",
+      "name": "Unbounded Knapsack",
+      "folder": "UnboundedKnapsackAlgo",
+      "category": "DynamicProgramming",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/DynamicProgramming/UnboundedKnapsackAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::ArticulationPointsAlgo",
+      "name": "Articulation Points",
+      "folder": "ArticulationPointsAlgo",
+      "category": "Graphs",
+      "tier": "** Advanced Interview (Tarjan)",
+      "path": "150 dsa algos/Graphs/ArticulationPointsAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::BellmanFordAlgo",
+      "name": "Bellman Ford",
+      "folder": "BellmanFordAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/Graphs/BellmanFordAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::BFS01Algo",
+      "name": "BFS01",
+      "folder": "BFS01Algo",
+      "category": "Graphs",
+      "tier": "** Advanced Interview (Shortest Path)",
+      "path": "150 dsa algos/Graphs/BFS01Algo/README.md"
+    },
+    {
+      "id": "algo::Graphs::BFSAlgo",
+      "name": "BFS",
+      "folder": "BFSAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Graphs/BFSAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::BipartiteGraphCheckAlgo",
+      "name": "Bipartite Graph Check",
+      "folder": "BipartiteGraphCheckAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Graphs/BipartiteGraphCheckAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::BridgesInGraphAlgo",
+      "name": "Bridges In Graph",
+      "folder": "BridgesInGraphAlgo",
+      "category": "Graphs",
+      "tier": "** Advanced Interview (Tarjan)",
+      "path": "150 dsa algos/Graphs/BridgesInGraphAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::CycleDetectiondirectedGraphAlgo",
+      "name": "Cycle Detectiondirected Graph",
+      "folder": "CycleDetectiondirectedGraphAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Graphs/CycleDetectiondirectedGraphAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::CycleDetectionUndirectedGraphAlgo",
+      "name": "Cycle Detection Undirected Graph",
+      "folder": "CycleDetectionUndirectedGraphAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Graphs/CycleDetectionUndirectedGraphAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::DAGDPAlgo",
+      "name": "DAGDP",
+      "folder": "DAGDPAlgo",
+      "category": "Graphs",
+      "tier": "** Advanced Interview (Optimization)",
+      "path": "150 dsa algos/Graphs/DAGDPAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::DFSAlgo",
+      "name": "DFS",
+      "folder": "DFSAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Graphs/DFSAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::DijkstrasAlgo",
+      "name": "Dijkstras",
+      "folder": "DijkstrasAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Graphs/DijkstrasAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::DisjointSetUnionAlgo",
+      "name": "Disjoint Set Union",
+      "folder": "DisjointSetUnionAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Graphs/DisjointSetUnionAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::FloydWarshallAlgo",
+      "name": "Floyd Warshall",
+      "folder": "FloydWarshallAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/Graphs/FloydWarshallAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::GraphRepresentationAlgo",
+      "name": "Graph Representation",
+      "folder": "GraphRepresentationAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Graphs/GraphRepresentationAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::KosarajusSCCAlgo",
+      "name": "Kosarajus SCC",
+      "folder": "KosarajusSCCAlgo",
+      "category": "Graphs",
+      "tier": "** Advanced Interview (Classic)",
+      "path": "150 dsa algos/Graphs/KosarajusSCCAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::KruskalsMSTAlgo",
+      "name": "Kruskals MST",
+      "folder": "KruskalsMSTAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Graphs/KruskalsMSTAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::MultiSourceBFSAlgo",
+      "name": "Multi Source BFS",
+      "folder": "MultiSourceBFSAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Graphs/MultiSourceBFSAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::PrimsAlgo",
+      "name": "Prims",
+      "folder": "PrimsAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Graphs/PrimsAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::TarjansAlgo",
+      "name": "Tarjans",
+      "folder": "TarjansAlgo",
+      "category": "Graphs",
+      "tier": "** Advanced Interview (Classic)",
+      "path": "150 dsa algos/Graphs/TarjansAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::TopologicalSortingAlgo",
+      "name": "Topological Sorting",
+      "folder": "TopologicalSortingAlgo",
+      "category": "Graphs",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Graphs/TopologicalSortingAlgo/README.md"
+    },
+    {
+      "id": "algo::Graphs::TreeDpAlgo",
+      "name": "Tree Dp",
+      "folder": "TreeDpAlgo",
+      "category": "Graphs",
+      "tier": "** Advanced Interview (Hard)",
+      "path": "150 dsa algos/Graphs/TreeDpAlgo/README.md"
+    },
+    {
+      "id": "algo::Greedy::ActivitySelectionAlgo",
+      "name": "Activity Selection",
+      "folder": "ActivitySelectionAlgo",
+      "category": "Greedy",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/Greedy/ActivitySelectionAlgo/README.md"
+    },
+    {
+      "id": "algo::Greedy::FunctionalKnapsackAlgo",
+      "name": "Functional Knapsack",
+      "folder": "FunctionalKnapsackAlgo",
+      "category": "Greedy",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/Greedy/FunctionalKnapsackAlgo/README.md"
+    },
+    {
+      "id": "algo::Greedy::GreedyWithPriorityQueueAlgo",
+      "name": "Greedy With Priority Queue",
+      "folder": "GreedyWithPriorityQueueAlgo",
+      "category": "Greedy",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Greedy/GreedyWithPriorityQueueAlgo/README.md"
+    },
+    {
+      "id": "algo::Greedy::GreedyWithSortingAlgo",
+      "name": "Greedy With Sorting",
+      "folder": "GreedyWithSortingAlgo",
+      "category": "Greedy",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Greedy/GreedyWithSortingAlgo/README.md"
+    },
+    {
+      "id": "algo::Greedy::HuffmanCodingAlgo",
+      "name": "Huffman Coding",
+      "folder": "HuffmanCodingAlgo",
+      "category": "Greedy",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/Greedy/HuffmanCodingAlgo/README.md"
+    },
+    {
+      "id": "algo::Greedy::IntervalsSchedulingAlgo",
+      "name": "Intervals Scheduling",
+      "folder": "IntervalsSchedulingAlgo",
+      "category": "Greedy",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Greedy/IntervalsSchedulingAlgo/README.md"
+    },
+    {
+      "id": "algo::Greedy::JobSchedulingAlgo",
+      "name": "Job Scheduling",
+      "folder": "JobSchedulingAlgo",
+      "category": "Greedy",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/Greedy/JobSchedulingAlgo/README.md"
+    },
+    {
+      "id": "algo::LinkedList::DoublyLinkedListAlgo",
+      "name": "Doubly Linked List",
+      "folder": "DoublyLinkedListAlgo",
+      "category": "LinkedList",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/LinkedList/DoublyLinkedListAlgo/README.md"
+    },
+    {
+      "id": "algo::LinkedList::FastAndSlowPointersAlgo",
+      "name": "Fast And Slow Pointers",
+      "folder": "FastAndSlowPointersAlgo",
+      "category": "LinkedList",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/LinkedList/FastAndSlowPointersAlgo/README.md"
+    },
+    {
+      "id": "algo::LinkedList::FloydsCycleDetectionAlgo",
+      "name": "Floyds Cycle Detection",
+      "folder": "FloydsCycleDetectionAlgo",
+      "category": "LinkedList",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/LinkedList/FloydsCycleDetectionAlgo/README.md"
+    },
+    {
+      "id": "algo::LinkedList::ReverseALinkedList",
+      "name": "Reverse A Linked List",
+      "folder": "ReverseALinkedList",
+      "category": "LinkedList",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/LinkedList/ReverseALinkedList/README.md"
+    },
+    {
+      "id": "algo::LinkedList::SinglyLinkedListAlgo",
+      "name": "Singly Linked List",
+      "folder": "SinglyLinkedListAlgo",
+      "category": "LinkedList",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/LinkedList/SinglyLinkedListAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::BinaryExponentiationAlgo",
+      "name": "Binary Exponentiation",
+      "folder": "BinaryExponentiationAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/MathORNumberTheory/BinaryExponentiationAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::CatalanNumbersAlgo",
+      "name": "Catalan Numbers",
+      "folder": "CatalanNumbersAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Advanced Interview (Math)",
+      "path": "150 dsa algos/MathORNumberTheory/CatalanNumbersAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::ChineseRemainderTheoremAlgo",
+      "name": "Chinese Remainder Theorem",
+      "folder": "ChineseRemainderTheoremAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Competitive Programming (Math)",
+      "path": "150 dsa algos/MathORNumberTheory/ChineseRemainderTheoremAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::EuclideanAlgo",
+      "name": "Euclidean",
+      "folder": "EuclideanAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/MathORNumberTheory/EuclideanAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::EulersTotientFunctionAlgo",
+      "name": "Eulers Totient Function",
+      "folder": "EulersTotientFunctionAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Advanced Interview (Math)",
+      "path": "150 dsa algos/MathORNumberTheory/EulersTotientFunctionAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::ExtendedEuclideanAlgo",
+      "name": "Extended Euclidean",
+      "folder": "ExtendedEuclideanAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Advanced Interview (Math)",
+      "path": "150 dsa algos/MathORNumberTheory/ExtendedEuclideanAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::InclusionExclusionPrincipleAlgo",
+      "name": "Inclusion Exclusion Principle",
+      "folder": "InclusionExclusionPrincipleAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Advanced Interview (Math)",
+      "path": "150 dsa algos/MathORNumberTheory/InclusionExclusionPrincipleAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::LCMAlgo",
+      "name": "LCM",
+      "folder": "LCMAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/MathORNumberTheory/LCMAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::LinearSieveAlgo",
+      "name": "Linear Sieve",
+      "folder": "LinearSieveAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Advanced Interview (Primes)",
+      "path": "150 dsa algos/MathORNumberTheory/LinearSieveAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::LucasTheoremAlgo",
+      "name": "Lucas Theorem",
+      "folder": "LucasTheoremAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Competitive Programming (Combinatorics)",
+      "path": "150 dsa algos/MathORNumberTheory/LucasTheoremAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::MatrixExponentiationAlgo",
+      "name": "Matrix Exponentiation",
+      "folder": "MatrixExponentiationAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Advanced Interview (Fibonacci/DP)",
+      "path": "150 dsa algos/MathORNumberTheory/MatrixExponentiationAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::MillerRabinAlgo",
+      "name": "Miller Rabin",
+      "folder": "MillerRabinAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Competitive Programming (Primality)",
+      "path": "150 dsa algos/MathORNumberTheory/MillerRabinAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::MobiusFunctionAlgo",
+      "name": "Mobius Function",
+      "folder": "MobiusFunctionAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Competitive Programming (Number Theory)",
+      "path": "150 dsa algos/MathORNumberTheory/MobiusFunctionAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::ModularArithmeticAlgo",
+      "name": "Modular Arithmetic",
+      "folder": "ModularArithmeticAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/MathORNumberTheory/ModularArithmeticAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::ModularInverseExtendedGCD",
+      "name": "Modular Inverse Extended GCD",
+      "folder": "ModularInverseExtendedGCD",
+      "category": "MathORNumberTheory",
+      "tier": "** Advanced Interview (Modular Math)",
+      "path": "150 dsa algos/MathORNumberTheory/ModularInverseExtendedGCD/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::ModularInverseFermatAlgo",
+      "name": "Modular Inverse Fermat",
+      "folder": "ModularInverseFermatAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/MathORNumberTheory/ModularInverseFermatAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::nCrWithModuloAlgo",
+      "name": "n Cr With Modulo",
+      "folder": "nCrWithModuloAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/MathORNumberTheory/nCrWithModuloAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::PollardRHOAlgo",
+      "name": "Pollard RHO",
+      "folder": "PollardRHOAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Competitive Programming (Factorization)",
+      "path": "150 dsa algos/MathORNumberTheory/PollardRHOAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::PrimeFactorizationAlgo",
+      "name": "Prime Factorization",
+      "folder": "PrimeFactorizationAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/MathORNumberTheory/PrimeFactorizationAlgo/README.md"
+    },
+    {
+      "id": "algo::MathORNumberTheory::SieveOfEratosthenesAlgo",
+      "name": "Sieve Of Eratosthenes",
+      "folder": "SieveOfEratosthenesAlgo",
+      "category": "MathORNumberTheory",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/MathORNumberTheory/SieveOfEratosthenesAlgo/README.md"
+    },
+    {
+      "id": "algo::QueueAndDeque::BFSUsingQueueAlgo",
+      "name": "BFS Using Queue",
+      "folder": "BFSUsingQueueAlgo",
+      "category": "QueueAndDeque",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/QueueAndDeque/BFSUsingQueueAlgo/README.md"
+    },
+    {
+      "id": "algo::QueueAndDeque::DequeAlgo",
+      "name": "Deque",
+      "folder": "DequeAlgo",
+      "category": "QueueAndDeque",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/QueueAndDeque/DequeAlgo/README.md"
+    },
+    {
+      "id": "algo::QueueAndDeque::MonotonicQueueAlgo",
+      "name": "Monotonic Queue",
+      "folder": "MonotonicQueueAlgo",
+      "category": "QueueAndDeque",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/QueueAndDeque/MonotonicQueueAlgo/README.md"
+    },
+    {
+      "id": "algo::QueueAndDeque::QueueAlgo",
+      "name": "Queue",
+      "folder": "QueueAlgo",
+      "category": "QueueAndDeque",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/QueueAndDeque/QueueAlgo/README.md"
+    },
+    {
+      "id": "algo::QueueAndDeque::SlidingWindowMaximumAlgo",
+      "name": "Sliding Window Maximum",
+      "folder": "SlidingWindowMaximumAlgo",
+      "category": "QueueAndDeque",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/QueueAndDeque/SlidingWindowMaximumAlgo/README.md"
+    },
+    {
+      "id": "algo::RecursionORBacktracking::BacktrackingAlgo",
+      "name": "Backtracking",
+      "folder": "BacktrackingAlgo",
+      "category": "RecursionORBacktracking",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/RecursionORBacktracking/BacktrackingAlgo/README.md"
+    },
+    {
+      "id": "algo::RecursionORBacktracking::CombinationGenerationAlgo",
+      "name": "Combination Generation",
+      "folder": "CombinationGenerationAlgo",
+      "category": "RecursionORBacktracking",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/RecursionORBacktracking/CombinationGenerationAlgo/README.md"
+    },
+    {
+      "id": "algo::RecursionORBacktracking::NQueensAlgo",
+      "name": "N Queens",
+      "folder": "NQueensAlgo",
+      "category": "RecursionORBacktracking",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/RecursionORBacktracking/NQueensAlgo/README.md"
+    },
+    {
+      "id": "algo::RecursionORBacktracking::PermutationGenerationAlgo",
+      "name": "Permutation Generation",
+      "folder": "PermutationGenerationAlgo",
+      "category": "RecursionORBacktracking",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/RecursionORBacktracking/PermutationGenerationAlgo/README.md"
+    },
+    {
+      "id": "algo::RecursionORBacktracking::RecursionAlgo",
+      "name": "Recursion",
+      "folder": "RecursionAlgo",
+      "category": "RecursionORBacktracking",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/RecursionORBacktracking/RecursionAlgo/README.md"
+    },
+    {
+      "id": "algo::RecursionORBacktracking::SubsetGenerationAlgo",
+      "name": "Subset Generation",
+      "folder": "SubsetGenerationAlgo",
+      "category": "RecursionORBacktracking",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/RecursionORBacktracking/SubsetGenerationAlgo/README.md"
+    },
+    {
+      "id": "algo::RecursionORBacktracking::SudokuSolverAlgo",
+      "name": "Sudoku Solver",
+      "folder": "SudokuSolverAlgo",
+      "category": "RecursionORBacktracking",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/RecursionORBacktracking/SudokuSolverAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::BinarySearchAlgo",
+      "name": "Binary Search",
+      "folder": "BinarySearchAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/SearchingAndSorting/BinarySearchAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::CountingSortAlgo",
+      "name": "Counting Sort",
+      "folder": "CountingSortAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/SearchingAndSorting/CountingSortAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::CyclicSortAlgo",
+      "name": "Cyclic Sort",
+      "folder": "CyclicSortAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/SearchingAndSorting/CyclicSortAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::InversionCountAlgo",
+      "name": "Inversion Count",
+      "folder": "InversionCountAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Merge Sort Variation)",
+      "path": "150 dsa algos/SearchingAndSorting/InversionCountAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::LowerBoundAlgo",
+      "name": "Lower Bound",
+      "folder": "LowerBoundAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/SearchingAndSorting/LowerBoundAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::MergeSortAlgo",
+      "name": "Merge Sort",
+      "folder": "MergeSortAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/SearchingAndSorting/MergeSortAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::QuickSortAlgo",
+      "name": "Quick Sort",
+      "folder": "QuickSortAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/SearchingAndSorting/QuickSortAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::RadixSortAlgo",
+      "name": "Radix Sort",
+      "folder": "RadixSortAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/SearchingAndSorting/RadixSortAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::TernarySearchAlgo",
+      "name": "Ternary Search",
+      "folder": "TernarySearchAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Advanced Interview (Unimodal)",
+      "path": "150 dsa algos/SearchingAndSorting/TernarySearchAlgo/README.md"
+    },
+    {
+      "id": "algo::SearchingAndSorting::UpperBoundAlgo",
+      "name": "Upper Bound",
+      "folder": "UpperBoundAlgo",
+      "category": "SearchingAndSorting",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/SearchingAndSorting/UpperBoundAlgo/README.md"
+    },
+    {
+      "id": "algo::Stacks::LargestRectangleinHistogram",
+      "name": "Largest Rectanglein Histogram",
+      "folder": "LargestRectangleinHistogram",
+      "category": "Stacks",
+      "tier": "** Core Interview (Hard/Classic)",
+      "path": "150 dsa algos/Stacks/LargestRectangleinHistogram/README.md"
+    },
+    {
+      "id": "algo::Stacks::NextGreaterElementAlgo",
+      "name": "Next Greater Element",
+      "folder": "NextGreaterElementAlgo",
+      "category": "Stacks",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Stacks/NextGreaterElementAlgo/README.md"
+    },
+    {
+      "id": "algo::Stacks::NextSmallerElement",
+      "name": "Next Smaller Element",
+      "folder": "NextSmallerElement",
+      "category": "Stacks",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Stacks/NextSmallerElement/README.md"
+    },
+    {
+      "id": "algo::Stacks::PreviousGreaterElement",
+      "name": "Previous Greater Element",
+      "folder": "PreviousGreaterElement",
+      "category": "Stacks",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Stacks/PreviousGreaterElement/README.md"
+    },
+    {
+      "id": "algo::Stacks::StackAlgo",
+      "name": "Stack",
+      "folder": "StackAlgo",
+      "category": "Stacks",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Stacks/StackAlgo/README.md"
+    },
+    {
+      "id": "algo::Stacks::ValidParantheses",
+      "name": "Valid Parantheses",
+      "folder": "ValidParantheses",
+      "category": "Stacks",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Stacks/ValidParantheses/README.md"
+    },
+    {
+      "id": "algo::Strings::AhoCorasickAlgo",
+      "name": "Aho Corasick",
+      "folder": "AhoCorasickAlgo",
+      "category": "Strings",
+      "tier": "** Competitive Programming (String Matching)",
+      "path": "150 dsa algos/Strings/AhoCorasickAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::KasaiAlgo",
+      "name": "Kasai",
+      "folder": "KasaiAlgo",
+      "category": "Strings",
+      "tier": "** Competitive Programming (LCP Array)",
+      "path": "150 dsa algos/Strings/KasaiAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::KMPAlgo",
+      "name": "KMP",
+      "folder": "KMPAlgo",
+      "category": "Strings",
+      "tier": "** Core Interview (Classic)",
+      "path": "150 dsa algos/Strings/KMPAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::ManachersAlgo",
+      "name": "Manachers",
+      "folder": "ManachersAlgo",
+      "category": "Strings",
+      "tier": "** Advanced Interview (Palindromes)",
+      "path": "150 dsa algos/Strings/ManachersAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::PalindromicTreeAlgo",
+      "name": "Palindromic Tree",
+      "folder": "PalindromicTreeAlgo",
+      "category": "Strings",
+      "tier": "** Competitive Programming (Palindromes)",
+      "path": "150 dsa algos/Strings/PalindromicTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::PrefixFunctionKMPAlgo",
+      "name": "Prefix Function KMP",
+      "folder": "PrefixFunctionKMPAlgo",
+      "category": "Strings",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Strings/PrefixFunctionKMPAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::RabinKarpAlgo",
+      "name": "Rabin Karp",
+      "folder": "RabinKarpAlgo",
+      "category": "Strings",
+      "tier": "** Core Interview (Rolling Hash)",
+      "path": "150 dsa algos/Strings/RabinKarpAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::StringHashingAlgo",
+      "name": "String Hashing",
+      "folder": "StringHashingAlgo",
+      "category": "Strings",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Strings/StringHashingAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::SuffixArrayAlgo",
+      "name": "Suffix Array",
+      "folder": "SuffixArrayAlgo",
+      "category": "Strings",
+      "tier": "** Advanced Interview (Strings)",
+      "path": "150 dsa algos/Strings/SuffixArrayAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::SuffixAutomaton",
+      "name": "Suffix Automaton",
+      "folder": "SuffixAutomaton",
+      "category": "Strings",
+      "tier": "** Competitive Programming (Strings)",
+      "path": "150 dsa algos/Strings/SuffixAutomaton/README.md"
+    },
+    {
+      "id": "algo::Strings::TrieAlgo",
+      "name": "Trie",
+      "folder": "TrieAlgo",
+      "category": "Strings",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Strings/TrieAlgo/README.md"
+    },
+    {
+      "id": "algo::Strings::ZAlgo",
+      "name": "Z",
+      "folder": "ZAlgo",
+      "category": "Strings",
+      "tier": "** Advanced Interview (Strings)",
+      "path": "150 dsa algos/Strings/ZAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::BinarySearchTreeAlgo",
+      "name": "Binary Search Tree",
+      "folder": "BinarySearchTreeAlgo",
+      "category": "Trees",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Trees/BinarySearchTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::CentroidDecompositionAlgo",
+      "name": "Centroid Decomposition",
+      "folder": "CentroidDecompositionAlgo",
+      "category": "Trees",
+      "tier": "** Competitive Programming (Tree Divide & Conquer)",
+      "path": "150 dsa algos/Trees/CentroidDecompositionAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::DSUOnTreesAlgo",
+      "name": "DSU On Trees",
+      "folder": "DSUOnTreesAlgo",
+      "category": "Trees",
+      "tier": "** Competitive Programming (Sack on Tree)",
+      "path": "150 dsa algos/Trees/DSUOnTreesAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::EulerTourAlgo",
+      "name": "Euler Tour",
+      "folder": "EulerTourAlgo",
+      "category": "Trees",
+      "tier": "** Advanced Interview (Subtree Queries)",
+      "path": "150 dsa algos/Trees/EulerTourAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::FenwickTreeAlgo",
+      "name": "Fenwick Tree",
+      "folder": "FenwickTreeAlgo",
+      "category": "Trees",
+      "tier": "** Core Interview (Binary Indexed Tree)",
+      "path": "150 dsa algos/Trees/FenwickTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::HeavyLightDecompositionAlgo",
+      "name": "Heavy Light Decomposition",
+      "folder": "HeavyLightDecompositionAlgo",
+      "category": "Trees",
+      "tier": "** Competitive Programming (Path Queries)",
+      "path": "150 dsa algos/Trees/HeavyLightDecompositionAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::LazySegmentTreeAlgo",
+      "name": "Lazy Segment Tree",
+      "folder": "LazySegmentTreeAlgo",
+      "category": "Trees",
+      "tier": "** Advanced Interview (Range Updates)",
+      "path": "150 dsa algos/Trees/LazySegmentTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::LowestCommonAncestorAlgo",
+      "name": "Lowest Common Ancestor",
+      "folder": "LowestCommonAncestorAlgo",
+      "category": "Trees",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Trees/LowestCommonAncestorAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::MergeSortTreeAlgo",
+      "name": "Merge Sort Tree",
+      "folder": "MergeSortTreeAlgo",
+      "category": "Trees",
+      "tier": "** Competitive Programming (Range Queries)",
+      "path": "150 dsa algos/Trees/MergeSortTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::PersistentSegmentTreeAlgo",
+      "name": "Persistent Segment Tree",
+      "folder": "PersistentSegmentTreeAlgo",
+      "category": "Trees",
+      "tier": "** Competitive Programming (Versioned Trees)",
+      "path": "150 dsa algos/Trees/PersistentSegmentTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::SegmentTreeAlgo",
+      "name": "Segment Tree",
+      "folder": "SegmentTreeAlgo",
+      "category": "Trees",
+      "tier": "** Advanced Interview (Range Queries)",
+      "path": "150 dsa algos/Trees/SegmentTreeAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::TreeDiamaterAlgo",
+      "name": "Tree Diamater",
+      "folder": "TreeDiamaterAlgo",
+      "category": "Trees",
+      "tier": "** Core Interview (High-Yield)",
+      "path": "150 dsa algos/Trees/TreeDiamaterAlgo/README.md"
+    },
+    {
+      "id": "algo::Trees::TreeHeight",
+      "name": "Tree Height",
+      "folder": "TreeHeight",
+      "category": "Trees",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Trees/TreeHeight/README.md"
+    },
+    {
+      "id": "algo::Trees::TreeTraversalsAlgo",
+      "name": "Tree Traversals",
+      "folder": "TreeTraversalsAlgo",
+      "category": "Trees",
+      "tier": "** Core Interview (Essential)",
+      "path": "150 dsa algos/Trees/TreeTraversalsAlgo/README.md"
     }
   ],
   "activityByDate": {
+    "2026-11-17": {
+      "questions": [
+        "2::Find-All-Numbers-Disappeared-in-an-Array",
+        "2::Intersection-of-Two-Arrays-II",
+        "2::Intersection-of-Two-Arrays",
+        "2::Remove-Duplicates-from-Sorted-Array-II",
+        "2::Remove-Duplicates-from-Sorted-Array"
+      ],
+      "concepts": [
+        "concept::Concepts/arrayList.md",
+        "concept::Concepts/priorityQueue.md",
+        "concept::Concepts/sweepLine.md"
+      ],
+      "trackerUpdated": false
+    },
     "2026-11-12": {
       "questions": [
         "1::Majority-Element",
@@ -81,6 +1311,13 @@
       "1::Move-Zeroes",
       "1::Squares-of-a-Sorted-Array",
       "1::Merge-Sorted-Array"
+    ],
+    "2026-11-17": [
+      "2::Remove-Duplicates-from-Sorted-Array",
+      "2::Remove-Duplicates-from-Sorted-Array-II",
+      "2::Find-All-Numbers-Disappeared-in-an-Array",
+      "2::Intersection-of-Two-Arrays",
+      "2::Intersection-of-Two-Arrays-II"
     ]
   },
   "weeks": [
@@ -89,7 +1326,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 6,
+      "solvedCount": 13,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -257,9 +1494,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-002_Arrays",
-          "solvedCount": 0,
+          "solvedCount": 7,
           "totalCount": 7,
-          "completed": false,
+          "completed": true,
           "questions": [
             {
               "id": "2::Remove-Duplicates-from-Sorted-Array",
@@ -275,15 +1512,15 @@
                 "optimised.java"
               ],
               "path": "Week-01/Day-002_Arrays/Remove-Duplicates-from-Sorted-Array",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Remove-Duplicates-from-Sorted-Array-II",
@@ -294,20 +1531,19 @@
               "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
-                "better.java",
-                "optimised.java"
+                "OptimisedSolution.java"
               ],
               "path": "Week-01/Day-002_Arrays/Remove-Duplicates-from-Sorted-Array-II",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
-                "optimised": false
+                "optimised": false,
+                "optimisedsolution": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Find-All-Numbers-Disappeared-in-an-Array",
@@ -323,15 +1559,15 @@
                 "optimised.java"
               ],
               "path": "Week-01/Day-002_Arrays/Find-All-Numbers-Disappeared-in-an-Array",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Intersection-of-Two-Arrays",
@@ -343,19 +1579,20 @@
               "hasJava": true,
               "javaFiles": [
                 "bruteforce.java",
-                "better.java",
-                "optimised.java"
+                "optimised.java",
+                "BetterSolution.java"
               ],
               "path": "Week-01/Day-002_Arrays/Intersection-of-Two-Arrays",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
-                "optimised": false
+                "optimised": true,
+                "bettersolution": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Intersection-of-Two-Arrays-II",
@@ -366,20 +1603,18 @@
               "url": "https://leetcode.com/problems/intersection-of-two-arrays-ii/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
-                "better.java",
                 "optimised.java"
               ],
               "path": "Week-01/Day-002_Arrays/Intersection-of-Two-Arrays-II",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
-                "optimised": false
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Maximum-Population-Year",
@@ -392,15 +1627,16 @@
               "javaFiles": [
                 "bruteforce.java",
                 "better.java",
-                "optimised.java"
+                "OptimisedSolution.java"
               ],
               "path": "Week-01/Day-002_Arrays/Maximum-Population-Year",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": false,
+                "optimisedsolution": true
               },
               "solvedAt": null,
               "lastUpdated": null
@@ -414,17 +1650,16 @@
               "url": "https://leetcode.com/problems/find-pivot-index/",
               "hasJava": true,
               "javaFiles": [
-                "bruteforce.java",
                 "better.java",
                 "optimised.java"
               ],
               "path": "Week-01/Day-002_Arrays/Find-Pivot-Index",
-              "status": "todo",
+              "status": "solved",
               "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "better": true,
+                "optimised": true
               },
               "solvedAt": null,
               "lastUpdated": null

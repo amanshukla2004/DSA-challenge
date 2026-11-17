@@ -22,6 +22,9 @@
         <button class="mode-btn" data-mode="roadmap">🗺️ Roadmap</button>
         <button class="mode-btn" data-mode="concepts">📚 Concepts <span id="conceptsCount"
             class="count-pill">0</span></button>
+        <button class="mode-btn" data-mode="algos">⚡ 150 Algos <span id="algosCount"
+            class="count-pill">0</span></button>
+        <button class="mode-btn" data-mode="todo">📝 Todo</button>
         <button class="mode-btn" data-mode="contests">🏆 Contest Tracker <span id="contestsCount"
             class="count-pill">0</span></button>
       </nav>
@@ -71,6 +74,39 @@
         </div>
       </div>
 
+      <!-- 150 Algos sidebar controls -->
+      <div id="algosControls" class="sidebar-controls hidden">
+        <div class="search-box">
+          <input id="algoSearchInput" type="search" placeholder="Search 150 algorithms, categories, triggers..."
+            autocomplete="off" />
+        </div>
+
+        <div class="filter-row" id="algoCategoryFilters">
+          <button class="chip active" data-algo-cat="all">All</button>
+          <button class="chip" data-algo-cat="Arrays">Arrays</button>
+          <button class="chip" data-algo-cat="DynamicProgramming">DP</button>
+          <button class="chip" data-algo-cat="Graphs">Graphs</button>
+          <button class="chip" data-algo-cat="Trees">Trees</button>
+          <button class="chip" data-algo-cat="Strings">Strings</button>
+          <button class="chip" data-algo-cat="SearchingAndSorting">Sort/Search</button>
+          <button class="chip" data-algo-cat="Stacks">Stacks</button>
+          <button class="chip" data-algo-cat="Greedy">Greedy</button>
+          <button class="chip" data-algo-cat="MathORNumberTheory">Math</button>
+          <button class="chip" data-algo-cat="BitManipulation">Bit</button>
+          <button class="chip" data-algo-cat="LinkedList">Linked List</button>
+          <button class="chip" data-algo-cat="QueueAndDeque">Queue</button>
+          <button class="chip" data-algo-cat="RecursionORBacktracking">Backtrack</button>
+          <button class="chip" data-algo-cat="AdvancedAndRare">Advanced</button>
+        </div>
+
+        <div class="filter-row diff-row" id="algoStatusFilters">
+          <button class="chip active" data-algo-status="all">All</button>
+          <button class="chip" data-algo-status="mastered">✓ Mastered</button>
+          <button class="chip" data-algo-status="todo">○ To Learn</button>
+          <button class="chip" id="randomAlgoBtn" title="Pick random algorithm">🎲 Random</button>
+        </div>
+      </div>
+
       <div id="treeContainer" class="tree-container">
         <div class="loading-msg">Loading roadmap...</div>
       </div>
@@ -80,6 +116,8 @@
       <div id="dashboardView" class="dashboard-view"></div>
       <div id="problemView" class="problem-view hidden"></div>
       <div id="conceptView" class="problem-view hidden"></div>
+      <div id="algosView" class="problem-view hidden"></div>
+      <div id="todoView" class="problem-view hidden"></div>
       <div id="contestView" class="dashboard-view hidden"></div>
     </main>
   </div>

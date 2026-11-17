@@ -3,7 +3,40 @@
   const CONTEST_JOINED_KEY = 'dsa_contest_tracker_joined';
   const POTD_DONE_KEY = 'dsa_potd_completed_by_date';
   const CONTEST_DONE_KEY = 'dsa_contest_completed_by_date';
+  const MASTERED_ALGOS_KEY = 'dsa_150_algos_mastered';
+  const TODO_CHECKED_KEY = 'dsa_todo_checked_map';
   const LC_API_BASE = 'https://alfa-leetcode-api.onrender.com';
+
+  function loadMasteredAlgos() {
+    try {
+      const raw = localStorage.getItem(MASTERED_ALGOS_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function saveMasteredAlgos(setOrArr) {
+    try {
+      localStorage.setItem(MASTERED_ALGOS_KEY, JSON.stringify(Array.from(setOrArr)));
+    } catch (_) {}
+  }
+
+  function loadTodoCheckedMap() {
+    try {
+      const raw = localStorage.getItem(TODO_CHECKED_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function saveTodoCheckedMap(map) {
+    try {
+      localStorage.setItem(TODO_CHECKED_KEY, JSON.stringify(map));
+    } catch (_) {}
+  }
 
   function loadJsonObject(key) {
     try {
@@ -109,11 +142,18 @@
     itemById: new Map(),
     /** @type {Map<string, any>} */
     conceptsById: new Map(),
-    mode: 'dashboard', // dashboard | roadmap | concepts | contests
+    /** @type {Map<string, any>} */
+    algosById: new Map(),
+    mode: 'dashboard', // dashboard | roadmap | concepts | algos | todo | contests
     /** @type {string | null} */
     selectedId: null,
     /** @type {string | null} */
     selectedConceptId: null,
+    /** @type {string | null} */
+    selectedAlgoId: null,
+    algosFilters: { search: '', category: 'all', status: 'all' },
+    masteredAlgoIds: new Set(loadMasteredAlgos()),
+    todoCheckedMap: loadTodoCheckedMap(),
     activeTier: 'optimised',
     viewMode: 'split', // split | notes | code
     /** @type {number | null} */
@@ -154,17 +194,25 @@
     navContestText: document.getElementById('navContestText'),
     modeButtons: Array.from(document.querySelectorAll('.mode-btn')),
     conceptsCount: document.getElementById('conceptsCount'),
+    algosCount: document.getElementById('algosCount'),
     contestsCount: document.getElementById('contestsCount'),
     roadmapControls: document.getElementById('roadmapControls'),
     conceptsControls: document.getElementById('conceptsControls'),
+    algosControls: document.getElementById('algosControls'),
     searchInput: /** @type {HTMLInputElement | null} */ (document.getElementById('searchInput')),
     conceptSearchInput: /** @type {HTMLInputElement | null} */ (document.getElementById('conceptSearchInput')),
+    algoSearchInput: /** @type {HTMLInputElement | null} */ (document.getElementById('algoSearchInput')),
+    algoCategoryFilters: document.getElementById('algoCategoryFilters'),
+    algoStatusFilters: document.getElementById('algoStatusFilters'),
+    randomAlgoBtn: document.getElementById('randomAlgoBtn'),
     typeFilters: document.getElementById('typeFilters'),
     diffFilters: document.getElementById('diffFilters'),
     treeContainer: document.getElementById('treeContainer'),
     dashboardView: document.getElementById('dashboardView'),
     problemView: document.getElementById('problemView'),
     conceptView: document.getElementById('conceptView'),
+    algosView: document.getElementById('algosView'),
+    todoView: document.getElementById('todoView'),
     contestView: document.getElementById('contestView'),
     themeBtn: document.getElementById('themeBtn')
   };
@@ -288,7 +336,7 @@
       const trimmed = body.trimEnd();
       let html;
       if (lower === 'java') {
-        html = `<pre><code>${highlightJava(trimmed)}</code></pre>`;
+        html = `<div class="code-block-wrapper"><button class="copy-code-btn" type="button">Copy</button><pre><code>${highlightJava(trimmed)}</code></pre></div>`;
       } else if (KROKI_LANGS.has(lower)) {
         const krokiLang = lower === 'dot' ? 'graphviz' : lower;
         const encoded = toBase64Utf8(trimmed);
@@ -308,7 +356,7 @@
           </div>
         `;
       } else {
-        html = `<pre><code>${escapeHtml(trimmed)}</code></pre>`;
+        html = `<div class="code-block-wrapper"><button class="copy-code-btn" type="button">Copy</button><pre><code>${escapeHtml(trimmed)}</code></pre></div>`;
       }
       codeBlocks.push(html);
       return `\n@@CODEBLOCK_${idx}@@\n`;
@@ -389,11 +437,38 @@
         continue;
       }
 
+      if (/^<\/?(details|summary)[\s>]/i.test(line.trim())) {
+        closeList();
+        html.push(line);
+        continue;
+      }
+
       const hMatch = line.match(/^(#{1,3})\s+(.*)$/);
       if (hMatch) {
         closeList();
         const level = hMatch[1].length;
         html.push(`<h${level}>${formatInline(hMatch[2])}</h${level}>`);
+        continue;
+      }
+
+      const alertMatch = line.match(/^>\s+\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s*(.*))?$/i);
+      if (alertMatch) {
+        closeList();
+        const type = alertMatch[1].toLowerCase();
+        const titleText = alertMatch[2] ? formatInline(alertMatch[2]) : type.toUpperCase();
+        const icon = type === 'tip' ? '💡' : type === 'important' ? '📌' : type === 'warning' ? '⚠️' : type === 'caution' ? '🛑' : 'ℹ️';
+        const bodyLines = [];
+        while (i + 1 < lines.length && lines[i + 1].startsWith('>')) {
+          i++;
+          bodyLines.push(lines[i].replace(/^>\s?/, ''));
+        }
+        const bodyHtml = bodyLines.map((l) => formatInline(l)).join('<br />');
+        html.push(`
+          <div class="markdown-alert markdown-alert-${escapeHtml(type)}">
+            <div class="markdown-alert-title">${icon} ${titleText}</div>
+            ${bodyHtml ? `<div>${bodyHtml}</div>` : ''}
+          </div>
+        `);
         continue;
       }
 
@@ -410,9 +485,15 @@
           inList = true;
         }
         let itemText = listMatch[2];
-        if (itemText.startsWith('[ ] ')) itemText = '☐ ' + itemText.slice(4);
-        else if (/^\[x\] /i.test(itemText)) itemText = '☑ ' + itemText.slice(4);
-        html.push(`<li>${formatInline(itemText)}</li>`);
+        if (itemText.startsWith('[ ] ')) {
+          const taskText = itemText.slice(4);
+          html.push(`<li class="md-task-item"><input type="checkbox" class="md-task-checkbox" data-task-label="${escapeHtml(taskText)}"> <span>${formatInline(taskText)}</span></li>`);
+        } else if (/^\[x\] /i.test(itemText)) {
+          const taskText = itemText.slice(4);
+          html.push(`<li class="md-task-item is-done"><input type="checkbox" class="md-task-checkbox" checked data-task-label="${escapeHtml(taskText)}"> <span>${formatInline(taskText)}</span></li>`);
+        } else {
+          html.push(`<li>${formatInline(itemText)}</li>`);
+        }
         continue;
       }
 
@@ -425,8 +506,9 @@
 
   function updateStatsBar() {
     if (!state.data) return;
-    const { concepts } = state.data.totals;
+    const { concepts, algos } = state.data.totals;
     if (els.conceptsCount) els.conceptsCount.textContent = String(concepts || 0);
+    if (els.algosCount) els.algosCount.textContent = String(algos || state.data.algos?.length || 0);
   }
 
   function setModeUI(mode) {
@@ -442,13 +524,15 @@
       state.contestTimerId = null;
     }
 
-    const isFullWidth = mode === 'dashboard' || mode === 'contests';
+    const isFullWidth = mode === 'dashboard' || mode === 'contests' || mode === 'todo';
     const isConcepts = mode === 'concepts';
+    const isAlgos = mode === 'algos';
 
     els.sidebar?.classList.toggle('hidden', isFullWidth);
     els.sidebarToggle?.classList.toggle('hidden', isFullWidth);
-    els.roadmapControls?.classList.toggle('hidden', isConcepts);
+    els.roadmapControls?.classList.toggle('hidden', isConcepts || isAlgos);
     els.conceptsControls?.classList.toggle('hidden', !isConcepts);
+    els.algosControls?.classList.toggle('hidden', !isAlgos);
 
     if (!isFullWidth && state.data) {
       renderSidebar();
@@ -484,6 +568,8 @@
     if (!state.data) return;
     if (state.mode === 'concepts') {
       renderConceptsSidebar();
+    } else if (state.mode === 'algos') {
+      renderAlgosSidebar();
     } else if (state.mode === 'roadmap') {
       renderRoadmapTree();
     }
@@ -535,6 +621,70 @@
     els.treeContainer.innerHTML = '';
     if (frag.childNodes.length === 0) {
       els.treeContainer.innerHTML = '<div class="empty-hint">No concept notes match your search. Add <code>.md</code> files to <code>Concepts/</code> and push to GitHub.</div>';
+    } else {
+      els.treeContainer.appendChild(frag);
+    }
+  }
+
+  function renderAlgosSidebar() {
+    if (!state.data || !els.treeContainer) return;
+    const algos = state.data.algos || [];
+    const query = (state.algosFilters.search || '').toLowerCase();
+    const catFilter = state.algosFilters.category;
+    const statusFilter = state.algosFilters.status;
+
+    const filtered = algos.filter((a) => {
+      if (catFilter !== 'all' && a.category !== catFilter) return false;
+      const isMastered = state.masteredAlgoIds.has(a.id);
+      if (statusFilter === 'mastered' && !isMastered) return false;
+      if (statusFilter === 'todo' && isMastered) return false;
+      if (query) {
+        const text = `${a.name} ${a.folder} ${a.category} ${a.tier || ''}`.toLowerCase();
+        if (!text.includes(query)) return false;
+      }
+      return true;
+    });
+
+    const groups = new Map();
+    for (const a of filtered) {
+      if (!groups.has(a.category)) groups.set(a.category, []);
+      groups.get(a.category).push(a);
+    }
+
+    const frag = document.createDocumentFragment();
+    for (const [groupName, items] of groups.entries()) {
+      const box = document.createElement('div');
+      box.className = 'week-group';
+
+      const masteredCount = items.filter((a) => state.masteredAlgoIds.has(a.id)).length;
+      const hdr = document.createElement('div');
+      hdr.className = 'week-header';
+      hdr.style.cursor = 'default';
+      hdr.innerHTML = `<span>${escapeHtml(groupName)}</span><span class="week-meta">${masteredCount}/${items.length}</span>`;
+      box.appendChild(hdr);
+
+      const body = document.createElement('div');
+      body.className = 'week-body';
+      for (const a of items) {
+        const isMastered = state.masteredAlgoIds.has(a.id);
+        const btn = document.createElement('button');
+        btn.className = `q-item ${state.selectedAlgoId === a.id ? 'active' : ''}`;
+        btn.innerHTML = `
+          <span class="q-item-left">
+            <span class="status-dot ${isMastered ? 'dot-g' : 'dot-dim'}">${isMastered ? '✓' : '○'}</span>
+            <span class="q-title">${escapeHtml(a.name)}</span>
+          </span>
+        `;
+        btn.addEventListener('click', () => selectAlgo(a.id));
+        body.appendChild(btn);
+      }
+      box.appendChild(body);
+      frag.appendChild(box);
+    }
+
+    els.treeContainer.innerHTML = '';
+    if (frag.childNodes.length === 0) {
+      els.treeContainer.innerHTML = '<div class="empty-hint">No algorithms match your search/filter.</div>';
     } else {
       els.treeContainer.appendChild(frag);
     }
@@ -1294,10 +1444,40 @@
     }
   }
 
-  function hydrateMarkdownExtras(container) {
+  function hydrateMarkdownExtras(container, contextKey = '') {
     if (!container) return;
     hydrateKrokiDiagrams(container);
     hydrateNoembedLinks(container);
+
+    container.querySelectorAll('.copy-code-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const pre = btn.closest('.code-block-wrapper')?.querySelector('pre');
+        if (!pre) return;
+        const textToCopy = pre.innerText || pre.textContent || '';
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = 'Copy'; }, 1400);
+        } catch (_) {}
+      });
+    });
+
+    container.querySelectorAll('.md-task-checkbox').forEach((chk) => {
+      if (!(chk instanceof HTMLInputElement)) return;
+      const label = chk.dataset.taskLabel || '';
+      const storageKey = contextKey ? `${contextKey}::${label}` : label;
+
+      if (storageKey in state.todoCheckedMap) {
+        chk.checked = Boolean(state.todoCheckedMap[storageKey]);
+        chk.closest('.md-task-item')?.classList.toggle('is-done', chk.checked);
+      }
+
+      chk.addEventListener('change', () => {
+        state.todoCheckedMap[storageKey] = chk.checked;
+        saveTodoCheckedMap(state.todoCheckedMap);
+        chk.closest('.md-task-item')?.classList.toggle('is-done', chk.checked);
+      });
+    });
   }
 
   function renderDashboard() {
@@ -1670,6 +1850,151 @@
     }
   }
 
+  function pickRandomAlgo() {
+    const algos = state.data?.algos || [];
+    if (!algos.length) return;
+    const unmastered = algos.filter((a) => !state.masteredAlgoIds.has(a.id));
+    const pool = unmastered.length > 0 ? unmastered : algos;
+    const chosen = pool[Math.floor(Math.random() * pool.length)];
+    selectAlgo(chosen.id);
+  }
+
+  async function selectAlgo(algoId) {
+    if (!state.data || !els.algosView) return;
+    const algos = state.data.algos || [];
+    const idx = algos.findIndex((a) => a.id === algoId);
+    if (idx === -1) return;
+    const algo = algos[idx];
+
+    state.selectedId = null;
+    state.selectedConceptId = null;
+    state.selectedAlgoId = algoId;
+    setModeUI('algos');
+    window.location.hash = encodeURIComponent(algoId);
+    els.sidebar?.classList.remove('open');
+
+    els.dashboardView?.classList.add('hidden');
+    els.problemView?.classList.add('hidden');
+    els.conceptView?.classList.add('hidden');
+    els.contestView?.classList.add('hidden');
+    els.todoView?.classList.add('hidden');
+    els.algosView.classList.remove('hidden');
+
+    const prevAlgo = idx > 0 ? algos[idx - 1] : null;
+    const nextAlgo = idx < algos.length - 1 ? algos[idx + 1] : null;
+    const isMastered = state.masteredAlgoIds.has(algo.id);
+
+    els.algosView.innerHTML = `
+      <div class="problem-header ${isMastered ? 'is-complete' : ''}">
+        <div>
+          <div class="breadcrumb">
+            150 Algos › ${escapeHtml(algo.category)}
+          </div>
+          <div class="problem-title-row">
+            <h1>${escapeHtml(algo.name)}</h1>
+            <span class="badge badge-b">${escapeHtml(algo.category)}</span>
+            <span class="badge badge-grey">${escapeHtml(algo.tier || 'Core Interview')}</span>
+            ${isMastered ? '<span class="badge badge-g">✓ Mastered</span>' : ''}
+          </div>
+        </div>
+        <div class="problem-actions">
+          <button class="btn ${isMastered ? 'btn-joined' : ''}" id="toggleMasteredAlgoBtn">
+            ${isMastered ? '✓ Mastered' : '+ Mark Mastered'}
+          </button>
+          <button class="btn" id="prevAlgoBtn" ${!prevAlgo ? 'disabled' : ''}>← Prev</button>
+          <button class="btn" id="nextAlgoBtn" ${!nextAlgo ? 'disabled' : ''}>Next →</button>
+        </div>
+      </div>
+
+      <div class="workspace-panes single-pane">
+        <div class="pane">
+          <div class="pane-body md-body" id="algoBody">Loading algorithm guide...</div>
+          <div class="path-footer">${escapeHtml(algo.path)}</div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('prevAlgoBtn')?.addEventListener('click', () => prevAlgo && selectAlgo(prevAlgo.id));
+    document.getElementById('nextAlgoBtn')?.addEventListener('click', () => nextAlgo && selectAlgo(nextAlgo.id));
+
+    document.getElementById('toggleMasteredAlgoBtn')?.addEventListener('click', () => {
+      if (state.masteredAlgoIds.has(algo.id)) {
+        state.masteredAlgoIds.delete(algo.id);
+      } else {
+        state.masteredAlgoIds.add(algo.id);
+      }
+      saveMasteredAlgos(state.masteredAlgoIds);
+      selectAlgo(algo.id);
+      renderAlgosSidebar();
+    });
+
+    const algoBody = document.getElementById('algoBody');
+    if (!algoBody) return;
+    try {
+      const md = await fetchText(algo.path);
+      algoBody.innerHTML = renderMarkdown(md);
+      hydrateMarkdownExtras(algoBody, algo.id);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      algoBody.innerHTML = `<div class="alert-box">Could not load <code>${escapeHtml(algo.path)}</code> (${escapeHtml(msg)}).</div>`;
+    }
+  }
+
+  async function renderTodoView() {
+    if (!els.todoView) return;
+    state.selectedId = null;
+    state.selectedConceptId = null;
+    state.selectedAlgoId = null;
+    setModeUI('todo');
+    if (window.location.hash !== '#todo') {
+      history.replaceState(null, '', '#todo');
+    }
+
+    els.dashboardView?.classList.add('hidden');
+    els.problemView?.classList.add('hidden');
+    els.conceptView?.classList.add('hidden');
+    els.algosView?.classList.add('hidden');
+    els.contestView?.classList.add('hidden');
+    els.todoView.classList.remove('hidden');
+
+    els.todoView.innerHTML = `
+      <div class="problem-header">
+        <div>
+          <div class="breadcrumb">150 Days Challenge › Study Planner</div>
+          <div class="problem-title-row">
+            <h1>📝 Study & Revision Todo List</h1>
+            <span class="badge badge-g">Auto-Saved</span>
+          </div>
+        </div>
+        <div class="problem-actions">
+          <button class="btn" id="refreshTodoBtn">↻ Reload TODO.md</button>
+        </div>
+      </div>
+
+      <div class="workspace-panes single-pane">
+        <div class="pane">
+          <div class="pane-body md-body" id="todoBody">Loading TODO.md...</div>
+          <div class="path-footer">TODO.md</div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('refreshTodoBtn')?.addEventListener('click', () => {
+      renderTodoView();
+    });
+
+    const todoBody = document.getElementById('todoBody');
+    if (!todoBody) return;
+    try {
+      const md = await fetchText('TODO.md');
+      todoBody.innerHTML = renderMarkdown(md);
+      hydrateMarkdownExtras(todoBody, 'todo');
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      todoBody.innerHTML = `<div class="alert-box">Could not load <code>TODO.md</code> (${escapeHtml(msg)}).</div>`;
+    }
+  }
+
   async function selectItem(id) {
     if (!state.data || !els.problemView) return;
     const idx = state.flatItems.findIndex((it) => it.id === id);
@@ -1886,6 +2211,10 @@
     state.conceptsById.clear();
     for (const c of data.concepts || []) {
       state.conceptsById.set(c.id, c);
+    }
+    state.algosById.clear();
+    for (const a of data.algos || []) {
+      state.algosById.set(a.id, a);
     }
     return items;
   }
@@ -2496,7 +2825,23 @@
       renderContestTracker();
       return;
     }
+    if (raw === 'todo') {
+      renderTodoView();
+      return;
+    }
     if (!state.data) return;
+    if (raw === 'algos') {
+      if (state.data.algos && state.data.algos.length) {
+        selectAlgo(state.selectedAlgoId || state.data.algos[0].id);
+      } else {
+        setModeUI('algos');
+      }
+      return;
+    }
+    if (raw.startsWith('algo::') && state.algosById.has(raw)) {
+      selectAlgo(raw);
+      return;
+    }
     if (raw.startsWith('concept::') && state.conceptsById.has(raw)) {
       selectConcept(raw);
     } else if (raw && state.itemById.has(raw)) {
@@ -2530,6 +2875,20 @@
           renderContestTracker();
           return;
         }
+        if (mode === 'todo') {
+          renderTodoView();
+          return;
+        }
+        if (mode === 'algos') {
+          if (state.selectedAlgoId && state.algosById.has(state.selectedAlgoId)) {
+            selectAlgo(state.selectedAlgoId);
+          } else if (state.data && state.data.algos && state.data.algos.length) {
+            selectAlgo(state.data.algos[0].id);
+          } else {
+            setModeUI('algos');
+          }
+          return;
+        }
         if (!state.data) return;
         if (mode === 'dashboard') {
           renderDashboard();
@@ -2559,6 +2918,35 @@
     els.conceptSearchInput?.addEventListener('input', () => {
       state.conceptSearch = (els.conceptSearchInput?.value || '').trim();
       renderConceptsSidebar();
+    });
+
+    els.algoSearchInput?.addEventListener('input', () => {
+      state.algosFilters.search = (els.algoSearchInput?.value || '').trim();
+      renderAlgosSidebar();
+    });
+
+    els.algoCategoryFilters?.querySelectorAll('.chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!(btn instanceof HTMLElement)) return;
+        els.algoCategoryFilters?.querySelectorAll('.chip').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.algosFilters.category = btn.dataset.algoCat || 'all';
+        renderAlgosSidebar();
+      });
+    });
+
+    els.algoStatusFilters?.querySelectorAll('.chip[data-algo-status]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!(btn instanceof HTMLElement)) return;
+        els.algoStatusFilters?.querySelectorAll('.chip[data-algo-status]').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.algosFilters.status = btn.dataset.algoStatus || 'all';
+        renderAlgosSidebar();
+      });
+    });
+
+    els.randomAlgoBtn?.addEventListener('click', () => {
+      pickRandomAlgo();
     });
 
     els.typeFilters?.querySelectorAll('.chip').forEach((btn) => {
