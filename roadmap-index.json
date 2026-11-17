@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T16:57:09.619Z",
+  "generatedAt": "2026-11-17T17:17:01.306Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -1272,6 +1272,8 @@
   "activityByDate": {
     "2026-11-17": {
       "questions": [
+        "2::Find-Pivot-Index",
+        "2::Maximum-Population-Year",
         "2::Find-All-Numbers-Disappeared-in-an-Array",
         "2::Intersection-of-Two-Arrays-II",
         "2::Intersection-of-Two-Arrays",
@@ -1317,7 +1319,9 @@
       "2::Remove-Duplicates-from-Sorted-Array-II",
       "2::Find-All-Numbers-Disappeared-in-an-Array",
       "2::Intersection-of-Two-Arrays",
-      "2::Intersection-of-Two-Arrays-II"
+      "2::Intersection-of-Two-Arrays-II",
+      "2::Maximum-Population-Year",
+      "2::Find-Pivot-Index"
     ]
   },
   "weeks": [
@@ -1638,8 +1642,8 @@
                 "optimised": false,
                 "optimisedsolution": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             },
             {
               "id": "2::Find-Pivot-Index",
@@ -1661,8 +1665,8 @@
                 "better": true,
                 "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": null
+              "solvedAt": "2026-11-17",
+              "lastUpdated": "2026-11-17"
             }
           ]
         },
