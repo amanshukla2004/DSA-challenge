@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T17:34:33.770Z",
+  "generatedAt": "2026-11-17T18:04:15.537Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -15,7 +15,18 @@
     "daysCompleted": 2,
     "weeksCompleted": 0
   },
-  "potd": null,
+  "potd": {
+    "date": "2026-11-17",
+    "title": "Minimum Changes to Make K Semi-palindromes",
+    "url": "https://leetcode.com/problems/minimum-changes-to-make-k-semi-palindromes/",
+    "diff": "H",
+    "diffLabel": "Hard",
+    "tags": [
+      "Two Pointers",
+      "String",
+      "Dynamic Programming"
+    ]
+  },
   "concepts": [
     {
       "id": "concept::Concepts/01-Java-DSA-Cheatsheet.md",
