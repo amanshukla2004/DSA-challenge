@@ -342,12 +342,32 @@ function scanAlgos() {
 
     for (const algo of algos) {
       const algoPath = path.join(catPath, algo.name);
-      const mdPath = path.join(algoPath, 'README.md');
-      const relPath = path.relative(ROOT_DIR, mdPath).replace(/\\/g, '/');
+      const allFiles = fs.readdirSync(algoPath, { withFileTypes: true })
+        .filter((f) => f.isFile() && !f.name.startsWith('.'))
+        .map((f) => {
+          const filePath = path.join(algoPath, f.name);
+          const rel = path.relative(ROOT_DIR, filePath).replace(/\\/g, '/');
+          const ext = path.extname(f.name).toLowerCase();
+          return {
+            name: f.name,
+            path: rel,
+            isMd: ext === '.md',
+            ext
+          };
+        })
+        .sort((a, b) => {
+          if (a.name.toLowerCase() === 'readme.md') return -1;
+          if (b.name.toLowerCase() === 'readme.md') return 1;
+          return a.name.localeCompare(b.name);
+        });
+
+      const readmeFile = allFiles.find((f) => f.name.toLowerCase() === 'readme.md') || allFiles[0];
+      const mdPath = readmeFile ? path.join(ROOT_DIR, readmeFile.path) : path.join(algoPath, 'README.md');
+      const relPath = readmeFile ? readmeFile.path : path.relative(ROOT_DIR, mdPath).replace(/\\/g, '/');
       let title = algo.name;
       let tier = 'Core Interview';
 
-      if (fs.existsSync(mdPath)) {
+      if (readmeFile && fs.existsSync(mdPath)) {
         const content = fs.readFileSync(mdPath, 'utf8');
         const h1Match = content.match(/^#\s+(.+)$/m);
         if (h1Match) title = h1Match[1].trim();
@@ -361,7 +381,8 @@ function scanAlgos() {
         folder: algo.name,
         category: cat.name,
         tier,
-        path: relPath
+        path: relPath,
+        files: allFiles
       });
     }
   }

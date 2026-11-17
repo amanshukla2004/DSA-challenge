@@ -1859,7 +1859,7 @@
     selectAlgo(chosen.id);
   }
 
-  async function selectAlgo(algoId) {
+  async function selectAlgo(algoId, initialFilePath) {
     if (!state.data || !els.algosView) return;
     const algos = state.data.algos || [];
     const idx = algos.findIndex((a) => a.id === algoId);
@@ -1883,6 +1883,12 @@
     const prevAlgo = idx > 0 ? algos[idx - 1] : null;
     const nextAlgo = idx < algos.length - 1 ? algos[idx + 1] : null;
     const isMastered = state.masteredAlgoIds.has(algo.id);
+
+    const files = (algo.files && algo.files.length > 0)
+      ? algo.files
+      : [{ name: 'README.md', path: algo.path, isMd: true, ext: '.md' }];
+
+    const initialFile = (initialFilePath && files.find((f) => f.path === initialFilePath)) || files[0];
 
     els.algosView.innerHTML = `
       <div class="problem-header ${isMastered ? 'is-complete' : ''}">
@@ -1908,8 +1914,17 @@
 
       <div class="workspace-panes single-pane">
         <div class="pane">
-          <div class="pane-body md-body" id="algoBody">Loading algorithm guide...</div>
-          <div class="path-footer">${escapeHtml(algo.path)}</div>
+          <div class="pane-header">
+            <div class="pane-tabs" id="algoFileTabs">
+              ${files.map((f) => `
+                <button class="pane-tab ${f.path === initialFile.path ? 'active' : ''}" data-file-path="${escapeHtml(f.path)}" data-file-name="${escapeHtml(f.name)}" data-is-md="${f.isMd ? '1' : '0'}" data-ext="${escapeHtml(f.ext || '')}">
+                  ${f.isMd ? '📄' : '💻'} ${escapeHtml(f.name)}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+          <div class="pane-body md-body" id="algoBody">Loading file...</div>
+          <div class="path-footer" id="algoPathFooter">${escapeHtml(initialFile.path)}</div>
         </div>
       </div>
     `;
@@ -1928,16 +1943,59 @@
       renderAlgosSidebar();
     });
 
-    const algoBody = document.getElementById('algoBody');
-    if (!algoBody) return;
-    try {
-      const md = await fetchText(algo.path);
-      algoBody.innerHTML = renderMarkdown(md);
-      hydrateMarkdownExtras(algoBody, algo.id);
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      algoBody.innerHTML = `<div class="alert-box">Could not load <code>${escapeHtml(algo.path)}</code> (${escapeHtml(msg)}).</div>`;
+    async function displayAlgoFile(fileObj) {
+      const algoBody = document.getElementById('algoBody');
+      const footer = document.getElementById('algoPathFooter');
+      if (!algoBody) return;
+      if (footer) footer.textContent = fileObj.path;
+      algoBody.innerHTML = '<div style="padding:16px;color:var(--text-muted)">Loading file...</div>';
+
+      try {
+        const text = await fetchText(fileObj.path);
+        if (fileObj.isMd || fileObj.name.toLowerCase().endsWith('.md')) {
+          algoBody.className = 'pane-body md-body';
+          algoBody.innerHTML = renderMarkdown(text, { contextKey: `${algo.id}::${fileObj.name}` });
+          hydrateMarkdownExtras(algoBody, `${algo.id}::${fileObj.name}`);
+        } else if (fileObj.ext === '.java' || fileObj.name.toLowerCase().endsWith('.java')) {
+          algoBody.className = 'pane-body code-body';
+          algoBody.innerHTML = `
+            <div class="code-view-container" style="position: relative;">
+              <button class="copy-code-btn" type="button" aria-label="Copy code">Copy</button>
+              ${highlightJava(text)}
+            </div>
+          `;
+          hydrateMarkdownExtras(algoBody, `${algo.id}::${fileObj.name}`);
+        } else {
+          algoBody.className = 'pane-body code-body';
+          algoBody.innerHTML = `
+            <div class="code-view-container" style="padding: 16px; position: relative;">
+              <div class="code-block-wrapper">
+                <button class="copy-code-btn" type="button" aria-label="Copy code">Copy</button>
+                <pre><code class="language-plaintext">${escapeHtml(text)}</code></pre>
+              </div>
+            </div>
+          `;
+          hydrateMarkdownExtras(algoBody, `${algo.id}::${fileObj.name}`);
+        }
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        algoBody.innerHTML = `<div class="alert-box">Could not load <code>${escapeHtml(fileObj.path)}</code> (${escapeHtml(msg)}).</div>`;
+      }
     }
+
+    const tabButtons = document.querySelectorAll('#algoFileTabs .pane-tab');
+    tabButtons.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const filePath = tab.getAttribute('data-file-path');
+        const target = files.find((f) => f.path === filePath);
+        if (!target) return;
+        tabButtons.forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+        displayAlgoFile(target);
+      });
+    });
+
+    await displayAlgoFile(initialFile);
   }
 
   async function renderTodoView() {

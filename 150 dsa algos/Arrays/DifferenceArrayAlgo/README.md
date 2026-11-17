@@ -5,7 +5,7 @@
 ---
 
 ## 🔗 Resources & Visualizers
-- **YouTube:** [Watch Difference Array Visual Guide](https://www.youtube.com/results?search_query=Difference%20Array%20algorithm%20visual%20explanation)
+- **YouTube:** [Watch Difference Array Visual Guide](https://www.youtube.com/playlist?list=PLpIkg8OmuX-Kqkb8DqDe_4-Tiav6ilS_L)
 - **Blog / Editorial:** [CP-Algorithms / GeeksforGeeks Guide](https://www.google.com/search?q=Difference%20Array%20algorithm%20tutorial%20CP%20algorithms)
 - **Interactive Visualizer:** [VisuAlgo Interactive Simulation](https://visualgo.net/en)
 

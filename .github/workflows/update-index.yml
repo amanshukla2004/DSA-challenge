@@ -7,6 +7,8 @@ on:
     paths:
       - "Week-*/**"
       - "Concepts/**"
+      - "150 dsa algos/**"
+      - "TODO.md"
       - "daily-tracker.json"
       - "daily_data.js"
       - "scripts/generate_structure.js"

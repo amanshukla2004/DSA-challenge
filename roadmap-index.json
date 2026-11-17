@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T17:18:22.361Z",
+  "generatedAt": "2026-11-17T17:34:33.770Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -15,18 +15,7 @@
     "daysCompleted": 2,
     "weeksCompleted": 0
   },
-  "potd": {
-    "date": "2026-11-17",
-    "title": "Minimum Changes to Make K Semi-palindromes",
-    "url": "https://leetcode.com/problems/minimum-changes-to-make-k-semi-palindromes/",
-    "diff": "H",
-    "diffLabel": "Hard",
-    "tags": [
-      "Two Pointers",
-      "String",
-      "Dynamic Programming"
-    ]
-  },
+  "potd": null,
   "concepts": [
     {
       "id": "concept::Concepts/01-Java-DSA-Cheatsheet.md",
@@ -85,7 +74,15 @@
       "folder": "ConvexHullAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/ConvexHullAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/ConvexHullAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/ConvexHullAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::ConvexHullTrick",
@@ -93,7 +90,15 @@
       "folder": "ConvexHullTrick",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/ConvexHullTrick/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/ConvexHullTrick/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/ConvexHullTrick/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::DinicsAlgo",
@@ -101,7 +106,15 @@
       "folder": "DinicsAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/DinicsAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/DinicsAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/DinicsAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::EdmondsKarpAlgo",
@@ -109,7 +122,15 @@
       "folder": "EdmondsKarpAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/EdmondsKarpAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/EdmondsKarpAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/EdmondsKarpAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::FordFulkersonAlgo",
@@ -117,7 +138,15 @@
       "folder": "FordFulkersonAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/FordFulkersonAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/FordFulkersonAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/FordFulkersonAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::GrundyNumbersAlgo",
@@ -125,7 +154,15 @@
       "folder": "GrundyNumbersAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/GrundyNumbersAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/GrundyNumbersAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/GrundyNumbersAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::LiChaoTreeAlgo",
@@ -133,7 +170,15 @@
       "folder": "LiChaoTreeAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/LiChaoTreeAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/LiChaoTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/LiChaoTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::LineIntersectionAlgo",
@@ -141,7 +186,15 @@
       "folder": "LineIntersectionAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/LineIntersectionAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/LineIntersectionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/LineIntersectionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::MinimumCostMaxFlowAlgo",
@@ -149,7 +202,15 @@
       "folder": "MinimumCostMaxFlowAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/MinimumCostMaxFlowAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/MinimumCostMaxFlowAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/MinimumCostMaxFlowAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::MinimumCutAlgo",
@@ -157,7 +218,15 @@
       "folder": "MinimumCutAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/MinimumCutAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/MinimumCutAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/MinimumCutAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::RotatingCalipersAlgo",
@@ -165,7 +234,15 @@
       "folder": "RotatingCalipersAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/RotatingCalipersAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/RotatingCalipersAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/RotatingCalipersAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::AdvancedAndRare::SpragueGrundyTheoremAlgo",
@@ -173,7 +250,15 @@
       "folder": "SpragueGrundyTheoremAlgo",
       "category": "AdvancedAndRare",
       "tier": "** Competitive Programming (Advanced)",
-      "path": "150 dsa algos/AdvancedAndRare/SpragueGrundyTheoremAlgo/README.md"
+      "path": "150 dsa algos/AdvancedAndRare/SpragueGrundyTheoremAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/AdvancedAndRare/SpragueGrundyTheoremAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::CoordinateCompressionAlgo",
@@ -181,7 +266,15 @@
       "folder": "CoordinateCompressionAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (Intermediate)",
-      "path": "150 dsa algos/Arrays/CoordinateCompressionAlgo/README.md"
+      "path": "150 dsa algos/Arrays/CoordinateCompressionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/CoordinateCompressionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::DifferenceArrayAlgo",
@@ -189,7 +282,21 @@
       "folder": "DifferenceArrayAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/README.md"
+      "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        },
+        {
+          "name": "dry-run.md",
+          "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/dry-run.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::KadanesAlgo",
@@ -197,7 +304,15 @@
       "folder": "KadanesAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Arrays/KadanesAlgo/README.md"
+      "path": "150 dsa algos/Arrays/KadanesAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/KadanesAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::MeetintheMiddleAlgo",
@@ -205,7 +320,15 @@
       "folder": "MeetintheMiddleAlgo",
       "category": "Arrays",
       "tier": "** Advanced Interview (Optimization)",
-      "path": "150 dsa algos/Arrays/MeetintheMiddleAlgo/README.md"
+      "path": "150 dsa algos/Arrays/MeetintheMiddleAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/MeetintheMiddleAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::PrefixSum2DAlgo",
@@ -213,7 +336,15 @@
       "folder": "PrefixSum2DAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Arrays/PrefixSum2DAlgo/README.md"
+      "path": "150 dsa algos/Arrays/PrefixSum2DAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/PrefixSum2DAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::PrefixSumAlgo",
@@ -221,7 +352,15 @@
       "folder": "PrefixSumAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Arrays/PrefixSumAlgo/README.md"
+      "path": "150 dsa algos/Arrays/PrefixSumAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/PrefixSumAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::SlidingWindowAlgo",
@@ -229,7 +368,15 @@
       "folder": "SlidingWindowAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Arrays/SlidingWindowAlgo/README.md"
+      "path": "150 dsa algos/Arrays/SlidingWindowAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/SlidingWindowAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::SubarraySumTechniqueAlgo",
@@ -237,7 +384,15 @@
       "folder": "SubarraySumTechniqueAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Arrays/SubarraySumTechniqueAlgo/README.md"
+      "path": "150 dsa algos/Arrays/SubarraySumTechniqueAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/SubarraySumTechniqueAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Arrays::TwoPointersAlgo",
@@ -245,7 +400,15 @@
       "folder": "TwoPointersAlgo",
       "category": "Arrays",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Arrays/TwoPointersAlgo/README.md"
+      "path": "150 dsa algos/Arrays/TwoPointersAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Arrays/TwoPointersAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::BitManipulation::BitMaskingAlgo",
@@ -253,7 +416,15 @@
       "folder": "BitMaskingAlgo",
       "category": "BitManipulation",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/BitManipulation/BitMaskingAlgo/README.md"
+      "path": "150 dsa algos/BitManipulation/BitMaskingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/BitManipulation/BitMaskingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::BitManipulation::BitwiseOperationsAlgo",
@@ -261,7 +432,15 @@
       "folder": "BitwiseOperationsAlgo",
       "category": "BitManipulation",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/BitManipulation/BitwiseOperationsAlgo/README.md"
+      "path": "150 dsa algos/BitManipulation/BitwiseOperationsAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/BitManipulation/BitwiseOperationsAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::BitManipulation::GrayCodeAlgo",
@@ -269,7 +448,15 @@
       "folder": "GrayCodeAlgo",
       "category": "BitManipulation",
       "tier": "** Advanced Interview (Pattern)",
-      "path": "150 dsa algos/BitManipulation/GrayCodeAlgo/README.md"
+      "path": "150 dsa algos/BitManipulation/GrayCodeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/BitManipulation/GrayCodeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::BitManipulation::SETClearToggleBitAlgo",
@@ -277,7 +464,15 @@
       "folder": "SETClearToggleBitAlgo",
       "category": "BitManipulation",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/BitManipulation/SETClearToggleBitAlgo/README.md"
+      "path": "150 dsa algos/BitManipulation/SETClearToggleBitAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/BitManipulation/SETClearToggleBitAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::BitManipulation::SubsetEnumerationAlgo",
@@ -285,7 +480,15 @@
       "folder": "SubsetEnumerationAlgo",
       "category": "BitManipulation",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/BitManipulation/SubsetEnumerationAlgo/README.md"
+      "path": "150 dsa algos/BitManipulation/SubsetEnumerationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/BitManipulation/SubsetEnumerationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::BitManipulation::XORPropertiesAlgo",
@@ -293,7 +496,15 @@
       "folder": "XORPropertiesAlgo",
       "category": "BitManipulation",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/BitManipulation/XORPropertiesAlgo/README.md"
+      "path": "150 dsa algos/BitManipulation/XORPropertiesAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/BitManipulation/XORPropertiesAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::BitMaskDPAlgo",
@@ -301,7 +512,15 @@
       "folder": "BitMaskDPAlgo",
       "category": "DynamicProgramming",
       "tier": "** Advanced Interview (Hard)",
-      "path": "150 dsa algos/DynamicProgramming/BitMaskDPAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/BitMaskDPAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/BitMaskDPAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::DigitDPAlgo",
@@ -309,7 +528,15 @@
       "folder": "DigitDPAlgo",
       "category": "DynamicProgramming",
       "tier": "** Advanced Interview (Hard)",
-      "path": "150 dsa algos/DynamicProgramming/DigitDPAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/DigitDPAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/DigitDPAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::DPOnGridsAlgo",
@@ -317,7 +544,15 @@
       "folder": "DPOnGridsAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/DynamicProgramming/DPOnGridsAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/DPOnGridsAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/DPOnGridsAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::DPOnIntervalsAlgo",
@@ -325,7 +560,15 @@
       "folder": "DPOnIntervalsAlgo",
       "category": "DynamicProgramming",
       "tier": "** Advanced Interview (Hard)",
-      "path": "150 dsa algos/DynamicProgramming/DPOnIntervalsAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/DPOnIntervalsAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/DPOnIntervalsAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::DPOnSubsequencesAlgo",
@@ -333,7 +576,15 @@
       "folder": "DPOnSubsequencesAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/DynamicProgramming/DPOnSubsequencesAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/DPOnSubsequencesAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/DPOnSubsequencesAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::EditDistanceAlgo",
@@ -341,7 +592,15 @@
       "folder": "EditDistanceAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/DynamicProgramming/EditDistanceAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/EditDistanceAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/EditDistanceAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::FibonacciDPAlgo",
@@ -349,7 +608,15 @@
       "folder": "FibonacciDPAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/DynamicProgramming/FibonacciDPAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/FibonacciDPAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/FibonacciDPAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::Knapsack01Algo",
@@ -357,7 +624,15 @@
       "folder": "Knapsack01Algo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/DynamicProgramming/Knapsack01Algo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/Knapsack01Algo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/Knapsack01Algo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::LongestCommonSubsequenceAlgo",
@@ -365,7 +640,15 @@
       "folder": "LongestCommonSubsequenceAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/DynamicProgramming/LongestCommonSubsequenceAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/LongestCommonSubsequenceAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/LongestCommonSubsequenceAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::LongestIncreasingSubsequenceAlgo",
@@ -373,7 +656,15 @@
       "folder": "LongestIncreasingSubsequenceAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/DynamicProgramming/LongestIncreasingSubsequenceAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/LongestIncreasingSubsequenceAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/LongestIncreasingSubsequenceAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::MatrixChainMultiplicationAlgo",
@@ -381,7 +672,15 @@
       "folder": "MatrixChainMultiplicationAlgo",
       "category": "DynamicProgramming",
       "tier": "** Advanced Interview (Classic)",
-      "path": "150 dsa algos/DynamicProgramming/MatrixChainMultiplicationAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/MatrixChainMultiplicationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/MatrixChainMultiplicationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::MemoizationAlgo",
@@ -389,7 +688,15 @@
       "folder": "MemoizationAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/DynamicProgramming/MemoizationAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/MemoizationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/MemoizationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::PartitionDPAlgo",
@@ -397,7 +704,15 @@
       "folder": "PartitionDPAlgo",
       "category": "DynamicProgramming",
       "tier": "** Advanced Interview (Hard)",
-      "path": "150 dsa algos/DynamicProgramming/PartitionDPAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/PartitionDPAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/PartitionDPAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::SubsetSumAlgo",
@@ -405,7 +720,15 @@
       "folder": "SubsetSumAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/DynamicProgramming/SubsetSumAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/SubsetSumAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/SubsetSumAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::TabulationAlgo",
@@ -413,7 +736,15 @@
       "folder": "TabulationAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/DynamicProgramming/TabulationAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/TabulationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/TabulationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::DynamicProgramming::UnboundedKnapsackAlgo",
@@ -421,7 +752,15 @@
       "folder": "UnboundedKnapsackAlgo",
       "category": "DynamicProgramming",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/DynamicProgramming/UnboundedKnapsackAlgo/README.md"
+      "path": "150 dsa algos/DynamicProgramming/UnboundedKnapsackAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/DynamicProgramming/UnboundedKnapsackAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::ArticulationPointsAlgo",
@@ -429,7 +768,15 @@
       "folder": "ArticulationPointsAlgo",
       "category": "Graphs",
       "tier": "** Advanced Interview (Tarjan)",
-      "path": "150 dsa algos/Graphs/ArticulationPointsAlgo/README.md"
+      "path": "150 dsa algos/Graphs/ArticulationPointsAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/ArticulationPointsAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::BellmanFordAlgo",
@@ -437,7 +784,15 @@
       "folder": "BellmanFordAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/Graphs/BellmanFordAlgo/README.md"
+      "path": "150 dsa algos/Graphs/BellmanFordAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/BellmanFordAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::BFS01Algo",
@@ -445,7 +800,15 @@
       "folder": "BFS01Algo",
       "category": "Graphs",
       "tier": "** Advanced Interview (Shortest Path)",
-      "path": "150 dsa algos/Graphs/BFS01Algo/README.md"
+      "path": "150 dsa algos/Graphs/BFS01Algo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/BFS01Algo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::BFSAlgo",
@@ -453,7 +816,15 @@
       "folder": "BFSAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Graphs/BFSAlgo/README.md"
+      "path": "150 dsa algos/Graphs/BFSAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/BFSAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::BipartiteGraphCheckAlgo",
@@ -461,7 +832,15 @@
       "folder": "BipartiteGraphCheckAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Graphs/BipartiteGraphCheckAlgo/README.md"
+      "path": "150 dsa algos/Graphs/BipartiteGraphCheckAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/BipartiteGraphCheckAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::BridgesInGraphAlgo",
@@ -469,7 +848,15 @@
       "folder": "BridgesInGraphAlgo",
       "category": "Graphs",
       "tier": "** Advanced Interview (Tarjan)",
-      "path": "150 dsa algos/Graphs/BridgesInGraphAlgo/README.md"
+      "path": "150 dsa algos/Graphs/BridgesInGraphAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/BridgesInGraphAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::CycleDetectiondirectedGraphAlgo",
@@ -477,7 +864,15 @@
       "folder": "CycleDetectiondirectedGraphAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Graphs/CycleDetectiondirectedGraphAlgo/README.md"
+      "path": "150 dsa algos/Graphs/CycleDetectiondirectedGraphAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/CycleDetectiondirectedGraphAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::CycleDetectionUndirectedGraphAlgo",
@@ -485,7 +880,15 @@
       "folder": "CycleDetectionUndirectedGraphAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Graphs/CycleDetectionUndirectedGraphAlgo/README.md"
+      "path": "150 dsa algos/Graphs/CycleDetectionUndirectedGraphAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/CycleDetectionUndirectedGraphAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::DAGDPAlgo",
@@ -493,7 +896,15 @@
       "folder": "DAGDPAlgo",
       "category": "Graphs",
       "tier": "** Advanced Interview (Optimization)",
-      "path": "150 dsa algos/Graphs/DAGDPAlgo/README.md"
+      "path": "150 dsa algos/Graphs/DAGDPAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/DAGDPAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::DFSAlgo",
@@ -501,7 +912,15 @@
       "folder": "DFSAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Graphs/DFSAlgo/README.md"
+      "path": "150 dsa algos/Graphs/DFSAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/DFSAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::DijkstrasAlgo",
@@ -509,7 +928,15 @@
       "folder": "DijkstrasAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Graphs/DijkstrasAlgo/README.md"
+      "path": "150 dsa algos/Graphs/DijkstrasAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/DijkstrasAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::DisjointSetUnionAlgo",
@@ -517,7 +944,15 @@
       "folder": "DisjointSetUnionAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Graphs/DisjointSetUnionAlgo/README.md"
+      "path": "150 dsa algos/Graphs/DisjointSetUnionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/DisjointSetUnionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::FloydWarshallAlgo",
@@ -525,7 +960,15 @@
       "folder": "FloydWarshallAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/Graphs/FloydWarshallAlgo/README.md"
+      "path": "150 dsa algos/Graphs/FloydWarshallAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/FloydWarshallAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::GraphRepresentationAlgo",
@@ -533,7 +976,15 @@
       "folder": "GraphRepresentationAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Graphs/GraphRepresentationAlgo/README.md"
+      "path": "150 dsa algos/Graphs/GraphRepresentationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/GraphRepresentationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::KosarajusSCCAlgo",
@@ -541,7 +992,15 @@
       "folder": "KosarajusSCCAlgo",
       "category": "Graphs",
       "tier": "** Advanced Interview (Classic)",
-      "path": "150 dsa algos/Graphs/KosarajusSCCAlgo/README.md"
+      "path": "150 dsa algos/Graphs/KosarajusSCCAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/KosarajusSCCAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::KruskalsMSTAlgo",
@@ -549,7 +1008,15 @@
       "folder": "KruskalsMSTAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Graphs/KruskalsMSTAlgo/README.md"
+      "path": "150 dsa algos/Graphs/KruskalsMSTAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/KruskalsMSTAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::MultiSourceBFSAlgo",
@@ -557,7 +1024,15 @@
       "folder": "MultiSourceBFSAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Graphs/MultiSourceBFSAlgo/README.md"
+      "path": "150 dsa algos/Graphs/MultiSourceBFSAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/MultiSourceBFSAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::PrimsAlgo",
@@ -565,7 +1040,15 @@
       "folder": "PrimsAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Graphs/PrimsAlgo/README.md"
+      "path": "150 dsa algos/Graphs/PrimsAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/PrimsAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::TarjansAlgo",
@@ -573,7 +1056,15 @@
       "folder": "TarjansAlgo",
       "category": "Graphs",
       "tier": "** Advanced Interview (Classic)",
-      "path": "150 dsa algos/Graphs/TarjansAlgo/README.md"
+      "path": "150 dsa algos/Graphs/TarjansAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/TarjansAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::TopologicalSortingAlgo",
@@ -581,7 +1072,15 @@
       "folder": "TopologicalSortingAlgo",
       "category": "Graphs",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Graphs/TopologicalSortingAlgo/README.md"
+      "path": "150 dsa algos/Graphs/TopologicalSortingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/TopologicalSortingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Graphs::TreeDpAlgo",
@@ -589,7 +1088,15 @@
       "folder": "TreeDpAlgo",
       "category": "Graphs",
       "tier": "** Advanced Interview (Hard)",
-      "path": "150 dsa algos/Graphs/TreeDpAlgo/README.md"
+      "path": "150 dsa algos/Graphs/TreeDpAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Graphs/TreeDpAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Greedy::ActivitySelectionAlgo",
@@ -597,7 +1104,15 @@
       "folder": "ActivitySelectionAlgo",
       "category": "Greedy",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/Greedy/ActivitySelectionAlgo/README.md"
+      "path": "150 dsa algos/Greedy/ActivitySelectionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Greedy/ActivitySelectionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Greedy::FunctionalKnapsackAlgo",
@@ -605,7 +1120,15 @@
       "folder": "FunctionalKnapsackAlgo",
       "category": "Greedy",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/Greedy/FunctionalKnapsackAlgo/README.md"
+      "path": "150 dsa algos/Greedy/FunctionalKnapsackAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Greedy/FunctionalKnapsackAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Greedy::GreedyWithPriorityQueueAlgo",
@@ -613,7 +1136,15 @@
       "folder": "GreedyWithPriorityQueueAlgo",
       "category": "Greedy",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Greedy/GreedyWithPriorityQueueAlgo/README.md"
+      "path": "150 dsa algos/Greedy/GreedyWithPriorityQueueAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Greedy/GreedyWithPriorityQueueAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Greedy::GreedyWithSortingAlgo",
@@ -621,7 +1152,15 @@
       "folder": "GreedyWithSortingAlgo",
       "category": "Greedy",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Greedy/GreedyWithSortingAlgo/README.md"
+      "path": "150 dsa algos/Greedy/GreedyWithSortingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Greedy/GreedyWithSortingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Greedy::HuffmanCodingAlgo",
@@ -629,7 +1168,15 @@
       "folder": "HuffmanCodingAlgo",
       "category": "Greedy",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/Greedy/HuffmanCodingAlgo/README.md"
+      "path": "150 dsa algos/Greedy/HuffmanCodingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Greedy/HuffmanCodingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Greedy::IntervalsSchedulingAlgo",
@@ -637,7 +1184,15 @@
       "folder": "IntervalsSchedulingAlgo",
       "category": "Greedy",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Greedy/IntervalsSchedulingAlgo/README.md"
+      "path": "150 dsa algos/Greedy/IntervalsSchedulingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Greedy/IntervalsSchedulingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Greedy::JobSchedulingAlgo",
@@ -645,7 +1200,15 @@
       "folder": "JobSchedulingAlgo",
       "category": "Greedy",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/Greedy/JobSchedulingAlgo/README.md"
+      "path": "150 dsa algos/Greedy/JobSchedulingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Greedy/JobSchedulingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::LinkedList::DoublyLinkedListAlgo",
@@ -653,7 +1216,15 @@
       "folder": "DoublyLinkedListAlgo",
       "category": "LinkedList",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/LinkedList/DoublyLinkedListAlgo/README.md"
+      "path": "150 dsa algos/LinkedList/DoublyLinkedListAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/LinkedList/DoublyLinkedListAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::LinkedList::FastAndSlowPointersAlgo",
@@ -661,7 +1232,15 @@
       "folder": "FastAndSlowPointersAlgo",
       "category": "LinkedList",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/LinkedList/FastAndSlowPointersAlgo/README.md"
+      "path": "150 dsa algos/LinkedList/FastAndSlowPointersAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/LinkedList/FastAndSlowPointersAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::LinkedList::FloydsCycleDetectionAlgo",
@@ -669,7 +1248,15 @@
       "folder": "FloydsCycleDetectionAlgo",
       "category": "LinkedList",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/LinkedList/FloydsCycleDetectionAlgo/README.md"
+      "path": "150 dsa algos/LinkedList/FloydsCycleDetectionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/LinkedList/FloydsCycleDetectionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::LinkedList::ReverseALinkedList",
@@ -677,7 +1264,15 @@
       "folder": "ReverseALinkedList",
       "category": "LinkedList",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/LinkedList/ReverseALinkedList/README.md"
+      "path": "150 dsa algos/LinkedList/ReverseALinkedList/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/LinkedList/ReverseALinkedList/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::LinkedList::SinglyLinkedListAlgo",
@@ -685,7 +1280,15 @@
       "folder": "SinglyLinkedListAlgo",
       "category": "LinkedList",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/LinkedList/SinglyLinkedListAlgo/README.md"
+      "path": "150 dsa algos/LinkedList/SinglyLinkedListAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/LinkedList/SinglyLinkedListAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::BinaryExponentiationAlgo",
@@ -693,7 +1296,15 @@
       "folder": "BinaryExponentiationAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/MathORNumberTheory/BinaryExponentiationAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/BinaryExponentiationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/BinaryExponentiationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::CatalanNumbersAlgo",
@@ -701,7 +1312,15 @@
       "folder": "CatalanNumbersAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Advanced Interview (Math)",
-      "path": "150 dsa algos/MathORNumberTheory/CatalanNumbersAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/CatalanNumbersAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/CatalanNumbersAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::ChineseRemainderTheoremAlgo",
@@ -709,7 +1328,15 @@
       "folder": "ChineseRemainderTheoremAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Competitive Programming (Math)",
-      "path": "150 dsa algos/MathORNumberTheory/ChineseRemainderTheoremAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/ChineseRemainderTheoremAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/ChineseRemainderTheoremAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::EuclideanAlgo",
@@ -717,7 +1344,15 @@
       "folder": "EuclideanAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/MathORNumberTheory/EuclideanAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/EuclideanAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/EuclideanAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::EulersTotientFunctionAlgo",
@@ -725,7 +1360,15 @@
       "folder": "EulersTotientFunctionAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Advanced Interview (Math)",
-      "path": "150 dsa algos/MathORNumberTheory/EulersTotientFunctionAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/EulersTotientFunctionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/EulersTotientFunctionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::ExtendedEuclideanAlgo",
@@ -733,7 +1376,15 @@
       "folder": "ExtendedEuclideanAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Advanced Interview (Math)",
-      "path": "150 dsa algos/MathORNumberTheory/ExtendedEuclideanAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/ExtendedEuclideanAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/ExtendedEuclideanAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::InclusionExclusionPrincipleAlgo",
@@ -741,7 +1392,15 @@
       "folder": "InclusionExclusionPrincipleAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Advanced Interview (Math)",
-      "path": "150 dsa algos/MathORNumberTheory/InclusionExclusionPrincipleAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/InclusionExclusionPrincipleAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/InclusionExclusionPrincipleAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::LCMAlgo",
@@ -749,7 +1408,15 @@
       "folder": "LCMAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/MathORNumberTheory/LCMAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/LCMAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/LCMAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::LinearSieveAlgo",
@@ -757,7 +1424,15 @@
       "folder": "LinearSieveAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Advanced Interview (Primes)",
-      "path": "150 dsa algos/MathORNumberTheory/LinearSieveAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/LinearSieveAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/LinearSieveAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::LucasTheoremAlgo",
@@ -765,7 +1440,15 @@
       "folder": "LucasTheoremAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Competitive Programming (Combinatorics)",
-      "path": "150 dsa algos/MathORNumberTheory/LucasTheoremAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/LucasTheoremAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/LucasTheoremAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::MatrixExponentiationAlgo",
@@ -773,7 +1456,15 @@
       "folder": "MatrixExponentiationAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Advanced Interview (Fibonacci/DP)",
-      "path": "150 dsa algos/MathORNumberTheory/MatrixExponentiationAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/MatrixExponentiationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/MatrixExponentiationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::MillerRabinAlgo",
@@ -781,7 +1472,15 @@
       "folder": "MillerRabinAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Competitive Programming (Primality)",
-      "path": "150 dsa algos/MathORNumberTheory/MillerRabinAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/MillerRabinAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/MillerRabinAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::MobiusFunctionAlgo",
@@ -789,7 +1488,15 @@
       "folder": "MobiusFunctionAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Competitive Programming (Number Theory)",
-      "path": "150 dsa algos/MathORNumberTheory/MobiusFunctionAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/MobiusFunctionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/MobiusFunctionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::ModularArithmeticAlgo",
@@ -797,7 +1504,15 @@
       "folder": "ModularArithmeticAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/MathORNumberTheory/ModularArithmeticAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/ModularArithmeticAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/ModularArithmeticAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::ModularInverseExtendedGCD",
@@ -805,7 +1520,15 @@
       "folder": "ModularInverseExtendedGCD",
       "category": "MathORNumberTheory",
       "tier": "** Advanced Interview (Modular Math)",
-      "path": "150 dsa algos/MathORNumberTheory/ModularInverseExtendedGCD/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/ModularInverseExtendedGCD/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/ModularInverseExtendedGCD/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::ModularInverseFermatAlgo",
@@ -813,7 +1536,15 @@
       "folder": "ModularInverseFermatAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/MathORNumberTheory/ModularInverseFermatAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/ModularInverseFermatAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/ModularInverseFermatAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::nCrWithModuloAlgo",
@@ -821,7 +1552,15 @@
       "folder": "nCrWithModuloAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/MathORNumberTheory/nCrWithModuloAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/nCrWithModuloAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/nCrWithModuloAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::PollardRHOAlgo",
@@ -829,7 +1568,15 @@
       "folder": "PollardRHOAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Competitive Programming (Factorization)",
-      "path": "150 dsa algos/MathORNumberTheory/PollardRHOAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/PollardRHOAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/PollardRHOAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::PrimeFactorizationAlgo",
@@ -837,7 +1584,15 @@
       "folder": "PrimeFactorizationAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/MathORNumberTheory/PrimeFactorizationAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/PrimeFactorizationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/PrimeFactorizationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::MathORNumberTheory::SieveOfEratosthenesAlgo",
@@ -845,7 +1600,15 @@
       "folder": "SieveOfEratosthenesAlgo",
       "category": "MathORNumberTheory",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/MathORNumberTheory/SieveOfEratosthenesAlgo/README.md"
+      "path": "150 dsa algos/MathORNumberTheory/SieveOfEratosthenesAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/MathORNumberTheory/SieveOfEratosthenesAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::QueueAndDeque::BFSUsingQueueAlgo",
@@ -853,7 +1616,15 @@
       "folder": "BFSUsingQueueAlgo",
       "category": "QueueAndDeque",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/QueueAndDeque/BFSUsingQueueAlgo/README.md"
+      "path": "150 dsa algos/QueueAndDeque/BFSUsingQueueAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/QueueAndDeque/BFSUsingQueueAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::QueueAndDeque::DequeAlgo",
@@ -861,7 +1632,15 @@
       "folder": "DequeAlgo",
       "category": "QueueAndDeque",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/QueueAndDeque/DequeAlgo/README.md"
+      "path": "150 dsa algos/QueueAndDeque/DequeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/QueueAndDeque/DequeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::QueueAndDeque::MonotonicQueueAlgo",
@@ -869,7 +1648,15 @@
       "folder": "MonotonicQueueAlgo",
       "category": "QueueAndDeque",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/QueueAndDeque/MonotonicQueueAlgo/README.md"
+      "path": "150 dsa algos/QueueAndDeque/MonotonicQueueAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/QueueAndDeque/MonotonicQueueAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::QueueAndDeque::QueueAlgo",
@@ -877,7 +1664,15 @@
       "folder": "QueueAlgo",
       "category": "QueueAndDeque",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/QueueAndDeque/QueueAlgo/README.md"
+      "path": "150 dsa algos/QueueAndDeque/QueueAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/QueueAndDeque/QueueAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::QueueAndDeque::SlidingWindowMaximumAlgo",
@@ -885,7 +1680,15 @@
       "folder": "SlidingWindowMaximumAlgo",
       "category": "QueueAndDeque",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/QueueAndDeque/SlidingWindowMaximumAlgo/README.md"
+      "path": "150 dsa algos/QueueAndDeque/SlidingWindowMaximumAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/QueueAndDeque/SlidingWindowMaximumAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::RecursionORBacktracking::BacktrackingAlgo",
@@ -893,7 +1696,15 @@
       "folder": "BacktrackingAlgo",
       "category": "RecursionORBacktracking",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/RecursionORBacktracking/BacktrackingAlgo/README.md"
+      "path": "150 dsa algos/RecursionORBacktracking/BacktrackingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/RecursionORBacktracking/BacktrackingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::RecursionORBacktracking::CombinationGenerationAlgo",
@@ -901,7 +1712,15 @@
       "folder": "CombinationGenerationAlgo",
       "category": "RecursionORBacktracking",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/RecursionORBacktracking/CombinationGenerationAlgo/README.md"
+      "path": "150 dsa algos/RecursionORBacktracking/CombinationGenerationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/RecursionORBacktracking/CombinationGenerationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::RecursionORBacktracking::NQueensAlgo",
@@ -909,7 +1728,15 @@
       "folder": "NQueensAlgo",
       "category": "RecursionORBacktracking",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/RecursionORBacktracking/NQueensAlgo/README.md"
+      "path": "150 dsa algos/RecursionORBacktracking/NQueensAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/RecursionORBacktracking/NQueensAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::RecursionORBacktracking::PermutationGenerationAlgo",
@@ -917,7 +1744,15 @@
       "folder": "PermutationGenerationAlgo",
       "category": "RecursionORBacktracking",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/RecursionORBacktracking/PermutationGenerationAlgo/README.md"
+      "path": "150 dsa algos/RecursionORBacktracking/PermutationGenerationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/RecursionORBacktracking/PermutationGenerationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::RecursionORBacktracking::RecursionAlgo",
@@ -925,7 +1760,15 @@
       "folder": "RecursionAlgo",
       "category": "RecursionORBacktracking",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/RecursionORBacktracking/RecursionAlgo/README.md"
+      "path": "150 dsa algos/RecursionORBacktracking/RecursionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/RecursionORBacktracking/RecursionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::RecursionORBacktracking::SubsetGenerationAlgo",
@@ -933,7 +1776,15 @@
       "folder": "SubsetGenerationAlgo",
       "category": "RecursionORBacktracking",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/RecursionORBacktracking/SubsetGenerationAlgo/README.md"
+      "path": "150 dsa algos/RecursionORBacktracking/SubsetGenerationAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/RecursionORBacktracking/SubsetGenerationAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::RecursionORBacktracking::SudokuSolverAlgo",
@@ -941,7 +1792,15 @@
       "folder": "SudokuSolverAlgo",
       "category": "RecursionORBacktracking",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/RecursionORBacktracking/SudokuSolverAlgo/README.md"
+      "path": "150 dsa algos/RecursionORBacktracking/SudokuSolverAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/RecursionORBacktracking/SudokuSolverAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::BinarySearchAlgo",
@@ -949,7 +1808,15 @@
       "folder": "BinarySearchAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/SearchingAndSorting/BinarySearchAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/BinarySearchAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/BinarySearchAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::CountingSortAlgo",
@@ -957,7 +1824,15 @@
       "folder": "CountingSortAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/SearchingAndSorting/CountingSortAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/CountingSortAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/CountingSortAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::CyclicSortAlgo",
@@ -965,7 +1840,15 @@
       "folder": "CyclicSortAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/SearchingAndSorting/CyclicSortAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/CyclicSortAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/CyclicSortAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::InversionCountAlgo",
@@ -973,7 +1856,15 @@
       "folder": "InversionCountAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Merge Sort Variation)",
-      "path": "150 dsa algos/SearchingAndSorting/InversionCountAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/InversionCountAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/InversionCountAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::LowerBoundAlgo",
@@ -981,7 +1872,15 @@
       "folder": "LowerBoundAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/SearchingAndSorting/LowerBoundAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/LowerBoundAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/LowerBoundAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::MergeSortAlgo",
@@ -989,7 +1888,15 @@
       "folder": "MergeSortAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/SearchingAndSorting/MergeSortAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/MergeSortAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/MergeSortAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::QuickSortAlgo",
@@ -997,7 +1904,15 @@
       "folder": "QuickSortAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/SearchingAndSorting/QuickSortAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/QuickSortAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/QuickSortAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::RadixSortAlgo",
@@ -1005,7 +1920,15 @@
       "folder": "RadixSortAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/SearchingAndSorting/RadixSortAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/RadixSortAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/RadixSortAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::TernarySearchAlgo",
@@ -1013,7 +1936,15 @@
       "folder": "TernarySearchAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Advanced Interview (Unimodal)",
-      "path": "150 dsa algos/SearchingAndSorting/TernarySearchAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/TernarySearchAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/TernarySearchAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::SearchingAndSorting::UpperBoundAlgo",
@@ -1021,7 +1952,15 @@
       "folder": "UpperBoundAlgo",
       "category": "SearchingAndSorting",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/SearchingAndSorting/UpperBoundAlgo/README.md"
+      "path": "150 dsa algos/SearchingAndSorting/UpperBoundAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/SearchingAndSorting/UpperBoundAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Stacks::LargestRectangleinHistogram",
@@ -1029,7 +1968,15 @@
       "folder": "LargestRectangleinHistogram",
       "category": "Stacks",
       "tier": "** Core Interview (Hard/Classic)",
-      "path": "150 dsa algos/Stacks/LargestRectangleinHistogram/README.md"
+      "path": "150 dsa algos/Stacks/LargestRectangleinHistogram/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Stacks/LargestRectangleinHistogram/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Stacks::NextGreaterElementAlgo",
@@ -1037,7 +1984,15 @@
       "folder": "NextGreaterElementAlgo",
       "category": "Stacks",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Stacks/NextGreaterElementAlgo/README.md"
+      "path": "150 dsa algos/Stacks/NextGreaterElementAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Stacks/NextGreaterElementAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Stacks::NextSmallerElement",
@@ -1045,7 +2000,15 @@
       "folder": "NextSmallerElement",
       "category": "Stacks",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Stacks/NextSmallerElement/README.md"
+      "path": "150 dsa algos/Stacks/NextSmallerElement/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Stacks/NextSmallerElement/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Stacks::PreviousGreaterElement",
@@ -1053,7 +2016,15 @@
       "folder": "PreviousGreaterElement",
       "category": "Stacks",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Stacks/PreviousGreaterElement/README.md"
+      "path": "150 dsa algos/Stacks/PreviousGreaterElement/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Stacks/PreviousGreaterElement/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Stacks::StackAlgo",
@@ -1061,7 +2032,15 @@
       "folder": "StackAlgo",
       "category": "Stacks",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Stacks/StackAlgo/README.md"
+      "path": "150 dsa algos/Stacks/StackAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Stacks/StackAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Stacks::ValidParantheses",
@@ -1069,7 +2048,15 @@
       "folder": "ValidParantheses",
       "category": "Stacks",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Stacks/ValidParantheses/README.md"
+      "path": "150 dsa algos/Stacks/ValidParantheses/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Stacks/ValidParantheses/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::AhoCorasickAlgo",
@@ -1077,7 +2064,15 @@
       "folder": "AhoCorasickAlgo",
       "category": "Strings",
       "tier": "** Competitive Programming (String Matching)",
-      "path": "150 dsa algos/Strings/AhoCorasickAlgo/README.md"
+      "path": "150 dsa algos/Strings/AhoCorasickAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/AhoCorasickAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::KasaiAlgo",
@@ -1085,7 +2080,15 @@
       "folder": "KasaiAlgo",
       "category": "Strings",
       "tier": "** Competitive Programming (LCP Array)",
-      "path": "150 dsa algos/Strings/KasaiAlgo/README.md"
+      "path": "150 dsa algos/Strings/KasaiAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/KasaiAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::KMPAlgo",
@@ -1093,7 +2096,15 @@
       "folder": "KMPAlgo",
       "category": "Strings",
       "tier": "** Core Interview (Classic)",
-      "path": "150 dsa algos/Strings/KMPAlgo/README.md"
+      "path": "150 dsa algos/Strings/KMPAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/KMPAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::ManachersAlgo",
@@ -1101,7 +2112,15 @@
       "folder": "ManachersAlgo",
       "category": "Strings",
       "tier": "** Advanced Interview (Palindromes)",
-      "path": "150 dsa algos/Strings/ManachersAlgo/README.md"
+      "path": "150 dsa algos/Strings/ManachersAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/ManachersAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::PalindromicTreeAlgo",
@@ -1109,7 +2128,15 @@
       "folder": "PalindromicTreeAlgo",
       "category": "Strings",
       "tier": "** Competitive Programming (Palindromes)",
-      "path": "150 dsa algos/Strings/PalindromicTreeAlgo/README.md"
+      "path": "150 dsa algos/Strings/PalindromicTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/PalindromicTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::PrefixFunctionKMPAlgo",
@@ -1117,7 +2144,15 @@
       "folder": "PrefixFunctionKMPAlgo",
       "category": "Strings",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Strings/PrefixFunctionKMPAlgo/README.md"
+      "path": "150 dsa algos/Strings/PrefixFunctionKMPAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/PrefixFunctionKMPAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::RabinKarpAlgo",
@@ -1125,7 +2160,15 @@
       "folder": "RabinKarpAlgo",
       "category": "Strings",
       "tier": "** Core Interview (Rolling Hash)",
-      "path": "150 dsa algos/Strings/RabinKarpAlgo/README.md"
+      "path": "150 dsa algos/Strings/RabinKarpAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/RabinKarpAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::StringHashingAlgo",
@@ -1133,7 +2176,15 @@
       "folder": "StringHashingAlgo",
       "category": "Strings",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Strings/StringHashingAlgo/README.md"
+      "path": "150 dsa algos/Strings/StringHashingAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/StringHashingAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::SuffixArrayAlgo",
@@ -1141,7 +2192,15 @@
       "folder": "SuffixArrayAlgo",
       "category": "Strings",
       "tier": "** Advanced Interview (Strings)",
-      "path": "150 dsa algos/Strings/SuffixArrayAlgo/README.md"
+      "path": "150 dsa algos/Strings/SuffixArrayAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/SuffixArrayAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::SuffixAutomaton",
@@ -1149,7 +2208,15 @@
       "folder": "SuffixAutomaton",
       "category": "Strings",
       "tier": "** Competitive Programming (Strings)",
-      "path": "150 dsa algos/Strings/SuffixAutomaton/README.md"
+      "path": "150 dsa algos/Strings/SuffixAutomaton/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/SuffixAutomaton/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::TrieAlgo",
@@ -1157,7 +2224,15 @@
       "folder": "TrieAlgo",
       "category": "Strings",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Strings/TrieAlgo/README.md"
+      "path": "150 dsa algos/Strings/TrieAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/TrieAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Strings::ZAlgo",
@@ -1165,7 +2240,15 @@
       "folder": "ZAlgo",
       "category": "Strings",
       "tier": "** Advanced Interview (Strings)",
-      "path": "150 dsa algos/Strings/ZAlgo/README.md"
+      "path": "150 dsa algos/Strings/ZAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Strings/ZAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::BinarySearchTreeAlgo",
@@ -1173,7 +2256,15 @@
       "folder": "BinarySearchTreeAlgo",
       "category": "Trees",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Trees/BinarySearchTreeAlgo/README.md"
+      "path": "150 dsa algos/Trees/BinarySearchTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/BinarySearchTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::CentroidDecompositionAlgo",
@@ -1181,7 +2272,15 @@
       "folder": "CentroidDecompositionAlgo",
       "category": "Trees",
       "tier": "** Competitive Programming (Tree Divide & Conquer)",
-      "path": "150 dsa algos/Trees/CentroidDecompositionAlgo/README.md"
+      "path": "150 dsa algos/Trees/CentroidDecompositionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/CentroidDecompositionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::DSUOnTreesAlgo",
@@ -1189,7 +2288,15 @@
       "folder": "DSUOnTreesAlgo",
       "category": "Trees",
       "tier": "** Competitive Programming (Sack on Tree)",
-      "path": "150 dsa algos/Trees/DSUOnTreesAlgo/README.md"
+      "path": "150 dsa algos/Trees/DSUOnTreesAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/DSUOnTreesAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::EulerTourAlgo",
@@ -1197,7 +2304,15 @@
       "folder": "EulerTourAlgo",
       "category": "Trees",
       "tier": "** Advanced Interview (Subtree Queries)",
-      "path": "150 dsa algos/Trees/EulerTourAlgo/README.md"
+      "path": "150 dsa algos/Trees/EulerTourAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/EulerTourAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::FenwickTreeAlgo",
@@ -1205,7 +2320,15 @@
       "folder": "FenwickTreeAlgo",
       "category": "Trees",
       "tier": "** Core Interview (Binary Indexed Tree)",
-      "path": "150 dsa algos/Trees/FenwickTreeAlgo/README.md"
+      "path": "150 dsa algos/Trees/FenwickTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/FenwickTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::HeavyLightDecompositionAlgo",
@@ -1213,7 +2336,15 @@
       "folder": "HeavyLightDecompositionAlgo",
       "category": "Trees",
       "tier": "** Competitive Programming (Path Queries)",
-      "path": "150 dsa algos/Trees/HeavyLightDecompositionAlgo/README.md"
+      "path": "150 dsa algos/Trees/HeavyLightDecompositionAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/HeavyLightDecompositionAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::LazySegmentTreeAlgo",
@@ -1221,7 +2352,15 @@
       "folder": "LazySegmentTreeAlgo",
       "category": "Trees",
       "tier": "** Advanced Interview (Range Updates)",
-      "path": "150 dsa algos/Trees/LazySegmentTreeAlgo/README.md"
+      "path": "150 dsa algos/Trees/LazySegmentTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/LazySegmentTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::LowestCommonAncestorAlgo",
@@ -1229,7 +2368,15 @@
       "folder": "LowestCommonAncestorAlgo",
       "category": "Trees",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Trees/LowestCommonAncestorAlgo/README.md"
+      "path": "150 dsa algos/Trees/LowestCommonAncestorAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/LowestCommonAncestorAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::MergeSortTreeAlgo",
@@ -1237,7 +2384,15 @@
       "folder": "MergeSortTreeAlgo",
       "category": "Trees",
       "tier": "** Competitive Programming (Range Queries)",
-      "path": "150 dsa algos/Trees/MergeSortTreeAlgo/README.md"
+      "path": "150 dsa algos/Trees/MergeSortTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/MergeSortTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::PersistentSegmentTreeAlgo",
@@ -1245,7 +2400,15 @@
       "folder": "PersistentSegmentTreeAlgo",
       "category": "Trees",
       "tier": "** Competitive Programming (Versioned Trees)",
-      "path": "150 dsa algos/Trees/PersistentSegmentTreeAlgo/README.md"
+      "path": "150 dsa algos/Trees/PersistentSegmentTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/PersistentSegmentTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::SegmentTreeAlgo",
@@ -1253,7 +2416,15 @@
       "folder": "SegmentTreeAlgo",
       "category": "Trees",
       "tier": "** Advanced Interview (Range Queries)",
-      "path": "150 dsa algos/Trees/SegmentTreeAlgo/README.md"
+      "path": "150 dsa algos/Trees/SegmentTreeAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/SegmentTreeAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::TreeDiamaterAlgo",
@@ -1261,7 +2432,15 @@
       "folder": "TreeDiamaterAlgo",
       "category": "Trees",
       "tier": "** Core Interview (High-Yield)",
-      "path": "150 dsa algos/Trees/TreeDiamaterAlgo/README.md"
+      "path": "150 dsa algos/Trees/TreeDiamaterAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/TreeDiamaterAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::TreeHeight",
@@ -1269,7 +2448,15 @@
       "folder": "TreeHeight",
       "category": "Trees",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Trees/TreeHeight/README.md"
+      "path": "150 dsa algos/Trees/TreeHeight/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/TreeHeight/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     },
     {
       "id": "algo::Trees::TreeTraversalsAlgo",
@@ -1277,7 +2464,15 @@
       "folder": "TreeTraversalsAlgo",
       "category": "Trees",
       "tier": "** Core Interview (Essential)",
-      "path": "150 dsa algos/Trees/TreeTraversalsAlgo/README.md"
+      "path": "150 dsa algos/Trees/TreeTraversalsAlgo/README.md",
+      "files": [
+        {
+          "name": "README.md",
+          "path": "150 dsa algos/Trees/TreeTraversalsAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
     }
   ],
   "activityByDate": {
