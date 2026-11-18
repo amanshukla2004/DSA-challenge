@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T16:42:05.526Z",
+  "generatedAt": "2026-11-18T17:00:26.031Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -10,9 +10,9 @@
     "revisionDays": 10,
     "concepts": 7,
     "algos": 150,
-    "repoSolved": 17,
-    "repoNotes": 17,
-    "daysCompleted": 2,
+    "repoSolved": 19,
+    "repoNotes": 19,
+    "daysCompleted": 3,
     "weeksCompleted": 0
   },
   "potd": {
@@ -2494,6 +2494,8 @@
     "2026-11-18": {
       "questions": [
         "3::Build-Array-from-Permutation",
+        "3::Third-Maximum-Number",
+        "3::Valid-Mountain-Array",
         "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
         "3::Remove-Element",
         "3::Running-Sum-of-1d-Array",
@@ -2510,8 +2512,6 @@
         "2::Maximum-Population-Year",
         "2::Remove-Duplicates-from-Sorted-Array-II",
         "2::Remove-Duplicates-from-Sorted-Array",
-        "3::Third-Maximum-Number",
-        "3::Valid-Mountain-Array",
         "4::Find-Common-Characters",
         "4::Max-Consecutive-Ones",
         "4::Range-Sum-Query-Immutable",
@@ -2970,7 +2970,9 @@
       "3::Running-Sum-of-1d-Array",
       "3::Remove-Element",
       "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
-      "3::Build-Array-from-Permutation"
+      "3::Build-Array-from-Permutation",
+      "3::Third-Maximum-Number",
+      "3::Valid-Mountain-Array"
     ]
   },
   "weeks": [
@@ -2979,7 +2981,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 17,
+      "solvedCount": 19,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -3403,9 +3405,9 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-003_Arrays",
-          "solvedCount": 4,
+          "solvedCount": 6,
           "totalCount": 6,
-          "completed": false,
+          "completed": true,
           "questions": [
             {
               "id": "3::Running-Sum-of-1d-Array",
@@ -3522,7 +3524,7 @@
               "hasCode": {
                 "bruteforce": true,
                 "better": false,
-                "optimised": false
+                "optimised": true
               },
               "solvedAt": "2026-11-18",
               "lastUpdated": "2026-11-18"
@@ -3547,14 +3549,14 @@
                 }
               ],
               "path": "Week-01/Day-003_Arrays/Third-Maximum-Number",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-18",
               "lastUpdated": "2026-11-18"
             },
             {
@@ -3577,14 +3579,14 @@
                 }
               ],
               "path": "Week-01/Day-003_Arrays/Valid-Mountain-Array",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-18",
               "lastUpdated": "2026-11-18"
             }
           ]
