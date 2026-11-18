@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T14:05:18.015Z",
+  "generatedAt": "2026-11-18T14:18:50.583Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -10,8 +10,8 @@
     "revisionDays": 10,
     "concepts": 7,
     "algos": 150,
-    "repoSolved": 13,
-    "repoNotes": 13,
+    "repoSolved": 14,
+    "repoNotes": 14,
     "daysCompleted": 2,
     "weeksCompleted": 0
   },
@@ -296,6 +296,12 @@
         {
           "name": "README.md",
           "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        },
+        {
+          "name": "1_lc2381_ShiftingLetters2.md",
+          "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/1_lc2381_ShiftingLetters2.md",
           "isMd": true,
           "ext": ".md"
         },
@@ -2487,6 +2493,7 @@
   "activityByDate": {
     "2026-11-18": {
       "questions": [
+        "3::Running-Sum-of-1d-Array",
         "1::Best-Time-to-Buy-and-Sell-Stock",
         "1::Majority-Element",
         "1::Merge-Sorted-Array",
@@ -2503,7 +2510,6 @@
         "3::Build-Array-from-Permutation",
         "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
         "3::Remove-Element",
-        "3::Running-Sum-of-1d-Array",
         "3::Third-Maximum-Number",
         "3::Valid-Mountain-Array",
         "4::Find-Common-Characters",
@@ -2959,6 +2965,9 @@
       "2::Intersection-of-Two-Arrays-II",
       "2::Maximum-Population-Year",
       "2::Find-Pivot-Index"
+    ],
+    "2026-11-18": [
+      "3::Running-Sum-of-1d-Array"
     ]
   },
   "weeks": [
@@ -2967,7 +2976,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 13,
+      "solvedCount": 14,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -3391,7 +3400,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-003_Arrays",
-          "solvedCount": 0,
+          "solvedCount": 1,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -3415,14 +3424,14 @@
                 }
               ],
               "path": "Week-01/Day-003_Arrays/Running-Sum-of-1d-Array",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-18",
               "lastUpdated": "2026-11-18"
             },
             {
