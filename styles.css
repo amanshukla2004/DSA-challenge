@@ -142,7 +142,6 @@ body {
 .topbar-center {
   display: flex;
   align-items: center;
-  justify-content: center;
   min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -150,6 +149,10 @@ body {
 
 .topbar-center::-webkit-scrollbar {
   display: none;
+}
+
+.topbar-center .mode-nav {
+  margin: 0 auto;
 }
 
 .topbar-right {
@@ -229,7 +232,7 @@ body {
   color: var(--red);
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .topbar {
     flex-wrap: wrap;
     padding: 8px 16px;
@@ -239,11 +242,10 @@ body {
   .topbar-center {
     order: 3;
     width: 100%;
-    justify-content: flex-start;
   }
 
   .nav-contest-pill {
-    max-width: 190px;
+    max-width: 210px;
   }
 }
 

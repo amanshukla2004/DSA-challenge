@@ -549,6 +549,23 @@
     if (els.algosCount) els.algosCount.textContent = String(algos || state.data.algos?.length || 0);
   }
 
+  function showOnlyView(activeView) {
+    const allViews = [
+      els.dashboardView,
+      els.problemView,
+      els.conceptView,
+      els.algosView,
+      els.todoView,
+      els.contestView
+    ];
+    for (const v of allViews) {
+      if (!v) continue;
+      v.classList.toggle('hidden', v !== activeView);
+    }
+    const main = document.getElementById('mainContent');
+    if (main) main.scrollTop = 0;
+  }
+
   function setModeUI(mode) {
     state.mode = mode;
     els.modeButtons.forEach((b) => {
@@ -1590,12 +1607,7 @@
     if (window.location.hash) {
       history.replaceState(null, '', window.location.pathname + window.location.search);
     }
-    els.problemView?.classList.add('hidden');
-    els.conceptView?.classList.add('hidden');
-    els.contestView?.classList.add('hidden');
-    els.algosView?.classList.add('hidden');
-    els.todoView?.classList.add('hidden');
-    els.dashboardView.classList.remove('hidden');
+    showOnlyView(els.dashboardView);
 
     const { solvedByDate = {} } = state.data;
     const flatDays = getFlatDays();
@@ -1854,15 +1866,13 @@
     const concept = concepts[idx];
 
     state.selectedId = null;
+    state.selectedAlgoId = null;
     state.selectedConceptId = conceptId;
     setModeUI('concepts');
     window.location.hash = encodeURIComponent(conceptId);
     els.sidebar?.classList.remove('open');
 
-    els.dashboardView?.classList.add('hidden');
-    els.problemView?.classList.add('hidden');
-    els.contestView?.classList.add('hidden');
-    els.conceptView.classList.remove('hidden');
+    showOnlyView(els.conceptView);
 
     const prevC = idx > 0 ? concepts[idx - 1] : null;
     const nextC = idx < concepts.length - 1 ? concepts[idx + 1] : null;
@@ -1928,12 +1938,7 @@
     window.location.hash = encodeURIComponent(algoId);
     els.sidebar?.classList.remove('open');
 
-    els.dashboardView?.classList.add('hidden');
-    els.problemView?.classList.add('hidden');
-    els.conceptView?.classList.add('hidden');
-    els.contestView?.classList.add('hidden');
-    els.todoView?.classList.add('hidden');
-    els.algosView.classList.remove('hidden');
+    showOnlyView(els.algosView);
 
     const prevAlgo = idx > 0 ? algos[idx - 1] : null;
     const nextAlgo = idx < algos.length - 1 ? algos[idx + 1] : null;
@@ -2063,12 +2068,7 @@
       history.replaceState(null, '', '#todo');
     }
 
-    els.dashboardView?.classList.add('hidden');
-    els.problemView?.classList.add('hidden');
-    els.conceptView?.classList.add('hidden');
-    els.algosView?.classList.add('hidden');
-    els.contestView?.classList.add('hidden');
-    els.todoView.classList.remove('hidden');
+    showOnlyView(els.todoView);
 
     els.todoView.innerHTML = `
       <div class="problem-header">
@@ -2123,12 +2123,7 @@
     window.location.hash = encodeURIComponent(id);
     els.sidebar?.classList.remove('open');
 
-    els.dashboardView?.classList.add('hidden');
-    els.conceptView?.classList.add('hidden');
-    els.contestView?.classList.add('hidden');
-    els.algosView?.classList.add('hidden');
-    els.todoView?.classList.add('hidden');
-    els.problemView.classList.remove('hidden');
+    showOnlyView(els.problemView);
 
     const prevItem = idx > 0 ? state.flatItems[idx - 1] : null;
     const nextItem = idx < state.flatItems.length - 1 ? state.flatItems[idx + 1] : null;
@@ -2436,10 +2431,13 @@
       endMs = startMs + durationMs;
     }
 
-    const url = String(
-      raw.url ||
-      (platform === 'leetcode' ? 'https://leetcode.com/contest/' : 'https://www.codechef.com/contests')
-    );
+    const fallbackUrl = platform === 'leetcode' ? 'https://leetcode.com/contest/' : 'https://www.codechef.com/contests';
+    const rawUrlStr = String(raw.url || '').trim();
+    const url = /^https?:\/\//i.test(rawUrlStr)
+      ? rawUrlStr
+      : rawUrlStr.startsWith('//')
+        ? `https:${rawUrlStr}`
+        : fallbackUrl;
 
     return {
       id: `${platform}::${startMs}`,
@@ -2709,15 +2707,13 @@
     if (!els.contestView) return;
     state.selectedId = null;
     state.selectedConceptId = null;
+    state.selectedAlgoId = null;
     setModeUI('contests');
     if (window.location.hash !== '#contests') {
       history.replaceState(null, '', '#contests');
     }
 
-    els.dashboardView?.classList.add('hidden');
-    els.problemView?.classList.add('hidden');
-    els.conceptView?.classList.add('hidden');
-    els.contestView.classList.remove('hidden');
+    showOnlyView(els.contestView);
 
     if (!state.contests.items.length && !state.contests.loading) {
       refreshContests(false);
