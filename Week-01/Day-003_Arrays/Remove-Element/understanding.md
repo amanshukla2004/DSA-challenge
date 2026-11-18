@@ -1,82 +1,54 @@
 # Remove Element
 
-- **LeetCode Number:** TBD
+- **LeetCode Number:** 27
 - **Difficulty:** Easy
-- **Topic:** Arrays *(Week 1 · Day 3)*
+- **Topic:** Arrays *(Week 1 · Day 3)*, Two pointers 
 - **URL:** [Remove Element](https://leetcode.com/problems/remove-element/)
 - **YouTube:** <!-- paste YouTube link here -->
-- **Need Revision:** No
+- **Need Revision:** Yes
 - **Status:** Todo
 
 ---
 
 ## 📋 Question
 <!-- Short summary of the problem in your own words -->
+Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
-### 📏 Constraints
-- <!-- Key constraints that decide the optimal time/space complexity -->
+Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
 
-<details>
-<summary><strong>💡 Hint</strong></summary>
+Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
+Return k.
 
-<!-- Key observation or nudge without giving away the full solution -->
 
-</details>
 
----
-
-## 🧠 Intuition
-<!-- Core pattern or mental model that unlocks this problem -->
-
----
-
-## 🐢 Approach 1: Brute Force
-
+## 🐢 Best Approach : 
 ### Intuition
-- <!-- Step-by-step brute force idea and why it is slow -->
+- idx will tell us the correct position of the next non target/val element 
+- we iterate through the array
+- if element is not equal to val, we place it at idx position and increment idx 
+- otherwise, we skip it
+
 
 ### Code
 ```java
-// Brute Force solution
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        
+
+        int idx = 0; // next position of the non-target element
+
+        for(int ele : nums){
+            if(ele != val){
+                nums[idx] = ele;
+                idx++;
+            }
+        }
+        return idx;
+    }
+}
 ```
 
 ### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
+- **Time Complexity (TC):** `O(N)`
+- **Space Complexity (SC):** `O(1)`
 
----
-
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->
