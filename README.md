@@ -5,10 +5,10 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Live Repo Progress
 | Metric | Progress |
 |---|---|
-| **Questions Solved** | **14 / 484** |
+| **Questions Solved** | **17 / 484** |
 | **Days Completed** | **2 / 136** |
 | **Weeks Completed** | **0 / 21** |
-| **Problem Notes Written** | **14 / 484** |
+| **Problem Notes Written** | **17 / 484** |
 | **Concept & Learning Notes** | **7** in [Concepts/](./Concepts) |
 
 ## Website Features (`index.html`)
@@ -45,7 +45,7 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Weekly Index
 
 <details>
-<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (14/39 solved · 7 days)</summary>
+<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (17/39 solved · 7 days)</summary>
 
 - **Day 1 — Arrays ✅** (6/6 solved):
   - [Two Sum](./Week-01/Day-001_Arrays/Two-Sum/understanding.md) `E` ✅
@@ -62,11 +62,11 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
   - [Intersection of Two Arrays II](./Week-01/Day-002_Arrays/Intersection-of-Two-Arrays-II/understanding.md) `E` ✅
   - [Maximum Population Year](./Week-01/Day-002_Arrays/Maximum-Population-Year/understanding.md) `E` ✅
   - [Find Pivot Index](./Week-01/Day-002_Arrays/Find-Pivot-Index/understanding.md) `E` ✅
-- **Day 3 — Arrays** (1/6 solved):
+- **Day 3 — Arrays** (4/6 solved):
   - [Running Sum of 1d Array](./Week-01/Day-003_Arrays/Running-Sum-of-1d-Array/understanding.md) `E` ✅
-  - [Remove Element](./Week-01/Day-003_Arrays/Remove-Element/understanding.md) `E`
-  - [Find Winner on a Tic Tac Toe Game](./Week-01/Day-003_Arrays/Find-Winner-on-a-Tic-Tac-Toe-Game/understanding.md) `E`
-  - [Build Array from Permutation](./Week-01/Day-003_Arrays/Build-Array-from-Permutation/understanding.md) `E`
+  - [Remove Element](./Week-01/Day-003_Arrays/Remove-Element/understanding.md) `E` ✅
+  - [Find Winner on a Tic Tac Toe Game](./Week-01/Day-003_Arrays/Find-Winner-on-a-Tic-Tac-Toe-Game/understanding.md) `E` ✅
+  - [Build Array from Permutation](./Week-01/Day-003_Arrays/Build-Array-from-Permutation/understanding.md) `E` ✅
   - [Third Maximum Number](./Week-01/Day-003_Arrays/Third-Maximum-Number/understanding.md) `E`
   - [Valid Mountain Array](./Week-01/Day-003_Arrays/Valid-Mountain-Array/understanding.md) `E`
 - **Day 4 — Arrays** (0/6 solved):
