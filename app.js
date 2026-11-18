@@ -925,7 +925,7 @@
 
   function renderHeatmap(solvedByDate, selectedDate) {
     const today = getTodayIsoLocal();
-    const totalDays = 10;
+    const totalDays = 30;
     const startDateIso = addDaysIso(today, -(totalDays - 1));
 
     const cells = [];
@@ -938,22 +938,25 @@
       else if (count >= 2) lvl = 'hm-2';
       else if (count >= 1) lvl = 'hm-1';
 
+      const isToday = iso === today;
       const selectedCls = selectedDate === iso ? 'hm-selected' : '';
-      const shortLbl = formatShortHmDate(iso, iso === today);
+      const todayCls = isToday ? 'hm-today' : '';
+      const dayNum = iso.split('-')[2].replace(/^0/, '');
+      const shortLbl = isToday ? 'Now' : dayNum;
       const title = `${iso}: ${count} question${count === 1 ? '' : 's'} solved`;
 
       cells.push(
-        `<button class="hm-day-box ${lvl} ${selectedCls}" data-hm-date="${iso}" title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}">
-          <span class="hm-day-num">${count}</span>
-          <span class="hm-day-date">${escapeHtml(shortLbl)}</span>
+        `<button class="hm-30-box ${lvl} ${selectedCls} ${todayCls}" data-hm-date="${iso}" title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}">
+          <span class="hm-30-num">${count}</span>
+          <span class="hm-30-date">${escapeHtml(shortLbl)}</span>
         </button>`
       );
     }
 
     return `
-      <div class="heatmap-10-grid">${cells.join('')}</div>
+      <div class="heatmap-30-grid">${cells.join('')}</div>
       <div class="heatmap-footer">
-        <span>Last 10 days (${startDateIso} → ${today}) · Click any day to inspect</span>
+        <span>Last 30 days (${startDateIso} → ${today}) · Click any day to inspect solved questions</span>
         <div class="hm-legend">
           <span>Less</span>
           <span class="hm-legend-box" style="background:var(--hm-0)"></span>
@@ -967,7 +970,33 @@
     `;
   }
 
-  function renderProgressMatrix(flatDays) {
+  function renderFocusQuestionRow(q, dayType, opts = {}) {
+    const badgeCls = q.diff ? `badge-${q.diff}` : `badge-${dayType}`;
+    const badgeTxt = q.diff || dayType;
+    const isDone = q.status === 'solved';
+    const hasUrl = Boolean(q.url && /^https?:\/\//i.test(q.url));
+    const subTag = opts.dayLabel ? `<span class="target-item-sub">${escapeHtml(opts.dayLabel)}</span>` : '';
+
+    return `
+      <div class="focus-q-row ${isDone ? 'is-complete' : ''}">
+        <button class="focus-q-main" data-jump-id="${escapeHtml(q.id)}" title="Open notes & solutions for ${escapeHtml(q.name)}">
+          <span class="target-item-left">
+            ${getStatusIndicator(q)}
+            <span class="target-item-title">${escapeHtml(q.name)}</span>
+          </span>
+          <span class="target-item-meta">
+            ${subTag}
+            <span class="badge ${badgeCls}">${escapeHtml(badgeTxt)}</span>
+          </span>
+        </button>
+        ${hasUrl ? `
+          <a class="q-ext-btn" href="${escapeHtml(q.url)}" target="_blank" rel="noopener noreferrer" title="Open ${escapeHtml(q.name)} on external site" aria-label="Open ${escapeHtml(q.name)} in new tab">→</a>
+        ` : ''}
+      </div>
+    `;
+  }
+
+  function renderProgressMatrix() {
     if (!state.data) return '';
     /** @type {Array<{ key: string, label: string, color: string, dimCls: string, litCls: string, items: Array<any> }>} */
     const groups = [
@@ -1019,7 +1048,36 @@
       `;
     }).join('');
 
+    const pct = totalQs ? ((totalSolvedQs / totalQs) * 100).toFixed(1) : '0.0';
+
+    return `
+      <section class="section-card matrix-stat-card">
+        <div class="matrix-stat-main">
+          <div class="section-header" style="margin-bottom:10px;">
+            <h2>Progress Matrix</h2>
+            <div class="matrix-legend">${legendHtml}</div>
+          </div>
+          <div class="matrix-box full-matrix-box">
+            <div class="block-grid block-grid-wide">${allCells.join('')}</div>
+          </div>
+        </div>
+        <div class="matrix-side-stat ${totalSolvedQs > 0 ? 'accent-g' : ''}">
+          <div class="side-stat-val">${totalSolvedQs} <span class="side-stat-total">/ ${totalQs}</span></div>
+          <div class="side-stat-lbl">Questions Solved</div>
+          <div class="day-progress-bar" style="width:100%;margin:8px 0 4px;">
+            <div class="day-progress-fill" style="width:${pct}%"></div>
+          </div>
+          <div class="side-stat-pct">${pct}% complete</div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderDaysCompletedMatrix(flatDays) {
     const daysDone = flatDays.filter((d) => d.day.completed).length;
+    const totalDays = flatDays.length;
+    const pct = totalDays ? ((daysDone / totalDays) * 100).toFixed(1) : '0.0';
+
     const dayCells = flatDays.map((entry, idx) => {
       const d = entry.day;
       const cls = d.completed ? 'lit-done' : d.solvedCount > 0 ? 'lit-partial' : '';
@@ -1029,40 +1087,24 @@
       return `<button class="p-cell ${cls}" data-day-idx="${idx}" title="${escapeHtml(info)}"></button>`;
     }).join('');
 
-    const weeks = state.data.weeks || [];
-    const weeksDone = weeks.filter((w) => w.completed).length;
-    const weekCells = weeks.map((wk) => {
-      const cls = wk.completed ? 'lit-done' : wk.solvedCount > 0 ? 'lit-partial' : '';
-      const info = `${wk.weekTitle} (${wk.solvedCount}/${wk.totalCount} solved)`;
-      return `<button class="w-cell ${cls}" data-week-num="${wk.week}" title="${escapeHtml(info)}">W${wk.week}</button>`;
-    }).join('');
-
     return `
-      <section class="section-card">
-        <div class="section-header" style="margin-bottom:8px;">
-          <h2>Progress Matrix <span class="badge ${totalSolvedQs ? 'badge-g' : 'badge-grey'}">${totalSolvedQs}/${totalQs}</span></h2>
-          <div class="matrix-legend">${legendHtml}</div>
+      <section class="section-card matrix-stat-card">
+        <div class="matrix-stat-main">
+          <div class="section-header" style="margin-bottom:10px;">
+            <h2>Days Completed</h2>
+            <span class="section-sub" style="margin:0;">Click any day cell to preview its target</span>
+          </div>
+          <div class="matrix-box full-matrix-box">
+            <div class="block-grid block-grid-days">${dayCells}</div>
+          </div>
         </div>
-        <div class="matrix-sections">
-          <div class="matrix-box">
-            <div class="block-grid">${allCells.join('')}</div>
+        <div class="matrix-side-stat ${daysDone > 0 ? 'accent-g' : ''}">
+          <div class="side-stat-val">${daysDone} <span class="side-stat-total">/ ${totalDays}</span></div>
+          <div class="side-stat-lbl">Days Completed</div>
+          <div class="day-progress-bar" style="width:100%;margin:8px 0 4px;">
+            <div class="day-progress-fill" style="width:${pct}%"></div>
           </div>
-          <div class="matrix-dw-grid">
-            <div class="matrix-box">
-              <div class="matrix-box-head">
-                <span>Days Completed</span>
-                <span class="matrix-count">${daysDone}/${flatDays.length}</span>
-              </div>
-              <div class="block-grid">${dayCells}</div>
-            </div>
-            <div class="matrix-box">
-              <div class="matrix-box-head">
-                <span>Weeks Completed</span>
-                <span class="matrix-count">${weeksDone}/${weeks.length}</span>
-              </div>
-              <div class="week-block-grid">${weekCells}</div>
-            </div>
-          </div>
+          <div class="side-stat-pct">${pct}% complete</div>
         </div>
       </section>
     `;
@@ -1543,6 +1585,7 @@
     if (!state.data || !els.dashboardView) return;
     state.selectedId = null;
     state.selectedConceptId = null;
+    state.selectedAlgoId = null;
     setModeUI('dashboard');
     if (window.location.hash) {
       history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -1550,9 +1593,11 @@
     els.problemView?.classList.add('hidden');
     els.conceptView?.classList.add('hidden');
     els.contestView?.classList.add('hidden');
+    els.algosView?.classList.add('hidden');
+    els.todoView?.classList.add('hidden');
     els.dashboardView.classList.remove('hidden');
 
-    const { totals, solvedByDate = {} } = state.data;
+    const { solvedByDate = {} } = state.data;
     const flatDays = getFlatDays();
     if (!flatDays.length) return;
 
@@ -1560,12 +1605,16 @@
     if (state.previewDayIndex === null) state.previewDayIndex = smartIdx;
     const targetIdx = Math.max(0, Math.min(state.previewDayIndex, flatDays.length - 1));
     const targetEntry = flatDays[targetIdx];
+    const tomorrowEntry = targetIdx + 1 < flatDays.length ? flatDays[targetIdx + 1] : null;
 
     const todayStr = getTodayIsoLocal();
     const yesterdayStr = addDaysIso(todayStr, -1);
-    const activeLeftDate = state.selectedHeatmapDate || todayStr;
-    const leftIds = solvedByDate[activeLeftDate] || [];
-    const yesterdayIds = solvedByDate[yesterdayStr] || [];
+    const activeSolvedDate = state.selectedHeatmapDate || yesterdayStr;
+    const activeSolvedIds = solvedByDate[activeSolvedDate] || [];
+    const activeSolvedItems = activeSolvedIds
+      .map((id) => state.itemById.get(id))
+      .filter((it) => it && !it.isRevision && it.q);
+
     const solvedTodayCount = (solvedByDate[todayStr] || []).length;
     const streak = computeSolvedStreak(solvedByDate);
 
@@ -1573,129 +1622,129 @@
     const calendarIdx = Math.max(0, Math.min(diffDaysIso(startDate, todayStr), flatDays.length - 1));
     const paceDelta = smartIdx - calendarIdx;
     let paceBadge = '<span class="badge badge-b">On Schedule</span>';
-    if (paceDelta > 0) paceBadge = `<span class="badge badge-g">+${paceDelta} Day${paceDelta > 1 ? 's' : ''} Ahead</span>`;
-    else if (paceDelta < 0) paceBadge = `<span class="badge badge-y">${Math.abs(paceDelta)} Day${Math.abs(paceDelta) > 1 ? 's' : ''} Behind</span>`;
+    if (paceDelta > 0) paceBadge = `<span class="badge badge-g">+${paceDelta}d Ahead</span>`;
+    else if (paceDelta < 0) paceBadge = `<span class="badge badge-y">${Math.abs(paceDelta)}d Behind</span>`;
 
     const targetQs = targetEntry.day.questions || [];
     const targetDone = targetEntry.day.solvedCount || 0;
     const targetTotal = targetEntry.day.totalCount || targetQs.length;
     const targetPct = targetTotal ? Math.round((targetDone / targetTotal) * 100) : (targetEntry.day.completed ? 100 : 0);
 
+    const tomorrowQs = tomorrowEntry ? (tomorrowEntry.day.questions || []) : [];
+
+    const leftCardTitle = state.selectedHeatmapDate
+      ? `Solved (${formatShortHmDate(activeSolvedDate, activeSolvedDate === todayStr)})`
+      : 'Solved Yesterday';
+
     els.dashboardView.innerHTML = `
-      <div class="stats-grid">
-        <div class="stat-card ${totals.repoSolved > 0 ? 'accent-g' : ''}">
-          <div class="stat-val">${totals.repoSolved} / ${totals.questions}</div>
-          <div class="stat-lbl">Questions Solved</div>
-        </div>
-        <div class="stat-card ${totals.daysCompleted > 0 ? 'accent-g' : ''}">
-          <div class="stat-val">${totals.daysCompleted} / ${totals.days}</div>
-          <div class="stat-lbl">Days Completed</div>
-        </div>
-        <div class="stat-card ${totals.weeksCompleted > 0 ? 'accent-g' : ''}">
-          <div class="stat-val">${totals.weeksCompleted} / ${totals.weeks}</div>
-          <div class="stat-lbl">Weeks Completed</div>
-        </div>
-        <div class="stat-card ${solvedTodayCount > 0 ? 'accent-g' : ''}">
-          <div class="stat-val">${solvedTodayCount}</div>
-          <div class="stat-lbl">Solved Today</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">${streak}d</div>
-          <div class="stat-lbl">Solve Streak</div>
-        </div>
-      </div>
-
-      <div class="bento-grid">
-        <div class="bento-col">
-          ${renderProgressMatrix(flatDays)}
+      <!-- Row 1: Combined 30-Day Heatmap + Yesterday / Today / Tomorrow Focus Cards (Full Width) -->
+      <section class="section-card heatmap-focus-shell">
+        <div class="section-header" style="margin-bottom:10px;">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <h2>Solve Heatmap</h2>
+            <span class="badge badge-grey">Last 30 Days</span>
+            <span class="badge ${solvedTodayCount > 0 ? 'badge-g' : 'badge-grey'}">✓ ${solvedTodayCount} today</span>
+            <span class="badge ${streak > 0 ? 'badge-y' : 'badge-grey'}">🔥 ${streak}d streak</span>
+          </div>
+          ${state.selectedHeatmapDate ? '<button class="btn" id="clearHeatmapBtn">Reset to Yesterday</button>' : ''}
         </div>
 
-        <div class="bento-col">
-          <section class="section-card target-highlight ${targetEntry.day.completed ? 'is-complete' : ''}">
-            <div class="section-header" style="margin-bottom:6px;">
-              <h2>
-                Today's Target — Day ${escapeHtml(targetEntry.day.day)}
-                ${targetEntry.day.completed ? '<span class="badge badge-g">✓ Done</span>' : paceBadge}
-              </h2>
-              <div style="display:flex;gap:5px;align-items:center;">
-                <button class="btn" id="targetPrevBtn" ${targetIdx <= 0 ? 'disabled' : ''}>←</button>
-                <button class="btn" id="targetTodayBtn">Next Pending</button>
-                <button class="btn" id="targetNextBtn" ${targetIdx >= flatDays.length - 1 ? 'disabled' : ''}>→</button>
+        ${renderHeatmap(solvedByDate, state.selectedHeatmapDate)}
+
+        <div class="focus-trio-grid">
+          <!-- 1. Solved Yesterday (or Selected Heatmap Date) -->
+          <div class="focus-card">
+            <div class="focus-card-head">
+              <div>
+                <h3>${escapeHtml(leftCardTitle)} <span class="badge ${activeSolvedItems.length ? 'badge-g' : 'badge-grey'}">${activeSolvedItems.length}</span></h3>
+                <div class="focus-card-sub">${escapeHtml(activeSolvedDate)}</div>
+              </div>
+            </div>
+            <div class="focus-q-list">
+              ${activeSolvedItems.length === 0 ? `
+                <div class="empty-hint" style="padding:14px 10px;font-size:12px;">
+                  ${state.selectedHeatmapDate ? 'No problems solved on this date.' : 'No problems solved yesterday.'}
+                </div>
+              ` : activeSolvedItems.map((it) => renderFocusQuestionRow(it.q, it.day.type, { dayLabel: `D${it.day.day}` })).join('')}
+            </div>
+          </div>
+
+          <!-- 2. Today's Target (Highlighted) -->
+          <div class="focus-card focus-today-card ${targetEntry.day.completed ? 'is-complete' : ''}">
+            <div class="focus-card-head">
+              <div>
+                <h3>
+                  Today's Target · Day ${escapeHtml(targetEntry.day.day)}
+                  ${targetEntry.day.completed ? '<span class="badge badge-g">✓ Done</span>' : paceBadge}
+                </h3>
+                <div class="focus-card-sub">
+                  <strong>${escapeHtml(targetEntry.day.category)}</strong>
+                  ${targetTotal ? ` · ${targetDone}/${targetTotal} (${targetPct}%)` : ''}
+                </div>
+              </div>
+              <div style="display:flex;gap:4px;align-items:center;">
+                <button class="btn btn-xs" id="targetPrevBtn" ${targetIdx <= 0 ? 'disabled' : ''} title="Previous Day">←</button>
+                <button class="btn btn-xs" id="targetTodayBtn" title="Jump to next pending day">Now</button>
+                <button class="btn btn-xs" id="targetNextBtn" ${targetIdx >= flatDays.length - 1 ? 'disabled' : ''} title="Next Day">→</button>
               </div>
             </div>
 
-            <div class="section-sub" style="margin-bottom:8px;">
-              Week ${targetEntry.week.week} ${targetEntry.week.completed ? '<span class="badge badge-g">✓ Week Done</span>' : ''}
-              · <strong>${escapeHtml(targetEntry.day.category)}</strong>
-              ${targetTotal ? ` · ${targetDone}/${targetTotal} (${targetPct}%)` : ''}
-            </div>
-
-            <div class="day-progress-bar" style="margin-bottom:9px;">
+            <div class="day-progress-bar" style="margin:6px 0 10px;">
               <div class="day-progress-fill" style="width:${targetPct}%"></div>
             </div>
 
-            ${targetEntry.day.type === 'revision' || targetQs.length === 0 ? `
-              <div class="target-grid">
-                <button class="target-item compact ${targetEntry.day.completed ? 'is-complete' : ''}" data-jump-id="rev::${escapeHtml(targetEntry.day.day)}">
-                  <span class="target-item-left">
-                    <span>${targetEntry.day.completed ? '✓' : '↻'}</span>
-                    <span class="target-item-title">${escapeHtml(targetEntry.day.title || targetEntry.day.category)}</span>
-                  </span>
-                  <span class="badge badge-revision">Open Revision</span>
-                </button>
-              </div>
-            ` : `
-              <div class="target-grid">
-                ${targetQs.map((q) => {
-                  const badgeCls = q.diff ? `badge-${q.diff}` : `badge-${targetEntry.day.type}`;
-                  const badgeTxt = q.diff || targetEntry.day.type;
-                  const isDone = q.status === 'solved';
-                  return `
-                    <button class="target-item compact ${isDone ? 'is-complete' : ''}" data-jump-id="${escapeHtml(q.id)}">
-                      <span class="target-item-left">
-                        ${getStatusIndicator(q)}
-                        <span class="target-item-title">${escapeHtml(q.name)}</span>
-                      </span>
-                      <span class="target-item-meta">
-                        ${q.solvedAt ? `<span class="target-item-sub">${escapeHtml(q.solvedAt)}</span>` : ''}
-                        <span class="badge ${badgeCls}">${escapeHtml(badgeTxt)}</span>
-                      </span>
-                    </button>
-                  `;
-                }).join('')}
-              </div>
-            `}
-          </section>
-
-          <section class="section-card">
-            <div class="section-header" style="margin-bottom:8px;">
-              <h2>Solve Heatmap <span class="badge badge-grey">Last 10 Days</span></h2>
-              ${state.selectedHeatmapDate ? '<button class="btn" id="clearHeatmapBtn">Reset to Today</button>' : ''}
+            <div class="focus-q-list">
+              ${targetEntry.day.type === 'revision' || targetQs.length === 0 ? `
+                <div class="focus-q-row ${targetEntry.day.completed ? 'is-complete' : ''}">
+                  <button class="focus-q-main" data-jump-id="rev::${escapeHtml(targetEntry.day.day)}">
+                    <span class="target-item-left">
+                      <span>${targetEntry.day.completed ? '✓' : '↻'}</span>
+                      <span class="target-item-title">${escapeHtml(targetEntry.day.title || targetEntry.day.category)}</span>
+                    </span>
+                    <span class="badge badge-revision">Revision</span>
+                  </button>
+                </div>
+              ` : targetQs.map((q) => renderFocusQuestionRow(q, targetEntry.day.type)).join('')}
             </div>
-            ${renderHeatmap(solvedByDate, state.selectedHeatmapDate)}
-          </section>
+          </div>
+
+          <!-- 3. Tomorrow's Target -->
+          <div class="focus-card">
+            <div class="focus-card-head">
+              <div>
+                <h3>
+                  Tomorrow's Target
+                  ${tomorrowEntry ? `<span class="badge badge-grey">Day ${escapeHtml(tomorrowEntry.day.day)}</span>` : ''}
+                </h3>
+                <div class="focus-card-sub">
+                  ${tomorrowEntry ? `<strong>${escapeHtml(tomorrowEntry.day.category)}</strong> · ${tomorrowQs.length} items` : 'Final day reached!'}
+                </div>
+              </div>
+            </div>
+            <div class="focus-q-list">
+              ${!tomorrowEntry ? `
+                <div class="empty-hint" style="padding:14px 10px;font-size:12px;">You have reached the end of the roadmap!</div>
+              ` : tomorrowEntry.day.type === 'revision' || tomorrowQs.length === 0 ? `
+                <div class="focus-q-row">
+                  <button class="focus-q-main" data-jump-id="rev::${escapeHtml(tomorrowEntry.day.day)}">
+                    <span class="target-item-left">
+                      <span>↻</span>
+                      <span class="target-item-title">${escapeHtml(tomorrowEntry.day.title || tomorrowEntry.day.category)}</span>
+                    </span>
+                    <span class="badge badge-revision">Revision</span>
+                  </button>
+                </div>
+              ` : tomorrowQs.map((q) => renderFocusQuestionRow(q, tomorrowEntry.day.type)).join('')}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="dashboard-grid-2 dashboard-bottom-row">
-        ${renderSolvedListCard(
-          state.selectedHeatmapDate ? `Solved (${activeLeftDate})` : 'Solved Today',
-          activeLeftDate,
-          leftIds,
-          state.selectedHeatmapDate
-            ? 'None solved on this date.'
-            : 'No problems solved today yet.'
-        )}
+      <!-- Row 2: Full-Width Progress Matrix + [Questions Solved] -->
+      ${renderProgressMatrix()}
 
-        ${renderSolvedListCard(
-          'Solved Yesterday',
-          yesterdayStr,
-          yesterdayIds,
-          'None solved yesterday.'
-        )}
-      </div>
-
-      ${renderIntegrationsRow(targetEntry, solvedByDate[todayStr] || [])}
+      <!-- Row 3: Full-Width Days Completed + [Days Completed] -->
+      ${renderDaysCompletedMatrix(flatDays)}
     `;
 
     document.getElementById('targetPrevBtn')?.addEventListener('click', () => {
@@ -1714,47 +1763,6 @@
     document.getElementById('clearHeatmapBtn')?.addEventListener('click', () => {
       state.selectedHeatmapDate = null;
       renderDashboard();
-    });
-
-    document.getElementById('lcRefreshPotdBtn')?.addEventListener('click', () => {
-      fetchLeetCodePotd();
-    });
-
-    const handleTogglePotd = () => {
-      togglePotdCompletedToday();
-      renderDashboard();
-    };
-    document.getElementById('togglePotdDoneBtn')?.addEventListener('click', handleTogglePotd);
-    document.getElementById('shareTogglePotdBtn')?.addEventListener('click', handleTogglePotd);
-
-    els.dashboardView.querySelectorAll('[data-quick-contest-id]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (!(btn instanceof HTMLElement) || !btn.dataset.quickContestId) return;
-        toggleContestCompletedToday({
-          id: btn.dataset.quickContestId,
-          title: btn.dataset.quickContestTitle || 'Coding Contest',
-          platform: btn.dataset.quickContestPlatform || 'leetcode',
-        });
-        renderDashboard();
-      });
-    });
-
-    document.getElementById('shufflePjBtn')?.addEventListener('click', () => {
-      pickRandomPjLine(true);
-      renderDashboard();
-    });
-
-    document.getElementById('copyXPostBtn')?.addEventListener('click', async () => {
-      const btn = document.getElementById('copyXPostBtn');
-      const preview = document.getElementById('xPostPreview');
-      if (!preview) return;
-      try {
-        await navigator.clipboard.writeText(preview.textContent || '');
-        if (btn) {
-          btn.textContent = 'Copied!';
-          setTimeout(() => { btn.textContent = 'Copy'; }, 1200);
-        }
-      } catch (_) {}
     });
 
     els.dashboardView.querySelectorAll('[data-hm-date]').forEach((btn) => {
@@ -1780,18 +1788,6 @@
           state.previewDayIndex = Number(btn.dataset.dayIdx);
           renderDashboard();
         }
-      });
-    });
-
-    els.dashboardView.querySelectorAll('[data-week-num]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (!(btn instanceof HTMLElement) || !btn.dataset.weekNum || !state.data) return;
-        const wkNum = Number(btn.dataset.weekNum);
-        state.expandedWeeks.add(wkNum);
-        const wk = state.data.weeks.find((w) => w.week === wkNum);
-        const firstDay = wk?.days?.[0];
-        const firstId = firstDay?.questions?.[0]?.id || (firstDay ? `rev::${firstDay.day}` : null);
-        if (firstId) selectItem(firstId);
       });
     });
   }
