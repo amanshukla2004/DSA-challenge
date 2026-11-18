@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T13:55:41.205Z",
+  "generatedAt": "2026-11-18T14:05:18.015Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -15,7 +15,16 @@
     "daysCompleted": 2,
     "weeksCompleted": 0
   },
-  "potd": null,
+  "potd": {
+    "date": "2026-11-18",
+    "title": "Minimum Number of Changes to Make Binary String Beautiful",
+    "url": "https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful/",
+    "diff": "M",
+    "diffLabel": "Medium",
+    "tags": [
+      "String"
+    ]
+  },
   "concepts": [
     {
       "id": "concept::Concepts/01-Java-DSA-Cheatsheet.md",
@@ -287,12 +296,6 @@
         {
           "name": "README.md",
           "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/README.md",
-          "isMd": true,
-          "ext": ".md"
-        },
-        {
-          "name": "1_lc2381_ShiftingLetters2.md",
-          "path": "150 dsa algos/Arrays/DifferenceArrayAlgo/1_lc2381_ShiftingLetters2.md",
           "isMd": true,
           "ext": ".md"
         },
@@ -2482,6 +2485,428 @@
     }
   ],
   "activityByDate": {
+    "2026-11-18": {
+      "questions": [
+        "1::Best-Time-to-Buy-and-Sell-Stock",
+        "1::Majority-Element",
+        "1::Merge-Sorted-Array",
+        "1::Move-Zeroes",
+        "1::Squares-of-a-Sorted-Array",
+        "1::Two-Sum",
+        "2::Find-All-Numbers-Disappeared-in-an-Array",
+        "2::Find-Pivot-Index",
+        "2::Intersection-of-Two-Arrays-II",
+        "2::Intersection-of-Two-Arrays",
+        "2::Maximum-Population-Year",
+        "2::Remove-Duplicates-from-Sorted-Array-II",
+        "2::Remove-Duplicates-from-Sorted-Array",
+        "3::Build-Array-from-Permutation",
+        "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
+        "3::Remove-Element",
+        "3::Running-Sum-of-1d-Array",
+        "3::Third-Maximum-Number",
+        "3::Valid-Mountain-Array",
+        "4::Find-Common-Characters",
+        "4::Max-Consecutive-Ones",
+        "4::Range-Sum-Query-Immutable",
+        "4::Shuffle-the-Array",
+        "4::Sort-Array-By-Parity",
+        "4::Sum-of-All-Odd-Length-Subarrays",
+        "5::Merge-Two-Sorted-Lists",
+        "5::Middle-of-the-Linked-List",
+        "5::Palindrome-Linked-List",
+        "5::Remove-Duplicates-from-Sorted-List",
+        "5::Remove-Linked-List-Elements",
+        "5::Reverse-Linked-List",
+        "6::Backspace-String-Compare",
+        "6::Implement-Queue-using-Stacks",
+        "6::Intersection-of-Two-Linked-Lists",
+        "6::Linked-List-Cycle",
+        "6::Next-Greater-Element-I",
+        "6::Valid-Parentheses",
+        "8::Binary-Tree-Inorder-Traversal",
+        "8::Binary-Tree-Postorder-Traversal",
+        "8::Binary-Tree-Preorder-Traversal",
+        "8::Invert-Binary-Tree",
+        "8::Maximum-Depth-of-Binary-Tree",
+        "8::Symmetric-Tree",
+        "9::Balanced-Binary-Tree",
+        "9::Diameter-of-Binary-Tree",
+        "9::Merge-Two-Binary-Trees",
+        "9::Same-Tree",
+        "9::Subtree-of-Another-Tree",
+        "10::Binary-Tree-Paths",
+        "10::Convert-Sorted-Array-to-Binary-Search-Tree",
+        "10::Cousins-in-Binary-Tree",
+        "10::Path-Sum",
+        "10::Range-Sum-of-BST",
+        "11::First-Unique-Character-in-a-String",
+        "11::Longest-Common-Prefix",
+        "11::Longest-Palindrome",
+        "11::Valid-Anagram",
+        "11::Valid-Palindrome-II",
+        "11::Valid-Palindrome",
+        "12::Is-Subsequence",
+        "12::Isomorphic-Strings",
+        "12::Remove-All-Adjacent-Duplicates-In-String",
+        "12::Reverse-String-II",
+        "12::Reverse-String",
+        "12::Reverse-Words-in-a-String-III",
+        "13::Add-Strings",
+        "13::Defanging-an-IP-Address",
+        "13::Fizz-Buzz",
+        "13::Length-of-Last-Word",
+        "13::Reverse-Only-Letters",
+        "13::Reverse-Vowels-of-a-String",
+        "16::Happy-Number",
+        "16::Palindrome-Number",
+        "16::Plus-One",
+        "16::Power-of-Two",
+        "16::Roman-to-Integer",
+        "16::Sqrtx",
+        "17::Add-Digits",
+        "17::Count-Odd-Numbers-in-an-Interval-Range",
+        "17::Excel-Sheet-Column-Number",
+        "17::Maximum-Product-of-Three-Numbers",
+        "17::Rectangle-Overlap",
+        "18::Add-Binary",
+        "18::Counting-Bits",
+        "18::Hamming-Distance",
+        "18::Missing-Number",
+        "18::Number-of-1-Bits",
+        "18::Reverse-Bits",
+        "18::Single-Number",
+        "19::Binary-Search",
+        "19::First-Bad-Version",
+        "19::Kth-Largest-Element-in-a-Stream",
+        "19::Kth-Missing-Positive-Number",
+        "19::Search-Insert-Position",
+        "19::Valid-Perfect-Square",
+        "20::Contains-Duplicate-II",
+        "20::Contains-Duplicate",
+        "20::Design-HashMap",
+        "20::Jewels-and-Stones",
+        "20::Ransom-Note",
+        "20::Unique-Number-of-Occurrences",
+        "21::Find-if-Path-Exists-in-Graph",
+        "21::Flood-Fill",
+        "21::Island-Perimeter",
+        "21::Number-of-Good-Pairs",
+        "21::Word-Pattern",
+        "23::Can-Place-Flowers",
+        "23::Climbing-Stairs",
+        "23::Fibonacci-Number",
+        "23::Maximum-Units-on-a-Truck",
+        "23::Min-Cost-Climbing-Stairs",
+        "23::Pascals-Triangle",
+        "24::3Sum-Closest",
+        "24::3Sum",
+        "24::Non-decreasing-Array",
+        "24::Product-of-Array-Except-Self",
+        "25::Insert-Interval",
+        "25::Interval-List-Intersections",
+        "25::Merge-Intervals",
+        "25::Non-overlapping-Intervals",
+        "26::Container-With-Most-Water",
+        "26::Contiguous-Array",
+        "26::Rotate-Array",
+        "26::Sort-Colors",
+        "27::Max-Consecutive-Ones-III",
+        "27::Maximum-Points-You-Can-Obtain-from-Cards",
+        "27::Shortest-Unsorted-Continuous-Subarray",
+        "27::Subarray-Sum-Equals-K",
+        "28::H-Index",
+        "28::Max-Chunks-To-Make-Sorted",
+        "28::Permutation-in-String",
+        "28::Wiggle-Sort-II",
+        "31::Delete-Node-in-a-Linked-List",
+        "31::Next-Greater-Node-In-Linked-List",
+        "31::Remove-Duplicates-from-Sorted-List-II",
+        "31::Remove-Nth-Node-From-End-of-List",
+        "32::Add-Two-Numbers-II",
+        "32::Add-Two-Numbers",
+        "32::Copy-List-with-Random-Pointer",
+        "32::Reverse-Linked-List-II",
+        "33::Odd-Even-Linked-List",
+        "33::Partition-List",
+        "33::Swap-Nodes-in-Pairs",
+        "34::Reorder-List",
+        "34::Rotate-List",
+        "34::Sort-List",
+        "35::Daily-Temperatures",
+        "35::Decode-String",
+        "35::Evaluate-Reverse-Polish-Notation",
+        "35::Min-Stack",
+        "36::132-Pattern",
+        "36::Minimum-Remove-to-Make-Valid-Parentheses",
+        "36::Next-Greater-Element-II",
+        "36::Next-Greater-Element-III",
+        "38::Asteroid-Collision",
+        "38::Basic-Calculator-II",
+        "38::Remove-Duplicate-Letters",
+        "38::Remove-K-Digits",
+        "39::Flatten-Nested-List-Iterator",
+        "39::Longest-Absolute-File-Path",
+        "39::Remove-All-Adjacent-Duplicates-in-String-II",
+        "39::Simplify-Path",
+        "40::LRU-Cache",
+        "40::Open-the-Lock",
+        "40::Shortest-Bridge",
+        "41::Find-All-Anagrams-in-a-String",
+        "41::Group-Anagrams",
+        "41::Longest-Substring-Without-Repeating-Characters",
+        "41::Pancake-Sorting",
+        "41::String-to-Integer-atoi",
+        "42::Find-the-Index-of-the-First-Occurrence-in-a-String",
+        "42::Largest-Number",
+        "42::Longest-Repeating-Character-Replacement",
+        "42::Number-of-Matching-Subsequences",
+        "43::Count-and-Say",
+        "43::Longest-Substring-with-At-Least-K-Repeating-Characters",
+        "43::Reverse-Words-in-a-String",
+        "43::String-Compression",
+        "43::Zigzag-Conversion",
+        "46::Binary-Tree-Level-Order-Traversal",
+        "46::Binary-Tree-Zigzag-Level-Order-Traversal",
+        "46::Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal",
+        "46::Lowest-Common-Ancestor-of-a-Binary-Tree",
+        "47::Binary-Tree-Right-Side-View",
+        "47::Maximum-Width-of-Binary-Tree",
+        "47::Populating-Next-Right-Pointers-in-Each-Node-II",
+        "47::Populating-Next-Right-Pointers-in-Each-Node",
+        "48::All-Nodes-Distance-K-in-Binary-Tree",
+        "48::Flatten-Binary-Tree-to-Linked-List",
+        "48::Path-Sum-II",
+        "48::Path-Sum-III",
+        "49::Count-Complete-Tree-Nodes",
+        "49::Distribute-Coins-in-Binary-Tree",
+        "49::Find-Bottom-Left-Tree-Value",
+        "49::Sum-Root-to-Leaf-Numbers",
+        "50::Delete-Node-in-a-BST",
+        "50::Kth-Smallest-Element-in-a-BST",
+        "50::Lowest-Common-Ancestor-of-a-Binary-Search-Tree",
+        "50::Validate-Binary-Search-Tree",
+        "51::Binary-Search-Tree-Iterator",
+        "51::Construct-Binary-Search-Tree-from-Preorder-Traversal",
+        "51::Convert-Sorted-List-to-Binary-Search-Tree",
+        "51::Recover-Binary-Search-Tree",
+        "53::Binary-Tree-Maximum-Path-Sum",
+        "53::Maximum-Level-Sum-of-a-Binary-Tree",
+        "53::Step-By-Step-Directions-From-a-Binary-Tree-Node-to-Another",
+        "54::Balance-a-Binary-Search-Tree",
+        "54::Serialize-and-Deserialize-Binary-Tree",
+        "54::Trim-a-Binary-Search-Tree",
+        "55::Find-Minimum-in-Rotated-Sorted-Array",
+        "55::Search-in-Rotated-Sorted-Array-II",
+        "55::Search-in-Rotated-Sorted-Array",
+        "55::Time-Based-Key-Value-Store",
+        "56::Find-First-and-Last-Position-of-Element-in-Sorted-Array",
+        "56::Find-the-Duplicate-Number",
+        "56::Minimum-Size-Subarray-Sum",
+        "56::Single-Element-in-a-Sorted-Array",
+        "57::Capacity-To-Ship-Packages-Within-D-Days",
+        "57::Find-Peak-Element",
+        "57::Koko-Eating-Bananas",
+        "57::Peak-Index-in-a-Mountain-Array",
+        "58::Search-a-2D-Matrix-II",
+        "58::Search-a-2D-Matrix",
+        "58::Spiral-Matrix-II",
+        "58::Spiral-Matrix",
+        "61::Game-of-Life",
+        "61::Rotate-Image",
+        "61::Set-Matrix-Zeroes",
+        "61::Valid-Sudoku",
+        "62::Battleships-in-a-Board",
+        "62::Diagonal-Traverse",
+        "62::Matrix-Block-Sum",
+        "62::Snapshot-Array",
+        "63::01-Matrix",
+        "63::Clone-Graph",
+        "63::Number-of-Islands",
+        "63::Rotting-Oranges",
+        "64::Accounts-Merge",
+        "64::Course-Schedule-II",
+        "64::Course-Schedule",
+        "64::Word-Search",
+        "65::Cheapest-Flights-Within-K-Stops",
+        "65::Max-Area-of-Island",
+        "65::Minimum-Height-Trees",
+        "65::Pacific-Atlantic-Water-Flow",
+        "66::Evaluate-Division",
+        "66::Network-Delay-Time",
+        "66::Number-of-Provinces",
+        "66::Surrounded-Regions",
+        "68::All-Paths-From-Source-to-Target",
+        "68::Number-of-Operations-to-Make-Network-Connected",
+        "68::Redundant-Connection",
+        "68::Shortest-Path-in-Binary-Matrix",
+        "69::Find-All-Duplicates-in-an-Array",
+        "69::Insert-Delete-GetRandom-O1",
+        "69::Longest-Consecutive-Sequence",
+        "69::Majority-Element-II",
+        "70::Continuous-Subarray-Sum",
+        "70::Custom-Sort-String",
+        "70::Find-and-Replace-Pattern",
+        "70::K-diff-Pairs-in-an-Array",
+        "71::Encode-and-Decode-TinyURL",
+        "71::Fraction-to-Recurring-Decimal",
+        "71::Fruit-Into-Baskets",
+        "71::Minimum-Area-Rectangle",
+        "72::Coin-Change-II",
+        "72::Coin-Change",
+        "72::Maximum-Product-Subarray",
+        "72::Maximum-Subarray",
+        "73::Jump-Game-II",
+        "73::Jump-Game-III",
+        "73::Jump-Game",
+        "73::Partition-Equal-Subset-Sum",
+        "76::Longest-Increasing-Subsequence",
+        "76::Maximal-Square",
+        "76::Unique-Paths-II",
+        "76::Unique-Paths",
+        "77::Decode-Ways",
+        "77::House-Robber-II",
+        "77::House-Robber-III",
+        "77::House-Robber",
+        "78::Best-Time-to-Buy-and-Sell-Stock-II",
+        "78::Longest-Common-Subsequence",
+        "78::Minimum-Path-Sum",
+        "78::Palindrome-Partitioning",
+        "79::Target-Sum",
+        "79::Triangle",
+        "79::Unique-Binary-Search-Trees-II",
+        "79::Unique-Binary-Search-Trees",
+        "80::Delete-and-Earn",
+        "80::Longest-Palindromic-Subsequence",
+        "80::Palindromic-Substrings",
+        "80::Partition-to-K-Equal-Sum-Subsets",
+        "81::Delete-Operation-for-Two-Strings",
+        "81::Longest-String-Chain",
+        "81::Minimum-Cost-For-Tickets",
+        "81::Perfect-Squares",
+        "83::Different-Ways-to-Add-Parentheses",
+        "83::Integer-Break",
+        "83::Largest-Divisible-Subset",
+        "83::Longest-Palindromic-Substring",
+        "84::Knight-Dialer",
+        "84::Matchsticks-to-Square",
+        "84::Minesweeper",
+        "85::Multiply-Strings",
+        "85::Powx-n",
+        "85::Random-Pick-with-Weight",
+        "85::Reverse-Integer",
+        "86::Angle-Between-Hands-of-a-Clock",
+        "86::Count-Primes",
+        "86::Integer-to-Roman",
+        "86::Robot-Bounded-In-Circle",
+        "87::Find-K-Closest-Elements",
+        "87::K-Closest-Points-to-Origin",
+        "87::Task-Scheduler",
+        "87::Top-K-Frequent-Elements",
+        "88::Kth-Largest-Element-in-an-Array",
+        "88::Kth-Smallest-Element-in-a-Sorted-Matrix",
+        "88::Reorganize-String",
+        "88::Top-K-Frequent-Words",
+        "91::Car-Pooling",
+        "91::Find-K-Pairs-with-Smallest-Sums",
+        "91::Maximum-Number-of-Events-That-Can-Be-Attended",
+        "91::Sort-Characters-By-Frequency",
+        "92::Design-Add-and-Search-Words-Data-Structure",
+        "92::Implement-Trie-Prefix-Tree",
+        "92::Remove-Sub-Folders-from-the-Filesystem",
+        "92::Search-Suggestions-System",
+        "92::Word-Break",
+        "93::Permutations-II",
+        "93::Permutations",
+        "93::Subsets-II",
+        "93::Subsets",
+        "94::Combinations",
+        "94::Generate-Parentheses",
+        "94::Letter-Combinations-of-a-Phone-Number",
+        "94::Next-Permutation",
+        "95::Combination-Sum-III",
+        "95::Combination-Sum-IV",
+        "95::Combination-Sum",
+        "95::Restore-IP-Addresses",
+        "96::Gas-Station",
+        "96::Minimum-Number-of-Arrows-to-Burst-Balloons",
+        "96::Partition-Labels",
+        "96::Valid-Parenthesis-String",
+        "98::Divide-Two-Integers",
+        "98::Maximum-XOR-of-Two-Numbers-in-an-Array",
+        "98::Single-Number-II",
+        "98::Single-Number-III",
+        "99::Bitwise-AND-of-Numbers-Range",
+        "99::Gray-Code",
+        "99::Sum-of-Two-Integers",
+        "100::Count-of-Smaller-Numbers-After-Self",
+        "100::Sliding-Window-Maximum",
+        "100::Trapping-Rain-Water",
+        "101::Candy",
+        "101::Number-of-Submatrices-That-Sum-to-Target",
+        "101::Reverse-Pairs",
+        "101::Subarrays-with-K-Different-Integers",
+        "102::First-Missing-Positive",
+        "102::Maximum-Gap",
+        "102::Shortest-Subarray-with-Sum-at-Least-K",
+        "103::LFU-Cache",
+        "103::Reverse-Nodes-in-k-Group",
+        "103::Shuffle-an-Array",
+        "106::Basic-Calculator",
+        "106::Largest-Rectangle-in-Histogram",
+        "106::Longest-Valid-Parentheses",
+        "107::Maximum-Frequency-Stack",
+        "107::Minimum-Window-Substring",
+        "107::The-Skyline-Problem",
+        "108::Palindrome-Pairs",
+        "108::Shortest-Palindrome",
+        "108::Text-Justification",
+        "109::Integer-to-English-Words",
+        "109::Max-Points-on-a-Line",
+        "109::Nth-Digit",
+        "110::Find-Minimum-in-Rotated-Sorted-Array-II",
+        "110::Maximum-Profit-in-Job-Scheduling",
+        "110::Median-of-Two-Sorted-Arrays",
+        "111::Longest-Increasing-Path-in-a-Matrix",
+        "111::Word-Ladder-II",
+        "111::Word-Ladder",
+        "113::Bus-Routes",
+        "113::Critical-Connections-in-a-Network",
+        "113::Word-Search-II",
+        "114::Making-A-Large-Island",
+        "114::Reconstruct-Itinerary",
+        "114::Shortest-Path-in-a-Grid-with-Obstacles-Elimination",
+        "115::Find-Median-from-Data-Stream",
+        "115::Merge-k-Sorted-Lists",
+        "115::Smallest-Range-Covering-Elements-from-K-Lists",
+        "116::Longest-Duplicate-Substring",
+        "116::Minimum-Number-of-Refueling-Stops",
+        "116::Swim-in-Rising-Water",
+        "117::N-Queens",
+        "117::Palindrome-Partitioning-II",
+        "117::Permutation-Sequence",
+        "117::Sudoku-Solver",
+        "118::K-th-Symbol-in-Grammar",
+        "118::Remove-Invalid-Parentheses",
+        "118::Unique-Paths-III",
+        "123::Edit-Distance",
+        "123::Maximal-Rectangle",
+        "123::Regular-Expression-Matching",
+        "126::Burst-Balloons",
+        "126::Split-Array-Largest-Sum",
+        "126::Wildcard-Matching",
+        "129::Best-Time-to-Buy-and-Sell-Stock-IV",
+        "129::Russian-Doll-Envelopes",
+        "129::Validate-Stack-Sequences",
+        "129::Word-Break-II",
+        "132::Binary-Tree-Cameras",
+        "132::Minimum-Cost-to-Cut-a-Stick",
+        "132::Minimum-Insertion-Steps-to-Make-a-String-Palindrome",
+        "132::Minimum-Number-of-Taps-to-Open-to-Water-a-Garden"
+      ],
+      "concepts": [],
+      "trackerUpdated": false
+    },
     "2026-11-17": {
       "questions": [
         "2::Find-Pivot-Index",
@@ -2584,7 +3009,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-12",
-              "lastUpdated": "2026-11-12"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "1::Best-Time-to-Buy-and-Sell-Stock",
@@ -2614,7 +3039,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-12",
-              "lastUpdated": "2026-11-12"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "1::Majority-Element",
@@ -2644,7 +3069,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-12",
-              "lastUpdated": "2026-11-12"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "1::Move-Zeroes",
@@ -2674,7 +3099,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-12",
-              "lastUpdated": "2026-11-12"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "1::Squares-of-a-Sorted-Array",
@@ -2704,7 +3129,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-12",
-              "lastUpdated": "2026-11-12"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "1::Merge-Sorted-Array",
@@ -2734,7 +3159,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-12",
-              "lastUpdated": "2026-11-12"
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -2776,7 +3201,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-17",
-              "lastUpdated": "2026-11-17"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "2::Remove-Duplicates-from-Sorted-Array-II",
@@ -2806,7 +3231,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-17",
-              "lastUpdated": "2026-11-17"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "2::Find-All-Numbers-Disappeared-in-an-Array",
@@ -2836,7 +3261,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-17",
-              "lastUpdated": "2026-11-17"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "2::Intersection-of-Two-Arrays",
@@ -2866,7 +3291,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-17",
-              "lastUpdated": "2026-11-17"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "2::Intersection-of-Two-Arrays-II",
@@ -2896,7 +3321,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-17",
-              "lastUpdated": "2026-11-17"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "2::Maximum-Population-Year",
@@ -2926,7 +3351,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-17",
-              "lastUpdated": "2026-11-17"
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "2::Find-Pivot-Index",
@@ -2956,7 +3381,7 @@
                 "optimised": true
               },
               "solvedAt": "2026-11-17",
-              "lastUpdated": "2026-11-17"
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -2998,7 +3423,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "3::Remove-Element",
@@ -3028,7 +3453,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
@@ -3058,7 +3483,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "3::Build-Array-from-Permutation",
@@ -3088,7 +3513,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "3::Third-Maximum-Number",
@@ -3118,7 +3543,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "3::Valid-Mountain-Array",
@@ -3148,7 +3573,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -3190,7 +3615,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "4::Sum-of-All-Odd-Length-Subarrays",
@@ -3220,7 +3645,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "4::Range-Sum-Query-Immutable",
@@ -3250,7 +3675,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "4::Shuffle-the-Array",
@@ -3280,7 +3705,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "4::Max-Consecutive-Ones",
@@ -3310,7 +3735,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "4::Sort-Array-By-Parity",
@@ -3340,7 +3765,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -3382,7 +3807,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "5::Remove-Linked-List-Elements",
@@ -3412,7 +3837,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "5::Remove-Duplicates-from-Sorted-List",
@@ -3442,7 +3867,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "5::Merge-Two-Sorted-Lists",
@@ -3472,7 +3897,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "5::Middle-of-the-Linked-List",
@@ -3502,7 +3927,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "5::Palindrome-Linked-List",
@@ -3532,7 +3957,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -3574,7 +3999,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "6::Linked-List-Cycle",
@@ -3604,7 +4029,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "6::Valid-Parentheses",
@@ -3634,7 +4059,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "6::Implement-Queue-using-Stacks",
@@ -3664,7 +4089,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "6::Backspace-String-Compare",
@@ -3694,7 +4119,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "6::Next-Greater-Element-I",
@@ -3724,7 +4149,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -3849,7 +4274,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "8::Binary-Tree-Inorder-Traversal",
@@ -3879,7 +4304,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "8::Binary-Tree-Postorder-Traversal",
@@ -3909,7 +4334,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "8::Maximum-Depth-of-Binary-Tree",
@@ -3939,7 +4364,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "8::Invert-Binary-Tree",
@@ -3969,7 +4394,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "8::Symmetric-Tree",
@@ -3999,7 +4424,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -4041,7 +4466,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "9::Diameter-of-Binary-Tree",
@@ -4071,7 +4496,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "9::Balanced-Binary-Tree",
@@ -4101,7 +4526,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "9::Merge-Two-Binary-Trees",
@@ -4131,7 +4556,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "9::Same-Tree",
@@ -4161,7 +4586,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -4203,7 +4628,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "10::Binary-Tree-Paths",
@@ -4233,7 +4658,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "10::Cousins-in-Binary-Tree",
@@ -4263,7 +4688,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "10::Convert-Sorted-Array-to-Binary-Search-Tree",
@@ -4293,7 +4718,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "10::Range-Sum-of-BST",
@@ -4323,7 +4748,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -4365,7 +4790,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "11::Valid-Palindrome-II",
@@ -4395,7 +4820,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "11::Longest-Palindrome",
@@ -4425,7 +4850,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "11::Longest-Common-Prefix",
@@ -4455,7 +4880,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "11::Valid-Anagram",
@@ -4485,7 +4910,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "11::First-Unique-Character-in-a-String",
@@ -4515,7 +4940,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -4557,7 +4982,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "12::Reverse-String",
@@ -4587,7 +5012,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "12::Reverse-String-II",
@@ -4617,7 +5042,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "12::Reverse-Words-in-a-String-III",
@@ -4647,7 +5072,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "12::Isomorphic-Strings",
@@ -4677,7 +5102,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "12::Remove-All-Adjacent-Duplicates-In-String",
@@ -4707,7 +5132,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -4749,7 +5174,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "13::Reverse-Only-Letters",
@@ -4779,7 +5204,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "13::Reverse-Vowels-of-a-String",
@@ -4809,7 +5234,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "13::Length-of-Last-Word",
@@ -4839,7 +5264,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "13::Add-Strings",
@@ -4869,7 +5294,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "13::Fizz-Buzz",
@@ -4899,7 +5324,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -5035,7 +5460,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "16::Palindrome-Number",
@@ -5065,7 +5490,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "16::Happy-Number",
@@ -5095,7 +5520,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "16::Power-of-Two",
@@ -5125,7 +5550,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "16::Sqrtx",
@@ -5155,7 +5580,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "16::Plus-One",
@@ -5185,7 +5610,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -5227,7 +5652,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "17::Rectangle-Overlap",
@@ -5257,7 +5682,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "17::Add-Digits",
@@ -5287,7 +5712,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "17::Maximum-Product-of-Three-Numbers",
@@ -5317,7 +5742,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "17::Excel-Sheet-Column-Number",
@@ -5347,7 +5772,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -5389,7 +5814,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "18::Counting-Bits",
@@ -5419,7 +5844,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "18::Number-of-1-Bits",
@@ -5449,7 +5874,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "18::Single-Number",
@@ -5479,7 +5904,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "18::Missing-Number",
@@ -5509,7 +5934,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "18::Reverse-Bits",
@@ -5539,7 +5964,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "18::Hamming-Distance",
@@ -5569,7 +5994,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -5611,7 +6036,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "19::Search-Insert-Position",
@@ -5641,7 +6066,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "19::First-Bad-Version",
@@ -5671,7 +6096,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "19::Valid-Perfect-Square",
@@ -5701,7 +6126,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "19::Kth-Missing-Positive-Number",
@@ -5731,7 +6156,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "19::Kth-Largest-Element-in-a-Stream",
@@ -5761,7 +6186,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -5803,7 +6228,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "20::Ransom-Note",
@@ -5833,7 +6258,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "20::Contains-Duplicate",
@@ -5863,7 +6288,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "20::Contains-Duplicate-II",
@@ -5893,7 +6318,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "20::Jewels-and-Stones",
@@ -5923,7 +6348,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "20::Unique-Number-of-Occurrences",
@@ -5953,7 +6378,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -5995,7 +6420,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "21::Number-of-Good-Pairs",
@@ -6025,7 +6450,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "21::Flood-Fill",
@@ -6055,7 +6480,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "21::Island-Perimeter",
@@ -6085,7 +6510,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "21::Find-if-Path-Exists-in-Graph",
@@ -6115,7 +6540,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -6240,7 +6665,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "23::Min-Cost-Climbing-Stairs",
@@ -6270,7 +6695,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "23::Climbing-Stairs",
@@ -6300,7 +6725,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "23::Pascals-Triangle",
@@ -6330,7 +6755,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "23::Can-Place-Flowers",
@@ -6360,7 +6785,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "23::Maximum-Units-on-a-Truck",
@@ -6390,7 +6815,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -6432,7 +6857,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "24::3Sum-Closest",
@@ -6462,7 +6887,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "24::Non-decreasing-Array",
@@ -6492,7 +6917,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "24::Product-of-Array-Except-Self",
@@ -6522,7 +6947,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -6564,7 +6989,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "25::Insert-Interval",
@@ -6594,7 +7019,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "25::Non-overlapping-Intervals",
@@ -6624,7 +7049,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "25::Interval-List-Intersections",
@@ -6654,7 +7079,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -6696,7 +7121,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "26::Sort-Colors",
@@ -6726,7 +7151,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "26::Rotate-Array",
@@ -6756,7 +7181,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "26::Contiguous-Array",
@@ -6786,7 +7211,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -6828,7 +7253,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "27::Shortest-Unsorted-Continuous-Subarray",
@@ -6858,7 +7283,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "27::Maximum-Points-You-Can-Obtain-from-Cards",
@@ -6888,7 +7313,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "27::Max-Consecutive-Ones-III",
@@ -6918,7 +7343,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -6960,7 +7385,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "28::Wiggle-Sort-II",
@@ -6990,7 +7415,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "28::Max-Chunks-To-Make-Sorted",
@@ -7020,7 +7445,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "28::H-Index",
@@ -7050,7 +7475,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -7186,7 +7611,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "31::Delete-Node-in-a-Linked-List",
@@ -7216,7 +7641,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "31::Remove-Duplicates-from-Sorted-List-II",
@@ -7246,7 +7671,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "31::Next-Greater-Node-In-Linked-List",
@@ -7276,7 +7701,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -7318,7 +7743,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "32::Add-Two-Numbers-II",
@@ -7348,7 +7773,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "32::Copy-List-with-Random-Pointer",
@@ -7378,7 +7803,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "32::Reverse-Linked-List-II",
@@ -7408,7 +7833,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -7450,7 +7875,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "33::Odd-Even-Linked-List",
@@ -7480,7 +7905,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "33::Partition-List",
@@ -7510,7 +7935,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -7552,7 +7977,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "34::Reorder-List",
@@ -7582,7 +8007,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "34::Rotate-List",
@@ -7612,7 +8037,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -7654,7 +8079,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "35::Min-Stack",
@@ -7684,7 +8109,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "35::Daily-Temperatures",
@@ -7714,7 +8139,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "35::Decode-String",
@@ -7744,7 +8169,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -7797,7 +8222,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "36::Next-Greater-Element-III",
@@ -7827,7 +8252,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "36::Minimum-Remove-to-Make-Valid-Parentheses",
@@ -7857,7 +8282,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "36::132-Pattern",
@@ -7887,7 +8312,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -8001,7 +8426,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "38::Basic-Calculator-II",
@@ -8031,7 +8456,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "38::Remove-K-Digits",
@@ -8061,7 +8486,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "38::Remove-Duplicate-Letters",
@@ -8091,7 +8516,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -8133,7 +8558,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "39::Flatten-Nested-List-Iterator",
@@ -8163,7 +8588,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "39::Simplify-Path",
@@ -8193,7 +8618,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "39::Longest-Absolute-File-Path",
@@ -8223,7 +8648,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -8265,7 +8690,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "40::Shortest-Bridge",
@@ -8295,7 +8720,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "40::LRU-Cache",
@@ -8325,7 +8750,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -8367,7 +8792,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "41::String-to-Integer-atoi",
@@ -8397,7 +8822,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "41::Find-All-Anagrams-in-a-String",
@@ -8427,7 +8852,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "41::Group-Anagrams",
@@ -8457,7 +8882,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "41::Pancake-Sorting",
@@ -8487,7 +8912,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -8529,7 +8954,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "42::Largest-Number",
@@ -8559,7 +8984,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "42::Number-of-Matching-Subsequences",
@@ -8589,7 +9014,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "42::Find-the-Index-of-the-First-Occurrence-in-a-String",
@@ -8619,7 +9044,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -8672,7 +9097,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "43::Zigzag-Conversion",
@@ -8702,7 +9127,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "43::Reverse-Words-in-a-String",
@@ -8732,7 +9157,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "43::String-Compression",
@@ -8762,7 +9187,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "43::Count-and-Say",
@@ -8792,7 +9217,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -8917,7 +9342,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "46::Binary-Tree-Zigzag-Level-Order-Traversal",
@@ -8947,7 +9372,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "46::Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal",
@@ -8977,7 +9402,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "46::Lowest-Common-Ancestor-of-a-Binary-Tree",
@@ -9007,7 +9432,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -9049,7 +9474,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "47::Populating-Next-Right-Pointers-in-Each-Node",
@@ -9079,7 +9504,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "47::Populating-Next-Right-Pointers-in-Each-Node-II",
@@ -9109,7 +9534,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "47::Maximum-Width-of-Binary-Tree",
@@ -9139,7 +9564,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -9181,7 +9606,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "48::Path-Sum-III",
@@ -9211,7 +9636,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "48::All-Nodes-Distance-K-in-Binary-Tree",
@@ -9241,7 +9666,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "48::Flatten-Binary-Tree-to-Linked-List",
@@ -9271,7 +9696,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -9313,7 +9738,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "49::Sum-Root-to-Leaf-Numbers",
@@ -9343,7 +9768,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "49::Find-Bottom-Left-Tree-Value",
@@ -9373,7 +9798,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "49::Distribute-Coins-in-Binary-Tree",
@@ -9403,7 +9828,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -9456,7 +9881,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "50::Validate-Binary-Search-Tree",
@@ -9486,7 +9911,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "50::Kth-Smallest-Element-in-a-BST",
@@ -9516,7 +9941,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "50::Lowest-Common-Ancestor-of-a-Binary-Search-Tree",
@@ -9546,7 +9971,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -9588,7 +10013,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "51::Construct-Binary-Search-Tree-from-Preorder-Traversal",
@@ -9618,7 +10043,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "51::Binary-Search-Tree-Iterator",
@@ -9648,7 +10073,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "51::Recover-Binary-Search-Tree",
@@ -9678,7 +10103,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -9792,7 +10217,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "53::Step-By-Step-Directions-From-a-Binary-Tree-Node-to-Another",
@@ -9822,7 +10247,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "53::Maximum-Level-Sum-of-a-Binary-Tree",
@@ -9852,7 +10277,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -9894,7 +10319,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "54::Balance-a-Binary-Search-Tree",
@@ -9924,7 +10349,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "54::Serialize-and-Deserialize-Binary-Tree",
@@ -9954,7 +10379,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -9996,7 +10421,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "55::Search-in-Rotated-Sorted-Array-II",
@@ -10026,7 +10451,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "55::Time-Based-Key-Value-Store",
@@ -10056,7 +10481,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "55::Find-Minimum-in-Rotated-Sorted-Array",
@@ -10086,7 +10511,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -10128,7 +10553,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "56::Find-the-Duplicate-Number",
@@ -10158,7 +10583,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "56::Minimum-Size-Subarray-Sum",
@@ -10188,7 +10613,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "56::Single-Element-in-a-Sorted-Array",
@@ -10218,7 +10643,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -10271,7 +10696,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "57::Capacity-To-Ship-Packages-Within-D-Days",
@@ -10301,7 +10726,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "57::Koko-Eating-Bananas",
@@ -10331,7 +10756,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "57::Peak-Index-in-a-Mountain-Array",
@@ -10361,7 +10786,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -10403,7 +10828,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "58::Search-a-2D-Matrix-II",
@@ -10433,7 +10858,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "58::Spiral-Matrix",
@@ -10463,7 +10888,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "58::Spiral-Matrix-II",
@@ -10493,7 +10918,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -10618,7 +11043,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "61::Rotate-Image",
@@ -10648,7 +11073,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "61::Set-Matrix-Zeroes",
@@ -10678,7 +11103,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "61::Game-of-Life",
@@ -10708,7 +11133,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -10750,7 +11175,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "62::Matrix-Block-Sum",
@@ -10780,7 +11205,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "62::Battleships-in-a-Board",
@@ -10810,7 +11235,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "62::Snapshot-Array",
@@ -10840,7 +11265,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -10882,7 +11307,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "63::01-Matrix",
@@ -10912,7 +11337,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "63::Clone-Graph",
@@ -10942,7 +11367,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "63::Rotting-Oranges",
@@ -10972,7 +11397,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -11025,7 +11450,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "64::Course-Schedule-II",
@@ -11055,7 +11480,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "64::Accounts-Merge",
@@ -11085,7 +11510,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "64::Word-Search",
@@ -11115,7 +11540,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -11157,7 +11582,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "65::Pacific-Atlantic-Water-Flow",
@@ -11187,7 +11612,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "65::Cheapest-Flights-Within-K-Stops",
@@ -11217,7 +11642,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "65::Max-Area-of-Island",
@@ -11247,7 +11672,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -11289,7 +11714,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "66::Number-of-Provinces",
@@ -11319,7 +11744,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "66::Surrounded-Regions",
@@ -11349,7 +11774,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "66::Network-Delay-Time",
@@ -11379,7 +11804,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -11493,7 +11918,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "68::Redundant-Connection",
@@ -11523,7 +11948,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "68::Shortest-Path-in-Binary-Matrix",
@@ -11553,7 +11978,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "68::Number-of-Operations-to-Make-Network-Connected",
@@ -11583,7 +12008,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -11625,7 +12050,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "69::Longest-Consecutive-Sequence",
@@ -11655,7 +12080,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "69::Insert-Delete-GetRandom-O1",
@@ -11685,7 +12110,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "69::Find-All-Duplicates-in-an-Array",
@@ -11715,7 +12140,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -11757,7 +12182,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "70::Find-and-Replace-Pattern",
@@ -11787,7 +12212,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "70::K-diff-Pairs-in-an-Array",
@@ -11817,7 +12242,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "70::Custom-Sort-String",
@@ -11847,7 +12272,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -11900,7 +12325,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "71::Fruit-Into-Baskets",
@@ -11930,7 +12355,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "71::Encode-and-Decode-TinyURL",
@@ -11960,7 +12385,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "71::Minimum-Area-Rectangle",
@@ -11990,7 +12415,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -12032,7 +12457,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "72::Maximum-Product-Subarray",
@@ -12062,7 +12487,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "72::Coin-Change",
@@ -12092,7 +12517,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "72::Coin-Change-II",
@@ -12122,7 +12547,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -12164,7 +12589,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "73::Jump-Game-II",
@@ -12194,7 +12619,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "73::Jump-Game-III",
@@ -12224,7 +12649,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "73::Partition-Equal-Subset-Sum",
@@ -12254,7 +12679,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -12379,7 +12804,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "76::Unique-Paths",
@@ -12409,7 +12834,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "76::Unique-Paths-II",
@@ -12439,7 +12864,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "76::Maximal-Square",
@@ -12469,7 +12894,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -12511,7 +12936,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "77::House-Robber-II",
@@ -12541,7 +12966,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "77::House-Robber-III",
@@ -12571,7 +12996,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "77::Decode-Ways",
@@ -12601,7 +13026,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -12654,7 +13079,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "78::Minimum-Path-Sum",
@@ -12684,7 +13109,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "78::Longest-Common-Subsequence",
@@ -12714,7 +13139,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "78::Palindrome-Partitioning",
@@ -12744,7 +13169,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -12786,7 +13211,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "79::Unique-Binary-Search-Trees-II",
@@ -12816,7 +13241,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "79::Target-Sum",
@@ -12846,7 +13271,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "79::Triangle",
@@ -12876,7 +13301,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -12918,7 +13343,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "80::Partition-to-K-Equal-Sum-Subsets",
@@ -12948,7 +13373,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "80::Delete-and-Earn",
@@ -12978,7 +13403,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "80::Palindromic-Substrings",
@@ -13008,7 +13433,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -13050,7 +13475,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "81::Minimum-Cost-For-Tickets",
@@ -13080,7 +13505,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "81::Delete-Operation-for-Two-Strings",
@@ -13110,7 +13535,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "81::Perfect-Squares",
@@ -13140,7 +13565,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -13254,7 +13679,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "83::Longest-Palindromic-Substring",
@@ -13284,7 +13709,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "83::Largest-Divisible-Subset",
@@ -13314,7 +13739,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "83::Integer-Break",
@@ -13344,7 +13769,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -13386,7 +13811,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "84::Knight-Dialer",
@@ -13416,7 +13841,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "84::Minesweeper",
@@ -13446,7 +13871,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -13499,7 +13924,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "85::Powx-n",
@@ -13529,7 +13954,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "85::Reverse-Integer",
@@ -13559,7 +13984,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "85::Multiply-Strings",
@@ -13589,7 +14014,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -13631,7 +14056,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "86::Integer-to-Roman",
@@ -13661,7 +14086,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "86::Robot-Bounded-In-Circle",
@@ -13691,7 +14116,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "86::Angle-Between-Hands-of-a-Clock",
@@ -13721,7 +14146,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -13763,7 +14188,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "87::Task-Scheduler",
@@ -13793,7 +14218,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "87::Top-K-Frequent-Elements",
@@ -13823,7 +14248,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "87::Find-K-Closest-Elements",
@@ -13853,7 +14278,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -13895,7 +14320,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "88::Kth-Smallest-Element-in-a-Sorted-Matrix",
@@ -13925,7 +14350,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "88::Top-K-Frequent-Words",
@@ -13955,7 +14380,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "88::Reorganize-String",
@@ -13985,7 +14410,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -14110,7 +14535,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "91::Car-Pooling",
@@ -14140,7 +14565,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "91::Find-K-Pairs-with-Smallest-Sums",
@@ -14170,7 +14595,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "91::Maximum-Number-of-Events-That-Can-Be-Attended",
@@ -14200,7 +14625,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -14253,7 +14678,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "92::Word-Break",
@@ -14283,7 +14708,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "92::Design-Add-and-Search-Words-Data-Structure",
@@ -14313,7 +14738,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "92::Search-Suggestions-System",
@@ -14343,7 +14768,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "92::Remove-Sub-Folders-from-the-Filesystem",
@@ -14373,7 +14798,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -14415,7 +14840,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "93::Permutations-II",
@@ -14445,7 +14870,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "93::Subsets",
@@ -14475,7 +14900,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "93::Subsets-II",
@@ -14505,7 +14930,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -14547,7 +14972,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "94::Combinations",
@@ -14577,7 +15002,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "94::Letter-Combinations-of-a-Phone-Number",
@@ -14607,7 +15032,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "94::Generate-Parentheses",
@@ -14637,7 +15062,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -14679,7 +15104,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "95::Combination-Sum-III",
@@ -14709,7 +15134,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "95::Combination-Sum-IV",
@@ -14739,7 +15164,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "95::Restore-IP-Addresses",
@@ -14769,7 +15194,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -14811,7 +15236,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "96::Partition-Labels",
@@ -14841,7 +15266,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "96::Valid-Parenthesis-String",
@@ -14871,7 +15296,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "96::Minimum-Number-of-Arrows-to-Burst-Balloons",
@@ -14901,7 +15326,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15015,7 +15440,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "98::Single-Number-III",
@@ -15045,7 +15470,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "98::Maximum-XOR-of-Two-Numbers-in-an-Array",
@@ -15075,7 +15500,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "98::Divide-Two-Integers",
@@ -15105,7 +15530,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -15158,7 +15583,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "99::Bitwise-AND-of-Numbers-Range",
@@ -15188,7 +15613,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "99::Gray-Code",
@@ -15218,7 +15643,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15260,7 +15685,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "100::Trapping-Rain-Water",
@@ -15290,7 +15715,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "100::Count-of-Smaller-Numbers-After-Self",
@@ -15320,7 +15745,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15362,7 +15787,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "101::Reverse-Pairs",
@@ -15392,7 +15817,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "101::Subarrays-with-K-Different-Integers",
@@ -15422,7 +15847,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "101::Number-of-Submatrices-That-Sum-to-Target",
@@ -15452,7 +15877,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15494,7 +15919,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "102::Maximum-Gap",
@@ -15524,7 +15949,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "102::First-Missing-Positive",
@@ -15554,7 +15979,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15596,7 +16021,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "103::Reverse-Nodes-in-k-Group",
@@ -15626,7 +16051,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "103::LFU-Cache",
@@ -15656,7 +16081,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15792,7 +16217,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "106::Largest-Rectangle-in-Histogram",
@@ -15822,7 +16247,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "106::Longest-Valid-Parentheses",
@@ -15852,7 +16277,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15894,7 +16319,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "107::The-Skyline-Problem",
@@ -15924,7 +16349,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "107::Minimum-Window-Substring",
@@ -15954,7 +16379,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -15996,7 +16421,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "108::Shortest-Palindrome",
@@ -16026,7 +16451,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "108::Text-Justification",
@@ -16056,7 +16481,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16098,7 +16523,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "109::Integer-to-English-Words",
@@ -16128,7 +16553,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "109::Max-Points-on-a-Line",
@@ -16158,7 +16583,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16200,7 +16625,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "110::Median-of-Two-Sorted-Arrays",
@@ -16230,7 +16655,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "110::Find-Minimum-in-Rotated-Sorted-Array-II",
@@ -16260,7 +16685,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16302,7 +16727,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "111::Word-Ladder-II",
@@ -16332,7 +16757,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "111::Longest-Increasing-Path-in-a-Matrix",
@@ -16362,7 +16787,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16487,7 +16912,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "113::Bus-Routes",
@@ -16517,7 +16942,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "113::Critical-Connections-in-a-Network",
@@ -16547,7 +16972,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16589,7 +17014,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "114::Reconstruct-Itinerary",
@@ -16619,7 +17044,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "114::Making-A-Large-Island",
@@ -16649,7 +17074,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16691,7 +17116,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "115::Find-Median-from-Data-Stream",
@@ -16721,7 +17146,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "115::Smallest-Range-Covering-Elements-from-K-Lists",
@@ -16751,7 +17176,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16793,7 +17218,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "116::Swim-in-Rising-Water",
@@ -16823,7 +17248,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "116::Longest-Duplicate-Substring",
@@ -16853,7 +17278,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -16895,7 +17320,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "117::Permutation-Sequence",
@@ -16925,7 +17350,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "117::Sudoku-Solver",
@@ -16955,7 +17380,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "117::Palindrome-Partitioning-II",
@@ -16985,7 +17410,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -17027,7 +17452,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "118::Remove-Invalid-Parentheses",
@@ -17057,7 +17482,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "118::Unique-Paths-III",
@@ -17087,7 +17512,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -17457,7 +17882,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "123::Regular-Expression-Matching",
@@ -17487,7 +17912,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "123::Maximal-Rectangle",
@@ -17517,7 +17942,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -17793,7 +18218,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "126::Burst-Balloons",
@@ -17823,7 +18248,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "126::Wildcard-Matching",
@@ -17853,7 +18278,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         }
@@ -18140,7 +18565,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "129::Word-Break-II",
@@ -18170,7 +18595,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "129::Russian-Doll-Envelopes",
@@ -18200,7 +18625,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "129::Validate-Stack-Sequences",
@@ -18230,7 +18655,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
@@ -18506,7 +18931,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "132::Minimum-Cost-to-Cut-a-Stick",
@@ -18536,7 +18961,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "132::Minimum-Number-of-Taps-to-Open-to-Water-a-Garden",
@@ -18566,7 +18991,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             },
             {
               "id": "132::Binary-Tree-Cameras",
@@ -18596,7 +19021,7 @@
                 "optimised": false
               },
               "solvedAt": null,
-              "lastUpdated": null
+              "lastUpdated": "2026-11-18"
             }
           ]
         },
