@@ -1,0 +1,4 @@
+# STRINGS METHODS : 
+
+
+- String.valueOf()
