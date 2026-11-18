@@ -2,7 +2,7 @@
 
 - **LeetCode Number:** TBD
 - **Difficulty:** Easy
-- **Topic:** Arrays *(Week 1 · Day 3)*
+- **Topic:** Prefix Sum , Arrays
 - **URL:** [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
@@ -12,6 +12,9 @@
 
 ## 📋 Question
 <!-- Short summary of the problem in your own words -->
+Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+Return the running sum of nums.
 
 ### 📏 Constraints
 - <!-- Key constraints that decide the optimal time/space complexity -->
@@ -25,58 +28,30 @@
 
 ---
 
-## 🧠 Intuition
-<!-- Core pattern or mental model that unlocks this problem -->
-
----
-
-## 🐢 Approach 1: Brute Force
+## 🐢 Approach 1: Best Approach : 
 
 ### Intuition
 - <!-- Step-by-step brute force idea and why it is slow -->
 
 ### Code
 ```java
-// Brute Force solution
+
+class Solution {
+    public int[] runningSum(int[] nums) {
+        
+        int n = nums.length;
+
+        for(int i=1; i<n; i++){
+            nums[i] += nums[i-1];
+        }
+        return nums;
+    }
+}
 ```
 
 ### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
+- **Time Complexity (TC):** `O(N)`
+- **Space Complexity (SC):** `O(1)`
 
 ---
 
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->
