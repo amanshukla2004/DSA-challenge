@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T14:18:50.583Z",
+  "generatedAt": "2026-11-18T16:42:05.526Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -10,8 +10,8 @@
     "revisionDays": 10,
     "concepts": 7,
     "algos": 150,
-    "repoSolved": 14,
-    "repoNotes": 14,
+    "repoSolved": 17,
+    "repoNotes": 17,
     "daysCompleted": 2,
     "weeksCompleted": 0
   },
@@ -2493,6 +2493,9 @@
   "activityByDate": {
     "2026-11-18": {
       "questions": [
+        "3::Build-Array-from-Permutation",
+        "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
+        "3::Remove-Element",
         "3::Running-Sum-of-1d-Array",
         "1::Best-Time-to-Buy-and-Sell-Stock",
         "1::Majority-Element",
@@ -2507,9 +2510,6 @@
         "2::Maximum-Population-Year",
         "2::Remove-Duplicates-from-Sorted-Array-II",
         "2::Remove-Duplicates-from-Sorted-Array",
-        "3::Build-Array-from-Permutation",
-        "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
-        "3::Remove-Element",
         "3::Third-Maximum-Number",
         "3::Valid-Mountain-Array",
         "4::Find-Common-Characters",
@@ -2967,7 +2967,10 @@
       "2::Find-Pivot-Index"
     ],
     "2026-11-18": [
-      "3::Running-Sum-of-1d-Array"
+      "3::Running-Sum-of-1d-Array",
+      "3::Remove-Element",
+      "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
+      "3::Build-Array-from-Permutation"
     ]
   },
   "weeks": [
@@ -2976,7 +2979,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 14,
+      "solvedCount": 17,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -3400,7 +3403,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-003_Arrays",
-          "solvedCount": 1,
+          "solvedCount": 4,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -3441,8 +3444,8 @@
               "type": "dsa",
               "slug": "remove-element",
               "url": "https://leetcode.com/problems/remove-element/",
-              "lcNumber": null,
-              "needRevision": false,
+              "lcNumber": "27",
+              "needRevision": true,
               "hasJava": false,
               "javaFiles": [],
               "files": [
@@ -3454,14 +3457,14 @@
                 }
               ],
               "path": "Week-01/Day-003_Arrays/Remove-Element",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-18",
               "lastUpdated": "2026-11-18"
             },
             {
@@ -3471,7 +3474,7 @@
               "type": "dsa",
               "slug": "find-winner-on-a-tic-tac-toe-game",
               "url": "https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/",
-              "lcNumber": null,
+              "lcNumber": "1275",
               "needRevision": false,
               "hasJava": false,
               "javaFiles": [],
@@ -3484,14 +3487,14 @@
                 }
               ],
               "path": "Week-01/Day-003_Arrays/Find-Winner-on-a-Tic-Tac-Toe-Game",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": true
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-18",
               "lastUpdated": "2026-11-18"
             },
             {
@@ -3514,14 +3517,14 @@
                 }
               ],
               "path": "Week-01/Day-003_Arrays/Build-Array-from-Permutation",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-18",
               "lastUpdated": "2026-11-18"
             },
             {
