@@ -37,46 +37,22 @@
 
 ### Code
 ```java
-// Brute Force solution
+class Solution {
+    public boolean validMountainArray(int[] arr) {
+        int n = arr.length;
+
+        int i=0;
+        int j=n-1;
+
+        while(i<n-1 && arr[i] < arr[i+1]) i++;
+        while(j>0 && (arr[j] < arr[j-1]) ) j--;
+        
+
+        return (i == j && i != 0 && j != n-1);
+    }
+}
 ```
 
 ### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->
+- **Time Complexity (TC):** `O(N)`
+- **Space Complexity (SC):** `O(1)`

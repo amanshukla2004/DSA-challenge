@@ -37,46 +37,36 @@
 
 ### Code
 ```java
-// Brute Force solution
+class Solution {
+    public int thirdMax(int[] nums) {
+        int n = nums.length;
+
+        Integer first = null,
+        second = null,
+        third = null;
+
+        for(Integer num : nums){
+            // remove duplicates
+            if(num.equals(first) || num.equals(second) || num.equals(third)) continue;
+
+            if(first == null || num > first){
+                third = second;
+                second = first;
+                first = num;
+            }
+            else if(second == null || num > second){
+                third = second;
+                second = num;
+            }
+            else if(third == null || num > third){
+                third = num;
+            }
+        }
+        return third == null ? first : third;
+    }
+}
 ```
 
 ### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->
+- **Time Complexity (TC):** `O(N)`
+- **Space Complexity (SC):** `O(1)`
