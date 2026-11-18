@@ -73,40 +73,86 @@ function buildDsaUnderstandingTemplate(dayEntry, q) {
   const diffLabel = q.diff === 'E' ? 'Easy' : q.diff === 'M' ? 'Medium' : q.diff === 'H' ? 'Hard' : (q.diff || 'DSA');
   return `# ${q.name}
 
-- **Question Name:** ${q.name}
-- **Question Number:** TBD
-- **Difficulty:** ${diffLabel} (${q.diff || 'DSA'})
-- **Week / Day / Category:** Week ${dayEntry.week} · Day ${dayEntry.day} · ${dayEntry.category}
-- **URL:** ${q.url}
+- **LeetCode Number:** TBD
+- **Difficulty:** ${diffLabel}
+- **Topic:** ${dayEntry.category} *(Week ${dayEntry.week} · Day ${dayEntry.day})*
+- **URL:** [${q.name}](${q.url})
+- **YouTube:** <!-- paste YouTube link here -->
+- **Need Revision:** No
+- **Status:** Todo
 
 ---
 
-## Intuition
-<!-- Write the core insight and why the brute-force approach can be improved -->
+## 📋 Question
+<!-- Short summary of the problem in your own words -->
 
+### 📏 Constraints
+- <!-- Key constraints that decide the optimal time/space complexity -->
 
-## Pattern
-<!-- e.g., Two Pointers, Sliding Window, Hash Map, Binary Search, DP -->
+<details>
+<summary><strong>💡 Hint</strong></summary>
 
+<!-- Key observation or nudge without giving away the full solution -->
 
-## Complexity Analysis
-- **Time Complexity (TC):**
-  - Bruteforce: \`O(...)\`
-  - Better: \`O(...)\`
-  - Optimised: \`O(...)\`
-- **Space Complexity (SC):**
-  - Bruteforce: \`O(...)\`
-  - Better: \`O(...)\`
-  - Optimised: \`O(...)\`
+</details>
 
-## Resources
-- [Problem Link](${q.url})
-- <!-- Add editorial, article, or video links here -->
+---
 
-## Approaches
-- [Bruteforce Approach](./bruteforce.java)
-- [Better Approach](./better.java)
-- [Optimised Approach](./optimised.java)
+## 🧠 Intuition
+<!-- Core pattern or mental model that unlocks this problem -->
+
+---
+
+## 🐢 Approach 1: Brute Force
+
+### Intuition
+- <!-- Step-by-step brute force idea and why it is slow -->
+
+### Code
+\`\`\`java
+// Brute Force solution
+\`\`\`
+
+### Complexity
+- **Time Complexity (TC):** \`O(...)\`
+- **Space Complexity (SC):** \`O(...)\`
+
+---
+
+## ⚡ Approach 2: Better
+
+### Intuition
+- <!-- How we improve on the brute force bottleneck -->
+
+### Code
+\`\`\`java
+// Better solution
+\`\`\`
+
+### Complexity
+- **Time Complexity (TC):** \`O(...)\`
+- **Space Complexity (SC):** \`O(...)\`
+
+---
+
+## 🚀 Approach 3: Optimised
+
+### Intuition
+- <!-- Optimal insight and why it achieves the best possible complexity -->
+
+### Code
+\`\`\`java
+// Optimised solution
+\`\`\`
+
+### Complexity
+- **Time Complexity (TC):** \`O(...)\`
+- **Space Complexity (SC):** \`O(...)\`
+
+---
+
+## ⚠️ Edge Cases & Mistakes
+- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->
 `;
 }
 
@@ -390,13 +436,60 @@ function scanAlgos() {
 }
 
 /**
- * Inspect question files to determine if notes/code have been filled in beyond starter templates.
+ * Inspect question files to determine all folder files, notes/code filled in, LC number, and revision status.
  */
 function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
-  const mdPath = path.join(qAbsPath, 'understanding.md');
+  const PREFERRED_FILE_ORDER = ['understanding.md', 'readme.md'];
+  const allFiles = fs.existsSync(qAbsPath)
+    ? fs.readdirSync(qAbsPath, { withFileTypes: true })
+        .filter((e) => e.isFile() && !e.name.startsWith('.'))
+        .map((e) => {
+          const abs = path.join(qAbsPath, e.name);
+          const rel = path.relative(ROOT_DIR, abs).replace(/\\/g, '/');
+          const ext = path.extname(e.name).toLowerCase();
+          return {
+            name: e.name,
+            path: rel,
+            isMd: ext === '.md',
+            ext
+          };
+        })
+        .sort((a, b) => {
+          const ia = PREFERRED_FILE_ORDER.indexOf(a.name.toLowerCase());
+          const ib = PREFERRED_FILE_ORDER.indexOf(b.name.toLowerCase());
+          if (ia !== -1 && ib !== -1) return ia - ib;
+          if (ia !== -1) return -1;
+          if (ib !== -1) return 1;
+          if (a.isMd !== b.isMd) return a.isMd ? -1 : 1;
+          return a.name.localeCompare(b.name);
+        })
+    : [];
+
+  const mdFiles = allFiles.filter((f) => f.isMd);
+  const primaryMdFile = mdFiles[0] || null;
+  const mdPath = primaryMdFile ? path.join(ROOT_DIR, primaryMdFile.path) : path.join(qAbsPath, 'understanding.md');
+
   let hasNotes = false;
   let explicitStatus = null;
   let explicitSolvedDate = null;
+  let needRevision = false;
+  let lcNumber = null;
+
+  const hasCode = { bruteforce: false, better: false, optimised: false };
+  let anyCode = false;
+
+  const isRealCodeBlock = (codeBody) => {
+    const stripped = String(codeBody || '')
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter((line) => {
+        if (!line) return false;
+        if (/^\/\/\s*(Brute\s*Force|Better|Optimised|Optimized)\s*solution\.?$/i.test(line)) return false;
+        if (/^\/\/\s*TODO/i.test(line)) return false;
+        return true;
+      });
+    return stripped.length > 0;
+  };
 
   if (fs.existsSync(mdPath)) {
     const actualMd = fs.readFileSync(mdPath, 'utf8');
@@ -404,14 +497,27 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
       ? buildDsaUnderstandingTemplate(dayEntry, q)
       : buildNonDsaUnderstandingTemplate(dayEntry, q);
 
-    hasNotes = normalizeText(actualMd) !== normalizeText(templateMd);
+    hasNotes = normalizeText(actualMd) !== normalizeText(templateMd) || mdFiles.length > 1;
 
     const statusMatch = actualMd.match(/^\s*[-*]\s*\*\*Status:\*\*\s*(.+)$/im);
     if (statusMatch) {
       const rawStatus = statusMatch[1].trim().toLowerCase();
       if (rawStatus.includes('revise') || rawStatus.includes('review')) explicitStatus = 'revise';
-      else if (rawStatus.includes('solved') || rawStatus.includes('done')) explicitStatus = 'solved';
+      else if (rawStatus.includes('solved') || rawStatus.includes('done') || rawStatus.includes('completed')) explicitStatus = 'solved';
       else if (rawStatus.includes('progress')) explicitStatus = 'in-progress';
+    }
+
+    const revMatch = actualMd.match(/^\s*[-*]\s*\*\*Need\s+Revision:\*\*\s*(.+)$/im);
+    if (revMatch) {
+      const rawRev = revMatch[1].trim().toLowerCase();
+      if (/^(yes|true|y|1|\[x\]|✓|✅|revise)/i.test(rawRev) || rawRev.includes('[x]')) {
+        needRevision = true;
+      }
+    }
+
+    const lcMatch = actualMd.match(/^\s*[-*]\s*\*\*(?:LeetCode\s+Number|Question\s+Number|LC\s*#?):\*\*\s*`?#?(\d+)`?/im);
+    if (lcMatch) {
+      lcNumber = lcMatch[1];
     }
 
     const dateMatch = actualMd.match(/^\s*[-*]\s*\*\*(?:Solved\s+Date|Date):\*\*\s*(\d{4}-\d{2}-\d{2})/im);
@@ -420,23 +526,38 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
     }
   }
 
-  const PREFERRED_JAVA_ORDER = ['bruteforce.java', 'better.java', 'optimised.java'];
-  const javaFiles = fs.existsSync(qAbsPath)
-    ? fs.readdirSync(qAbsPath, { withFileTypes: true })
-        .filter((e) => e.isFile() && /\.java$/i.test(e.name))
-        .map((e) => e.name)
-        .sort((a, b) => {
-          const ia = PREFERRED_JAVA_ORDER.indexOf(a.toLowerCase());
-          const ib = PREFERRED_JAVA_ORDER.indexOf(b.toLowerCase());
-          if (ia !== -1 && ib !== -1) return ia - ib;
-          if (ia !== -1) return -1;
-          if (ib !== -1) return 1;
-          return a.localeCompare(b);
-        })
-    : [];
+  for (const mf of mdFiles) {
+    const content = fs.readFileSync(path.join(ROOT_DIR, mf.path), 'utf8');
+    // Check code blocks per section when present
+    const sections = content.split(/(?=^##\s+)/m);
+    for (const sec of sections) {
+      const headLine = (sec.split(/\r?\n/)[0] || '').toLowerCase();
+      const fenceRe = /```[a-zA-Z0-9_-]*\r?\n([\s\S]*?)```/g;
+      let m;
+      while ((m = fenceRe.exec(sec)) !== null) {
+        if (isRealCodeBlock(m[1])) {
+          anyCode = true;
+          if (headLine.includes('brute')) hasCode.bruteforce = true;
+          else if (headLine.includes('better')) hasCode.better = true;
+          else if (headLine.includes('optimis') || headLine.includes('optimiz')) hasCode.optimised = true;
+        }
+      }
+    }
+  }
 
-  const hasCode = { bruteforce: false, better: false, optimised: false };
-  let anyCode = false;
+  const PREFERRED_JAVA_ORDER = ['bruteforce.java', 'better.java', 'optimised.java'];
+  const javaFiles = allFiles
+    .filter((e) => /\.java$/i.test(e.name))
+    .map((e) => e.name)
+    .sort((a, b) => {
+      const ia = PREFERRED_JAVA_ORDER.indexOf(a.toLowerCase());
+      const ib = PREFERRED_JAVA_ORDER.indexOf(b.toLowerCase());
+      if (ia !== -1 && ib !== -1) return ia - ib;
+      if (ia !== -1) return -1;
+      if (ib !== -1) return 1;
+      return a.localeCompare(b);
+    });
+
   for (const fileName of javaFiles) {
     const javaPath = path.join(qAbsPath, fileName);
     const actualJava = fs.readFileSync(javaPath, 'utf8');
@@ -445,8 +566,10 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
     if (tier === 'bruteforce' || tier === 'better' || tier === 'optimised') {
       const templateJava = buildJavaTemplate(dayEntry, q, tier);
       const isCustom = normalizeText(actualJava) !== normalizeText(templateJava);
-      hasCode[tier] = isCustom;
-      if (isCustom) anyCode = true;
+      if (isCustom) {
+        hasCode[tier] = true;
+        anyCode = true;
+      }
     } else if (actualJava.trim().length > 0) {
       hasCode[tier] = true;
       anyCode = true;
@@ -464,7 +587,7 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
     }
   }
 
-  return { hasNotes, hasCode, javaFiles, status, explicitSolvedDate };
+  return { hasNotes, hasCode, javaFiles, files: allFiles, status, needRevision, lcNumber, explicitSolvedDate };
 }
 
 /**
@@ -816,32 +939,31 @@ async function main() {
         const isDsa = dayEntry.type === 'dsa';
         if (isDsa) {
           totals.dsaQuestions++;
-          const mdPath = path.join(qAbsPath, 'understanding.md');
-          const hadFolderInit =
-            fs.existsSync(mdPath) ||
-            fs.readdirSync(qAbsPath, { withFileTypes: true }).some((e) => e.isFile() && /\.java$/i.test(e.name));
-          writeIfMissing(
-            mdPath,
-            buildDsaUnderstandingTemplate(dayEntry, q),
-            stats
-          );
-          if (!hadFolderInit) {
-            for (const tier of ['bruteforce', 'better', 'optimised']) {
-              writeIfMissing(
-                path.join(qAbsPath, `${tier}.java`),
-                buildJavaTemplate(dayEntry, q, tier),
-                stats
-              );
-            }
+          const hasAnyMd = fs.readdirSync(qAbsPath, { withFileTypes: true })
+            .some((e) => e.isFile() && /\.md$/i.test(e.name));
+          if (!hasAnyMd) {
+            writeIfMissing(
+              path.join(qAbsPath, 'understanding.md'),
+              buildDsaUnderstandingTemplate(dayEntry, q),
+              stats
+            );
+          } else {
+            stats.skipped++;
           }
         } else {
           if (dayEntry.type === 'design') totals.designQuestions++;
           else if (dayEntry.type === 'behavioral') totals.behavioralQuestions++;
-          writeIfMissing(
-            path.join(qAbsPath, 'understanding.md'),
-            buildNonDsaUnderstandingTemplate(dayEntry, q),
-            stats
-          );
+          const hasAnyMd = fs.readdirSync(qAbsPath, { withFileTypes: true })
+            .some((e) => e.isFile() && /\.md$/i.test(e.name));
+          if (!hasAnyMd) {
+            writeIfMissing(
+              path.join(qAbsPath, 'understanding.md'),
+              buildNonDsaUnderstandingTemplate(dayEntry, q),
+              stats
+            );
+          } else {
+            stats.skipped++;
+          }
         }
 
         const qId = `${dayEntry.day}::${qFolder}`;
@@ -872,8 +994,11 @@ async function main() {
           type: q.type || dayEntry.type,
           slug: q.slug || null,
           url: q.url,
+          lcNumber: inspected.lcNumber || null,
+          needRevision: Boolean(inspected.needRevision),
           hasJava: inspected.javaFiles.length > 0,
           javaFiles: inspected.javaFiles,
+          files: inspected.files,
           path: qRelPath,
           status: inspected.status,
           hasNotes: inspected.hasNotes,

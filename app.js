@@ -336,7 +336,16 @@
       const trimmed = body.trimEnd();
       let html;
       if (lower === 'java') {
-        html = `<div class="code-block-wrapper"><button class="copy-code-btn" type="button">Copy</button><pre><code>${highlightJava(trimmed)}</code></pre></div>`;
+        const copyB64 = toBase64Utf8(trimmed);
+        html = `
+          <div class="code-block-wrapper md-code-card">
+            <div class="md-code-bar">
+              <span class="md-code-lang">JAVA</span>
+              <button class="copy-code-btn" type="button" data-copy-b64="${escapeHtml(copyB64)}">Copy</button>
+            </div>
+            <div class="md-code-body">${highlightJava(trimmed)}</div>
+          </div>
+        `;
       } else if (KROKI_LANGS.has(lower)) {
         const krokiLang = lower === 'dot' ? 'graphviz' : lower;
         const encoded = toBase64Utf8(trimmed);
@@ -356,7 +365,17 @@
           </div>
         `;
       } else {
-        html = `<div class="code-block-wrapper"><button class="copy-code-btn" type="button">Copy</button><pre><code>${escapeHtml(trimmed)}</code></pre></div>`;
+        const copyB64 = toBase64Utf8(trimmed);
+        const langLabel = (lower || 'TEXT').toUpperCase();
+        html = `
+          <div class="code-block-wrapper md-code-card">
+            <div class="md-code-bar">
+              <span class="md-code-lang">${escapeHtml(langLabel)}</span>
+              <button class="copy-code-btn" type="button" data-copy-b64="${escapeHtml(copyB64)}">Copy</button>
+            </div>
+            <pre><code>${escapeHtml(trimmed)}</code></pre>
+          </div>
+        `;
       }
       codeBlocks.push(html);
       return `\n@@CODEBLOCK_${idx}@@\n`;
@@ -364,19 +383,38 @@
 
     const formatInline = (text) => {
       let s = escapeHtml(text);
-      s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+      const inlineTokens = [];
+      const stash = (fragment) => {
+        const idx = inlineTokens.length;
+        inlineTokens.push(fragment);
+        return `@@INL_${idx}@@`;
+      };
+
+      s = s.replace(/`([^`]+)`/g, (_, code) => stash(`<code>${code}</code>`));
       s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
         const cleanHref = href.trim();
         const javaMatch = cleanHref.match(/^(?:\.\/)?([^/?#]+\.java)$/i);
         if (javaMatch) {
           const fileName = javaMatch[1];
-          return `<a href="#java-${escapeHtml(fileName)}" data-java-tab="${escapeHtml(fileName)}">${label}</a>`;
+          return stash(`<a href="#file-${escapeHtml(fileName)}" data-file-tab="${escapeHtml(fileName)}" data-java-tab="${escapeHtml(fileName)}">${label}</a>`);
+        }
+        const mdMatch = cleanHref.match(/^(?:\.\/)?([^/?#]+\.md)$/i);
+        if (mdMatch) {
+          const fileName = mdMatch[1];
+          return stash(`<a href="#file-${escapeHtml(fileName)}" data-file-tab="${escapeHtml(fileName)}">${label}</a>`);
         }
         const safeHref = /^https?:\/\//i.test(cleanHref) ? cleanHref : '#';
-        return `<a href="${escapeHtml(safeHref)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+        return stash(`<a href="${escapeHtml(safeHref)}" target="_blank" rel="noopener noreferrer">${label}</a>`);
       });
+
+      // Auto-link bare http(s) URLs (e.g., pasted YouTube links)
+      s = s.replace(/(https?:\/\/[^\s<>"')]+)/g, (url) =>
+        stash(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${url}</a>`)
+      );
+
       s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
       s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      s = s.replace(/@@INL_(\d+)@@/g, (_, idx) => inlineTokens[Number(idx)] || '');
       return s;
     };
 
@@ -1446,14 +1484,35 @@
 
   function hydrateMarkdownExtras(container, contextKey = '') {
     if (!container) return;
+
+    // Enhance top metadata bullet list (right under h1) into a clean metadata card grid
+    const firstH1 = container.querySelector('h1');
+    const nextEl = firstH1 ? firstH1.nextElementSibling : null;
+    if (nextEl && nextEl.tagName === 'UL') {
+      const items = Array.from(nextEl.children);
+      const isMetaList = items.length >= 3 && items.every((li) => {
+        const firstChild = li.firstElementChild;
+        return firstChild && firstChild.tagName === 'STRONG';
+      });
+      if (isMetaList) {
+        nextEl.classList.add('md-meta-grid');
+      }
+    }
+
     hydrateKrokiDiagrams(container);
     hydrateNoembedLinks(container);
 
     container.querySelectorAll('.copy-code-btn').forEach((btn) => {
       btn.addEventListener('click', async () => {
-        const pre = btn.closest('.code-block-wrapper')?.querySelector('pre');
-        if (!pre) return;
-        const textToCopy = pre.innerText || pre.textContent || '';
+        const b64 = btn.getAttribute('data-copy-b64');
+        let textToCopy = '';
+        if (b64) {
+          textToCopy = fromBase64Utf8(b64);
+        } else {
+          const pre = btn.closest('.code-block-wrapper, .code-view-container')?.querySelector('pre');
+          textToCopy = pre ? (pre.innerText || pre.textContent || '') : '';
+        }
+        if (!textToCopy) return;
         try {
           await navigator.clipboard.writeText(textToCopy);
           btn.textContent = 'Copied!';
@@ -2053,7 +2112,7 @@
     }
   }
 
-  async function selectItem(id) {
+  async function selectItem(id, initialFilePath) {
     if (!state.data || !els.problemView) return;
     const idx = state.flatItems.findIndex((it) => it.id === id);
     if (idx === -1) return;
@@ -2061,6 +2120,7 @@
 
     state.selectedId = id;
     state.selectedConceptId = null;
+    state.selectedAlgoId = null;
     state.expandedWeeks.add(item.week.week);
     state.expandedDays.add(String(item.day.day));
     setModeUI('roadmap');
@@ -2070,6 +2130,8 @@
     els.dashboardView?.classList.add('hidden');
     els.conceptView?.classList.add('hidden');
     els.contestView?.classList.add('hidden');
+    els.algosView?.classList.add('hidden');
+    els.todoView?.classList.add('hidden');
     els.problemView.classList.remove('hidden');
 
     const prevItem = idx > 0 ? state.flatItems[idx - 1] : null;
@@ -2127,11 +2189,13 @@
           : q.hasNotes
             ? '<span class="badge badge-y">◐ Notes Added</span>'
             : '<span class="badge badge-grey">○ Todo</span>';
+    const lcBadge = q.lcNumber ? `<span class="badge badge-b">LC #${escapeHtml(q.lcNumber)}</span>` : '';
+    const revBadge = q.needRevision ? '<span class="badge badge-r">🔁 Need Revision</span>' : '';
 
-    const javaFiles = getQuestionJavaFiles(q);
-    const hasJavaFiles = q.hasJava && javaFiles.length > 0;
-    const activeJavaFile = resolveJavaFileChoice(javaFiles, state.activeTier);
-    const singlePane = !hasJavaFiles || state.viewMode !== 'split';
+    const folderFiles = (q.files && q.files.length > 0)
+      ? q.files
+      : [{ name: 'understanding.md', path: `${q.path}/understanding.md`, isMd: true, ext: '.md' }];
+    const initialFile = (initialFilePath && folderFiles.find((f) => f.path === initialFilePath || f.name.toLowerCase() === String(initialFilePath).toLowerCase())) || folderFiles[0];
 
     els.problemView.innerHTML = `
       <div class="problem-header ${q.status === 'solved' ? 'is-complete' : ''}">
@@ -2142,110 +2206,117 @@
           </div>
           <div class="problem-title-row">
             <h1>${escapeHtml(q.name)}</h1>
+            ${lcBadge}
             <span class="badge ${badgeCls}">${escapeHtml(badgeText)}</span>
             ${statusBadge}
+            ${revBadge}
           </div>
         </div>
         <div class="problem-actions">
-          ${hasJavaFiles ? `
-            <div class="view-mode-group">
-              <button class="view-mode-btn ${state.viewMode === 'split' ? 'active' : ''}" data-mode="split">Split</button>
-              <button class="view-mode-btn ${state.viewMode === 'notes' ? 'active' : ''}" data-mode="notes">Notes</button>
-              <button class="view-mode-btn ${state.viewMode === 'code' ? 'active' : ''}" data-mode="code">Code</button>
-            </div>
-          ` : ''}
           <a class="btn btn-primary" href="${escapeHtml(q.url)}" target="_blank" rel="noopener noreferrer">Open Problem ↗</a>
           <button class="btn" id="prevBtn" ${!prevItem ? 'disabled' : ''}>←</button>
           <button class="btn" id="nextBtn" ${!nextItem ? 'disabled' : ''}>→</button>
         </div>
       </div>
 
-      <div class="workspace-panes ${singlePane ? 'single-pane' : ''}" id="workspacePanes">
-        <div class="pane ${hasJavaFiles && state.viewMode === 'code' ? 'hidden' : ''}" id="notesPane">
+      <div class="workspace-panes single-pane" id="workspacePanes">
+        <div class="pane" id="notesPane">
           <div class="pane-header">
-            <strong>understanding.md</strong>
-          </div>
-          <div class="pane-body md-body" id="notesBody">Loading notes...</div>
-          <div class="path-footer">${escapeHtml(q.path)}/understanding.md</div>
-        </div>
-
-        ${hasJavaFiles ? `
-          <div class="pane ${state.viewMode === 'notes' ? 'hidden' : ''}" id="codePane">
-            <div class="pane-header">
-              <div class="pane-tabs">
-                ${javaFiles.map((fileName) => `
-                  <button class="pane-tab ${activeJavaFile === fileName ? 'active' : ''}" data-java-file="${escapeHtml(fileName)}">${escapeHtml(fileName)}</button>
-                `).join('')}
-              </div>
-              <button class="btn" id="copyCodeBtn">Copy</button>
+            <div class="pane-tabs" id="questionFileTabs">
+              ${folderFiles.map((f) => `
+                <button class="pane-tab ${f.path === initialFile.path ? 'active' : ''}" data-file-path="${escapeHtml(f.path)}" data-file-name="${escapeHtml(f.name)}" data-is-md="${f.isMd ? '1' : '0'}" data-ext="${escapeHtml(f.ext || '')}">
+                  ${f.isMd ? '📄' : '💻'} ${escapeHtml(f.name)}
+                </button>
+              `).join('')}
             </div>
-            <div class="pane-body code-body" id="codeBody">Loading Java...</div>
-            <div class="path-footer" id="codeFooter">${escapeHtml(q.path)}/${escapeHtml(activeJavaFile)}</div>
+            ${folderFiles.length > 1 ? `<span class="badge badge-grey">${folderFiles.length} files</span>` : ''}
           </div>
-        ` : ''}
+          <div class="pane-body md-body" id="notesBody">Loading file...</div>
+          <div class="path-footer" id="questionPathFooter">${escapeHtml(initialFile.path)}</div>
+        </div>
       </div>
     `;
 
     document.getElementById('prevBtn')?.addEventListener('click', () => prevItem && selectItem(prevItem.id));
     document.getElementById('nextBtn')?.addEventListener('click', () => nextItem && selectItem(nextItem.id));
 
-    els.problemView.querySelectorAll('.view-mode-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (btn instanceof HTMLElement && btn.dataset.mode) {
-          state.viewMode = btn.dataset.mode;
-          selectItem(q.id);
-        }
+    const tabButtons = Array.from(els.problemView.querySelectorAll('#questionFileTabs .pane-tab'));
+
+    async function displayQuestionFile(fileObj) {
+      const notesBody = document.getElementById('notesBody');
+      const footer = document.getElementById('questionPathFooter');
+      if (!notesBody) return;
+      if (footer) footer.textContent = fileObj.path;
+
+      tabButtons.forEach((t) => {
+        t.classList.toggle('active', t.getAttribute('data-file-path') === fileObj.path);
       });
-    });
 
-    els.problemView.querySelectorAll('.pane-tab[data-java-file]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (btn instanceof HTMLElement && btn.dataset.javaFile) {
-          loadJavaTab(item, btn.dataset.javaFile);
-        }
-      });
-    });
+      notesBody.innerHTML = '<div style="padding:16px;color:var(--text-muted)">Loading file...</div>';
 
-    const copyBtn = document.getElementById('copyCodeBtn');
-    copyBtn?.addEventListener('click', async () => {
-      if (!state.currentJavaSource) return;
       try {
-        await navigator.clipboard.writeText(state.currentJavaSource);
-        copyBtn.textContent = 'Copied!';
-        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1200);
-      } catch (_) {}
-    });
+        const text = await fetchText(fileObj.path);
+        const isMarkdown = fileObj.isMd || fileObj.name.toLowerCase().endsWith('.md');
+        const isJava = fileObj.ext === '.java' || fileObj.name.toLowerCase().endsWith('.java');
 
-    const notesBody = document.getElementById('notesBody');
-    if (notesBody) {
-      try {
-        const md = await fetchText(`${q.path}/understanding.md`);
-        notesBody.innerHTML = renderMarkdown(md);
-        hydrateMarkdownExtras(notesBody);
-        notesBody.querySelectorAll('a[data-java-tab]').forEach((a) => {
-          a.addEventListener('click', (ev) => {
-            ev.preventDefault();
-            if (!(a instanceof HTMLElement)) return;
-            const tier = a.dataset.javaTab;
-            if (!tier) return;
-            if (state.viewMode === 'notes') {
-              state.viewMode = 'split';
-              state.activeTier = tier;
-              selectItem(q.id);
-            } else {
-              loadJavaTab(item, tier);
-            }
+        if (isMarkdown) {
+          notesBody.className = 'pane-body md-body question-md-body';
+          notesBody.innerHTML = renderMarkdown(text);
+          hydrateMarkdownExtras(notesBody, `${q.id}::${fileObj.name}`);
+
+          // Wire relative file links inside markdown (e.g. ./dry-run.md or ./alt.java) to switch tabs
+          notesBody.querySelectorAll('a[data-file-tab], a[data-java-tab]').forEach((a) => {
+            a.addEventListener('click', (ev) => {
+              ev.preventDefault();
+              const targetName = a.getAttribute('data-file-tab') || a.getAttribute('data-java-tab');
+              if (!targetName) return;
+              const match = folderFiles.find((f) => f.name.toLowerCase() === targetName.toLowerCase());
+              if (match) displayQuestionFile(match);
+            });
           });
-        });
+        } else if (isJava) {
+          const copyB64 = toBase64Utf8(text);
+          notesBody.className = 'pane-body md-body';
+          notesBody.innerHTML = `
+            <div class="code-block-wrapper md-code-card">
+              <div class="md-code-bar">
+                <span class="md-code-lang">JAVA · ${escapeHtml(fileObj.name)}</span>
+                <button class="copy-code-btn" type="button" data-copy-b64="${escapeHtml(copyB64)}">Copy</button>
+              </div>
+              <div class="md-code-body">${highlightJava(text)}</div>
+            </div>
+          `;
+          hydrateMarkdownExtras(notesBody, `${q.id}::${fileObj.name}`);
+        } else {
+          const copyB64 = toBase64Utf8(text);
+          const extLabel = (fileObj.ext || '.txt').replace(/^\./, '').toUpperCase();
+          notesBody.className = 'pane-body md-body';
+          notesBody.innerHTML = `
+            <div class="code-block-wrapper md-code-card">
+              <div class="md-code-bar">
+                <span class="md-code-lang">${escapeHtml(extLabel)} · ${escapeHtml(fileObj.name)}</span>
+                <button class="copy-code-btn" type="button" data-copy-b64="${escapeHtml(copyB64)}">Copy</button>
+              </div>
+              <pre><code>${escapeHtml(text)}</code></pre>
+            </div>
+          `;
+          hydrateMarkdownExtras(notesBody, `${q.id}::${fileObj.name}`);
+        }
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
-        notesBody.innerHTML = `<div class="alert-box">Could not load <code>${escapeHtml(q.path)}/understanding.md</code> (${escapeHtml(msg)}).</div>`;
+        notesBody.innerHTML = `<div class="alert-box">Could not load <code>${escapeHtml(fileObj.path)}</code> (${escapeHtml(msg)}).</div>`;
       }
     }
 
-    if (hasJavaFiles && activeJavaFile) {
-      loadJavaTab(item, activeJavaFile);
-    }
+    tabButtons.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const filePath = tab.getAttribute('data-file-path');
+        const target = folderFiles.find((f) => f.path === filePath);
+        if (target) displayQuestionFile(target);
+      });
+    });
+
+    await displayQuestionFile(initialFile);
   }
 
   function buildFlatItems(data) {

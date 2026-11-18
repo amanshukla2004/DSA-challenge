@@ -1,36 +1,82 @@
 # Maximum Width of Binary Tree
 
-- **Question Name:** Maximum Width of Binary Tree
-- **Question Number:** TBD
-- **Difficulty:** Medium (M)
-- **Week / Day / Category:** Week 7 · Day 47 · Trees (Views & Pointers)
-- **URL:** https://leetcode.com/problems/maximum-width-of-binary-tree/
+- **LeetCode Number:** TBD
+- **Difficulty:** Medium
+- **Topic:** Trees (Views & Pointers) *(Week 7 · Day 47)*
+- **URL:** [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/)
+- **YouTube:** <!-- paste YouTube link here -->
+- **Need Revision:** No
+- **Status:** Todo
 
 ---
 
-## Intuition
-<!-- Write the core insight and why the brute-force approach can be improved -->
+## 📋 Question
+<!-- Short summary of the problem in your own words -->
 
+### 📏 Constraints
+- <!-- Key constraints that decide the optimal time/space complexity -->
 
-## Pattern
-<!-- e.g., Two Pointers, Sliding Window, Hash Map, Binary Search, DP -->
+<details>
+<summary><strong>💡 Hint</strong></summary>
 
+<!-- Key observation or nudge without giving away the full solution -->
 
-## Complexity Analysis
-- **Time Complexity (TC):**
-  - Bruteforce: `O(...)`
-  - Better: `O(...)`
-  - Optimised: `O(...)`
-- **Space Complexity (SC):**
-  - Bruteforce: `O(...)`
-  - Better: `O(...)`
-  - Optimised: `O(...)`
+</details>
 
-## Resources
-- [Problem Link](https://leetcode.com/problems/maximum-width-of-binary-tree/)
-- <!-- Add editorial, article, or video links here -->
+---
 
-## Approaches
-- [Bruteforce Approach](./bruteforce.java)
-- [Better Approach](./better.java)
-- [Optimised Approach](./optimised.java)
+## 🧠 Intuition
+<!-- Core pattern or mental model that unlocks this problem -->
+
+---
+
+## 🐢 Approach 1: Brute Force
+
+### Intuition
+- <!-- Step-by-step brute force idea and why it is slow -->
+
+### Code
+```java
+// Brute Force solution
+```
+
+### Complexity
+- **Time Complexity (TC):** `O(...)`
+- **Space Complexity (SC):** `O(...)`
+
+---
+
+## ⚡ Approach 2: Better
+
+### Intuition
+- <!-- How we improve on the brute force bottleneck -->
+
+### Code
+```java
+// Better solution
+```
+
+### Complexity
+- **Time Complexity (TC):** `O(...)`
+- **Space Complexity (SC):** `O(...)`
+
+---
+
+## 🚀 Approach 3: Optimised
+
+### Intuition
+- <!-- Optimal insight and why it achieves the best possible complexity -->
+
+### Code
+```java
+// Optimised solution
+```
+
+### Complexity
+- **Time Complexity (TC):** `O(...)`
+- **Space Complexity (SC):** `O(...)`
+
+---
+
+## ⚠️ Edge Cases & Mistakes
+- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->

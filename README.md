@@ -8,7 +8,7 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 | **Questions Solved** | **13 / 484** |
 | **Days Completed** | **2 / 136** |
 | **Weeks Completed** | **0 / 21** |
-| **Problem Notes Written** | **8 / 484** |
+| **Problem Notes Written** | **13 / 484** |
 | **Concept & Learning Notes** | **7** in [Concepts/](./Concepts) |
 
 ## Website Features (`index.html`)
