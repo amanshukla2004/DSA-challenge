@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T17:00:26.031Z",
+  "generatedAt": "2026-11-18T17:13:18.913Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -8,7 +8,7 @@
     "designQuestions": 42,
     "behavioralQuestions": 26,
     "revisionDays": 10,
-    "concepts": 7,
+    "concepts": 8,
     "algos": 150,
     "repoSolved": 19,
     "repoNotes": 19,
@@ -67,6 +67,13 @@
       "group": "General",
       "path": "Concepts/priorityQueue.md",
       "lastUpdated": "2026-11-17"
+    },
+    {
+      "id": "concept::Concepts/String.md",
+      "title": "STRINGS METHODS :",
+      "group": "General",
+      "path": "Concepts/String.md",
+      "lastUpdated": "2026-11-18"
     },
     {
       "id": "concept::Concepts/sweepLine.md",
@@ -2910,7 +2917,9 @@
         "132::Minimum-Insertion-Steps-to-Make-a-String-Palindrome",
         "132::Minimum-Number-of-Taps-to-Open-to-Water-a-Garden"
       ],
-      "concepts": [],
+      "concepts": [
+        "concept::Concepts/String.md"
+      ],
       "trackerUpdated": false
     },
     "2026-11-17": {
