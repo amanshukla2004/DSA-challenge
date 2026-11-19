@@ -5,10 +5,10 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Live Repo Progress
 | Metric | Progress |
 |---|---|
-| **Questions Solved** | **19 / 484** |
+| **Questions Solved** | **22 / 484** |
 | **Days Completed** | **3 / 136** |
 | **Weeks Completed** | **0 / 21** |
-| **Problem Notes Written** | **19 / 484** |
+| **Problem Notes Written** | **22 / 484** |
 | **Concept & Learning Notes** | **8** in [Concepts/](./Concepts) |
 
 ## Website Features (`index.html`)
@@ -40,13 +40,13 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 - [Learnings & Mistakes Log](./Concepts/04-Learnings-and-Mistakes-Log.md) *(General)*
 - [arrayList](./Concepts/arrayList.md) *(General)*
 - [priorityQueue](./Concepts/priorityQueue.md) *(General)*
-- [STRINGS METHODS :](./Concepts/String.md) *(General)*
+- [Java Strings for DSA: Everything You Actually Use](./Concepts/String.md) *(General)*
 - [sweepLine](./Concepts/sweepLine.md) *(General)*
 
 ## Weekly Index
 
 <details>
-<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (19/39 solved · 7 days)</summary>
+<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (22/39 solved · 7 days)</summary>
 
 - **Day 1 — Arrays ✅** (6/6 solved):
   - [Two Sum](./Week-01/Day-001_Arrays/Two-Sum/understanding.md) `E` ✅
@@ -70,13 +70,13 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
   - [Build Array from Permutation](./Week-01/Day-003_Arrays/Build-Array-from-Permutation/understanding.md) `E` ✅
   - [Third Maximum Number](./Week-01/Day-003_Arrays/Third-Maximum-Number/understanding.md) `E` ✅
   - [Valid Mountain Array](./Week-01/Day-003_Arrays/Valid-Mountain-Array/understanding.md) `E` ✅
-- **Day 4 — Arrays** (0/6 solved):
+- **Day 4 — Arrays** (3/6 solved):
   - [Find Common Characters](./Week-01/Day-004_Arrays/Find-Common-Characters/understanding.md) `E`
   - [Sum of All Odd Length Subarrays](./Week-01/Day-004_Arrays/Sum-of-All-Odd-Length-Subarrays/understanding.md) `E`
   - [Range Sum Query - Immutable](./Week-01/Day-004_Arrays/Range-Sum-Query-Immutable/understanding.md) `E`
-  - [Shuffle the Array](./Week-01/Day-004_Arrays/Shuffle-the-Array/understanding.md) `E`
-  - [Max Consecutive Ones](./Week-01/Day-004_Arrays/Max-Consecutive-Ones/understanding.md) `E`
-  - [Sort Array By Parity](./Week-01/Day-004_Arrays/Sort-Array-By-Parity/understanding.md) `E`
+  - [Shuffle the Array](./Week-01/Day-004_Arrays/Shuffle-the-Array/understanding.md) `E` ✅
+  - [Max Consecutive Ones](./Week-01/Day-004_Arrays/Max-Consecutive-Ones/understanding.md) `E` ✅
+  - [Sort Array By Parity](./Week-01/Day-004_Arrays/Sort-Array-By-Parity/understanding.md) `E` ✅
 - **Day 5 — Linked List** (0/6 solved):
   - [Reverse Linked List](./Week-01/Day-005_Linked-List/Reverse-Linked-List/understanding.md) `E`
   - [Remove Linked List Elements](./Week-01/Day-005_Linked-List/Remove-Linked-List-Elements/understanding.md) `E`
