@@ -27,56 +27,57 @@
 
 ## 🧠 Intuition
 <!-- Core pattern or mental model that unlocks this problem -->
-
+- you have to swap when left is odd and right is even
+- use two pointer approach
 ---
 
-## 🐢 Approach 1: Brute Force
-
-### Intuition
-- <!-- Step-by-step brute force idea and why it is slow -->
-
+## 🐢 Approach :
 ### Code
 ```java
-// Brute Force solution
+class Solution {
+    public int[] sortArrayByParity(int[] nums) {
+
+        int n = nums.length;
+        int i=0;
+        int j=n-1;
+
+        while(i<j){
+            boolean left = (nums[i] % 2 == 0) ? true : false; // true -> even
+            boolean right = (nums[j] % 2 == 0) ? true : false;
+
+            if(left == true){
+                if(right == true){
+                    i++;
+                }
+                else {
+                    i++;
+                    j--;
+                }
+            }
+            else {
+                if(right == true){
+                    //swap
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                    i++;
+                    j--; 
+                }
+                else {
+                    j--;
+                }
+            }
+
+        }
+
+        return nums;
+        
+    }
+}
 ```
 
 ### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
+- **Time Complexity (TC):** `O(N)`
+- **Space Complexity (SC):** `O(1)`
 
 ---
-
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->
