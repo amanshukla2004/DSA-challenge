@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T18:20:28.161Z",
+  "generatedAt": "2026-11-20T18:29:09.174Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -10,20 +10,20 @@
     "revisionDays": 10,
     "concepts": 8,
     "algos": 150,
-    "repoSolved": 22,
-    "repoNotes": 22,
+    "repoSolved": 24,
+    "repoNotes": 24,
     "daysCompleted": 3,
     "weeksCompleted": 0
   },
   "potd": {
-    "date": "2026-11-19",
-    "title": "Minimum Score by Changing Two Elements",
-    "url": "https://leetcode.com/problems/minimum-score-by-changing-two-elements/",
-    "diff": "M",
-    "diffLabel": "Medium",
+    "date": "2026-11-20",
+    "title": "Maximize Consecutive Elements in an Array After Modification",
+    "url": "https://leetcode.com/problems/maximize-consecutive-elements-in-an-array-after-modification/",
+    "diff": "H",
+    "diffLabel": "Hard",
     "tags": [
       "Array",
-      "Greedy",
+      "Dynamic Programming",
       "Sorting"
     ]
   },
@@ -2500,6 +2500,15 @@
     }
   ],
   "activityByDate": {
+    "2026-11-20": {
+      "questions": [
+        "4::Range-Sum-Query-Immutable",
+        "4::Shuffle-the-Array",
+        "4::Sum-of-All-Odd-Length-Subarrays"
+      ],
+      "concepts": [],
+      "trackerUpdated": false
+    },
     "2026-11-19": {
       "questions": [
         "4::Max-Consecutive-Ones",
@@ -2995,6 +3004,8 @@
       "3::Build-Array-from-Permutation",
       "3::Third-Maximum-Number",
       "3::Valid-Mountain-Array",
+      "4::Sum-of-All-Odd-Length-Subarrays",
+      "4::Range-Sum-Query-Immutable",
       "4::Shuffle-the-Array",
       "4::Max-Consecutive-Ones",
       "4::Sort-Array-By-Parity"
@@ -3006,7 +3017,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 22,
+      "solvedCount": 24,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -3622,7 +3633,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-004_Arrays",
-          "solvedCount": 3,
+          "solvedCount": 5,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -3676,15 +3687,15 @@
                 }
               ],
               "path": "Week-01/Day-004_Arrays/Sum-of-All-Odd-Length-Subarrays",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
-                "optimised": false
+                "bruteforce": true,
+                "better": true,
+                "optimised": true
               },
-              "solvedAt": null,
-              "lastUpdated": "2026-11-18"
+              "solvedAt": "2026-11-18",
+              "lastUpdated": "2026-11-20"
             },
             {
               "id": "4::Range-Sum-Query-Immutable",
@@ -3706,15 +3717,15 @@
                 }
               ],
               "path": "Week-01/Day-004_Arrays/Range-Sum-Query-Immutable",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
-                "better": false,
+                "bruteforce": true,
+                "better": true,
                 "optimised": false
               },
-              "solvedAt": null,
-              "lastUpdated": "2026-11-18"
+              "solvedAt": "2026-11-18",
+              "lastUpdated": "2026-11-20"
             },
             {
               "id": "4::Shuffle-the-Array",
@@ -3744,7 +3755,7 @@
                 "optimised": false
               },
               "solvedAt": "2026-11-18",
-              "lastUpdated": "2026-11-19"
+              "lastUpdated": "2026-11-20"
             },
             {
               "id": "4::Max-Consecutive-Ones",
