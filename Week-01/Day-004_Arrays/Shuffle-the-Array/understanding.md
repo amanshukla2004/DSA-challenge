@@ -66,13 +66,38 @@ class Solution {
 ---
 
 ## ⚡ Approach 2: In-place (imp)
+## In-Place Encoding (Value Packing) Trick
 
 ### Intuition
 - <!-- How we improve on the brute force bottleneck -->
 
 ### Code
+
 ```java
 // Better solution
+//# In-Place Encoding (Value Packing) Trick
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int M = 10000; // > 1000 (max value)
+
+        // encode: low part = left value, high part = right value
+        for (int i = n; i < 2 * n; i++) {
+            int x = nums[i - n];   // left half value
+            int y = nums[i];       // right half value
+            nums[i] = x + y * M;
+        }
+
+        // decode
+        int idx = 0;
+        for (int i = n; i < 2 * n; i++) {
+            nums[idx]     = nums[i] % M;  // x
+            nums[idx + 1] = nums[i] / M;  // y
+            idx += 2;
+        }
+        return nums;
+    }
+}
 ```
 
 ### Complexity

@@ -2,7 +2,7 @@
 
 - **LeetCode Number:** TBD
 - **Difficulty:** Easy
-- **Topic:** Arrays *(Week 1 · Day 4)*
+- **Topic:** Arrays, prefix sum *(Week 1 · Day 4)*
 - **URL:** [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
@@ -38,6 +38,22 @@
 ### Code
 ```java
 // Brute Force solution
+class NumArray {
+
+    int[] arr;
+
+    public NumArray(int[] nums) {
+        arr = nums;
+    }
+    
+    public int sumRange(int left, int right) {
+        int sum = 0;
+        for(int i=left; i<=right; i++){
+            sum += arr[i];
+        }
+        return sum;
+    }
+}
 ```
 
 ### Complexity
@@ -46,7 +62,7 @@
 
 ---
 
-## ⚡ Approach 2: Better
+## ⚡ Approach 2: Better : PreFix SUM
 
 ### Intuition
 - <!-- How we improve on the brute force bottleneck -->
@@ -54,6 +70,25 @@
 ### Code
 ```java
 // Better solution
+// prefix sum
+class NumArray {
+
+    int[] arr;
+
+    public NumArray(int[] nums) {
+        arr = nums;
+
+        for(int i=1; i<arr.length; i++){
+            arr[i] = arr[i] + arr[i-1];
+        }
+    }
+    
+    public int sumRange(int left, int right) {
+        if(left == 0) return arr[right];
+        
+        return arr[right] - arr[left-1];
+    }
+}
 ```
 
 ### Complexity
@@ -61,22 +96,3 @@
 - **Space Complexity (SC):** `O(...)`
 
 ---
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->
