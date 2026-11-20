@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T17:13:18.913Z",
+  "generatedAt": "2026-11-19T18:20:28.161Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -10,19 +10,21 @@
     "revisionDays": 10,
     "concepts": 8,
     "algos": 150,
-    "repoSolved": 19,
-    "repoNotes": 19,
+    "repoSolved": 22,
+    "repoNotes": 22,
     "daysCompleted": 3,
     "weeksCompleted": 0
   },
   "potd": {
-    "date": "2026-11-18",
-    "title": "Minimum Number of Changes to Make Binary String Beautiful",
-    "url": "https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful/",
+    "date": "2026-11-19",
+    "title": "Minimum Score by Changing Two Elements",
+    "url": "https://leetcode.com/problems/minimum-score-by-changing-two-elements/",
     "diff": "M",
     "diffLabel": "Medium",
     "tags": [
-      "String"
+      "Array",
+      "Greedy",
+      "Sorting"
     ]
   },
   "concepts": [
@@ -70,10 +72,10 @@
     },
     {
       "id": "concept::Concepts/String.md",
-      "title": "STRINGS METHODS :",
+      "title": "Java Strings for DSA: Everything You Actually Use",
       "group": "General",
       "path": "Concepts/String.md",
-      "lastUpdated": "2026-11-18"
+      "lastUpdated": "2026-11-19"
     },
     {
       "id": "concept::Concepts/sweepLine.md",
@@ -2498,6 +2500,17 @@
     }
   ],
   "activityByDate": {
+    "2026-11-19": {
+      "questions": [
+        "4::Max-Consecutive-Ones",
+        "4::Shuffle-the-Array",
+        "4::Sort-Array-By-Parity"
+      ],
+      "concepts": [
+        "concept::Concepts/String.md"
+      ],
+      "trackerUpdated": false
+    },
     "2026-11-18": {
       "questions": [
         "3::Build-Array-from-Permutation",
@@ -2981,7 +2994,10 @@
       "3::Find-Winner-on-a-Tic-Tac-Toe-Game",
       "3::Build-Array-from-Permutation",
       "3::Third-Maximum-Number",
-      "3::Valid-Mountain-Array"
+      "3::Valid-Mountain-Array",
+      "4::Shuffle-the-Array",
+      "4::Max-Consecutive-Ones",
+      "4::Sort-Array-By-Parity"
     ]
   },
   "weeks": [
@@ -2990,7 +3006,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 19,
+      "solvedCount": 22,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -3606,7 +3622,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-004_Arrays",
-          "solvedCount": 0,
+          "solvedCount": 3,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -3707,7 +3723,7 @@
               "type": "dsa",
               "slug": "shuffle-the-array",
               "url": "https://leetcode.com/problems/shuffle-the-array/",
-              "lcNumber": null,
+              "lcNumber": "1470",
               "needRevision": false,
               "hasJava": false,
               "javaFiles": [],
@@ -3720,15 +3736,15 @@
                 }
               ],
               "path": "Week-01/Day-004_Arrays/Shuffle-the-Array",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
-              "lastUpdated": "2026-11-18"
+              "solvedAt": "2026-11-18",
+              "lastUpdated": "2026-11-19"
             },
             {
               "id": "4::Max-Consecutive-Ones",
@@ -3737,7 +3753,7 @@
               "type": "dsa",
               "slug": "max-consecutive-ones",
               "url": "https://leetcode.com/problems/max-consecutive-ones/",
-              "lcNumber": null,
+              "lcNumber": "485",
               "needRevision": false,
               "hasJava": false,
               "javaFiles": [],
@@ -3750,15 +3766,15 @@
                 }
               ],
               "path": "Week-01/Day-004_Arrays/Max-Consecutive-Ones",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
-              "lastUpdated": "2026-11-18"
+              "solvedAt": "2026-11-18",
+              "lastUpdated": "2026-11-19"
             },
             {
               "id": "4::Sort-Array-By-Parity",
@@ -3780,15 +3796,15 @@
                 }
               ],
               "path": "Week-01/Day-004_Arrays/Sort-Array-By-Parity",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
-              "lastUpdated": "2026-11-18"
+              "solvedAt": "2026-11-18",
+              "lastUpdated": "2026-11-19"
             }
           ]
         },
