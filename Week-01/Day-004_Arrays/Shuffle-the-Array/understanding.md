@@ -6,7 +6,7 @@
 - **URL:** [Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

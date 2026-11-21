@@ -6,7 +6,7 @@
 - **URL:** [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

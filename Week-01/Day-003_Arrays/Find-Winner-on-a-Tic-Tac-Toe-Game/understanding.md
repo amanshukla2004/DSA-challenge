@@ -6,7 +6,7 @@
 - **URL:** [Find Winner on a Tic Tac Toe Game](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 ---
  
 ## 📋 Question

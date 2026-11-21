@@ -8,6 +8,19 @@ const CONCEPTS_DIR = path.join(ROOT_DIR, 'Concepts');
 const ALGOS_DIR = path.join(ROOT_DIR, '150 dsa algos');
 const TRACKER_FILE = path.join(ROOT_DIR, 'daily-tracker.json');
 const INITIAL_SCAFFOLD_COMMIT = '6fefd623855cce9b7554ac13123ce156de254069';
+const MASS_MD_MIGRATION_COMMIT = '6b48d9469206c754a8fa79db2938ef0c27abaf23';
+const MIGRATION_COMMITS = new Set([
+  INITIAL_SCAFFOLD_COMMIT,
+  MASS_MD_MIGRATION_COMMIT
+]);
+
+function getTodayIsoLocal() {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
 
 /**
  * Load dailyRoadmap array from daily_data.js without needing module.exports in daily_data.js.
@@ -80,6 +93,7 @@ function buildDsaUnderstandingTemplate(dayEntry, q) {
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
 - **Status:** Todo
+- **Date:** <!-- YYYY-MM-DD (auto-tracked from git commit date if empty) -->
 
 ---
 
@@ -520,7 +534,7 @@ function inspectQuestionFiles(qAbsPath, dayEntry, q, isDsa) {
       lcNumber = lcMatch[1];
     }
 
-    const dateMatch = actualMd.match(/^\s*[-*]\s*\*\*(?:Solved\s+Date|Date):\*\*\s*(\d{4}-\d{2}-\d{2})/im);
+    const dateMatch = actualMd.match(/^\s*[-*]\s*\*\*(?:Solved\s*Date|Date|Completed\s*Date|Solved):\*\*\s*`?(\d{4}-\d{2}-\d{2})`?/im);
     if (dateMatch) {
       explicitSolvedDate = dateMatch[1];
     }
@@ -606,7 +620,9 @@ function buildGitActivity(questionPathToId, conceptPathToId) {
       { cwd: ROOT_DIR, encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 }
     );
 
-    let current = null;
+    const commits = [];
+    let curCommit = null;
+
     for (const rawLine of out.split(/\r?\n/)) {
       const line = rawLine.trim();
       if (!line) continue;
@@ -615,46 +631,69 @@ function buildGitActivity(questionPathToId, conceptPathToId) {
         const payload = line.slice('__COMMIT__'.length);
         const [hash, date, ...subjectParts] = payload.split('|');
         const subject = subjectParts.join('|');
-        const isScaffold = hash === INITIAL_SCAFFOLD_COMMIT;
-        const isAutoIndex =
-          subject.includes('[skip ci]') ||
-          subject.includes('[skip actions]') ||
-          subject.startsWith('chore(index):');
-        current = (!isScaffold && !isAutoIndex && date) ? { date, skip: false } : { date, skip: true };
+        curCommit = { hash, date, subject, files: [] };
+        commits.push(curCommit);
+      } else if (curCommit) {
+        curCommit.files.push(line.replace(/\\/g, '/'));
+      }
+    }
+
+    for (const commit of commits) {
+      const isExplicitSkip =
+        MIGRATION_COMMITS.has(commit.hash) ||
+        commit.subject.includes('[skip ci]') ||
+        commit.subject.includes('[skip actions]') ||
+        commit.subject.startsWith('chore(index):') ||
+        commit.subject.toLowerCase().includes('migrate roadmap questions');
+
+      const touchedQuestionFolders = new Set();
+      for (const filePath of commit.files) {
+        const folderPath = filePath.split('/').slice(0, -1).join('/');
+        if (questionPathToId.has(folderPath)) {
+          touchedQuestionFolders.add(folderPath);
+        }
+      }
+
+      const isMassMigration = touchedQuestionFolders.size > 20;
+      if (isExplicitSkip || isMassMigration || !commit.date) {
         continue;
       }
 
-      if (!current || current.skip) continue;
-      const filePath = line.replace(/\\/g, '/');
+      for (const filePath of commit.files) {
+        if (!lastUpdatedByPath[filePath] || commit.date > lastUpdatedByPath[filePath]) {
+          lastUpdatedByPath[filePath] = commit.date;
+        }
 
-      if (!lastUpdatedByPath[filePath] || current.date > lastUpdatedByPath[filePath]) {
-        lastUpdatedByPath[filePath] = current.date;
-      }
+        const dayEntry = activityByDate[commit.date] || {
+          questions: [],
+          concepts: [],
+          trackerUpdated: false
+        };
 
-      const dayEntry = activityByDate[current.date] || {
-        questions: [],
-        concepts: [],
-        trackerUpdated: false
-      };
+        const folderPath = filePath.split('/').slice(0, -1).join('/');
+        if (questionPathToId.has(folderPath)) {
+          const qId = questionPathToId.get(folderPath);
+          if (!dayEntry.questions.includes(qId)) dayEntry.questions.push(qId);
 
-      const folderPath = filePath.split('/').slice(0, -1).join('/');
-      if (questionPathToId.has(folderPath)) {
-        const qId = questionPathToId.get(folderPath);
-        if (!dayEntry.questions.includes(qId)) dayEntry.questions.push(qId);
+          const prev = questionCommitDates.get(qId) || {
+            earliest: commit.date,
+            latest: commit.date,
+            commits: []
+          };
+          if (commit.date < prev.earliest) prev.earliest = commit.date;
+          if (commit.date > prev.latest) prev.latest = commit.date;
+          if (!prev.commits.includes(commit.date)) prev.commits.push(commit.date);
+          questionCommitDates.set(qId, prev);
+        } else if (conceptPathToId.has(filePath)) {
+          const cId = conceptPathToId.get(filePath);
+          if (!dayEntry.concepts.includes(cId)) dayEntry.concepts.push(cId);
+        } else if (filePath === 'daily-tracker.json') {
+          dayEntry.trackerUpdated = true;
+        }
 
-        const prev = questionCommitDates.get(qId) || { earliest: current.date, latest: current.date };
-        if (current.date < prev.earliest) prev.earliest = current.date;
-        if (current.date > prev.latest) prev.latest = current.date;
-        questionCommitDates.set(qId, prev);
-      } else if (conceptPathToId.has(filePath)) {
-        const cId = conceptPathToId.get(filePath);
-        if (!dayEntry.concepts.includes(cId)) dayEntry.concepts.push(cId);
-      } else if (filePath === 'daily-tracker.json') {
-        dayEntry.trackerUpdated = true;
-      }
-
-      if (dayEntry.questions.length || dayEntry.concepts.length || dayEntry.trackerUpdated) {
-        activityByDate[current.date] = dayEntry;
+        if (dayEntry.questions.length || dayEntry.concepts.length || dayEntry.trackerUpdated) {
+          activityByDate[commit.date] = dayEntry;
+        }
       }
     }
   } catch (_) {
@@ -1034,6 +1073,7 @@ async function main() {
     c.lastUpdated = lastUpdatedByPath[c.path] || null;
   }
 
+  const todayIso = getTodayIsoLocal();
   const solvedByDate = {};
   const weeksIndex = Array.from(weeksMap.values()).sort((a, b) => a.week - b.week);
   for (const wk of weeksIndex) {
@@ -1046,7 +1086,7 @@ async function main() {
         q.lastUpdated = dates ? dates.latest : null;
         if (q.status === 'solved') {
           if (!q.solvedAt) {
-            q.solvedAt = dates ? dates.earliest : null;
+            q.solvedAt = dates ? dates.earliest : todayIso;
           }
           if (q.solvedAt) {
             if (!solvedByDate[q.solvedAt]) solvedByDate[q.solvedAt] = [];

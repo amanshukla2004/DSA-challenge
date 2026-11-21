@@ -6,7 +6,7 @@
 - **URL:** [Third Maximum Number](https://leetcode.com/problems/third-maximum-number/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

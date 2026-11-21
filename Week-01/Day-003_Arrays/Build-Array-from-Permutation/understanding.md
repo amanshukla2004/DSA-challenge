@@ -6,7 +6,7 @@
 - **URL:** [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)
 - **YouTube:** [YT ](https://www.youtube.com/watch?v=0Q7m9VFCrUI)
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

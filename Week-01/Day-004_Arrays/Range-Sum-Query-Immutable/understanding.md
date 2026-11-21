@@ -6,7 +6,7 @@
 - **URL:** [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

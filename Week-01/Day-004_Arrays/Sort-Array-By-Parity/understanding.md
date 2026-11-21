@@ -6,7 +6,7 @@
 - **URL:** [Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

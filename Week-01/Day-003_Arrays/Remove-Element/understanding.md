@@ -6,7 +6,7 @@
 - **URL:** [Remove Element](https://leetcode.com/problems/remove-element/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** Yes
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

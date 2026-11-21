@@ -6,7 +6,7 @@
 - **URL:** [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 

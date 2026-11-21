@@ -6,7 +6,7 @@
 - **URL:** [Valid Mountain Array](https://leetcode.com/problems/valid-mountain-array/)
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
-- **Status:** Todo
+- **Status:** Solved
 
 ---
 
