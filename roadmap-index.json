@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T13:37:35.315Z",
+  "generatedAt": "2026-11-21T13:46:54.570Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -11,7 +11,7 @@
     "concepts": 8,
     "algos": 150,
     "repoSolved": 24,
-    "repoNotes": 416,
+    "repoNotes": 24,
     "daysCompleted": 3,
     "weeksCompleted": 0
   },
@@ -3268,8 +3268,8 @@
                 }
               ],
               "path": "Week-01/Day-004_Arrays/Find-Common-Characters",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3460,8 +3460,8 @@
                 }
               ],
               "path": "Week-01/Day-005_Linked-List/Reverse-Linked-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3490,8 +3490,8 @@
                 }
               ],
               "path": "Week-01/Day-005_Linked-List/Remove-Linked-List-Elements",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3520,8 +3520,8 @@
                 }
               ],
               "path": "Week-01/Day-005_Linked-List/Remove-Duplicates-from-Sorted-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3550,8 +3550,8 @@
                 }
               ],
               "path": "Week-01/Day-005_Linked-List/Merge-Two-Sorted-Lists",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3580,8 +3580,8 @@
                 }
               ],
               "path": "Week-01/Day-005_Linked-List/Middle-of-the-Linked-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3610,8 +3610,8 @@
                 }
               ],
               "path": "Week-01/Day-005_Linked-List/Palindrome-Linked-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3652,8 +3652,8 @@
                 }
               ],
               "path": "Week-01/Day-006_Linked-List-and-Stack/Intersection-of-Two-Linked-Lists",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3682,8 +3682,8 @@
                 }
               ],
               "path": "Week-01/Day-006_Linked-List-and-Stack/Linked-List-Cycle",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3712,8 +3712,8 @@
                 }
               ],
               "path": "Week-01/Day-006_Linked-List-and-Stack/Valid-Parentheses",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3742,8 +3742,8 @@
                 }
               ],
               "path": "Week-01/Day-006_Linked-List-and-Stack/Implement-Queue-using-Stacks",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3772,8 +3772,8 @@
                 }
               ],
               "path": "Week-01/Day-006_Linked-List-and-Stack/Backspace-String-Compare",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3802,8 +3802,8 @@
                 }
               ],
               "path": "Week-01/Day-006_Linked-List-and-Stack/Next-Greater-Element-I",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3927,8 +3927,8 @@
                 }
               ],
               "path": "Week-02/Day-008_Binary-Trees/Binary-Tree-Preorder-Traversal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3957,8 +3957,8 @@
                 }
               ],
               "path": "Week-02/Day-008_Binary-Trees/Binary-Tree-Inorder-Traversal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -3987,8 +3987,8 @@
                 }
               ],
               "path": "Week-02/Day-008_Binary-Trees/Binary-Tree-Postorder-Traversal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4017,8 +4017,8 @@
                 }
               ],
               "path": "Week-02/Day-008_Binary-Trees/Maximum-Depth-of-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4047,8 +4047,8 @@
                 }
               ],
               "path": "Week-02/Day-008_Binary-Trees/Invert-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4077,8 +4077,8 @@
                 }
               ],
               "path": "Week-02/Day-008_Binary-Trees/Symmetric-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4119,8 +4119,8 @@
                 }
               ],
               "path": "Week-02/Day-009_Binary-Trees/Subtree-of-Another-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4149,8 +4149,8 @@
                 }
               ],
               "path": "Week-02/Day-009_Binary-Trees/Diameter-of-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4179,8 +4179,8 @@
                 }
               ],
               "path": "Week-02/Day-009_Binary-Trees/Balanced-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4209,8 +4209,8 @@
                 }
               ],
               "path": "Week-02/Day-009_Binary-Trees/Merge-Two-Binary-Trees",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4239,8 +4239,8 @@
                 }
               ],
               "path": "Week-02/Day-009_Binary-Trees/Same-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4281,8 +4281,8 @@
                 }
               ],
               "path": "Week-02/Day-010_Binary-Trees-and-BST/Path-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4311,8 +4311,8 @@
                 }
               ],
               "path": "Week-02/Day-010_Binary-Trees-and-BST/Binary-Tree-Paths",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4341,8 +4341,8 @@
                 }
               ],
               "path": "Week-02/Day-010_Binary-Trees-and-BST/Cousins-in-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4371,8 +4371,8 @@
                 }
               ],
               "path": "Week-02/Day-010_Binary-Trees-and-BST/Convert-Sorted-Array-to-Binary-Search-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4401,8 +4401,8 @@
                 }
               ],
               "path": "Week-02/Day-010_Binary-Trees-and-BST/Range-Sum-of-BST",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4443,8 +4443,8 @@
                 }
               ],
               "path": "Week-02/Day-011_Strings/Valid-Palindrome",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4473,8 +4473,8 @@
                 }
               ],
               "path": "Week-02/Day-011_Strings/Valid-Palindrome-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4503,8 +4503,8 @@
                 }
               ],
               "path": "Week-02/Day-011_Strings/Longest-Palindrome",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4533,8 +4533,8 @@
                 }
               ],
               "path": "Week-02/Day-011_Strings/Longest-Common-Prefix",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4563,8 +4563,8 @@
                 }
               ],
               "path": "Week-02/Day-011_Strings/Valid-Anagram",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4593,8 +4593,8 @@
                 }
               ],
               "path": "Week-02/Day-011_Strings/First-Unique-Character-in-a-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4635,8 +4635,8 @@
                 }
               ],
               "path": "Week-02/Day-012_Strings/Is-Subsequence",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4665,8 +4665,8 @@
                 }
               ],
               "path": "Week-02/Day-012_Strings/Reverse-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4695,8 +4695,8 @@
                 }
               ],
               "path": "Week-02/Day-012_Strings/Reverse-String-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4725,8 +4725,8 @@
                 }
               ],
               "path": "Week-02/Day-012_Strings/Reverse-Words-in-a-String-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4755,8 +4755,8 @@
                 }
               ],
               "path": "Week-02/Day-012_Strings/Isomorphic-Strings",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4785,8 +4785,8 @@
                 }
               ],
               "path": "Week-02/Day-012_Strings/Remove-All-Adjacent-Duplicates-In-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4827,8 +4827,8 @@
                 }
               ],
               "path": "Week-02/Day-013_Strings/Defanging-an-IP-Address",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4857,8 +4857,8 @@
                 }
               ],
               "path": "Week-02/Day-013_Strings/Reverse-Only-Letters",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4887,8 +4887,8 @@
                 }
               ],
               "path": "Week-02/Day-013_Strings/Reverse-Vowels-of-a-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4917,8 +4917,8 @@
                 }
               ],
               "path": "Week-02/Day-013_Strings/Length-of-Last-Word",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4947,8 +4947,8 @@
                 }
               ],
               "path": "Week-02/Day-013_Strings/Add-Strings",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -4977,8 +4977,8 @@
                 }
               ],
               "path": "Week-02/Day-013_Strings/Fizz-Buzz",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5113,8 +5113,8 @@
                 }
               ],
               "path": "Week-03/Day-016_Math/Roman-to-Integer",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5143,8 +5143,8 @@
                 }
               ],
               "path": "Week-03/Day-016_Math/Palindrome-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5173,8 +5173,8 @@
                 }
               ],
               "path": "Week-03/Day-016_Math/Happy-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5203,8 +5203,8 @@
                 }
               ],
               "path": "Week-03/Day-016_Math/Power-of-Two",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5233,8 +5233,8 @@
                 }
               ],
               "path": "Week-03/Day-016_Math/Sqrtx",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5263,8 +5263,8 @@
                 }
               ],
               "path": "Week-03/Day-016_Math/Plus-One",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5305,8 +5305,8 @@
                 }
               ],
               "path": "Week-03/Day-017_Math-and-Geometry/Count-Odd-Numbers-in-an-Interval-Range",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5335,8 +5335,8 @@
                 }
               ],
               "path": "Week-03/Day-017_Math-and-Geometry/Rectangle-Overlap",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5365,8 +5365,8 @@
                 }
               ],
               "path": "Week-03/Day-017_Math-and-Geometry/Add-Digits",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5395,8 +5395,8 @@
                 }
               ],
               "path": "Week-03/Day-017_Math-and-Geometry/Maximum-Product-of-Three-Numbers",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5425,8 +5425,8 @@
                 }
               ],
               "path": "Week-03/Day-017_Math-and-Geometry/Excel-Sheet-Column-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5467,8 +5467,8 @@
                 }
               ],
               "path": "Week-03/Day-018_Bit-Manipulation/Add-Binary",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5497,8 +5497,8 @@
                 }
               ],
               "path": "Week-03/Day-018_Bit-Manipulation/Counting-Bits",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5527,8 +5527,8 @@
                 }
               ],
               "path": "Week-03/Day-018_Bit-Manipulation/Number-of-1-Bits",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5557,8 +5557,8 @@
                 }
               ],
               "path": "Week-03/Day-018_Bit-Manipulation/Single-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5587,8 +5587,8 @@
                 }
               ],
               "path": "Week-03/Day-018_Bit-Manipulation/Missing-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5617,8 +5617,8 @@
                 }
               ],
               "path": "Week-03/Day-018_Bit-Manipulation/Reverse-Bits",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5647,8 +5647,8 @@
                 }
               ],
               "path": "Week-03/Day-018_Bit-Manipulation/Hamming-Distance",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5689,8 +5689,8 @@
                 }
               ],
               "path": "Week-03/Day-019_Binary-Search/Binary-Search",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5719,8 +5719,8 @@
                 }
               ],
               "path": "Week-03/Day-019_Binary-Search/Search-Insert-Position",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5749,8 +5749,8 @@
                 }
               ],
               "path": "Week-03/Day-019_Binary-Search/First-Bad-Version",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5779,8 +5779,8 @@
                 }
               ],
               "path": "Week-03/Day-019_Binary-Search/Valid-Perfect-Square",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5809,8 +5809,8 @@
                 }
               ],
               "path": "Week-03/Day-019_Binary-Search/Kth-Missing-Positive-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5839,8 +5839,8 @@
                 }
               ],
               "path": "Week-03/Day-019_Binary-Search/Kth-Largest-Element-in-a-Stream",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5881,8 +5881,8 @@
                 }
               ],
               "path": "Week-03/Day-020_Hashing-and-Hash-Table/Design-HashMap",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5911,8 +5911,8 @@
                 }
               ],
               "path": "Week-03/Day-020_Hashing-and-Hash-Table/Ransom-Note",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5941,8 +5941,8 @@
                 }
               ],
               "path": "Week-03/Day-020_Hashing-and-Hash-Table/Contains-Duplicate",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -5971,8 +5971,8 @@
                 }
               ],
               "path": "Week-03/Day-020_Hashing-and-Hash-Table/Contains-Duplicate-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6001,8 +6001,8 @@
                 }
               ],
               "path": "Week-03/Day-020_Hashing-and-Hash-Table/Jewels-and-Stones",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6031,8 +6031,8 @@
                 }
               ],
               "path": "Week-03/Day-020_Hashing-and-Hash-Table/Unique-Number-of-Occurrences",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6073,8 +6073,8 @@
                 }
               ],
               "path": "Week-03/Day-021_Hashing-and-Graphs-Intro/Word-Pattern",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6103,8 +6103,8 @@
                 }
               ],
               "path": "Week-03/Day-021_Hashing-and-Graphs-Intro/Number-of-Good-Pairs",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6133,8 +6133,8 @@
                 }
               ],
               "path": "Week-03/Day-021_Hashing-and-Graphs-Intro/Flood-Fill",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6163,8 +6163,8 @@
                 }
               ],
               "path": "Week-03/Day-021_Hashing-and-Graphs-Intro/Island-Perimeter",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6193,8 +6193,8 @@
                 }
               ],
               "path": "Week-03/Day-021_Hashing-and-Graphs-Intro/Find-if-Path-Exists-in-Graph",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6318,8 +6318,8 @@
                 }
               ],
               "path": "Week-04/Day-023_Dynamic-Programming-and-Greedy-Intro/Fibonacci-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6348,8 +6348,8 @@
                 }
               ],
               "path": "Week-04/Day-023_Dynamic-Programming-and-Greedy-Intro/Min-Cost-Climbing-Stairs",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6378,8 +6378,8 @@
                 }
               ],
               "path": "Week-04/Day-023_Dynamic-Programming-and-Greedy-Intro/Climbing-Stairs",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6408,8 +6408,8 @@
                 }
               ],
               "path": "Week-04/Day-023_Dynamic-Programming-and-Greedy-Intro/Pascals-Triangle",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6438,8 +6438,8 @@
                 }
               ],
               "path": "Week-04/Day-023_Dynamic-Programming-and-Greedy-Intro/Can-Place-Flowers",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6468,8 +6468,8 @@
                 }
               ],
               "path": "Week-04/Day-023_Dynamic-Programming-and-Greedy-Intro/Maximum-Units-on-a-Truck",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6510,8 +6510,8 @@
                 }
               ],
               "path": "Week-04/Day-024_Arrays-and-Two-Pointers/3Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6540,8 +6540,8 @@
                 }
               ],
               "path": "Week-04/Day-024_Arrays-and-Two-Pointers/3Sum-Closest",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6570,8 +6570,8 @@
                 }
               ],
               "path": "Week-04/Day-024_Arrays-and-Two-Pointers/Non-decreasing-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6600,8 +6600,8 @@
                 }
               ],
               "path": "Week-04/Day-024_Arrays-and-Two-Pointers/Product-of-Array-Except-Self",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6642,8 +6642,8 @@
                 }
               ],
               "path": "Week-04/Day-025_Intervals/Merge-Intervals",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6672,8 +6672,8 @@
                 }
               ],
               "path": "Week-04/Day-025_Intervals/Insert-Interval",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6702,8 +6702,8 @@
                 }
               ],
               "path": "Week-04/Day-025_Intervals/Non-overlapping-Intervals",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6732,8 +6732,8 @@
                 }
               ],
               "path": "Week-04/Day-025_Intervals/Interval-List-Intersections",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6774,8 +6774,8 @@
                 }
               ],
               "path": "Week-04/Day-026_Two-Pointers-and-Arrays/Container-With-Most-Water",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6804,8 +6804,8 @@
                 }
               ],
               "path": "Week-04/Day-026_Two-Pointers-and-Arrays/Sort-Colors",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6834,8 +6834,8 @@
                 }
               ],
               "path": "Week-04/Day-026_Two-Pointers-and-Arrays/Rotate-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6864,8 +6864,8 @@
                 }
               ],
               "path": "Week-04/Day-026_Two-Pointers-and-Arrays/Contiguous-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6906,8 +6906,8 @@
                 }
               ],
               "path": "Week-04/Day-027_Prefix-Sum-and-Sliding-Window/Subarray-Sum-Equals-K",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6936,8 +6936,8 @@
                 }
               ],
               "path": "Week-04/Day-027_Prefix-Sum-and-Sliding-Window/Shortest-Unsorted-Continuous-Subarray",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6966,8 +6966,8 @@
                 }
               ],
               "path": "Week-04/Day-027_Prefix-Sum-and-Sliding-Window/Maximum-Points-You-Can-Obtain-from-Cards",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -6996,8 +6996,8 @@
                 }
               ],
               "path": "Week-04/Day-027_Prefix-Sum-and-Sliding-Window/Max-Consecutive-Ones-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7038,8 +7038,8 @@
                 }
               ],
               "path": "Week-04/Day-028_Sliding-Window-and-Arrays/Permutation-in-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7068,8 +7068,8 @@
                 }
               ],
               "path": "Week-04/Day-028_Sliding-Window-and-Arrays/Wiggle-Sort-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7098,8 +7098,8 @@
                 }
               ],
               "path": "Week-04/Day-028_Sliding-Window-and-Arrays/Max-Chunks-To-Make-Sorted",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7128,8 +7128,8 @@
                 }
               ],
               "path": "Week-04/Day-028_Sliding-Window-and-Arrays/H-Index",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7264,8 +7264,8 @@
                 }
               ],
               "path": "Week-05/Day-031_Linked-List/Remove-Nth-Node-From-End-of-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7294,8 +7294,8 @@
                 }
               ],
               "path": "Week-05/Day-031_Linked-List/Delete-Node-in-a-Linked-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7324,8 +7324,8 @@
                 }
               ],
               "path": "Week-05/Day-031_Linked-List/Remove-Duplicates-from-Sorted-List-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7354,8 +7354,8 @@
                 }
               ],
               "path": "Week-05/Day-031_Linked-List/Next-Greater-Node-In-Linked-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7396,8 +7396,8 @@
                 }
               ],
               "path": "Week-05/Day-032_Linked-List/Add-Two-Numbers",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7426,8 +7426,8 @@
                 }
               ],
               "path": "Week-05/Day-032_Linked-List/Add-Two-Numbers-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7456,8 +7456,8 @@
                 }
               ],
               "path": "Week-05/Day-032_Linked-List/Copy-List-with-Random-Pointer",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7486,8 +7486,8 @@
                 }
               ],
               "path": "Week-05/Day-032_Linked-List/Reverse-Linked-List-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7528,8 +7528,8 @@
                 }
               ],
               "path": "Week-05/Day-033_Linked-List/Swap-Nodes-in-Pairs",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7558,8 +7558,8 @@
                 }
               ],
               "path": "Week-05/Day-033_Linked-List/Odd-Even-Linked-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7588,8 +7588,8 @@
                 }
               ],
               "path": "Week-05/Day-033_Linked-List/Partition-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7630,8 +7630,8 @@
                 }
               ],
               "path": "Week-05/Day-034_Linked-List/Sort-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7660,8 +7660,8 @@
                 }
               ],
               "path": "Week-05/Day-034_Linked-List/Reorder-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7690,8 +7690,8 @@
                 }
               ],
               "path": "Week-05/Day-034_Linked-List/Rotate-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7732,8 +7732,8 @@
                 }
               ],
               "path": "Week-05/Day-035_Stack/Evaluate-Reverse-Polish-Notation",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7762,8 +7762,8 @@
                 }
               ],
               "path": "Week-05/Day-035_Stack/Min-Stack",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7792,8 +7792,8 @@
                 }
               ],
               "path": "Week-05/Day-035_Stack/Daily-Temperatures",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7822,8 +7822,8 @@
                 }
               ],
               "path": "Week-05/Day-035_Stack/Decode-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7875,8 +7875,8 @@
                 }
               ],
               "path": "Week-06/Day-036_Stack-Monotonic/Next-Greater-Element-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7905,8 +7905,8 @@
                 }
               ],
               "path": "Week-06/Day-036_Stack-Monotonic/Next-Greater-Element-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7935,8 +7935,8 @@
                 }
               ],
               "path": "Week-06/Day-036_Stack-Monotonic/Minimum-Remove-to-Make-Valid-Parentheses",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -7965,8 +7965,8 @@
                 }
               ],
               "path": "Week-06/Day-036_Stack-Monotonic/132-Pattern",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8079,8 +8079,8 @@
                 }
               ],
               "path": "Week-06/Day-038_Stack/Asteroid-Collision",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8109,8 +8109,8 @@
                 }
               ],
               "path": "Week-06/Day-038_Stack/Basic-Calculator-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8139,8 +8139,8 @@
                 }
               ],
               "path": "Week-06/Day-038_Stack/Remove-K-Digits",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8169,8 +8169,8 @@
                 }
               ],
               "path": "Week-06/Day-038_Stack/Remove-Duplicate-Letters",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8211,8 +8211,8 @@
                 }
               ],
               "path": "Week-06/Day-039_Stack/Remove-All-Adjacent-Duplicates-in-String-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8241,8 +8241,8 @@
                 }
               ],
               "path": "Week-06/Day-039_Stack/Flatten-Nested-List-Iterator",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8271,8 +8271,8 @@
                 }
               ],
               "path": "Week-06/Day-039_Stack/Simplify-Path",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8301,8 +8301,8 @@
                 }
               ],
               "path": "Week-06/Day-039_Stack/Longest-Absolute-File-Path",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8343,8 +8343,8 @@
                 }
               ],
               "path": "Week-06/Day-040_BFS-and-Cache/Open-the-Lock",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8373,8 +8373,8 @@
                 }
               ],
               "path": "Week-06/Day-040_BFS-and-Cache/Shortest-Bridge",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8403,8 +8403,8 @@
                 }
               ],
               "path": "Week-06/Day-040_BFS-and-Cache/LRU-Cache",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8445,8 +8445,8 @@
                 }
               ],
               "path": "Week-06/Day-041_Strings-and-Window/Longest-Substring-Without-Repeating-Characters",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8475,8 +8475,8 @@
                 }
               ],
               "path": "Week-06/Day-041_Strings-and-Window/String-to-Integer-atoi",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8505,8 +8505,8 @@
                 }
               ],
               "path": "Week-06/Day-041_Strings-and-Window/Find-All-Anagrams-in-a-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8535,8 +8535,8 @@
                 }
               ],
               "path": "Week-06/Day-041_Strings-and-Window/Group-Anagrams",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8565,8 +8565,8 @@
                 }
               ],
               "path": "Week-06/Day-041_Strings-and-Window/Pancake-Sorting",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8607,8 +8607,8 @@
                 }
               ],
               "path": "Week-06/Day-042_Strings/Longest-Repeating-Character-Replacement",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8637,8 +8637,8 @@
                 }
               ],
               "path": "Week-06/Day-042_Strings/Largest-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8667,8 +8667,8 @@
                 }
               ],
               "path": "Week-06/Day-042_Strings/Number-of-Matching-Subsequences",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8697,8 +8697,8 @@
                 }
               ],
               "path": "Week-06/Day-042_Strings/Find-the-Index-of-the-First-Occurrence-in-a-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8750,8 +8750,8 @@
                 }
               ],
               "path": "Week-07/Day-043_Strings/Longest-Substring-with-At-Least-K-Repeating-Characters",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8780,8 +8780,8 @@
                 }
               ],
               "path": "Week-07/Day-043_Strings/Zigzag-Conversion",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8810,8 +8810,8 @@
                 }
               ],
               "path": "Week-07/Day-043_Strings/Reverse-Words-in-a-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8840,8 +8840,8 @@
                 }
               ],
               "path": "Week-07/Day-043_Strings/String-Compression",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8870,8 +8870,8 @@
                 }
               ],
               "path": "Week-07/Day-043_Strings/Count-and-Say",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -8995,8 +8995,8 @@
                 }
               ],
               "path": "Week-07/Day-046_Trees-Level-Order-and-Ancestor/Binary-Tree-Level-Order-Traversal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9025,8 +9025,8 @@
                 }
               ],
               "path": "Week-07/Day-046_Trees-Level-Order-and-Ancestor/Binary-Tree-Zigzag-Level-Order-Traversal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9055,8 +9055,8 @@
                 }
               ],
               "path": "Week-07/Day-046_Trees-Level-Order-and-Ancestor/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9085,8 +9085,8 @@
                 }
               ],
               "path": "Week-07/Day-046_Trees-Level-Order-and-Ancestor/Lowest-Common-Ancestor-of-a-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9127,8 +9127,8 @@
                 }
               ],
               "path": "Week-07/Day-047_Trees-Views-and-Pointers/Binary-Tree-Right-Side-View",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9157,8 +9157,8 @@
                 }
               ],
               "path": "Week-07/Day-047_Trees-Views-and-Pointers/Populating-Next-Right-Pointers-in-Each-Node",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9187,8 +9187,8 @@
                 }
               ],
               "path": "Week-07/Day-047_Trees-Views-and-Pointers/Populating-Next-Right-Pointers-in-Each-Node-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9217,8 +9217,8 @@
                 }
               ],
               "path": "Week-07/Day-047_Trees-Views-and-Pointers/Maximum-Width-of-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9259,8 +9259,8 @@
                 }
               ],
               "path": "Week-07/Day-048_Trees-Path-and-Distance/Path-Sum-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9289,8 +9289,8 @@
                 }
               ],
               "path": "Week-07/Day-048_Trees-Path-and-Distance/Path-Sum-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9319,8 +9319,8 @@
                 }
               ],
               "path": "Week-07/Day-048_Trees-Path-and-Distance/All-Nodes-Distance-K-in-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9349,8 +9349,8 @@
                 }
               ],
               "path": "Week-07/Day-048_Trees-Path-and-Distance/Flatten-Binary-Tree-to-Linked-List",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9391,8 +9391,8 @@
                 }
               ],
               "path": "Week-07/Day-049_Trees-Counting-and-Coins/Count-Complete-Tree-Nodes",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9421,8 +9421,8 @@
                 }
               ],
               "path": "Week-07/Day-049_Trees-Counting-and-Coins/Sum-Root-to-Leaf-Numbers",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9451,8 +9451,8 @@
                 }
               ],
               "path": "Week-07/Day-049_Trees-Counting-and-Coins/Find-Bottom-Left-Tree-Value",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9481,8 +9481,8 @@
                 }
               ],
               "path": "Week-07/Day-049_Trees-Counting-and-Coins/Distribute-Coins-in-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9534,8 +9534,8 @@
                 }
               ],
               "path": "Week-08/Day-050_BST-Operations/Delete-Node-in-a-BST",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9564,8 +9564,8 @@
                 }
               ],
               "path": "Week-08/Day-050_BST-Operations/Validate-Binary-Search-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9594,8 +9594,8 @@
                 }
               ],
               "path": "Week-08/Day-050_BST-Operations/Kth-Smallest-Element-in-a-BST",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9624,8 +9624,8 @@
                 }
               ],
               "path": "Week-08/Day-050_BST-Operations/Lowest-Common-Ancestor-of-a-Binary-Search-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9666,8 +9666,8 @@
                 }
               ],
               "path": "Week-08/Day-051_BST-Conversion-and-Iterator/Convert-Sorted-List-to-Binary-Search-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9696,8 +9696,8 @@
                 }
               ],
               "path": "Week-08/Day-051_BST-Conversion-and-Iterator/Construct-Binary-Search-Tree-from-Preorder-Traversal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9726,8 +9726,8 @@
                 }
               ],
               "path": "Week-08/Day-051_BST-Conversion-and-Iterator/Binary-Search-Tree-Iterator",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9756,8 +9756,8 @@
                 }
               ],
               "path": "Week-08/Day-051_BST-Conversion-and-Iterator/Recover-Binary-Search-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9870,8 +9870,8 @@
                 }
               ],
               "path": "Week-08/Day-053_Trees-Advanced/Binary-Tree-Maximum-Path-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9900,8 +9900,8 @@
                 }
               ],
               "path": "Week-08/Day-053_Trees-Advanced/Step-By-Step-Directions-From-a-Binary-Tree-Node-to-Another",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9930,8 +9930,8 @@
                 }
               ],
               "path": "Week-08/Day-053_Trees-Advanced/Maximum-Level-Sum-of-a-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -9972,8 +9972,8 @@
                 }
               ],
               "path": "Week-08/Day-054_Trees-Serialization-and-BST/Trim-a-Binary-Search-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10002,8 +10002,8 @@
                 }
               ],
               "path": "Week-08/Day-054_Trees-Serialization-and-BST/Balance-a-Binary-Search-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10032,8 +10032,8 @@
                 }
               ],
               "path": "Week-08/Day-054_Trees-Serialization-and-BST/Serialize-and-Deserialize-Binary-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10074,8 +10074,8 @@
                 }
               ],
               "path": "Week-08/Day-055_Binary-Search-Rotated/Search-in-Rotated-Sorted-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10104,8 +10104,8 @@
                 }
               ],
               "path": "Week-08/Day-055_Binary-Search-Rotated/Search-in-Rotated-Sorted-Array-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10134,8 +10134,8 @@
                 }
               ],
               "path": "Week-08/Day-055_Binary-Search-Rotated/Time-Based-Key-Value-Store",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10164,8 +10164,8 @@
                 }
               ],
               "path": "Week-08/Day-055_Binary-Search-Rotated/Find-Minimum-in-Rotated-Sorted-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10206,8 +10206,8 @@
                 }
               ],
               "path": "Week-08/Day-056_Binary-Search-and-Arrays/Find-First-and-Last-Position-of-Element-in-Sorted-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10236,8 +10236,8 @@
                 }
               ],
               "path": "Week-08/Day-056_Binary-Search-and-Arrays/Find-the-Duplicate-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10266,8 +10266,8 @@
                 }
               ],
               "path": "Week-08/Day-056_Binary-Search-and-Arrays/Minimum-Size-Subarray-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10296,8 +10296,8 @@
                 }
               ],
               "path": "Week-08/Day-056_Binary-Search-and-Arrays/Single-Element-in-a-Sorted-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10349,8 +10349,8 @@
                 }
               ],
               "path": "Week-09/Day-057_Binary-Search-on-Answer/Find-Peak-Element",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10379,8 +10379,8 @@
                 }
               ],
               "path": "Week-09/Day-057_Binary-Search-on-Answer/Capacity-To-Ship-Packages-Within-D-Days",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10409,8 +10409,8 @@
                 }
               ],
               "path": "Week-09/Day-057_Binary-Search-on-Answer/Koko-Eating-Bananas",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10439,8 +10439,8 @@
                 }
               ],
               "path": "Week-09/Day-057_Binary-Search-on-Answer/Peak-Index-in-a-Mountain-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10481,8 +10481,8 @@
                 }
               ],
               "path": "Week-09/Day-058_Matrix-and-2D-Search/Search-a-2D-Matrix",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10511,8 +10511,8 @@
                 }
               ],
               "path": "Week-09/Day-058_Matrix-and-2D-Search/Search-a-2D-Matrix-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10541,8 +10541,8 @@
                 }
               ],
               "path": "Week-09/Day-058_Matrix-and-2D-Search/Spiral-Matrix",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10571,8 +10571,8 @@
                 }
               ],
               "path": "Week-09/Day-058_Matrix-and-2D-Search/Spiral-Matrix-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10696,8 +10696,8 @@
                 }
               ],
               "path": "Week-09/Day-061_Matrix-Simulation/Valid-Sudoku",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10726,8 +10726,8 @@
                 }
               ],
               "path": "Week-09/Day-061_Matrix-Simulation/Rotate-Image",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10756,8 +10756,8 @@
                 }
               ],
               "path": "Week-09/Day-061_Matrix-Simulation/Set-Matrix-Zeroes",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10786,8 +10786,8 @@
                 }
               ],
               "path": "Week-09/Day-061_Matrix-Simulation/Game-of-Life",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10828,8 +10828,8 @@
                 }
               ],
               "path": "Week-09/Day-062_Matrix-and-Arrays/Diagonal-Traverse",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10858,8 +10858,8 @@
                 }
               ],
               "path": "Week-09/Day-062_Matrix-and-Arrays/Matrix-Block-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10888,8 +10888,8 @@
                 }
               ],
               "path": "Week-09/Day-062_Matrix-and-Arrays/Battleships-in-a-Board",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10918,8 +10918,8 @@
                 }
               ],
               "path": "Week-09/Day-062_Matrix-and-Arrays/Snapshot-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10960,8 +10960,8 @@
                 }
               ],
               "path": "Week-09/Day-063_Graphs-BFS-DFS-Basics/Number-of-Islands",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -10990,8 +10990,8 @@
                 }
               ],
               "path": "Week-09/Day-063_Graphs-BFS-DFS-Basics/01-Matrix",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11020,8 +11020,8 @@
                 }
               ],
               "path": "Week-09/Day-063_Graphs-BFS-DFS-Basics/Clone-Graph",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11050,8 +11050,8 @@
                 }
               ],
               "path": "Week-09/Day-063_Graphs-BFS-DFS-Basics/Rotting-Oranges",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11103,8 +11103,8 @@
                 }
               ],
               "path": "Week-10/Day-064_Graphs-Topological-and-DFS/Course-Schedule",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11133,8 +11133,8 @@
                 }
               ],
               "path": "Week-10/Day-064_Graphs-Topological-and-DFS/Course-Schedule-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11163,8 +11163,8 @@
                 }
               ],
               "path": "Week-10/Day-064_Graphs-Topological-and-DFS/Accounts-Merge",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11193,8 +11193,8 @@
                 }
               ],
               "path": "Week-10/Day-064_Graphs-Topological-and-DFS/Word-Search",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11235,8 +11235,8 @@
                 }
               ],
               "path": "Week-10/Day-065_Graphs-Shortest-Path-and-DFS/Minimum-Height-Trees",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11265,8 +11265,8 @@
                 }
               ],
               "path": "Week-10/Day-065_Graphs-Shortest-Path-and-DFS/Pacific-Atlantic-Water-Flow",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11295,8 +11295,8 @@
                 }
               ],
               "path": "Week-10/Day-065_Graphs-Shortest-Path-and-DFS/Cheapest-Flights-Within-K-Stops",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11325,8 +11325,8 @@
                 }
               ],
               "path": "Week-10/Day-065_Graphs-Shortest-Path-and-DFS/Max-Area-of-Island",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11367,8 +11367,8 @@
                 }
               ],
               "path": "Week-10/Day-066_Graphs-Union-Find-and-Dijkstra/Evaluate-Division",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11397,8 +11397,8 @@
                 }
               ],
               "path": "Week-10/Day-066_Graphs-Union-Find-and-Dijkstra/Number-of-Provinces",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11427,8 +11427,8 @@
                 }
               ],
               "path": "Week-10/Day-066_Graphs-Union-Find-and-Dijkstra/Surrounded-Regions",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11457,8 +11457,8 @@
                 }
               ],
               "path": "Week-10/Day-066_Graphs-Union-Find-and-Dijkstra/Network-Delay-Time",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11571,8 +11571,8 @@
                 }
               ],
               "path": "Week-10/Day-068_Graphs-Paths-and-Connectivity/All-Paths-From-Source-to-Target",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11601,8 +11601,8 @@
                 }
               ],
               "path": "Week-10/Day-068_Graphs-Paths-and-Connectivity/Redundant-Connection",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11631,8 +11631,8 @@
                 }
               ],
               "path": "Week-10/Day-068_Graphs-Paths-and-Connectivity/Shortest-Path-in-Binary-Matrix",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11661,8 +11661,8 @@
                 }
               ],
               "path": "Week-10/Day-068_Graphs-Paths-and-Connectivity/Number-of-Operations-to-Make-Network-Connected",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11703,8 +11703,8 @@
                 }
               ],
               "path": "Week-10/Day-069_Hashing-and-Array/Majority-Element-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11733,8 +11733,8 @@
                 }
               ],
               "path": "Week-10/Day-069_Hashing-and-Array/Longest-Consecutive-Sequence",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11763,8 +11763,8 @@
                 }
               ],
               "path": "Week-10/Day-069_Hashing-and-Array/Insert-Delete-GetRandom-O1",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11793,8 +11793,8 @@
                 }
               ],
               "path": "Week-10/Day-069_Hashing-and-Array/Find-All-Duplicates-in-an-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11835,8 +11835,8 @@
                 }
               ],
               "path": "Week-10/Day-070_Subarrays-and-Hashing/Continuous-Subarray-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11865,8 +11865,8 @@
                 }
               ],
               "path": "Week-10/Day-070_Subarrays-and-Hashing/Find-and-Replace-Pattern",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11895,8 +11895,8 @@
                 }
               ],
               "path": "Week-10/Day-070_Subarrays-and-Hashing/K-diff-Pairs-in-an-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11925,8 +11925,8 @@
                 }
               ],
               "path": "Week-10/Day-070_Subarrays-and-Hashing/Custom-Sort-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -11978,8 +11978,8 @@
                 }
               ],
               "path": "Week-11/Day-071_Math-and-Sliding-Window/Fraction-to-Recurring-Decimal",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12008,8 +12008,8 @@
                 }
               ],
               "path": "Week-11/Day-071_Math-and-Sliding-Window/Fruit-Into-Baskets",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12038,8 +12038,8 @@
                 }
               ],
               "path": "Week-11/Day-071_Math-and-Sliding-Window/Encode-and-Decode-TinyURL",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12068,8 +12068,8 @@
                 }
               ],
               "path": "Week-11/Day-071_Math-and-Sliding-Window/Minimum-Area-Rectangle",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12110,8 +12110,8 @@
                 }
               ],
               "path": "Week-11/Day-072_Dynamic-Programming-1D-and-Knapsack/Maximum-Subarray",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12140,8 +12140,8 @@
                 }
               ],
               "path": "Week-11/Day-072_Dynamic-Programming-1D-and-Knapsack/Maximum-Product-Subarray",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12170,8 +12170,8 @@
                 }
               ],
               "path": "Week-11/Day-072_Dynamic-Programming-1D-and-Knapsack/Coin-Change",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12200,8 +12200,8 @@
                 }
               ],
               "path": "Week-11/Day-072_Dynamic-Programming-1D-and-Knapsack/Coin-Change-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12242,8 +12242,8 @@
                 }
               ],
               "path": "Week-11/Day-073_Dynamic-Programming-and-Greedy/Jump-Game",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12272,8 +12272,8 @@
                 }
               ],
               "path": "Week-11/Day-073_Dynamic-Programming-and-Greedy/Jump-Game-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12302,8 +12302,8 @@
                 }
               ],
               "path": "Week-11/Day-073_Dynamic-Programming-and-Greedy/Jump-Game-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12332,8 +12332,8 @@
                 }
               ],
               "path": "Week-11/Day-073_Dynamic-Programming-and-Greedy/Partition-Equal-Subset-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12457,8 +12457,8 @@
                 }
               ],
               "path": "Week-11/Day-076_Dynamic-Programming-2D-Grid-and-LIS/Longest-Increasing-Subsequence",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12487,8 +12487,8 @@
                 }
               ],
               "path": "Week-11/Day-076_Dynamic-Programming-2D-Grid-and-LIS/Unique-Paths",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12517,8 +12517,8 @@
                 }
               ],
               "path": "Week-11/Day-076_Dynamic-Programming-2D-Grid-and-LIS/Unique-Paths-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12547,8 +12547,8 @@
                 }
               ],
               "path": "Week-11/Day-076_Dynamic-Programming-2D-Grid-and-LIS/Maximal-Square",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12589,8 +12589,8 @@
                 }
               ],
               "path": "Week-11/Day-077_Dynamic-Programming-House-Robber-and-Decoding/House-Robber",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12619,8 +12619,8 @@
                 }
               ],
               "path": "Week-11/Day-077_Dynamic-Programming-House-Robber-and-Decoding/House-Robber-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12649,8 +12649,8 @@
                 }
               ],
               "path": "Week-11/Day-077_Dynamic-Programming-House-Robber-and-Decoding/House-Robber-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12679,8 +12679,8 @@
                 }
               ],
               "path": "Week-11/Day-077_Dynamic-Programming-House-Robber-and-Decoding/Decode-Ways",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12732,8 +12732,8 @@
                 }
               ],
               "path": "Week-12/Day-078_Dynamic-Programming-Stock-and-String/Best-Time-to-Buy-and-Sell-Stock-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12762,8 +12762,8 @@
                 }
               ],
               "path": "Week-12/Day-078_Dynamic-Programming-Stock-and-String/Minimum-Path-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12792,8 +12792,8 @@
                 }
               ],
               "path": "Week-12/Day-078_Dynamic-Programming-Stock-and-String/Longest-Common-Subsequence",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12822,8 +12822,8 @@
                 }
               ],
               "path": "Week-12/Day-078_Dynamic-Programming-Stock-and-String/Palindrome-Partitioning",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12864,8 +12864,8 @@
                 }
               ],
               "path": "Week-12/Day-079_Dynamic-Programming-Trees-and-Target-Sum/Unique-Binary-Search-Trees",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12894,8 +12894,8 @@
                 }
               ],
               "path": "Week-12/Day-079_Dynamic-Programming-Trees-and-Target-Sum/Unique-Binary-Search-Trees-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12924,8 +12924,8 @@
                 }
               ],
               "path": "Week-12/Day-079_Dynamic-Programming-Trees-and-Target-Sum/Target-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12954,8 +12954,8 @@
                 }
               ],
               "path": "Week-12/Day-079_Dynamic-Programming-Trees-and-Target-Sum/Triangle",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -12996,8 +12996,8 @@
                 }
               ],
               "path": "Week-12/Day-080_Dynamic-Programming-Palindromes-and-Subsets/Longest-Palindromic-Subsequence",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13026,8 +13026,8 @@
                 }
               ],
               "path": "Week-12/Day-080_Dynamic-Programming-Palindromes-and-Subsets/Partition-to-K-Equal-Sum-Subsets",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13056,8 +13056,8 @@
                 }
               ],
               "path": "Week-12/Day-080_Dynamic-Programming-Palindromes-and-Subsets/Delete-and-Earn",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13086,8 +13086,8 @@
                 }
               ],
               "path": "Week-12/Day-080_Dynamic-Programming-Palindromes-and-Subsets/Palindromic-Substrings",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13128,8 +13128,8 @@
                 }
               ],
               "path": "Week-12/Day-081_Dynamic-Programming-Strings-and-Costs/Longest-String-Chain",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13158,8 +13158,8 @@
                 }
               ],
               "path": "Week-12/Day-081_Dynamic-Programming-Strings-and-Costs/Minimum-Cost-For-Tickets",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13188,8 +13188,8 @@
                 }
               ],
               "path": "Week-12/Day-081_Dynamic-Programming-Strings-and-Costs/Delete-Operation-for-Two-Strings",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13218,8 +13218,8 @@
                 }
               ],
               "path": "Week-12/Day-081_Dynamic-Programming-Strings-and-Costs/Perfect-Squares",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13332,8 +13332,8 @@
                 }
               ],
               "path": "Week-12/Day-083_Dynamic-Programming-Partition-and-Math/Different-Ways-to-Add-Parentheses",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13362,8 +13362,8 @@
                 }
               ],
               "path": "Week-12/Day-083_Dynamic-Programming-Partition-and-Math/Longest-Palindromic-Substring",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13392,8 +13392,8 @@
                 }
               ],
               "path": "Week-12/Day-083_Dynamic-Programming-Partition-and-Math/Largest-Divisible-Subset",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13422,8 +13422,8 @@
                 }
               ],
               "path": "Week-12/Day-083_Dynamic-Programming-Partition-and-Math/Integer-Break",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13464,8 +13464,8 @@
                 }
               ],
               "path": "Week-12/Day-084_DP-and-Backtracking-Simulation/Matchsticks-to-Square",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13494,8 +13494,8 @@
                 }
               ],
               "path": "Week-12/Day-084_DP-and-Backtracking-Simulation/Knight-Dialer",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13524,8 +13524,8 @@
                 }
               ],
               "path": "Week-12/Day-084_DP-and-Backtracking-Simulation/Minesweeper",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13577,8 +13577,8 @@
                 }
               ],
               "path": "Week-13/Day-085_Math-and-Strings/Random-Pick-with-Weight",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13607,8 +13607,8 @@
                 }
               ],
               "path": "Week-13/Day-085_Math-and-Strings/Powx-n",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13637,8 +13637,8 @@
                 }
               ],
               "path": "Week-13/Day-085_Math-and-Strings/Reverse-Integer",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13667,8 +13667,8 @@
                 }
               ],
               "path": "Week-13/Day-085_Math-and-Strings/Multiply-Strings",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13709,8 +13709,8 @@
                 }
               ],
               "path": "Week-13/Day-086_Math-and-Geometry/Count-Primes",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13739,8 +13739,8 @@
                 }
               ],
               "path": "Week-13/Day-086_Math-and-Geometry/Integer-to-Roman",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13769,8 +13769,8 @@
                 }
               ],
               "path": "Week-13/Day-086_Math-and-Geometry/Robot-Bounded-In-Circle",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13799,8 +13799,8 @@
                 }
               ],
               "path": "Week-13/Day-086_Math-and-Geometry/Angle-Between-Hands-of-a-Clock",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13841,8 +13841,8 @@
                 }
               ],
               "path": "Week-13/Day-087_Heaps-Priority-Queues/K-Closest-Points-to-Origin",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13871,8 +13871,8 @@
                 }
               ],
               "path": "Week-13/Day-087_Heaps-Priority-Queues/Task-Scheduler",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13901,8 +13901,8 @@
                 }
               ],
               "path": "Week-13/Day-087_Heaps-Priority-Queues/Top-K-Frequent-Elements",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13931,8 +13931,8 @@
                 }
               ],
               "path": "Week-13/Day-087_Heaps-Priority-Queues/Find-K-Closest-Elements",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -13973,8 +13973,8 @@
                 }
               ],
               "path": "Week-13/Day-088_Heaps-and-Strings/Kth-Largest-Element-in-an-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14003,8 +14003,8 @@
                 }
               ],
               "path": "Week-13/Day-088_Heaps-and-Strings/Kth-Smallest-Element-in-a-Sorted-Matrix",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14033,8 +14033,8 @@
                 }
               ],
               "path": "Week-13/Day-088_Heaps-and-Strings/Top-K-Frequent-Words",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14063,8 +14063,8 @@
                 }
               ],
               "path": "Week-13/Day-088_Heaps-and-Strings/Reorganize-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14188,8 +14188,8 @@
                 }
               ],
               "path": "Week-13/Day-091_Heaps-and-Greedy/Sort-Characters-By-Frequency",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14218,8 +14218,8 @@
                 }
               ],
               "path": "Week-13/Day-091_Heaps-and-Greedy/Car-Pooling",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14248,8 +14248,8 @@
                 }
               ],
               "path": "Week-13/Day-091_Heaps-and-Greedy/Find-K-Pairs-with-Smallest-Sums",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14278,8 +14278,8 @@
                 }
               ],
               "path": "Week-13/Day-091_Heaps-and-Greedy/Maximum-Number-of-Events-That-Can-Be-Attended",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14331,8 +14331,8 @@
                 }
               ],
               "path": "Week-14/Day-092_Trie-Data-Structure/Implement-Trie-Prefix-Tree",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14361,8 +14361,8 @@
                 }
               ],
               "path": "Week-14/Day-092_Trie-Data-Structure/Word-Break",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14391,8 +14391,8 @@
                 }
               ],
               "path": "Week-14/Day-092_Trie-Data-Structure/Design-Add-and-Search-Words-Data-Structure",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14421,8 +14421,8 @@
                 }
               ],
               "path": "Week-14/Day-092_Trie-Data-Structure/Search-Suggestions-System",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14451,8 +14451,8 @@
                 }
               ],
               "path": "Week-14/Day-092_Trie-Data-Structure/Remove-Sub-Folders-from-the-Filesystem",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14493,8 +14493,8 @@
                 }
               ],
               "path": "Week-14/Day-093_Backtracking-Subsets-and-Permutations/Permutations",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14523,8 +14523,8 @@
                 }
               ],
               "path": "Week-14/Day-093_Backtracking-Subsets-and-Permutations/Permutations-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14553,8 +14553,8 @@
                 }
               ],
               "path": "Week-14/Day-093_Backtracking-Subsets-and-Permutations/Subsets",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14583,8 +14583,8 @@
                 }
               ],
               "path": "Week-14/Day-093_Backtracking-Subsets-and-Permutations/Subsets-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14625,8 +14625,8 @@
                 }
               ],
               "path": "Week-14/Day-094_Backtracking-Combinations/Next-Permutation",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14655,8 +14655,8 @@
                 }
               ],
               "path": "Week-14/Day-094_Backtracking-Combinations/Combinations",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14685,8 +14685,8 @@
                 }
               ],
               "path": "Week-14/Day-094_Backtracking-Combinations/Letter-Combinations-of-a-Phone-Number",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14715,8 +14715,8 @@
                 }
               ],
               "path": "Week-14/Day-094_Backtracking-Combinations/Generate-Parentheses",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14757,8 +14757,8 @@
                 }
               ],
               "path": "Week-14/Day-095_Backtracking-Combination-Sum/Combination-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14787,8 +14787,8 @@
                 }
               ],
               "path": "Week-14/Day-095_Backtracking-Combination-Sum/Combination-Sum-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14817,8 +14817,8 @@
                 }
               ],
               "path": "Week-14/Day-095_Backtracking-Combination-Sum/Combination-Sum-IV",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14847,8 +14847,8 @@
                 }
               ],
               "path": "Week-14/Day-095_Backtracking-Combination-Sum/Restore-IP-Addresses",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14889,8 +14889,8 @@
                 }
               ],
               "path": "Week-14/Day-096_Greedy-Algorithms/Gas-Station",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14919,8 +14919,8 @@
                 }
               ],
               "path": "Week-14/Day-096_Greedy-Algorithms/Partition-Labels",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14949,8 +14949,8 @@
                 }
               ],
               "path": "Week-14/Day-096_Greedy-Algorithms/Valid-Parenthesis-String",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -14979,8 +14979,8 @@
                 }
               ],
               "path": "Week-14/Day-096_Greedy-Algorithms/Minimum-Number-of-Arrows-to-Burst-Balloons",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15093,8 +15093,8 @@
                 }
               ],
               "path": "Week-14/Day-098_Bit-Manipulation/Single-Number-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15123,8 +15123,8 @@
                 }
               ],
               "path": "Week-14/Day-098_Bit-Manipulation/Single-Number-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15153,8 +15153,8 @@
                 }
               ],
               "path": "Week-14/Day-098_Bit-Manipulation/Maximum-XOR-of-Two-Numbers-in-an-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15183,8 +15183,8 @@
                 }
               ],
               "path": "Week-14/Day-098_Bit-Manipulation/Divide-Two-Integers",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15236,8 +15236,8 @@
                 }
               ],
               "path": "Week-15/Day-099_Bit-Manipulation/Sum-of-Two-Integers",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15266,8 +15266,8 @@
                 }
               ],
               "path": "Week-15/Day-099_Bit-Manipulation/Bitwise-AND-of-Numbers-Range",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15296,8 +15296,8 @@
                 }
               ],
               "path": "Week-15/Day-099_Bit-Manipulation/Gray-Code",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15338,8 +15338,8 @@
                 }
               ],
               "path": "Week-15/Day-100_Advanced-DSA-Sliding-Window-and-Monotonic-Stack/Sliding-Window-Maximum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15368,8 +15368,8 @@
                 }
               ],
               "path": "Week-15/Day-100_Advanced-DSA-Sliding-Window-and-Monotonic-Stack/Trapping-Rain-Water",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15398,8 +15398,8 @@
                 }
               ],
               "path": "Week-15/Day-100_Advanced-DSA-Sliding-Window-and-Monotonic-Stack/Count-of-Smaller-Numbers-After-Self",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15440,8 +15440,8 @@
                 }
               ],
               "path": "Week-15/Day-101_Hard-Arrays-and-Submatrices/Candy",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15470,8 +15470,8 @@
                 }
               ],
               "path": "Week-15/Day-101_Hard-Arrays-and-Submatrices/Reverse-Pairs",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15500,8 +15500,8 @@
                 }
               ],
               "path": "Week-15/Day-101_Hard-Arrays-and-Submatrices/Subarrays-with-K-Different-Integers",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15530,8 +15530,8 @@
                 }
               ],
               "path": "Week-15/Day-101_Hard-Arrays-and-Submatrices/Number-of-Submatrices-That-Sum-to-Target",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15572,8 +15572,8 @@
                 }
               ],
               "path": "Week-15/Day-102_Hard-Arrays-and-Monotonic-Deque/Shortest-Subarray-with-Sum-at-Least-K",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15602,8 +15602,8 @@
                 }
               ],
               "path": "Week-15/Day-102_Hard-Arrays-and-Monotonic-Deque/Maximum-Gap",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15632,8 +15632,8 @@
                 }
               ],
               "path": "Week-15/Day-102_Hard-Arrays-and-Monotonic-Deque/First-Missing-Positive",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15674,8 +15674,8 @@
                 }
               ],
               "path": "Week-15/Day-103_Hard-Linked-Lists-and-Cache/Shuffle-an-Array",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15704,8 +15704,8 @@
                 }
               ],
               "path": "Week-15/Day-103_Hard-Linked-Lists-and-Cache/Reverse-Nodes-in-k-Group",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15734,8 +15734,8 @@
                 }
               ],
               "path": "Week-15/Day-103_Hard-Linked-Lists-and-Cache/LFU-Cache",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15870,8 +15870,8 @@
                 }
               ],
               "path": "Week-16/Day-106_Hard-Stack-Problems/Basic-Calculator",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15900,8 +15900,8 @@
                 }
               ],
               "path": "Week-16/Day-106_Hard-Stack-Problems/Largest-Rectangle-in-Histogram",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15930,8 +15930,8 @@
                 }
               ],
               "path": "Week-16/Day-106_Hard-Stack-Problems/Longest-Valid-Parentheses",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -15972,8 +15972,8 @@
                 }
               ],
               "path": "Week-16/Day-107_Hard-Data-Structures/Maximum-Frequency-Stack",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16002,8 +16002,8 @@
                 }
               ],
               "path": "Week-16/Day-107_Hard-Data-Structures/The-Skyline-Problem",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16032,8 +16032,8 @@
                 }
               ],
               "path": "Week-16/Day-107_Hard-Data-Structures/Minimum-Window-Substring",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16074,8 +16074,8 @@
                 }
               ],
               "path": "Week-16/Day-108_Hard-Strings/Palindrome-Pairs",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16104,8 +16104,8 @@
                 }
               ],
               "path": "Week-16/Day-108_Hard-Strings/Shortest-Palindrome",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16134,8 +16134,8 @@
                 }
               ],
               "path": "Week-16/Day-108_Hard-Strings/Text-Justification",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16176,8 +16176,8 @@
                 }
               ],
               "path": "Week-16/Day-109_Math-and-Strings/Nth-Digit",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16206,8 +16206,8 @@
                 }
               ],
               "path": "Week-16/Day-109_Math-and-Strings/Integer-to-English-Words",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16236,8 +16236,8 @@
                 }
               ],
               "path": "Week-16/Day-109_Math-and-Strings/Max-Points-on-a-Line",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16278,8 +16278,8 @@
                 }
               ],
               "path": "Week-16/Day-110_Hard-Binary-Search-and-DP/Maximum-Profit-in-Job-Scheduling",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16308,8 +16308,8 @@
                 }
               ],
               "path": "Week-16/Day-110_Hard-Binary-Search-and-DP/Median-of-Two-Sorted-Arrays",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16338,8 +16338,8 @@
                 }
               ],
               "path": "Week-16/Day-110_Hard-Binary-Search-and-DP/Find-Minimum-in-Rotated-Sorted-Array-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16380,8 +16380,8 @@
                 }
               ],
               "path": "Week-16/Day-111_Hard-Graphs-and-BFS/Word-Ladder",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16410,8 +16410,8 @@
                 }
               ],
               "path": "Week-16/Day-111_Hard-Graphs-and-BFS/Word-Ladder-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16440,8 +16440,8 @@
                 }
               ],
               "path": "Week-16/Day-111_Hard-Graphs-and-BFS/Longest-Increasing-Path-in-a-Matrix",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16565,8 +16565,8 @@
                 }
               ],
               "path": "Week-17/Day-113_Hard-Graphs-and-Trie/Word-Search-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16595,8 +16595,8 @@
                 }
               ],
               "path": "Week-17/Day-113_Hard-Graphs-and-Trie/Bus-Routes",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16625,8 +16625,8 @@
                 }
               ],
               "path": "Week-17/Day-113_Hard-Graphs-and-Trie/Critical-Connections-in-a-Network",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16667,8 +16667,8 @@
                 }
               ],
               "path": "Week-17/Day-114_Hard-BFS-and-Eulerian-Path/Shortest-Path-in-a-Grid-with-Obstacles-Elimination",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16697,8 +16697,8 @@
                 }
               ],
               "path": "Week-17/Day-114_Hard-BFS-and-Eulerian-Path/Reconstruct-Itinerary",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16727,8 +16727,8 @@
                 }
               ],
               "path": "Week-17/Day-114_Hard-BFS-and-Eulerian-Path/Making-A-Large-Island",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16769,8 +16769,8 @@
                 }
               ],
               "path": "Week-17/Day-115_Hard-Heaps-and-Two-Heaps/Merge-k-Sorted-Lists",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16799,8 +16799,8 @@
                 }
               ],
               "path": "Week-17/Day-115_Hard-Heaps-and-Two-Heaps/Find-Median-from-Data-Stream",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16829,8 +16829,8 @@
                 }
               ],
               "path": "Week-17/Day-115_Hard-Heaps-and-Two-Heaps/Smallest-Range-Covering-Elements-from-K-Lists",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16871,8 +16871,8 @@
                 }
               ],
               "path": "Week-17/Day-116_Hard-Heaps-and-Binary-Search/Minimum-Number-of-Refueling-Stops",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16901,8 +16901,8 @@
                 }
               ],
               "path": "Week-17/Day-116_Hard-Heaps-and-Binary-Search/Swim-in-Rising-Water",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16931,8 +16931,8 @@
                 }
               ],
               "path": "Week-17/Day-116_Hard-Heaps-and-Binary-Search/Longest-Duplicate-Substring",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -16973,8 +16973,8 @@
                 }
               ],
               "path": "Week-17/Day-117_Hard-Backtracking-and-DP/N-Queens",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17003,8 +17003,8 @@
                 }
               ],
               "path": "Week-17/Day-117_Hard-Backtracking-and-DP/Permutation-Sequence",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17033,8 +17033,8 @@
                 }
               ],
               "path": "Week-17/Day-117_Hard-Backtracking-and-DP/Sudoku-Solver",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17063,8 +17063,8 @@
                 }
               ],
               "path": "Week-17/Day-117_Hard-Backtracking-and-DP/Palindrome-Partitioning-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17105,8 +17105,8 @@
                 }
               ],
               "path": "Week-17/Day-118_Recursion-and-Backtracking/K-th-Symbol-in-Grammar",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17135,8 +17135,8 @@
                 }
               ],
               "path": "Week-17/Day-118_Recursion-and-Backtracking/Remove-Invalid-Parentheses",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17165,8 +17165,8 @@
                 }
               ],
               "path": "Week-17/Day-118_Recursion-and-Backtracking/Unique-Paths-III",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17535,8 +17535,8 @@
                 }
               ],
               "path": "Week-18/Day-123_Hard-Dynamic-Programming/Edit-Distance",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17565,8 +17565,8 @@
                 }
               ],
               "path": "Week-18/Day-123_Hard-Dynamic-Programming/Regular-Expression-Matching",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17595,8 +17595,8 @@
                 }
               ],
               "path": "Week-18/Day-123_Hard-Dynamic-Programming/Maximal-Rectangle",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17871,8 +17871,8 @@
                 }
               ],
               "path": "Week-18/Day-126_Hard-DP-and-Binary-Search/Split-Array-Largest-Sum",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17901,8 +17901,8 @@
                 }
               ],
               "path": "Week-18/Day-126_Hard-DP-and-Binary-Search/Burst-Balloons",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -17931,8 +17931,8 @@
                 }
               ],
               "path": "Week-18/Day-126_Hard-DP-and-Binary-Search/Wildcard-Matching",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18218,8 +18218,8 @@
                 }
               ],
               "path": "Week-19/Day-129_DP-and-Monotonic-Stack/Best-Time-to-Buy-and-Sell-Stock-IV",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18248,8 +18248,8 @@
                 }
               ],
               "path": "Week-19/Day-129_DP-and-Monotonic-Stack/Word-Break-II",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18278,8 +18278,8 @@
                 }
               ],
               "path": "Week-19/Day-129_DP-and-Monotonic-Stack/Russian-Doll-Envelopes",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18308,8 +18308,8 @@
                 }
               ],
               "path": "Week-19/Day-129_DP-and-Monotonic-Stack/Validate-Stack-Sequences",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18584,8 +18584,8 @@
                 }
               ],
               "path": "Week-19/Day-132_Hard-DP-and-Greedy/Minimum-Insertion-Steps-to-Make-a-String-Palindrome",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18614,8 +18614,8 @@
                 }
               ],
               "path": "Week-19/Day-132_Hard-DP-and-Greedy/Minimum-Cost-to-Cut-a-Stick",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18644,8 +18644,8 @@
                 }
               ],
               "path": "Week-19/Day-132_Hard-DP-and-Greedy/Minimum-Number-of-Taps-to-Open-to-Water-a-Garden",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
@@ -18674,8 +18674,8 @@
                 }
               ],
               "path": "Week-19/Day-132_Hard-DP-and-Greedy/Binary-Tree-Cameras",
-              "status": "in-progress",
-              "hasNotes": true,
+              "status": "todo",
+              "hasNotes": false,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,

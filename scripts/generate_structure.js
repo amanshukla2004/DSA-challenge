@@ -93,7 +93,6 @@ function buildDsaUnderstandingTemplate(dayEntry, q) {
 - **YouTube:** <!-- paste YouTube link here -->
 - **Need Revision:** No
 - **Status:** Todo
-- **Date:** <!-- YYYY-MM-DD (auto-tracked from git commit date if empty) -->
 
 ---
 
