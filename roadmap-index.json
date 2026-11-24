@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T07:24:39.822Z",
+  "generatedAt": "2026-11-24T07:26:52.100Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -9,7 +9,7 @@
     "behavioralQuestions": 26,
     "revisionDays": 10,
     "concepts": 8,
-    "algos": 150,
+    "algos": 151,
     "repoSolved": 24,
     "repoNotes": 24,
     "daysCompleted": 3,
@@ -1981,6 +1981,22 @@
         {
           "name": "README.md",
           "path": "150 dsa algos/SearchingAndSorting/UpperBoundAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
+    },
+    {
+      "id": "algo::Stacks::#StackRevision",
+      "name": "Stack: Java Revision Notes",
+      "folder": "#StackRevision",
+      "category": "Stacks",
+      "tier": "Core Interview",
+      "path": "150 dsa algos/Stacks/#StackRevision/stack.md",
+      "files": [
+        {
+          "name": "stack.md",
+          "path": "150 dsa algos/Stacks/#StackRevision/stack.md",
           "isMd": true,
           "ext": ".md"
         }
