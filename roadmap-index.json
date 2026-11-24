@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T07:26:52.100Z",
+  "generatedAt": "2026-11-24T07:28:50.463Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -8,7 +8,7 @@
     "designQuestions": 42,
     "behavioralQuestions": 26,
     "revisionDays": 10,
-    "concepts": 8,
+    "concepts": 9,
     "algos": 151,
     "repoSolved": 24,
     "repoNotes": 24,
@@ -69,6 +69,13 @@
       "group": "General",
       "path": "Concepts/priorityQueue.md",
       "lastUpdated": "2026-11-17"
+    },
+    {
+      "id": "concept::Concepts/StackRevision.md",
+      "title": "Stack: Java Revision Notes",
+      "group": "General",
+      "path": "Concepts/StackRevision.md",
+      "lastUpdated": null
     },
     {
       "id": "concept::Concepts/String.md",
@@ -1987,22 +1994,6 @@
       ]
     },
     {
-      "id": "algo::Stacks::#StackRevision",
-      "name": "Stack: Java Revision Notes",
-      "folder": "#StackRevision",
-      "category": "Stacks",
-      "tier": "Core Interview",
-      "path": "150 dsa algos/Stacks/#StackRevision/stack.md",
-      "files": [
-        {
-          "name": "stack.md",
-          "path": "150 dsa algos/Stacks/#StackRevision/stack.md",
-          "isMd": true,
-          "ext": ".md"
-        }
-      ]
-    },
-    {
       "id": "algo::Stacks::LargestRectangleinHistogram",
       "name": "Largest Rectanglein Histogram",
       "folder": "LargestRectangleinHistogram",
@@ -2077,6 +2068,22 @@
         {
           "name": "README.md",
           "path": "150 dsa algos/Stacks/StackAlgo/README.md",
+          "isMd": true,
+          "ext": ".md"
+        }
+      ]
+    },
+    {
+      "id": "algo::Stacks::StackRevision",
+      "name": "Stack: Java Revision Notes",
+      "folder": "StackRevision",
+      "category": "Stacks",
+      "tier": "Core Interview",
+      "path": "150 dsa algos/Stacks/StackRevision/stack.md",
+      "files": [
+        {
+          "name": "stack.md",
+          "path": "150 dsa algos/Stacks/StackRevision/stack.md",
           "isMd": true,
           "ext": ".md"
         }

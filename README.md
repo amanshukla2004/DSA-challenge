@@ -9,7 +9,7 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 | **Days Completed** | **3 / 136** |
 | **Weeks Completed** | **0 / 21** |
 | **Problem Notes Written** | **24 / 484** |
-| **Concept & Learning Notes** | **8** in [Concepts/](./Concepts) |
+| **Concept & Learning Notes** | **9** in [Concepts/](./Concepts) |
 
 ## Website Features (`index.html`)
 - **📊 One-Page Bento Dashboard:** Isolated single-screen summary built for tracking & sharing progress:
@@ -40,6 +40,7 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 - [Learnings & Mistakes Log](./Concepts/04-Learnings-and-Mistakes-Log.md) *(General)*
 - [arrayList](./Concepts/arrayList.md) *(General)*
 - [priorityQueue](./Concepts/priorityQueue.md) *(General)*
+- [Stack: Java Revision Notes](./Concepts/StackRevision.md) *(General)*
 - [Java Strings for DSA: Everything You Actually Use](./Concepts/String.md) *(General)*
 - [sweepLine](./Concepts/sweepLine.md) *(General)*
 
