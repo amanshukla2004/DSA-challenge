@@ -141,23 +141,107 @@ static String infixToPostfix(String s) {
    - all other operators → pop while `prec(top) > prec(c)` (strictly greater)
 4. Reverse the result
 
-### Evaluate Postfix
+### Infix → Postfix: dry runs
 
-- Operand → push
-- Operator → pop `b` first, then `a`, push `a op b`
+**Rule:** before pushing an operator, pop every waiting operator with higher precedence (or equal, except `^`).
+
+`A+B*C` → `ABC*+`
+
+| Char | Action | Stack | Output |
+|---|---|---|---|
+| A | output | | A |
+| + | push | + | A |
+| B | output | + | AB |
+| * | higher than `+`, push | + * | AB |
+| C | output | + * | ABC |
+| end | pop all | | ABC*+ |
+
+`(A+B)*C` → `AB+C*`
+
+| Char | Action | Stack | Output |
+|---|---|---|---|
+| ( | push | ( | |
+| A | output | ( | A |
+| + | push | ( + | A |
+| B | output | ( + | AB |
+| ) | pop until `(` | | AB+ |
+| * | push | * | AB+ |
+| C | output | * | AB+C |
+| end | pop all | | AB+C* |
+
+`A-B+C` → `AB-C+` (equal precedence, left to right, so `-` pops first)
+
+### Postfix → Infix
+
+- Operand: push as string
+- Operator: pop `b` (right) first, then `a` (left), push `"(" + a + op + b + ")"`
+
+Dry run `AB+C*`: push A, push B, `+` → `(A+B)`, push C, `*` → `((A+B)*C)`
 
 ```java
-static int evalPostfix(String[] tokens) {
+static String postfixToInfix(String s) {
+    Deque<String> st = new ArrayDeque<>();
+    for (char c : s.toCharArray()) {
+        if (Character.isLetterOrDigit(c)) st.push(String.valueOf(c));
+        else {
+            String b = st.pop();
+            String a = st.pop();
+            st.push("(" + a + c + b + ")");
+        }
+    }
+    return st.pop();
+}
+```
+
+### Other conversions (same shape, only pop order and scan direction change)
+
+```java
+// Postfix → Prefix (scan left to right)
+String b = st.pop(), a = st.pop();
+st.push(c + a + b);
+
+// Prefix → Postfix (scan RIGHT to left)
+String a = st.pop(), b = st.pop();   // first pop is LEFT operand
+st.push(a + b + c);
+
+// Prefix → Infix (scan RIGHT to left)
+String a = st.pop(), b = st.pop();
+st.push("(" + a + c + b + ")");
+```
+
+Memory trick: scanning left to right → first pop is the right operand. Scanning right to left → first pop is the left operand.
+
+### Evaluate Postfix
+
+- Number: push
+- Operator: pop `b` first, then `a`, compute `a op b`, push result
+- Answer: the single value left on the stack
+
+Dry run `2 3 1 * + 9 -` (= 2 + 3*1 - 9 = -4)
+
+| Token | Action | Stack (top on right) |
+|---|---|---|
+| 2 | push | 2 |
+| 3 | push | 2 3 |
+| 1 | push | 2 3 1 |
+| * | b=1, a=3, push 3 | 2 3 |
+| + | b=3, a=2, push 5 | 5 |
+| 9 | push | 5 9 |
+| - | b=9, a=5, push -4 | -4 |
+
+```java
+static int evalPostfix(String[] tokens) {   // tokens split by space
     Deque<Integer> st = new ArrayDeque<>();
     for (String t : tokens) {
-        if (t.matches("-?\\d+")) st.push(Integer.parseInt(t));
-        else {
+        if (t.length() > 1 || Character.isDigit(t.charAt(0))) {   // number (handles negatives and multi-digit)
+            st.push(Integer.parseInt(t));
+        } else {
             int b = st.pop(), a = st.pop();
-            switch (t) {
-                case "+": st.push(a + b); break;
-                case "-": st.push(a - b); break;
-                case "*": st.push(a * b); break;
-                case "/": st.push(a / b); break;
+            switch (t.charAt(0)) {
+                case '+': st.push(a + b); break;
+                case '-': st.push(a - b); break;
+                case '*': st.push(a * b); break;
+                case '/': st.push(a / b); break;   // int division truncates toward zero
             }
         }
     }
@@ -165,18 +249,83 @@ static int evalPostfix(String[] tokens) {
 }
 ```
 
+Order of `a` and `b` only matters for `-` and `/`.
+
 ### Evaluate Prefix
 
 - Scan **right to left**
-- Operand → push
-- Operator → pop `a` first, then `b`, push `a op b`
+- Number: push
+- Operator: pop `a` first (left), then `b` (right), push `a op b`
 
-### Conversions (quick)
+Dry run `* + 2 3 4` (= (2+3)*4 = 20): push 4, push 3, push 2, `+` → a=2, b=3 → 5, `*` → a=5, b=4 → 20
 
-- Postfix → Infix: operand push; operator pop `b`, `a`, push `"(" + a + op + b + ")"`
-- Prefix → Infix: scan right to left, pop `a`, `b`, push `"(" + a + op + b + ")"`
-- Postfix → Prefix: pop `b`, `a`, push `op + a + b`
-- Prefix → Postfix: scan right to left, pop `a`, `b`, push `a + b + op`
+```java
+static int evalPrefix(String[] tokens) {
+    Deque<Integer> st = new ArrayDeque<>();
+    for (int i = tokens.length - 1; i >= 0; i--) {
+        String t = tokens[i];
+        if (t.length() > 1 || Character.isDigit(t.charAt(0))) st.push(Integer.parseInt(t));
+        else {
+            int a = st.pop(), b = st.pop();   // a is LEFT here
+            switch (t.charAt(0)) {
+                case '+': st.push(a + b); break;
+                case '-': st.push(a - b); break;
+                case '*': st.push(a * b); break;
+                case '/': st.push(a / b); break;
+            }
+        }
+    }
+    return st.pop();
+}
+```
+
+### Evaluate Infix directly (two stacks)
+
+- `nums` stack for numbers, `ops` stack for operators
+- Number: read full digits, push to `nums`
+- `(`: push to `ops`
+- `)`: apply operators until `(`, discard it
+- Operator: while top of `ops` has higher or equal precedence, apply it; then push the new operator
+- End: apply everything left
+
+Same pop rule as infix → postfix, but instead of writing to output we compute immediately.
+
+```java
+static int evalInfix(String s) {
+    Deque<Integer> nums = new ArrayDeque<>();
+    Deque<Character> ops = new ArrayDeque<>();
+    for (int i = 0; i < s.length(); i++) {
+        char c = s.charAt(i);
+        if (c == ' ') continue;
+        if (Character.isDigit(c)) {
+            int n = 0;
+            while (i < s.length() && Character.isDigit(s.charAt(i))) n = n * 10 + (s.charAt(i++) - '0');
+            i--;
+            nums.push(n);
+        } else if (c == '(') ops.push(c);
+        else if (c == ')') {
+            while (ops.peek() != '(') apply(nums, ops.pop());
+            ops.pop();
+        } else {
+            while (!ops.isEmpty() && prec(ops.peek()) >= prec(c)) apply(nums, ops.pop());
+            ops.push(c);
+        }
+    }
+    while (!ops.isEmpty()) apply(nums, ops.pop());
+    return nums.pop();
+}
+
+static void apply(Deque<Integer> nums, char op) {
+    int b = nums.pop(), a = nums.pop();
+    switch (op) {
+        case '+': nums.push(a + b); break;
+        case '-': nums.push(a - b); break;
+        case '*': nums.push(a * b); break;
+        case '/': nums.push(a / b); break;
+    }
+}
+// prec('(') must return -1 so the while loop stops at '('. No unary minus handling here.
+```
 
 ## 5. Core Patterns
 
