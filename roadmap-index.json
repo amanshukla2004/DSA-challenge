@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T09:14:56.365Z",
+  "generatedAt": "2026-11-24T09:15:17.869Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -2524,7 +2524,11 @@
   ],
   "activityByDate": {
     "2026-11-24": {
-      "questions": [],
+      "questions": [
+        "6::Implement-Queue-using-Stacks",
+        "35::Evaluate-Reverse-Polish-Notation",
+        "35::Min-Stack"
+      ],
       "concepts": [
         "concept::Concepts/StackRevision.md"
       ],
@@ -3785,7 +3789,7 @@
                 "optimised": false
               },
               "solvedAt": "2026-11-24",
-              "lastUpdated": null
+              "lastUpdated": "2026-11-24"
             },
             {
               "id": "6::Backspace-String-Compare",
@@ -7775,7 +7779,7 @@
                 "optimised": false
               },
               "solvedAt": "2026-11-24",
-              "lastUpdated": null
+              "lastUpdated": "2026-11-24"
             },
             {
               "id": "35::Min-Stack",
@@ -7805,7 +7809,7 @@
                 "optimised": false
               },
               "solvedAt": "2026-11-24",
-              "lastUpdated": null
+              "lastUpdated": "2026-11-24"
             },
             {
               "id": "35::Daily-Temperatures",
