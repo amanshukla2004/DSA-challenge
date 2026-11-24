@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T13:47:08.771Z",
+  "generatedAt": "2026-11-24T07:24:19.647Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -16,15 +16,15 @@
     "weeksCompleted": 0
   },
   "potd": {
-    "date": "2026-11-21",
-    "title": "Find Subtree Sizes After Changes",
-    "url": "https://leetcode.com/problems/find-subtree-sizes-after-changes/",
-    "diff": "M",
-    "diffLabel": "Medium",
+    "date": "2026-11-24",
+    "title": "Maximum Subarray With Equal Products",
+    "url": "https://leetcode.com/problems/maximum-subarray-with-equal-products/",
+    "diff": "E",
+    "diffLabel": "Easy",
     "tags": [
       "Array",
-      "Hash Table",
-      "String"
+      "Math",
+      "Sliding Window"
     ]
   },
   "concepts": [
