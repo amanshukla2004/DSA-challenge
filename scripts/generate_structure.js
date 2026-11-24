@@ -1098,7 +1098,12 @@ async function main() {
     }
   }
   totals.weeks = weeksIndex.length;
-  const potd = await fetchDailyProblemSnapshot();
+  let previousPotd = null;
+  try {
+    const existing = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'roadmap-index.json'), 'utf8'));
+    previousPotd = existing.potd || null;
+  } catch (_) {}
+  const potd = (await fetchDailyProblemSnapshot()) || previousPotd;
 
   const indexPayload = {
     generatedAt: new Date().toISOString(),

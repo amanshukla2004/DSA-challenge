@@ -36,13 +36,14 @@ jobs:
 
       - name: Commit updated index if changed
         run: |
-          if [ -n "$(git status --porcelain roadmap-index.json README.md)" ]; then
+          if [ -n "$(git diff -I '^[[:space:]]*"generatedAt":' --name-only roadmap-index.json README.md)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                        git add roadmap-index.json README.md
+            git add roadmap-index.json README.md
             git commit -m "chore(index): update roadmap-index.json and README.md [skip actions]"
             git push
           else
-            echo "No index changes to commit."
+            echo "No structural index changes to commit (ignoring timestamp)."
+            git checkout -- roadmap-index.json README.md 2>/dev/null || true
           fi
 
