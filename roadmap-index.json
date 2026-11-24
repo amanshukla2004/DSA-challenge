@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T07:54:17.565Z",
+  "generatedAt": "2026-11-24T09:14:56.365Z",
   "totals": {
     "weeks": 21,
     "days": 136,
@@ -10,8 +10,8 @@
     "revisionDays": 10,
     "concepts": 9,
     "algos": 151,
-    "repoSolved": 24,
-    "repoNotes": 24,
+    "repoSolved": 27,
+    "repoNotes": 27,
     "daysCompleted": 3,
     "weeksCompleted": 0
   },
@@ -2650,6 +2650,11 @@
       "4::Shuffle-the-Array",
       "4::Max-Consecutive-Ones",
       "4::Sort-Array-By-Parity"
+    ],
+    "2026-11-24": [
+      "6::Implement-Queue-using-Stacks",
+      "35::Evaluate-Reverse-Polish-Notation",
+      "35::Min-Stack"
     ]
   },
   "weeks": [
@@ -2658,7 +2663,7 @@
       "folder": "Week-01",
       "weekTitle": "Week 1 (Days 1–7)",
       "phase": "Phase 1: DSA Foundations & Core Structures",
-      "solvedCount": 24,
+      "solvedCount": 25,
       "totalCount": 39,
       "completed": false,
       "days": [
@@ -3658,7 +3663,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-01/Day-006_Linked-List-and-Stack",
-          "solvedCount": 0,
+          "solvedCount": 1,
           "totalCount": 6,
           "completed": false,
           "questions": [
@@ -3772,14 +3777,14 @@
                 }
               ],
               "path": "Week-01/Day-006_Linked-List-and-Stack/Implement-Queue-using-Stacks",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
-                "bruteforce": false,
+                "bruteforce": true,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-24",
               "lastUpdated": null
             },
             {
@@ -7177,7 +7182,7 @@
       "folder": "Week-05",
       "weekTitle": "Week 5 (Days 29–35)",
       "phase": "Phase 2: Core Patterns, Two Pointers & Stacks",
-      "solvedCount": 0,
+      "solvedCount": 2,
       "totalCount": 20,
       "completed": false,
       "days": [
@@ -7738,7 +7743,7 @@
           "type": "dsa",
           "title": null,
           "path": "Week-05/Day-035_Stack",
-          "solvedCount": 0,
+          "solvedCount": 2,
           "totalCount": 4,
           "completed": false,
           "questions": [
@@ -7762,14 +7767,14 @@
                 }
               ],
               "path": "Week-05/Day-035_Stack/Evaluate-Reverse-Polish-Notation",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-24",
               "lastUpdated": null
             },
             {
@@ -7792,14 +7797,14 @@
                 }
               ],
               "path": "Week-05/Day-035_Stack/Min-Stack",
-              "status": "todo",
-              "hasNotes": false,
+              "status": "solved",
+              "hasNotes": true,
               "hasCode": {
                 "bruteforce": false,
                 "better": false,
                 "optimised": false
               },
-              "solvedAt": null,
+              "solvedAt": "2026-11-24",
               "lastUpdated": null
             },
             {

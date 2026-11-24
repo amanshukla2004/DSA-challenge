@@ -12,71 +12,55 @@
 
 ## 📋 Question
 <!-- Short summary of the problem in your own words -->
+Evaluate Postfix Notation
 
-### 📏 Constraints
-- <!-- Key constraints that decide the optimal time/space complexity -->
-
-<details>
-<summary><strong>💡 Hint</strong></summary>
-
-<!-- Key observation or nudge without giving away the full solution -->
-
-</details>
-
----
-
-## 🧠 Intuition
-<!-- Core pattern or mental model that unlocks this problem -->
-
----
-
-## 🐢 Approach 1: Brute Force
+## 🐢 Approach 1: Evaluate Postfix
 
 ### Intuition
-- <!-- Step-by-step brute force idea and why it is slow -->
+- Evaluate Postfix
+- Number: push into stack
+- Operator: pop b first, then a, compute a op b, push result
+- Answer: the single value left on the stack
 
 ### Code
 ```java
-// Brute Force solution
+class Solution {
+    public int evalRPN(String[] tokens) {
+        
+        int n = tokens.length;
+
+        Deque<Integer> st = new ArrayDeque<>();
+
+        for(String ch : tokens){
+            if(ch.length() > 1 || Character.isDigit(ch.charAt(0))){
+                st.push(Integer.parseInt(ch));
+            }
+            /*
+            ch.length() : 123 -> digit , * -> operator, -3 -> digit
+            
+            Character.isDigit(ch.charAt(0)) : * -> NO, -3 -> NO , 123 -> YES
+            */
+            else {
+                int b = st.pop();
+                int a = st.pop();
+                int res = 0;
+
+                switch(ch.charAt(0)){
+                    case '+' : st.push(a + b); break;
+                    case '-' : st.push(a - b); break;
+                    case '*' : st.push(a * b); break;
+                    case '/' : st.push(a / b); break;
+                }
+
+            }
+        }
+        return st.pop();
+    }
+}
 ```
 
 ### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
+- **Time Complexity (TC):** `O(N)`
+- **Space Complexity (SC):** `O(N)`
 
----
 
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->

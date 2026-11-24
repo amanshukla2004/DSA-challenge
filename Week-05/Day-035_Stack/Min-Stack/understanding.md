@@ -10,34 +10,67 @@
 
 ---
 
-## 📋 Question
-<!-- Short summary of the problem in your own words -->
-
-### 📏 Constraints
-- <!-- Key constraints that decide the optimal time/space complexity -->
-
-<details>
-<summary><strong>💡 Hint</strong></summary>
-
-<!-- Key observation or nudge without giving away the full solution -->
-
-</details>
-
 ---
 
 ## 🧠 Intuition
-<!-- Core pattern or mental model that unlocks this problem -->
+The problem: get the minimum in O(1) while pushing and popping.
 
----
+The key observation: the minimum only changes when you push something smaller or pop the current minimum. So the minimum at any moment depends only on what is currently in the stack, and it "rewinds" in the exact reverse order it was set.
 
-## 🐢 Approach 1: Brute Force
+That reverse order is itself stack behavior. So the history of minimums can live in a second stack.
 
-### Intuition
-- <!-- Step-by-step brute force idea and why it is slow -->
+Picture it: you push 5, 3, 7.
 
+Min is 5, then 3, then still 3 after 7
+Pop 7: min is still 3
+Pop 3: min goes back to 5
+
+The minimum "5" had to be remembered somewhere while 3 was on top. That memory is the min stack.
+
+#### Optimization : store a min only when it changes
+- Push onto min only when val <= min.peek() (or min is empty)
+- On pop: if the popped value equals min.peek(), pop min too
+- <= matters: each copy of a duplicate minimum needs its own entry, otherwise popping one copy loses the min while another copy is still in the stack (the bug in your code)
+- Same O(1) time, less space when most pushes aren't new minimums
 ### Code
 ```java
-// Brute Force solution
+class MinStack {
+    Deque<Integer> st = new ArrayDeque<>(), min = new ArrayDeque<>();
+    public MinStack() {
+        
+    }
+    
+    public void push(int value) {
+        st.push(value);
+
+        if(min.isEmpty() || value <= min.peek()){
+            min.push(value);
+        }
+    }
+    
+    public void pop() {
+        int popped = st.pop();
+
+        if(min.peek() == popped) min.pop();
+    }
+    
+    public int top() {
+        return st.peek();
+    }
+    
+    public int getMin() {
+        return min.peek();
+    }
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(value);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
 ```
 
 ### Complexity
@@ -45,38 +78,3 @@
 - **Space Complexity (SC):** `O(...)`
 
 ---
-
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->

@@ -5,10 +5,10 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Live Repo Progress
 | Metric | Progress |
 |---|---|
-| **Questions Solved** | **24 / 484** |
+| **Questions Solved** | **27 / 484** |
 | **Days Completed** | **3 / 136** |
 | **Weeks Completed** | **0 / 21** |
-| **Problem Notes Written** | **24 / 484** |
+| **Problem Notes Written** | **27 / 484** |
 | **Concept & Learning Notes** | **9** in [Concepts/](./Concepts) |
 
 ## Website Features (`index.html`)
@@ -47,7 +47,7 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 ## Weekly Index
 
 <details>
-<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (24/39 solved · 7 days)</summary>
+<summary><strong>Week 1 (Days 1–7)</strong> — Phase 1: DSA Foundations & Core Structures (25/39 solved · 7 days)</summary>
 
 - **Day 1 — Arrays ✅** (6/6 solved):
   - [Two Sum](./Week-01/Day-001_Arrays/Two-Sum/understanding.md) `E` ✅
@@ -85,11 +85,11 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
   - [Merge Two Sorted Lists](./Week-01/Day-005_Linked-List/Merge-Two-Sorted-Lists/understanding.md) `E`
   - [Middle of the Linked List](./Week-01/Day-005_Linked-List/Middle-of-the-Linked-List/understanding.md) `E`
   - [Palindrome Linked List](./Week-01/Day-005_Linked-List/Palindrome-Linked-List/understanding.md) `E`
-- **Day 6 — Linked List & Stack** (0/6 solved):
+- **Day 6 — Linked List & Stack** (1/6 solved):
   - [Intersection of Two Linked Lists](./Week-01/Day-006_Linked-List-and-Stack/Intersection-of-Two-Linked-Lists/understanding.md) `E`
   - [Linked List Cycle](./Week-01/Day-006_Linked-List-and-Stack/Linked-List-Cycle/understanding.md) `E`
   - [Valid Parentheses](./Week-01/Day-006_Linked-List-and-Stack/Valid-Parentheses/understanding.md) `E`
-  - [Implement Queue using Stacks](./Week-01/Day-006_Linked-List-and-Stack/Implement-Queue-using-Stacks/understanding.md) `E`
+  - [Implement Queue using Stacks](./Week-01/Day-006_Linked-List-and-Stack/Implement-Queue-using-Stacks/understanding.md) `E` ✅
   - [Backspace String Compare](./Week-01/Day-006_Linked-List-and-Stack/Backspace-String-Compare/understanding.md) `E`
   - [Next Greater Element I](./Week-01/Day-006_Linked-List-and-Stack/Next-Greater-Element-I/understanding.md) `E`
 - **Day 7 — System Design & OOD** (0/2 solved):
@@ -237,7 +237,7 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
 </details>
 
 <details>
-<summary><strong>Week 5 (Days 29–35)</strong> — Phase 2: Core Patterns, Two Pointers & Stacks (0/20 solved · 7 days)</summary>
+<summary><strong>Week 5 (Days 29–35)</strong> — Phase 2: Core Patterns, Two Pointers & Stacks (2/20 solved · 7 days)</summary>
 
 - **Day 29 — System Design & OOD** (0/2 solved):
   - [Design A Distributed Unique ID Generator](./Week-05/Day-029_System-Design-and-OOD/Design-A-Distributed-Unique-ID-Generator/understanding.md) `System Design`
@@ -261,9 +261,9 @@ A **21-Week (136 Days · 484 Questions)** Git-backed preparation repository & st
   - [Sort List](./Week-05/Day-034_Linked-List/Sort-List/understanding.md) `M`
   - [Reorder List](./Week-05/Day-034_Linked-List/Reorder-List/understanding.md) `M`
   - [Rotate List](./Week-05/Day-034_Linked-List/Rotate-List/understanding.md) `M`
-- **Day 35 — Stack** (0/4 solved):
-  - [Evaluate Reverse Polish Notation](./Week-05/Day-035_Stack/Evaluate-Reverse-Polish-Notation/understanding.md) `M`
-  - [Min Stack](./Week-05/Day-035_Stack/Min-Stack/understanding.md) `M`
+- **Day 35 — Stack** (2/4 solved):
+  - [Evaluate Reverse Polish Notation](./Week-05/Day-035_Stack/Evaluate-Reverse-Polish-Notation/understanding.md) `M` ✅
+  - [Min Stack](./Week-05/Day-035_Stack/Min-Stack/understanding.md) `M` ✅
   - [Daily Temperatures](./Week-05/Day-035_Stack/Daily-Temperatures/understanding.md) `M`
   - [Decode String](./Week-05/Day-035_Stack/Decode-String/understanding.md) `M`
 

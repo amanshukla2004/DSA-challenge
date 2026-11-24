@@ -37,7 +37,51 @@
 
 ### Code
 ```java
-// Brute Force solution
+class MyQueue {
+
+    Deque<Integer> first = new ArrayDeque<>();
+    Deque<Integer> second = new ArrayDeque<>();
+
+
+    public MyQueue() {
+        
+    }
+    
+    public void push(int x) {
+        first.push(x);
+    }
+    
+    public int pop() {
+        if(!second.isEmpty()) return second.pop();
+        while(!first.isEmpty()){
+            int popped = first.pop();
+            second.push(popped);
+        }
+        return second.pop();
+    }
+    
+    public int peek() {
+        if(!second.isEmpty()) return second.peek();
+        while(!first.isEmpty()){
+            int popped = first.pop();
+            second.push(popped);
+        }
+        return second.peek();
+    }
+    
+    public boolean empty() {
+        return (first.isEmpty() && second.isEmpty());
+    }
+}
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue obj = new MyQueue();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.peek();
+ * boolean param_4 = obj.empty();
+ */
 ```
 
 ### Complexity
@@ -46,37 +90,3 @@
 
 ---
 
-## ⚡ Approach 2: Better
-
-### Intuition
-- <!-- How we improve on the brute force bottleneck -->
-
-### Code
-```java
-// Better solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## 🚀 Approach 3: Optimised
-
-### Intuition
-- <!-- Optimal insight and why it achieves the best possible complexity -->
-
-### Code
-```java
-// Optimised solution
-```
-
-### Complexity
-- **Time Complexity (TC):** `O(...)`
-- **Space Complexity (SC):** `O(...)`
-
----
-
-## ⚠️ Edge Cases & Mistakes
-- <!-- Tricky inputs, off-by-one bugs, or mistakes to remember -->

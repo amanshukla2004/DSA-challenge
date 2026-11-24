@@ -211,7 +211,9 @@ st.push("(" + a + c + b + ")");
 
 Memory trick: scanning left to right → first pop is the right operand. Scanning right to left → first pop is the left operand.
 
-### Evaluate Postfix
+# Evaluate Postfix
+150. Evaluate Reverse Polish Notation
+https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
 
 - Number: push
 - Operator: pop `b` first, then `a`, compute `a op b`, push result
@@ -235,7 +237,13 @@ static int evalPostfix(String[] tokens) {   // tokens split by space
     for (String t : tokens) {
         if (t.length() > 1 || Character.isDigit(t.charAt(0))) {   // number (handles negatives and multi-digit)
             st.push(Integer.parseInt(t));
-        } else {
+        } 
+        /*
+        t.length() : 123 -> digit , * -> operator, -3 -> digit
+        
+        Character.isDigit(t.charAt(0)) : * -> NO, -3 -> NO , 123 -> YES
+        */
+        else {
             int b = st.pop(), a = st.pop();
             switch (t.charAt(0)) {
                 case '+': st.push(a + b); break;
